@@ -1,0 +1,382 @@
+@font-face {
+  font-family: 'UnifrakturMaguntia';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/unifrakturmaguntia-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IM Fell Double Pica';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/im-fell-double-pica-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IM Fell Double Pica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/im-fell-double-pica-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IM Fell Double Pica SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/im-fell-double-pica-sc-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Elsie Swash Caps';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/elsie-swash-caps-latin-900-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Elsie';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/elsie-latin-900-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Victorian Gothic: a penny dreadful printed in reverse, bone ink on black. The lamps along the street come on as you walk past them. */
+@counter-style vg-ordinal { system: fixed; symbols: 'First' 'Second' 'Third' 'Fourth' 'Fifth' 'Sixth' 'Seventh' 'Eighth' 'Ninth' 'Tenth'; suffix: ''; }
+:root {
+  --black: #0b0c0b; --hearse: #121312; --bone: #ede7d3; --bone-dim: #bdbba8; --paper: #e9e3cc; --sooty: #141412;
+  --gas: #e9c46a; --moon: #96a465; --blood: #b8332a; --rule: #5b5c51;
+  --bg: var(--black); --surface: var(--hearse); --ink: var(--bone); --muted: var(--bone-dim); --accent: var(--gas); --line: var(--rule);
+  --font-display: 'UnifrakturMaguntia', 'Times New Roman', serif;
+  --font-body: 'IM Fell Double Pica', Georgia, 'Times New Roman', serif; --font-mono: var(--font-body);
+  --font-sc: 'IM Fell Double Pica SC', Georgia, 'Times New Roman', serif;
+  --font-swash: 'Elsie Swash Caps', Georgia, 'Times New Roman', serif;
+  --font-head: 'Elsie', Georgia, 'Times New Roman', serif;
+  --radius: 0; --max: 1120px; --gap: 22px; --atlas-h: 44px; --frame: 48px; --pad: 40px;
+  --w: calc(min(100vw - 16px, var(--max)) - 2 * (var(--frame) + var(--pad)));
+  color-scheme: dark;
+}
+html { font-size: 20px; }
+body { background: var(--black); line-height: 1.46; }
+::selection { background: var(--gas); color: var(--black); }
+
+/* Site bar: a strip of small type under a scotch rule */
+.atlas { background: var(--black); border-bottom: 0; box-shadow: 0 1px 0 var(--black), 0 3px 0 var(--bone-dim), 0 5px 0 var(--black), 0 6px 0 var(--rule); font: 17px/1 var(--font-sc); color: var(--bone); }
+.atlas a, .atlas-btn { color: var(--bone); white-space: nowrap; }
+.atlas-home { font-weight: 400; }
+.atlas-here { color: var(--bone-dim); font-size: 16px; }
+.atlas-here::before { content: 'No. '; }
+.vg-count { color: var(--gas); font: italic 16px/1 var(--font-body); white-space: nowrap; }
+.atlas-btn:hover { border-color: var(--bone-dim); }
+.atlas-btn[aria-pressed="true"] { color: var(--gas); }
+
+/* The sheet: a white-line arcade cut down both edges */
+.page { max-width: var(--max); margin: 26px auto 0; padding: 22px var(--pad) 36px; background: rgb(11 12 11 / .62); background-clip: padding-box; border: var(--frame) solid transparent; border-image: url(../media/victorian-gothic/frame.svg) 96 round; counter-reset: plate sec; }
+
+/* Masthead */
+.hero { padding: 0 0 8px; }
+.hero-text { position: relative; text-align: center; padding-bottom: 34px; }
+.hero-text::before { content: ''; position: absolute; z-index: -1; left: calc(-1 * var(--pad)); right: calc(-1 * var(--pad)); bottom: 0; height: 380px; background: url(../media/victorian-gothic/skyline.svg) center bottom / 1600px 380px no-repeat; -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent); }
+.hero-kicker { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 18px; padding: 8px 0 7px; margin: 0; border-top: 4px solid var(--bone); border-bottom: 1px solid var(--bone); box-shadow: 0 -7px 0 -6px var(--bone), 0 3px 0 -2px var(--black), 0 4px 0 -2px var(--bone-dim); color: var(--bone); font: 17px/1.25 var(--font-sc); }
+.hero-kicker::before { content: 'No. 57.'; }
+.hero-kicker::after { content: 'Price One Penny'; }
+.hero-title { position: relative; z-index: 1; margin: 26px auto 0; font-size: clamp(2.6rem, 8vw, 5.6rem); font-weight: 400; text-shadow: 0 0 34px rgb(233 196 106 / .18); }
+.hero-title svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hero-title text { font: 138px var(--font-display); }
+.vg-face { fill: var(--bone); stroke: var(--black); stroke-width: 5px; paint-order: stroke; }
+.vg-shade { fill: url(#vg-hatch); }
+.hero-sub { position: relative; z-index: 1; margin: -14px 0 0; font: 900 clamp(1.3rem, 3.4vw, 2rem)/1.15 var(--font-swash); color: var(--bone); text-shadow: 0 2px 8px var(--black); }
+.hero-tagline { position: relative; z-index: 1; max-width: 33em; margin: 16px auto 0; font: italic 1.12rem/1.32 var(--font-body); color: var(--bone); text-shadow: 0 1px 6px var(--black), 0 0 2px var(--black); }
+
+/* The plates. One big woodcut across the page, then Doré large enough to read, with two smaller plates beside him. */
+.hero-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 24px; margin-top: 14px; }
+.hero-gallery .shot-1 { grid-column: 1 / -1; }
+.hero-gallery .shot-1 .shot-link { aspect-ratio: 16 / 9; }
+.hero-gallery .shot-2 { grid-column: 1 / span 2; grid-row: 2 / span 2; display: flex; flex-direction: column; }
+.hero-gallery .shot-2 .shot-link { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+.hero-gallery .shot-2 img { position: absolute; left: 5px; top: 5px; width: calc(100% - 10px); height: calc(100% - 10px); }
+.hero-gallery .shot-3, .hero-gallery .shot-4 { grid-column: 3; }
+.hero-gallery .shot-3 .shot-link, .hero-gallery .shot-4 .shot-link { aspect-ratio: 16 / 10; }
+.shot-4 img { object-position: 12% 50%; }
+.hero-gallery .shot-2 img { filter: contrast(1.28) brightness(1.06); transition: filter .3s; }
+.hero-gallery .shot-2 .shot-link:hover img, .hero-gallery .shot-2 .shot-link:focus-visible img { filter: none; }
+.shot { counter-increment: plate; }
+.shot-link { position: relative; padding: 5px; background: var(--black); border: 1px solid var(--bone); box-shadow: 0 0 0 3px var(--black), 0 0 0 4px var(--bone-dim); }
+:root:not([data-calm]) .shot-link::after { content: ''; position: absolute; inset: 5px; box-shadow: inset 0 0 60px rgb(0 0 0 / .4); pointer-events: none; transition: opacity .3s; }
+.shot-link:hover::after, .shot-link:focus-visible::after { opacity: 0; }
+.shot figcaption { padding-top: 13px; text-align: center; font: 17px/1.3 var(--font-sc); color: var(--bone); }
+.shot figcaption::before { content: 'Plate ' counter(plate, upper-roman) '. '; color: var(--gas); }
+.shot-title { font-weight: 400; }
+.shot-meta { display: block; font: italic 16px/1.3 var(--font-body); color: var(--bone-dim); }
+
+/* Contents of this number */
+.toc { margin: 40px 0 0; padding: 12px 0 13px; text-align: center; border-top: 1px solid var(--bone-dim); border-bottom: 4px solid var(--bone-dim); box-shadow: 0 3px 0 -2px var(--black); }
+.toc::before { content: 'In This Number'; display: block; margin-bottom: 4px; font: 16px/1.2 var(--font-sc); letter-spacing: .08em; color: var(--gas); }
+.toc ul { justify-content: center; gap: 2px 8px; }
+.toc li + li::before { content: '\25C6'; margin-right: 8px; font-size: 10px; vertical-align: 2px; color: var(--rule); }
+.toc a { color: var(--bone); font: italic 1rem/1.3 var(--font-body); text-decoration: none; }
+.toc a:hover { color: var(--gas); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Parts */
+.sec { position: relative; padding: 62px 0 8px; counter-increment: sec; }
+.sec::after { content: '(To be continued.)'; display: block; margin-top: 1.5em; text-align: right; font: italic .88rem/1.2 var(--font-body); color: var(--bone-dim); }
+.sec-related::after { content: 'The End.'; text-align: center; font: 1.6rem/1.2 var(--font-display); color: var(--bone); margin-top: 1.4em; }
+.sec-title { text-align: center; font-size: clamp(2.5rem, 5.6vw, 3.7rem); font-weight: 400; line-height: 1.05; margin-bottom: 26px; color: var(--bone-dim); transition: color 1.2s, text-shadow 1.2s; }
+.sec.is-lit .sec-title { color: var(--bone); text-shadow: 0 0 30px rgb(233 196 106 / .3); }
+.sec-title::before { content: 'Part the ' counter(sec, vg-ordinal); display: block; margin-bottom: 8px; font: 17px/1.2 var(--font-sc); letter-spacing: .06em; color: var(--gas); text-shadow: none; }
+.sec-title::after { content: ''; display: block; height: 24px; margin-top: 12px; background: url(../media/victorian-gothic/fleuron.svg) center / auto 100% no-repeat; opacity: .8; }
+.sec h3 { font: 900 1.16rem/1.2 var(--font-head); font-variant-ligatures: none; margin-bottom: 8px; color: var(--bone); }
+
+.feel-body { max-width: none; columns: 2; column-gap: 46px; column-rule: 1px solid var(--rule); font-size: 1.05rem; line-height: 1.46; text-align: justify; hyphens: auto; }
+.feel-body p { break-inside: avoid-column; }
+.feel-body p:first-child::first-letter { float: left; margin: .1em .14em 0 0; padding: .15em .17em .08em; font: 400 4.1em/.78 var(--font-display); color: var(--bone); background: url(../media/victorian-gothic/factotum.svg) center / 100% 100% no-repeat; text-shadow: 0 0 6px var(--black), 0 0 3px var(--black), 0 0 1px var(--black); }
+.mood-words { justify-content: center; gap: 2px 8px; margin: 26px 0 0; }
+.mood-words li { padding: 0; border: 0; font: 19px/1.3 var(--font-sc); color: var(--bone); }
+.mood-words li + li::before { content: '\25C6'; margin-right: 8px; font-size: 10px; vertical-align: 2px; color: var(--gas); }
+.origins { max-width: none; margin-top: 28px; padding: 18px 24px 20px; border: 4px double var(--bone-dim); background: var(--hearse); text-align: justify; hyphens: auto; }
+.origins h3 { text-align: center; }
+.origins p { line-height: 1.42; }
+
+/* Core elements: a Gothic arcade of six lancets */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
+.core-item { position: relative; padding: 0 18px 20px; background: none; border-style: solid; border-width: 92px 1px 1px; border-image: url(../media/victorian-gothic/arch.svg) 120 2 2 2 fill / 92px 1px 1px stretch; }
+.core-item h3 { text-align: center; margin: -6px 0 10px; line-height: 1.16; }
+.core-item h3::before { content: counter(core, upper-roman); position: absolute; left: 0; right: 0; top: -54px; text-align: center; font: 400 1.5rem/1 var(--font-body); color: var(--gas); }
+.core-item::before { content: ''; position: absolute; left: 50%; top: -74px; width: 92px; height: 72px; margin-left: -46px; background: radial-gradient(closest-side, rgb(233 196 106 / .34), transparent); opacity: 0; transition: opacity 1.4s; pointer-events: none; }
+.sec.is-lit .core-item::before { opacity: 1; }
+.core-item p { font-size: 19px; line-height: 1.36; }
+
+/* How to: instalments, set in two columns */
+.steps { display: block; max-width: none; columns: 2; column-gap: 46px; column-rule: 1px solid var(--rule); }
+.step { break-inside: avoid; padding: 0 0 24px; }
+.step::before { position: static; display: block; width: auto; height: auto; margin-bottom: 3px; background: none; color: var(--gas); font: 17px/1.2 var(--font-sc); letter-spacing: .04em; content: 'Instalment the ' counter(step, vg-ordinal) '.'; }
+.step h3 { margin-bottom: 5px; }
+.step p { font-size: 19px; line-height: 1.38; text-align: justify; hyphens: auto; }
+
+/* The cheat sheet is a handbill pasted to the black wall */
+.how-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; margin-top: 30px; align-items: start; }
+.specs { position: relative; padding: 24px 26px 22px; background: var(--paper); color: var(--sooty); border: 0; outline: 1px solid var(--sooty); outline-offset: -8px; box-shadow: 0 14px 44px rgb(0 0 0 / .85), 0 0 0 1px #000; transform: rotate(-.6deg); }
+.specs h3 { margin-bottom: 8px; color: var(--sooty); font: 400 2rem/1 var(--font-display); text-align: center; }
+.spec { grid-template-columns: 6.3em minmax(0, 1fr); gap: 8px; padding: 5px 0 6px; border-top: 1px dotted var(--sooty); line-height: 1.22; font-size: 18px; }
+.spec:first-child { border-top: 3px double var(--sooty); }
+.spec dt { font: 18px/1.22 var(--font-sc); }
+.dodont { gap: 26px; }
+.do h3, .avoid h3 { text-align: center; padding-bottom: 6px; border-bottom: 4px double var(--bone-dim); margin-bottom: 12px; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 9px; padding-left: 46px; font-size: 19px; line-height: 1.32; }
+.do li::before { content: ''; position: absolute; left: 0; top: .2em; width: 36px; height: 17px; background: url(../media/victorian-gothic/manicule.svg) center / contain no-repeat; }
+.avoid li::before { content: ''; position: absolute; left: 13px; top: .12em; width: 13px; height: 21px; background: var(--blood); clip-path: polygon(30% 0, 70% 0, 100% 28%, 72% 100%, 28% 100%, 0 28%); }
+
+.learn { margin-top: 34px; }
+.learn h3 { text-align: center; }
+.learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 46px; margin-top: 12px; }
+.ref-item { margin-bottom: 12px; line-height: 1.26; }
+.ref-item a { color: var(--bone); text-decoration-color: var(--gas); text-underline-offset: 3px; }
+.ref-item a:hover { color: var(--gas); }
+.ref-meta { font: italic 16px/1.2 var(--font-body); color: var(--bone-dim); }
+.ref-note { margin-top: 2px; font-size: 18px; line-height: 1.3; color: var(--bone-dim); }
+.brief { justify-content: center; }
+.palette-actions { justify-content: center; }
+.btn { padding: 9px 16px; background: var(--black); color: var(--bone); border: 1px solid var(--bone); box-shadow: inset 0 0 0 2px var(--black), inset 0 0 0 3px var(--rule); font: 17px/1.1 var(--font-sc); }
+.btn:hover { background: var(--bone); color: var(--black); border-color: var(--bone); }
+.brief-note, .palette-note { color: var(--bone-dim); font: italic 17px/1.3 var(--font-body); }
+.palette-note { max-width: 44em; margin: 26px auto 0; text-align: center; }
+
+/* Palette: a wall of cameos */
+.swatches { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 16px 14px; }
+.swatch button { background: none; border: 0; overflow: visible; text-align: center; padding: 8px 8px 0; }
+.chip { height: auto; aspect-ratio: 4 / 5; border-radius: 50%; box-shadow: 0 0 0 1.5px var(--bone), 0 0 0 5px var(--black), 0 0 0 6px var(--bone-dim), 0 8px 24px #000; transition: transform .2s; }
+.swatch button:hover .chip { transform: translateY(-3px); }
+.swatch-name, .swatch-hex { padding: 0; }
+.swatch-name { padding-top: 16px; font: 16px/1.15 var(--font-sc); color: var(--bone); }
+.swatch-hex { padding: 3px 0 0; font: italic 16px/1.15 var(--font-body); color: var(--bone-dim); }
+
+/* Motion: magic lantern slides */
+.loops-wrap h3, .music-wrap h3 { text-align: center; margin-bottom: 18px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; }
+.loop video { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 28px; box-shadow: 0 0 0 1px var(--bone-dim), 0 0 0 7px var(--black), 0 0 0 8px var(--rule); }
+.loop figcaption { padding-top: 14px; text-align: center; font: 18px/1.28 var(--font-body); }
+.loop figcaption a { color: var(--bone); text-decoration-color: var(--gas); text-underline-offset: 3px; }
+.loop .shot-title { font-weight: 400; font-family: var(--font-sc); }
+.loop .shot-meta { display: block; }
+
+/* Music: a concert programme */
+.tracks { max-width: 800px; margin: 0 auto; gap: 0; }
+.track { padding: 10px 0; border-top: 1px dotted var(--rule); column-gap: 14px; }
+.track:first-child { border-top: 4px double var(--bone-dim); }
+.track-btn { padding: 2px 0; background: none; border: 0; }
+.track-btn:hover .track-title, .track.is-playing .track-title { color: var(--gas); }
+.track-play { width: 32px; height: 32px; border-radius: 50%; background: var(--black); color: var(--gas); box-shadow: 0 0 0 1px var(--bone-dim); }
+.track-title { font-weight: 400; font-size: 1.02rem; line-height: 1.2; }
+.track-artist { font: italic 17px/1.2 var(--font-body); color: var(--bone-dim); }
+.track-note { margin: 2px 0 0 46px; font-size: 18px; line-height: 1.3; color: var(--bone-dim); }
+.track-yt { font: 16px/1 var(--font-sc); color: var(--bone-dim); }
+.player { background: var(--black); border: 4px double var(--bone-dim); font-family: var(--font-body); box-shadow: 0 10px 40px #000; }
+.player-info { font-size: 16px; }
+.player-now { font: 16px/1.2 var(--font-sc); letter-spacing: .02em; text-transform: none; color: var(--gas); }
+.player-title { font-weight: 400; }
+.player-artist { color: var(--bone-dim); font-style: italic; }
+.player-close { color: var(--bone); }
+
+/* References: the plates carry on, uncropped, set like a scrapbook */
+.ref-gallery { display: block; columns: 3; column-gap: 22px; margin-bottom: 34px; }
+.ref-gallery .shot { break-inside: avoid; padding: 4px 4px 22px; }
+.ref-gallery .shot-link { aspect-ratio: auto; }
+.ref-gallery .shot-link img { height: auto; }
+.ref-lists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 46px; }
+.ref-list h3 { text-align: center; padding-bottom: 6px; border-bottom: 4px double var(--bone-dim); margin-bottom: 14px; }
+
+/* Also published: small ads at the back of the issue */
+.related { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
+.related a { padding: 6px; border: 1px solid var(--rule); color: var(--bone); }
+.related a:hover { border-color: var(--gas); color: var(--gas); }
+.related span { padding-top: 8px; font: 17px/1.2 var(--font-sc); text-align: center; }
+
+.foot { margin-top: 26px; padding-top: 18px; border-top: 4px double var(--bone-dim); font: italic 17px/1.3 var(--font-body); color: var(--bone-dim); text-align: center; }
+.foot-nav { margin-top: 14px; font-style: normal; }
+.foot-nav a { color: var(--bone); font-size: 18px; }
+.foot-nav a:hover { color: var(--gas); }
+.foot-nav a[rel=next] span::before { content: 'Continued in our next: '; font-style: italic; color: var(--bone-dim); }
+.foot-nav a[rel=prev] span::before { content: 'In our last: '; font-style: italic; color: var(--bone-dim); }
+.vg-lastline { display: block; margin-top: 8px; color: var(--gas); }
+
+/* The street along the bottom of the page */
+.vg-street { height: 380px; margin-top: -40px; background: url(../media/victorian-gothic/skyline.svg) center bottom / 1600px 380px repeat-x; }
+
+/* ---- Gas lamps ---- */
+.vg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.vg-lamp { --s: 1; position: absolute; z-index: 2; display: block; width: calc(68px * var(--s)); height: calc(178px * var(--s)); padding: 0; background: none; border: 0; cursor: pointer; }
+.vg-lamp svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.vg-iron { fill: none; stroke: var(--bone-dim); stroke-width: 2; stroke-linecap: round; }
+.vg-iron-fine { fill: none; stroke: var(--bone-dim); stroke-width: 1; stroke-linecap: round; }
+.vg-solid { fill: #171815; stroke: var(--bone-dim); stroke-width: 1.3; }
+.vg-glass { fill: #151611; stroke: var(--bone-dim); stroke-width: 1.2; transition: fill 1s; }
+.is-lit > svg .vg-glass { fill: url(#vg-glow); }
+.vg-flame { transform-box: fill-box; transform-origin: 50% 100%; opacity: 0; transform: scale(.2); transition: opacity .5s, transform .9s cubic-bezier(.2, 1.6, .4, 1); }
+.is-lit > svg .vg-flame { opacity: 1; transform: none; animation: vg-flame var(--d, 3.7s) ease-in-out var(--o, 0s) infinite; }
+@keyframes vg-flame { 0%, 100% { transform: scale(1, 1); } 17% { transform: scale(.94, 1.06); } 33% { transform: scale(1.03, .96); } 52% { transform: scale(.96, 1.08); } 71% { transform: scale(1.02, .94); } 86% { transform: scale(.98, 1.03); } }
+.vg-chain { display: none; }
+.vg-lamp:hover .vg-iron, .vg-lamp:hover .vg-solid, .vg-lamp:hover .vg-glass { stroke: var(--bone); }
+
+.vg-lights { position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw + 8px); width: calc(100vw - 16px); overflow-x: clip; pointer-events: none; }
+.vg-halo { --r: 480px; position: absolute; width: calc(var(--r) * 2); height: calc(var(--r) * 2); margin: calc(var(--r) * -1) 0 0 calc(var(--r) * -1); opacity: 0; transition: opacity 1.5s ease-out; }
+.vg-halo::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(closest-side, rgb(236 200 110 / .34), rgb(218 186 100 / .19) 26%, rgb(150 164 101 / .08) 58%, transparent); animation: vg-waver var(--d, 3.7s) ease-in-out var(--o, 0s) infinite; }
+.vg-halo.is-lit { opacity: 1; }
+@keyframes vg-waver { 0%, 100% { opacity: 1; } 13% { opacity: .92; } 29% { opacity: .99; } 41% { opacity: .88; } 58% { opacity: .97; } 72% { opacity: .9; } 86% { opacity: 1; } }
+:root[data-gas="dip"] .vg-halo { opacity: .5; transition: opacity .35s; }
+:root[data-gas="dip"] .vg-flame { filter: brightness(.6); }
+
+/* The flock wallpaper shows only where a lamp falls on it */
+.vg-wall { display: none; position: absolute; width: calc((100vw - var(--max)) / 2 - 13px); height: 820px; opacity: 0; transition: opacity 1.8s; background: url(../media/victorian-gothic/damask.svg) center / 96px 160px; -webkit-mask-image: radial-gradient(closest-side, #000 0, rgb(0 0 0 / .55) 45%, transparent 100%); mask-image: radial-gradient(closest-side, #000 0, rgb(0 0 0 / .55) 45%, transparent 100%); }
+.vg-wall.is-lit { opacity: .17; }
+
+/* Masthead lamps hang in the corners, above the ends of the arch */
+.vg-lamp-mast { --s: .66; top: 40px; }
+.vg-lamp-mast .vg-chain { display: block; }
+.vg-lamp-mast .vg-bracket { display: none; }
+.vg-lamp-a { left: 1.4%; }
+.vg-lamp-b { right: 1.4%; }
+.vg-halo-mast { --r: 430px; top: 100px; }
+.vg-halo-a { left: calc(50% - var(--w) * .486 + 22px); }
+.vg-halo-b { left: calc(50% + var(--w) * .486 - 22px); }
+
+/* Section lamps. Narrow screens hang one above each title. */
+.vg-lamp-sec { --s: .62; position: relative; margin: -30px auto 8px; }
+.vg-lamp-sec .vg-chain { display: block; }
+.vg-lamp-sec .vg-bracket { display: none; }
+.vg-halo-sec { --r: 360px; left: 50%; top: 78px; }
+
+/* Wide screens: wall brackets in the margin, alternating sides like lamps down a street */
+@media (min-width: 1340px) {
+  .sec > .vg-lamp-sec { --s: .68; --arm: calc(122px * var(--s)); position: absolute; margin: 0; top: 34px; }
+  .sec > .vg-lamp-sec .vg-chain { display: none; }
+  .sec > .vg-lamp-sec .vg-bracket { display: block; }
+  .sec > .vg-lamp-r { left: calc(100% + var(--pad) + var(--frame) + var(--arm) - 34px * var(--s)); }
+  .sec > .vg-lamp-l { right: calc(100% + var(--pad) + var(--frame) + var(--arm) - 34px * var(--s)); transform: scaleX(-1); }
+  .vg-halo-sec { --hs: .68; --r: 520px; top: calc(34px + 86px * var(--hs)); }
+  .vg-halo-r { left: calc(50% + var(--max) / 2 + 122px * var(--hs)); }
+  .vg-halo-l { left: calc(50% - var(--max) / 2 - 122px * var(--hs)); }
+  .vg-wall { display: block; top: -300px; }
+  .vg-wall-r { left: calc(50% + var(--max) / 2 + 5px); }
+  .vg-wall-l { right: calc(50% + var(--max) / 2 + 5px); }
+}
+@media (min-width: 1440px) {
+  .sec > .vg-lamp-sec { --s: .92; }
+  .vg-halo-sec { --hs: .92; }
+}
+@media (min-width: 1536px) {
+  .sec > .vg-lamp-sec { --s: 1.15; }
+  .vg-halo-sec { --hs: 1.15; }
+}
+@media (min-width: 1680px) {
+  .sec > .vg-lamp-sec { --s: 1.35; }
+  .vg-halo-sec { --hs: 1.35; }
+}
+
+/* Fog: a thick bank behind the sheet, and a thin one in front that parts around the pointer */
+.vg-backfog { position: fixed; z-index: -2; left: 0; right: 0; top: 0; bottom: 0; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(to top, #000 30%, rgb(0 0 0 / .35) 70%, rgb(0 0 0 / .15)); mask-image: linear-gradient(to top, #000 30%, rgb(0 0 0 / .35) 70%, rgb(0 0 0 / .15)); }
+.vg-fogbank { position: absolute; left: 0; right: 0; bottom: 0; height: 26vh; -webkit-mask-image: radial-gradient(circle 240px at var(--mx, -999px) var(--my, -999px), transparent 25%, #000 100%), linear-gradient(to top, #000 10%, transparent); mask-image: radial-gradient(circle 240px at var(--mx, -999px) var(--my, -999px), transparent 25%, #000 100%), linear-gradient(to top, #000 10%, transparent); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.vg-fog { position: absolute; left: 0; bottom: 0; width: calc(100% + 1800px); height: 100%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='640'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0028 .011' numOctaves='4' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .58 0 0 0 0 .54 1.7 0 0 0 -.64'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") 0 100% / 1800px 100% repeat-x; animation: vg-drift 130s linear infinite; will-change: transform; }
+.vg-backfog .vg-fog-a { opacity: .5; }
+.vg-backfog .vg-fog-b { opacity: .34; animation-duration: 84s; animation-direction: reverse; background-position: 700px 100%; }
+.vg-fogbank .vg-fog-a { opacity: .2; }
+.vg-fogbank .vg-fog-b { opacity: .13; animation-duration: 84s; animation-direction: reverse; background-position: 700px 100%; }
+@keyframes vg-drift { to { transform: translateX(-1800px); } }
+
+/* Phones and small windows */
+@media (max-width: 1100px) {
+  :root { --frame: 26px; --pad: 22px; }
+}
+@media (max-width: 900px) {
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery { columns: 2; }
+}
+@media (max-width: 720px) {
+  html { font-size: 19px; }
+  .vg-count { display: none; }
+  .atlas { gap: 8px; padding: 0 8px; font-size: 16px; }
+  .atlas-actions { gap: 2px; }
+  :root { --frame: 0px; --pad: 14px; }
+  .page { margin-top: 10px; padding-top: 12px; border: 0; border-image: none; border-bottom: 4px double var(--bone-dim); }
+  .hero-kicker { justify-content: center; text-align: center; font-size: 16px; }
+  .hero-kicker::before, .hero-kicker::after { flex: 0 0 auto; }
+  .hero-title { margin-top: 18px; }
+  .vg-lamp-mast { --s: .36; top: 62px; }
+  .vg-lamp-a { left: 0; }
+  .vg-lamp-b { right: 0; }
+  .vg-halo-mast { --r: 240px; top: 96px; }
+  .vg-halo-a { left: calc(50% - var(--w) * .5 + 12px); }
+  .vg-halo-b { left: calc(50% + var(--w) * .5 - 12px); }
+  .hero-sub { margin-top: -4px; }
+  .hero-text { padding-bottom: 20px; }
+  .hero-text::before { height: 238px; background-size: 1000px 238px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .hero-gallery .shot, .hero-gallery .shot-2, .hero-gallery .shot-3, .hero-gallery .shot-4 { grid-column: 1; grid-row: auto; display: block; }
+  .hero-gallery .shot-link, .hero-gallery .shot-2 .shot-link, .hero-gallery .shot-3 .shot-link, .hero-gallery .shot-4 .shot-link { aspect-ratio: 16 / 10; }
+  .hero-gallery .shot-2 .shot-link { aspect-ratio: 5 / 4; }
+  .hero-gallery .shot-2 img { position: static; width: 100%; height: 100%; }
+  .feel-body, .steps { columns: 1; }
+  .feel-body, .step p, .origins { text-align: left; hyphens: manual; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .core-item { border-width: 74px 1px 1px; border-image-width: 74px 1px 1px; }
+  .core-item h3::before { top: -42px; }
+  .core-item::before { top: -60px; height: 56px; }
+  .learn ul, .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery { columns: 1; }
+  .specs { transform: none; padding: 22px 20px 18px; }
+  .spec { grid-template-columns: 5.6em minmax(0, 1fr); }
+  .swatches { gap: 14px 10px; }
+  .swatch button { padding: 8px 4px 0; }
+  .vg-street { height: 238px; margin-top: -20px; background-size: 1000px 238px; }
+  .foot-nav { flex-direction: column; align-items: center; text-align: center; }
+  .sec { padding-top: 50px; }
+  .sec-title { font-size: 2.5rem; }
+}

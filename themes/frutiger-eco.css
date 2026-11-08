@@ -1,0 +1,377 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/nunito-sans-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/hind-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/hind-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/hind-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Frutiger Eco: a 2008 corporate sustainability report. White paper, soft green gradients, charts, and a plant that grows up the margin as you read. No glass anywhere. */
+:root {
+  --ink: #17352a; --muted: #456456; --forest: #0b5d3b; --leaf: #2e9e3f; --leaf-d: #1c7d30; --lime: #8cc63f; --mint: #e9f5da; --water: #0a7fb8; --clay: #a83f16; --hair: #cfe0c0;
+  --bg: #eef4e6; --surface: #fff; --accent: #0b6b3a; --line: #cfe0c0;
+  --font-display: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Hind', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Hind', 'Segoe UI', system-ui, sans-serif;
+  --radius: 0; --max: 1400px; --gap: 22px; --atlas-h: 46px; --gut: 0px;
+  --corner: 0 70px 0 70px;
+  --sheet: 0 1px 2px rgb(11 93 59 / .1), 0 14px 34px rgb(11 93 59 / .08);
+  color-scheme: light;
+}
+html { font-size: 17.5px; background: var(--bg); }
+body { background: var(--bg); color: var(--ink); line-height: 1.6; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { color: var(--leaf); }
+
+/* Site bar: letterhead */
+.atlas { background: #fff; color: var(--forest); border: 0; font: 600 15px/1 var(--font-display); }
+.atlas::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 3px; background: linear-gradient(90deg, var(--forest), var(--leaf) 40%, var(--lime) 75%, #d9efa2); pointer-events: none; }
+.atlas a, .atlas-btn { color: var(--forest); }
+.atlas-home::after { content: ''; width: 18px; height: 18px; margin-left: 2px; background: url(../media/frutiger-eco/i-leaf.svg) center / contain no-repeat; }
+.atlas-here { color: var(--muted); font-weight: 400; }
+.atlas-here::after { content: ' \00b7  Annual report 2008'; }
+.atlas-btn { border-radius: 99px; font-weight: 600; }
+.atlas-btn:hover { background: var(--mint); border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--leaf-d); }
+
+/* Page: white sheets with a leaf corner. Symmetric gutters hold the plant and the thumb index. */
+.page { max-width: var(--max); padding: 0 calc(24px + var(--gut)) 0; counter-reset: sec folio fig; }
+
+/* Cover */
+.hero { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px 18px; padding: 34px 0 160px; }
+.hero::before { content: ''; position: absolute; z-index: -3; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; background: #fff; }
+.hero::after { content: ''; position: absolute; z-index: -2; left: 50%; bottom: 0; width: 100vw; height: 186px; margin-left: -50vw; background: url(../media/frutiger-eco/swoosh.svg) center bottom / 100% 100% no-repeat; pointer-events: none; }
+.hero-text { position: relative; z-index: 1; grid-column: 1 / span 5; grid-row: 1; align-self: start; }
+.hero-kicker { margin-bottom: 18px; font: 600 14px/1.2 var(--font-display); letter-spacing: .02em; color: var(--muted); }
+.hero-title { font-weight: 300; font-size: clamp(3.4rem, 6.6vw, 6.1rem); line-height: .96; letter-spacing: -.035em; color: var(--forest); overflow-wrap: normal; }
+.eco-word { display: block; font-weight: 400; background: linear-gradient(95deg, #1f8f3a, #5aa81f); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
+.hero-sub { margin-top: 14px; font: 300 clamp(1.1rem, 1.7vw, 1.36rem)/1.28 var(--font-display); color: var(--forest); text-wrap: balance; }
+.hero-tagline { max-width: min(20em, calc(100% - 110px)); margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--hair); font-size: 1.05rem; line-height: 1.5; color: var(--ink); }
+
+/* The four figures */
+.hero-gallery { display: contents; }
+.shot { counter-increment: fig; }
+.hero .shot { position: relative; z-index: 1; min-width: 0; }
+.hero .shot-1 { grid-column: 6 / -1; grid-row: 1; }
+.hero .shot-2, .hero .shot-3, .hero .shot-4 { grid-column: span 4; grid-row: 2; }
+.hero .shot-link { aspect-ratio: auto; height: clamp(190px, 18vw, 250px); border-radius: var(--corner); background: var(--mint); box-shadow: var(--sheet); }
+.hero .shot-1 .shot-link { height: clamp(300px, 31vw, 440px); border-radius: 0 110px 0 110px; }
+.hero .shot-1 figcaption { text-align: right; }
+.shot-link { transition: box-shadow .25s; }
+.shot-link:hover { box-shadow: 0 0 0 4px var(--lime), var(--sheet); }
+.shot figcaption { padding-top: 8px; font-size: 14px; line-height: 1.35; }
+.shot figcaption::before { content: 'Fig. ' counter(fig) '  '; font: 700 13px/1 var(--font-display); color: var(--leaf-d); white-space: pre; }
+.shot-title { font-weight: 500; }
+.shot-meta { color: var(--muted); }
+
+/* Cover extras added by the script */
+.eco-spray { position: absolute; z-index: 2; left: calc(41.6% - 124px); top: min(25vw, 330px); width: clamp(150px, 16vw, 232px); transform: rotate(-7deg); pointer-events: none; filter: drop-shadow(0 6px 8px rgb(11 93 59 / .2)); }
+.eco-wind { position: absolute; z-index: -1; left: 0; right: 0; bottom: 34px; height: 130px; pointer-events: none; }
+.eco-wind svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.eco-rotor { transform-origin: 0 0; }
+:root:not([data-calm]) .eco-rotor { animation: eco-spin 5s linear infinite; }
+@keyframes eco-spin { to { transform: rotate(360deg); } }
+
+/* Front page: contents and highlights */
+.eco-front { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 34px; margin: -82px 0 26px; padding: 34px 44px 30px; border-radius: var(--corner); background: #fff; box-shadow: var(--sheet); }
+.toc { margin: 0; }
+.toc::before, .eco-high-title { content: 'Contents'; display: block; margin: 0 0 10px; font: 300 1.7rem/1.1 var(--font-display); color: var(--forest); }
+.toc ul { display: block; counter-reset: toc; }
+.toc li { counter-increment: toc; border-top: 1px solid var(--hair); }
+.toc li:last-child { border-bottom: 1px solid var(--hair); }
+.toc a { display: flex; gap: 12px; align-items: baseline; padding: 7px 4px; font-size: 16px; line-height: 1.3; text-decoration: none; color: var(--ink); }
+.toc a::before { content: counter(toc, decimal-leading-zero); flex: none; font: 300 1.1rem/1 var(--font-display); color: var(--leaf-d); }
+.toc a:hover { background: var(--mint); color: var(--forest); }
+.eco-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.eco-chart-line { fill: none; stroke: var(--leaf); stroke-width: 3.5; stroke-linecap: round; }
+.eco-miles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+.eco-miles b { display: block; font: 300 1.5rem/1.1 var(--font-display); color: var(--leaf); }
+.eco-miles span { display: block; font-size: 14px; line-height: 1.32; color: var(--ink); }
+.eco-small { margin: 12px 0 0; font-size: 15px; line-height: 1.35; color: var(--muted); }
+
+/* Section sheets */
+.sec { position: relative; display: grid; grid-template-columns: 210px minmax(0, 1fr); column-gap: 42px; align-content: start; margin: 0 0 26px; padding: 62px 46px 56px; border-radius: var(--corner); background: #fff; box-shadow: var(--sheet); counter-increment: sec folio 6; }
+.sec > * { grid-column: 2; min-width: 0; }
+.sec::before { content: 'Frutiger Eco Annual Report 2008'; position: absolute; left: 46px; right: 70px; top: 22px; padding-bottom: 7px; border-bottom: 1px solid var(--hair); font-size: 13.5px; line-height: 1.2; color: var(--muted); }
+.sec::after { content: counter(folio); position: absolute; right: 26px; bottom: 14px; font: 300 1.05rem/1 var(--font-display); color: var(--muted); }
+.sec-title { grid-column: 1; grid-row: 1 / span 12; align-self: start; position: sticky; top: calc(var(--atlas-h) + 22px); margin: 0; font-weight: 300; font-size: 1.62rem; line-height: 1.12; letter-spacing: -.012em; color: var(--forest); }
+.sec-title::before { content: counter(sec, decimal-leading-zero); display: block; margin-bottom: 6px; font-weight: 200; font-size: 4.2rem; line-height: .9; letter-spacing: -.04em; background: linear-gradient(120deg, var(--leaf), var(--lime)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sec h3 { font: 600 1.14rem/1.2 var(--font-display); color: var(--forest); }
+
+/* 01 Letter */
+.feel-body { max-width: none; columns: 2; column-gap: 34px; column-rule: 1px solid var(--hair); font-size: 1.04rem; line-height: 1.62; }
+.feel-body p { break-inside: avoid; }
+.feel-body p:first-child::first-letter { float: left; margin: .05em .08em 0 0; font: 300 3.9em/.8 var(--font-display); color: var(--leaf); }
+.mood-words { gap: 4px 18px; margin: 18px 0 0; padding-top: 12px; border-top: 1px solid var(--hair); }
+.mood-words li { display: flex; align-items: center; gap: 6px; padding: 0; border: 0; font-size: 15px; color: var(--forest); }
+.mood-words li::before { content: ''; flex: none; width: 13px; height: 13px; background: url(../media/frutiger-eco/i-leaf.svg) center / contain no-repeat; }
+.origins { max-width: none; margin-top: 20px; padding: 20px 26px 22px; border-radius: 0 44px 0 44px; background: var(--mint); font-size: .98rem; }
+.origins h3 { margin-bottom: 6px; }
+
+/* 02 Pillars */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.core-item { position: relative; padding: 18px 20px 22px 0; border: 0; border-radius: 0; border-top: 1px solid var(--hair); background: none; }
+.core-item:not(:nth-child(3n+1)) { padding-left: 22px; border-left: 1px solid var(--hair); }
+.core-item::before { content: ''; display: block; width: 58px; height: 58px; margin-bottom: 8px; background: var(--ic) center / contain no-repeat; }
+.core-item:nth-child(1) { --ic: url(../media/frutiger-eco/i-turbine.svg); }
+.core-item:nth-child(2) { --ic: url(../media/frutiger-eco/i-recycle.svg); }
+.core-item:nth-child(3) { --ic: url(../media/frutiger-eco/i-drop.svg); }
+.core-item:nth-child(4) { --ic: url(../media/frutiger-eco/i-sprout.svg); }
+.core-item:nth-child(5) { --ic: url(../media/frutiger-eco/i-leaf.svg); }
+.core-item:nth-child(6) { --ic: url(../media/frutiger-eco/i-globe.svg); }
+.core-item h3 { margin-bottom: 5px; font-size: 1.1rem; }
+.core-item p { margin: 0; font-size: .95rem; line-height: 1.5; }
+
+/* 03 Roadmap: a rising bar for each phase */
+.eco-bars { display: flex; align-items: flex-end; gap: 7px; height: 118px; margin-bottom: 20px; border-bottom: 1px solid var(--forest); }
+.eco-bars a { position: relative; flex: 1 1 0; height: calc(26% + var(--i) * 12%); display: grid; place-items: end center; padding-bottom: 5px; border-radius: 0 12px 0 0; color: #fff; text-decoration: none; font: 300 1.12rem/1 var(--font-display); background: linear-gradient(0deg, var(--forest), var(--leaf)); transition: filter .15s; }
+.eco-bars a:hover { filter: brightness(1.2); color: #fff; }
+.eco-bars a:last-child::after { content: ''; position: absolute; left: 50%; bottom: 100%; width: 28px; height: 46px; margin: 0 0 -3px -12px; background: url(../media/frutiger-eco/leaf.svg) center bottom / contain no-repeat; transform: rotate(14deg); transform-origin: 40% 100%; }
+.steps { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 34px; }
+.step { padding: 14px 0 18px; border-top: 1px solid var(--hair); scroll-margin-top: calc(var(--atlas-h) + 26px); }
+.step::before { position: static; display: block; width: auto; height: auto; background: none; color: var(--leaf-d); text-align: left; content: 'Phase ' counter(step); font: 700 13px/1 var(--font-display); letter-spacing: .03em; margin-bottom: 6px; }
+.step h3 { margin-bottom: 5px; }
+.step p { margin: 0; font-size: .96rem; line-height: 1.52; }
+.step:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.how-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; margin-top: 24px; align-items: start; }
+.specs { padding: 0; border: 0; background: none; }
+.specs h3 { margin-bottom: 0; padding: 8px 12px; color: #fff; background: linear-gradient(90deg, var(--forest), var(--leaf)); border-radius: 0 16px 0 0; font-size: 1.02rem; }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); padding: 7px 12px; border-top: 0; border-bottom: 1px solid var(--hair); font-size: .93rem; line-height: 1.34; }
+.spec:nth-child(even) { background: #f6faef; }
+.spec dt { font-weight: 500; color: var(--forest); }
+.dodont { gap: 16px; }
+.do, .avoid { padding: 14px 18px 12px; border-radius: 0 28px 0 28px; background: var(--mint); }
+.avoid { background: #fbf0ea; }
+.avoid h3 { color: var(--clay); }
+.dodont ul { list-style: none; padding: 0; margin-top: 6px; }
+.dodont li { position: relative; margin-bottom: 7px; padding-left: 24px; font-size: .94rem; line-height: 1.4; }
+.dodont li::before { content: ''; position: absolute; left: 0; top: 3px; width: 15px; height: 15px; background: url(../media/frutiger-eco/i-leaf.svg) center / contain no-repeat; }
+.avoid li::before { border-radius: 50%; background: radial-gradient(circle, #fff 0 22%, var(--clay) 23%); }
+.learn { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--hair); }
+.learn h3 { margin-bottom: 10px; }
+.learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 30px; }
+.ref-item { margin-bottom: 10px; line-height: 1.35; }
+.ref-meta { color: var(--muted); }
+.ref-note { margin-top: 2px; font-size: .92rem; line-height: 1.4; }
+.brief, .palette-actions { margin-top: 18px; }
+.brief-note { color: var(--muted); font-size: 14px; }
+.btn { padding: 7px 18px 6px; border: 0; border-radius: 0 13px 0 13px; color: #fff; font: 600 15px/1.2 var(--font-display); background: linear-gradient(90deg, var(--forest), var(--leaf)); transition: filter .15s; }
+.btn:hover { filter: brightness(1.15); border: 0; }
+
+/* 04 Brand guidelines: water drops and a colour chart */
+.eco-palette { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 18px 28px; align-items: start; }
+.swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 8px; }
+.swatch button { padding: 0; border: 0; background: none; text-align: center; }
+.chip { position: relative; width: 62px; height: 62px; margin: 12px auto 16px; border-radius: 0 50% 50% 50%; transform: rotate(45deg); box-shadow: inset 0 0 0 1px rgb(23 53 42 / .16), 4px 4px 10px rgb(11 93 59 / .22); transition: transform .2s; }
+.chip::after { content: ''; position: absolute; left: 44%; top: 44%; width: 26%; height: 15%; border-radius: 50%; background: rgb(255 255 255 / .8); transform: rotate(-45deg) translate(0, 14px); }
+.swatch button:hover .chip, .swatch.is-on .chip { transform: rotate(45deg) scale(1.12); }
+.swatch-name, .swatch-hex { padding: 0; font-size: 14px; line-height: 1.28; color: var(--ink); }
+.swatch-name { font-weight: 500; }
+.swatch-hex { font-family: var(--font-body); color: var(--muted); }
+.eco-donut-wrap { margin: 0; text-align: center; }
+.eco-donut { display: block; width: 100%; max-width: 210px; height: auto; margin: 0 auto; transform: rotate(-90deg); }
+.eco-donut circle { fill: none; stroke-width: 11; transition: stroke-width .15s; }
+.eco-donut circle.on { stroke-width: 15; }
+.eco-donut-wrap figcaption { margin-top: 6px; font-size: 13.5px; line-height: 1.35; color: var(--muted); }
+.eco-donut-wrap b { display: block; min-height: 1.3em; font: 600 15px/1.3 var(--font-display); color: var(--forest); }
+.palette-note { max-width: none; margin-top: 16px; color: var(--ink); font-size: .96rem; }
+
+/* 05 Engagement */
+.loops-wrap { margin-bottom: 26px; }
+.loops-wrap h3, .music-wrap h3 { margin-bottom: 10px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 14px; }
+.loop video { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 0 44px 0 44px; background: var(--mint); }
+.loop figcaption { padding-top: 7px; font-size: 14px; line-height: 1.35; }
+.tracks { max-width: none; gap: 0; }
+.track { column-gap: 10px; padding: 8px 0 9px; border-top: 1px solid var(--hair); }
+.track:last-child { border-bottom: 1px solid var(--hair); }
+.track-btn { gap: 12px; padding: 0; background: none; border: 0; }
+.track-play { width: 38px; height: 38px; border-radius: 0 50% 50% 50%; color: #fff; background: linear-gradient(135deg, var(--leaf), var(--forest)); }
+.track-btn:hover .track-play { background: linear-gradient(135deg, var(--lime), var(--leaf)); }
+.track.is-playing { background: var(--mint); }
+.track.is-playing .track-play { border-radius: 50%; }
+.track-title { font: 600 1.05rem/1.2 var(--font-display); color: var(--forest); }
+.track-artist { font-size: 14px; color: var(--muted); }
+.track-note { margin: 3px 0 0 50px; font-size: .94rem; line-height: 1.4; color: var(--ink); }
+.track-yt { font-size: 14px; color: var(--accent); }
+.player { overflow: hidden; border: 0; border-top: 4px solid var(--lime); border-radius: 0 0 0 30px; background: #fff; box-shadow: 0 14px 34px rgb(11 93 59 / .35); }
+.player-now { color: var(--leaf-d); font-family: var(--font-display); }
+.player-title { font-family: var(--font-display); color: var(--forest); }
+.player-artist { color: var(--muted); }
+.player-close { color: var(--forest); }
+
+/* 06 Appendix */
+.ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 16px; margin-bottom: 26px; }
+.ref-gallery .shot-link { aspect-ratio: 3 / 2; border-radius: 0 40px 0 40px; background: var(--mint); }
+.ref-gallery .is-contain .shot-link img { object-fit: cover; }
+.ref-lists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.ref-list h3 { margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid var(--hair); }
+
+/* 07 Subsidiaries */
+.related { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+.related a { color: var(--forest); }
+.related img { border-radius: 0 34px 0 34px; }
+.related span { font: 600 15px/1.3 var(--font-display); }
+
+/* Back cover */
+.foot { position: relative; isolation: isolate; margin: 0 calc(-24px - var(--gut)); padding: 150px calc(24px + var(--gut)) 30px; border: 0; color: #fff; font-size: 16px; }
+.foot::before { content: ''; position: absolute; z-index: -1; left: 50%; top: 96px; bottom: 0; width: 100vw; margin-left: -50vw; background: linear-gradient(100deg, #083f28, var(--forest) 50%, #157a3e); }
+.foot a { color: #e4f7c3; }
+.foot a:hover { color: #fff; }
+.eco-forest { position: absolute; left: 50%; top: 0; width: 100vw; height: 118px; margin-left: -50vw; overflow: hidden; pointer-events: none; }
+.eco-forest svg { position: absolute; left: 50%; bottom: 0; width: max(100%, 900px); height: 118px; transform: translateX(-50%); display: block; }
+.eco-tree { transform-box: fill-box; transform-origin: 50% 100%; }
+.eco-tree.new { animation: eco-pop .55s cubic-bezier(.2, 1.5, .4, 1) both; }
+@keyframes eco-pop { from { transform: scale(0); } }
+.eco-print { margin: 12px 0 0; font-size: 15px; color: #cfeadb; }
+
+/* The plant */
+.eco-plant { position: fixed; z-index: 30; display: none; left: max(0px, calc(50vw - 700px)); top: calc(var(--atlas-h) + 4px); bottom: 118px; width: 118px; pointer-events: none; }
+.eco-plant svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.eco-stem { fill: none; stroke: url(#eco-stem-g); stroke-width: 4.5; stroke-linecap: round; }
+.pu { transform: scale(0); transform-origin: 0 0; transition: transform .75s cubic-bezier(.2, 1.5, .4, 1); }
+.pl.on .pu { transform: scale(1); }
+.eco-bloom { transform: scale(0); transform-origin: 0 0; transition: transform 1s cubic-bezier(.2, 1.4, .4, 1); }
+.eco-bloom.on { transform: scale(1); }
+
+/* Trees planted */
+.eco-trees { position: fixed; z-index: 40; left: max(8px, calc(50vw - 692px)); bottom: 12px; display: grid; width: 106px; padding: 8px 10px 9px; border-radius: 0 22px 0 22px; color: var(--forest); background: #fff; box-shadow: var(--sheet); }
+.eco-n { font: 200 2rem/1 var(--font-display); letter-spacing: -.02em; }
+.eco-l { margin: 1px 0 6px; font-size: 13px; line-height: 1.15; }
+.eco-trees button { padding: 3px 0 2px; border: 0; border-radius: 0 9px 0 9px; color: #fff; font: 600 13px/1.2 var(--font-display); background: linear-gradient(90deg, var(--forest), var(--leaf)); }
+.eco-trees button:hover { filter: brightness(1.18); }
+
+/* Thumb index */
+.eco-tabs { position: fixed; z-index: 30; display: none; right: 0; top: 50%; transform: translateY(-50%); flex-direction: column; gap: 3px; }
+.eco-tabs a { position: relative; display: grid; place-items: center; width: 40px; height: 54px; border-radius: 14px 0 0 0; color: #fff; text-decoration: none; font: 300 1.05rem/1 var(--font-display); background: var(--c); transition: width .15s; }
+.eco-tabs a:hover, .eco-tabs a[aria-current="true"] { width: 54px; }
+.eco-tabs a:hover::after { content: attr(data-label); position: absolute; right: calc(100% + 6px); top: 50%; transform: translateY(-50%); padding: 4px 10px 3px; border-radius: 0 10px 0 10px; color: #fff; background: var(--forest); font: 400 14px/1.2 var(--font-body); white-space: nowrap; }
+
+@media (min-width: 1180px) {
+  :root { --gut: 96px; }
+  .eco-plant { display: block; }
+  .eco-tabs { display: flex; }
+}
+@media (max-width: 1179px) {
+  .eco-trees { display: flex; align-items: center; gap: 7px; width: auto; padding: 5px 7px 5px 11px; border-radius: 0 14px 0 14px; }
+  .eco-n { font-size: 1.4rem; }
+  .eco-l { margin: 0; }
+  .eco-trees button { padding: 4px 9px 3px; }
+}
+@media (max-width: 1000px) {
+  .sec { grid-template-columns: minmax(0, 1fr); padding: 52px 30px 46px; }
+  .sec > *, .sec-title { grid-column: 1; }
+  .sec-title { grid-row: auto; position: static; margin-bottom: 16px; }
+  .sec-title::before { font-size: 3.3rem; }
+  .sec::before { left: 30px; }
+  .eco-front { grid-template-columns: minmax(0, 1fr); padding: 28px 28px 26px; }
+}
+@media (max-width: 760px) {
+  html { font-size: 17px; }
+  :root { --corner: 0 40px 0 40px; }
+  .atlas-here::after { content: ''; }
+  .eco-lx { display: none; }
+  .page { padding: 0 12px; }
+  .hero { display: block; padding: 22px 0 124px; }
+  .hero-title { font-size: clamp(3.3rem, 17vw, 4.6rem); }
+  .hero .shot { margin-top: 16px; }
+  .hero .shot-link, .hero .shot-1 .shot-link { height: auto; aspect-ratio: 16 / 10; border-radius: 0 56px 0 56px; }
+  .eco-spray { left: auto; right: 8px; top: 10px; width: 108px; }
+  .hero-text { padding-right: 0; }
+  .eco-wind { bottom: 16px; height: 70px; }
+  .hero::after { height: 130px; }
+  .eco-front { margin: -40px 0 16px; padding: 22px 18px; }
+  .eco-miles { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .eco-miles div { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 8px; align-items: baseline; }
+  .sec { margin-bottom: 16px; padding: 46px 18px 42px; }
+  .sec::before { left: 18px; right: 44px; top: 16px; }
+  .feel-body { columns: 1; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .core-item { padding: 16px 0; }
+  .core-item:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+  .core-item::before { float: left; width: 46px; height: 46px; margin: 2px 12px 0 0; }
+  .core-item p { clear: none; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .eco-bars { height: 92px; }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .learn ul { grid-template-columns: minmax(0, 1fr); }
+  .eco-palette { grid-template-columns: minmax(0, 1fr); }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .track-note { margin-left: 4px; }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; }
+  .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foot { margin: 0 -12px; padding: 136px 16px 30px; }
+  .eco-trees { position: static; display: inline-flex; margin-bottom: 14px; }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" preserveAspectRatio="none">
+    <path d="M1 299V120C4 62 92 22 150 2 208 22 296 62 299 120V299Z" fill="#111211"/>
+    <path d="M1 299V120C4 62 92 22 150 2 208 22 296 62 299 120V299Z" fill="none" stroke="#E6E0CB" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+    <path d="M12 125C16 78 96 42 150 22 204 42 284 78 288 125" fill="none" stroke="#E6E0CB" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  </svg>

@@ -1,0 +1,344 @@
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/cormorant-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/cormorant-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/cormorant-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/spectral-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/spectral-latin-600-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/spectral-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/spectral-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spectral SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/spectral-sc-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Overgrown Ruins: the page is a concrete wall that nature is taking back. Each slab is one real stage of ecological
+   succession, from lichen at the top to forest at the bottom. Ivy grows down the wall as you read. Grey first, green second. */
+:root {
+  --stone: #dcd9ca; --stone-2: #cfccbc; --ink: #1f2217; --ink-2: #3f4233; --moss: #495836; --moss-d: #2c3a2d; --leaf: #6d7f3c; --bronze: #33301f; --verd: #6da08a; --plate-ink: #efe9cd; --rust: #6c3d24;
+  --bg: #aeac9e; --surface: var(--stone); --muted: var(--ink-2); --accent: var(--moss-d); --line: #8b897a;
+  --font-display: 'Cormorant', 'Times New Roman', serif; --font-body: 'Spectral', Georgia, serif; --font-mono: 'Spectral SC', Georgia, serif;
+  --radius: 0; --max: 1260px; --gap: 24px; --atlas-h: 48px;
+  --wall: url(../media/overgrown-ruins/wall.webp); --moss-tex: url(../media/overgrown-ruins/moss.webp); --fringe: url(../media/overgrown-ruins/fringe.webp);
+  --lichen: url(../media/overgrown-ruins/lichen.webp); --grass: url(../media/overgrown-ruins/grass.webp); --hole: url(../media/overgrown-ruins/hole.webp);
+  --carve: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='c' x='-3%25' y='-8%25' width='106%25' height='116%25' color-interpolation-filters='sRGB'%3E%3CfeComponentTransfer in='SourceAlpha' result='inv'%3E%3CfeFuncA type='table' tableValues='1 0'/%3E%3C/feComponentTransfer%3E%3CfeGaussianBlur in='inv' stdDeviation='2.4'/%3E%3CfeOffset dx='2.4' dy='3.8' result='b'/%3E%3CfeFlood flood-color='%23080b05' flood-opacity='.9'/%3E%3CfeComposite in2='b' operator='in'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='is'/%3E%3CfeOffset in='SourceAlpha' dx='1.3' dy='1.7' result='o'/%3E%3CfeFlood flood-color='%23fffef2' flood-opacity='.82'/%3E%3CfeComposite in2='o' operator='in'/%3E%3CfeComposite in2='SourceAlpha' operator='out' result='rim'/%3E%3CfeMerge%3E%3CfeMergeNode in='rim'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3CfeMergeNode in='is'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E#c");
+  color-scheme: light;
+}
+html { font-size: 18px; }
+body { position: relative; background: var(--bg) var(--wall) 0 0 / 1024px; color: var(--ink); line-height: 1.58; }
+/* Moss creeps over the wall, then the whole page sinks into forest shade toward the bottom. */
+body::before { content: ''; position: absolute; inset: 0; z-index: 0; background: var(--moss-tex) 0 0 / 512px; -webkit-mask-image: linear-gradient(180deg, transparent 8%, rgb(0 0 0 / .26) 30%, rgb(0 0 0 / .62) 58%, #000 88%); mask-image: linear-gradient(180deg, transparent 8%, rgb(0 0 0 / .26) 30%, rgb(0 0 0 / .62) 58%, #000 88%); pointer-events: none; }
+body::after { content: ''; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgb(255 251 226 / .3), transparent 12%, rgb(36 50 20 / 0) 34%, rgb(26 38 16 / .62) 72%, rgb(10 17 7 / .95) 96%); pointer-events: none; }
+
+/* Dappled light: leaf shadow drifting over the whole wall */
+.decor .og-dapple { position: absolute; inset: -160px; background: url(../media/overgrown-ruins/dapple.webp) 0 0 / 1024px; animation: og-sway 34s ease-in-out infinite alternate; }
+@keyframes og-sway { to { transform: translate(84px, 46px) rotate(.4deg); } }
+
+/* Site bar: the shaded underside of a slab, moss hanging from it */
+.atlas { background: #232b16; color: #f3efd9; border-bottom: 0; font: 500 15.5px/1 var(--font-body); }
+.atlas::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 56px; margin-top: -14px; background: var(--fringe) 0 0 / 320px 56px repeat-x; pointer-events: none; }
+.atlas a, .atlas-btn { color: #f3efd9; }
+.atlas-home { font: 600 21px/1 var(--font-display); }
+.atlas-here { color: #ced0ad; font: 500 15px/1 var(--font-mono); }
+.atlas-btn:hover { background: #3c4826; border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { background: #4c5a2d; color: #fff; }
+
+/* Page */
+.page { z-index: 1; padding: 0 var(--gap) 0; }
+
+/* Hero: the name cut into the wall, moss growing up inside the letters */
+.hero { padding: 96px 0 0; }
+.hero-text { position: relative; text-align: center; }
+.hero-kicker { display: inline-block; margin-bottom: 14px; padding: 2px 16px; background: rgb(226 223 206 / .9); color: var(--ink); font: 500 16px/1.5 var(--font-mono); letter-spacing: .03em; }
+.hero-title { position: relative; display: inline-block; font: 700 clamp(2.5rem, 7.9vw, 7.6rem)/1 var(--font-display); letter-spacing: .008em; white-space: nowrap; text-transform: uppercase; color: #39392d; filter: var(--carve); overflow-wrap: normal; }
+.hero-title::after { content: attr(data-text); position: absolute; left: 0; right: 0; top: 0; color: transparent; background: var(--moss-tex) 0 0 / 256px; -webkit-background-clip: text; background-clip: text; -webkit-mask-image: linear-gradient(0deg, #000 16%, rgb(0 0 0 / .72) 42%, transparent 78%); mask-image: linear-gradient(0deg, #000 16%, rgb(0 0 0 / .72) 42%, transparent 78%); animation: og-creep 7s ease-out both; }
+@keyframes og-creep { from { opacity: 0; transform: translateY(5px); } }
+.hero-sub { margin: 10px 0 0; color: var(--ink); font: 600 clamp(1.25rem, 2.7vw, 2.2rem)/1.1 var(--font-display); letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 1px 0 rgb(255 255 240 / .75); }
+.hero-tagline { display: inline-block; margin: 16px 0 0; padding: 6px 20px; background: rgb(226 223 206 / .9); color: var(--ink); font: italic 400 clamp(1.05rem, 1.7vw, 1.24rem)/1.4 var(--font-body); }
+
+/* Hero images: seen through holes broken in the wall */
+.hero-gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 58px 40px; margin-top: 54px; }
+.hero-gallery .shot-1, .hero-gallery .shot-4 { grid-column: span 7; }
+.hero-gallery .shot-2, .hero-gallery .shot-3 { grid-column: span 5; }
+.hero-gallery .shot-link { height: clamp(220px, 27.5vw, 410px); aspect-ratio: auto; }
+.shot { position: relative; }
+.shot-link { position: relative; overflow: visible; background: #1c2214; }
+.shot-link::after { content: ''; position: absolute; inset: -24px; border: 56px solid transparent; border-image: var(--hole) 120 round; pointer-events: none; }
+.shot-link:focus-visible { outline-offset: 20px; }
+.shot figcaption, .loop figcaption { position: relative; width: fit-content; max-width: 100%; margin: 26px auto 0; padding: 3px 14px; background: rgb(226 223 206 / .94); color: var(--ink); font-size: 15.5px; line-height: 1.35; text-align: center; }
+.shot-title { font-weight: 600; }
+.shot-meta { color: var(--ink-2); font-size: 14.5px; }
+.loop figcaption a { color: var(--ink); text-underline-offset: 3px; }
+
+/* Contents: stepping stones on a path */
+.toc { margin: 60px 0 0; }
+.toc ul { justify-content: center; gap: 12px 12px; }
+.toc a { display: block; padding: 10px 22px 11px; background: linear-gradient(170deg, rgb(255 253 238 / .5), transparent 42%), var(--stone-2); border-radius: 48% 52% 46% 54% / 58% 44% 56% 42%; box-shadow: 0 7px 10px rgb(26 30 14 / .42), inset 0 -5px 8px rgb(60 60 40 / .34); color: var(--ink); font: 600 16px/1.2 var(--font-body); text-decoration: none; }
+.toc li:nth-child(even) a { border-radius: 54% 46% 58% 42% / 46% 56% 44% 54%; transform: translateY(5px); }
+.toc a:hover { background-color: #e8e6d5; text-decoration: underline; text-underline-offset: 3px; }
+
+/* The slabs: broken concrete, staggered down the wall */
+main { display: block; }
+.sec { position: relative; isolation: isolate; width: 86%; max-width: none; margin: 142px 0 0; padding: 86px 62px 58px; --poly: none; }
+.sec::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgb(233 230 216 / .8), rgb(226 223 208 / .84)), var(--wall) var(--wx, 0) var(--wy, 0) / 1024px; clip-path: var(--poly); }
+.sec::after { content: ''; position: absolute; inset: 22px 8px -20px; z-index: -2; background: rgb(14 18 8 / .62); filter: blur(18px); }
+.sec:nth-of-type(even) { margin-left: auto; }
+#feel { margin-top: 110px; padding-top: 64px; --wx: 120px; --poly: polygon(0 18px, 34px 6px, 62px 0, calc(100% - 128px) 0, calc(100% - 92px) 14px, calc(100% - 60px) 8px, calc(100% - 30px) 30px, 100% 44px, 100% calc(100% - 26px), calc(100% - 18px) 100%, 44px 100%, 20px calc(100% - 14px), 0 calc(100% - 40px)); }
+#core { --wx: 340px; --wy: 200px; --poly: polygon(0 0, calc(100% - 220px) 0, calc(100% - 180px) 22px, calc(100% - 150px) 16px, calc(100% - 110px) 50px, calc(100% - 64px) 46px, calc(100% - 36px) 82px, 100% 96px, 100% 100%, 60px 100%, 36px calc(100% - 30px), 0 calc(100% - 44px)); }
+#how { --wx: 700px; --poly: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 26px) calc(100% - 44px), calc(100% - 54px) calc(100% - 50px), calc(100% - 84px) calc(100% - 16px), calc(100% - 130px) 100%, 0 100%, 0 76px, 22px 52px, 18px 30px, 46px 20px); }
+#palette { --wy: 420px; --poly: polygon(0 26px, 50px 8px, 120px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 44px) 100%, 0 100%); }
+#vibe { --wx: 500px; --poly: polygon(0 0, calc(100% - 96px) 0, calc(100% - 60px) 16px, calc(100% - 44px) 44px, 100% 62px, 100% 100%, 90px 100%, 60px calc(100% - 22px), 26px calc(100% - 26px), 0 calc(100% - 60px)); }
+#refs { --wx: 860px; --wy: 300px; --poly: polygon(0 40px, 42px 12px, 90px 0, 100% 0, 100% calc(100% - 22px), 100% 100%, 0 100%); }
+#related { --wy: 640px; --poly: polygon(0 0, calc(100% - 60px) 0, 100% 40px, 100% 100%, 40px 100%, 0 calc(100% - 34px)); }
+
+/* What grows on each stage */
+#feel::before { background: var(--lichen) calc(100% + 170px) -110px / 420px auto no-repeat, var(--lichen) -210px calc(100% + 150px) / 420px auto no-repeat, linear-gradient(rgb(233 230 216 / .8), rgb(226 223 208 / .84)), var(--wall) var(--wx, 0) var(--wy, 0) / 1024px; }
+#core::before { background: var(--fringe) 0 0 / 460px 80px repeat-x, var(--lichen) -240px calc(100% + 170px) / 460px auto no-repeat, linear-gradient(rgb(233 230 216 / .8), rgb(226 223 208 / .84)), var(--wall) var(--wx, 0) var(--wy, 0) / 1024px; }
+#how::before, #palette::before, #vibe::before, #refs::before, #related::before { background: var(--fringe) var(--wx, 0) 0 / 420px 74px repeat-x, var(--lichen) calc(100% + 180px) calc(100% + 130px) / 420px auto no-repeat, linear-gradient(rgb(233 230 216 / .82), rgb(226 223 208 / .86)), var(--wall) var(--wx, 0) var(--wy, 0) / 1024px; }
+.og-grass { position: absolute; left: 0; right: 0; bottom: 100%; height: 76px; margin-bottom: -5px; background: var(--grass) 0 100% / 620px 76px repeat-x; -webkit-mask-image: linear-gradient(90deg, #000 0 26%, transparent 37%, transparent 60%, #000 76%); mask-image: linear-gradient(90deg, #000 0 26%, transparent 37%, transparent 60%, #000 76%); pointer-events: none; }
+.og-rebar { position: absolute; width: 150px; height: 118px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 118' fill='none' stroke-linecap='round'%3E%3Cg stroke='%2358321d' stroke-width='5'%3E%3Cpath d='M4 92C40 78 74 74 98 40 104 30 116 26 128 28'/%3E%3Cpath d='M2 110C34 100 62 96 86 92 110 88 122 72 146 72'/%3E%3C/g%3E%3Cg stroke='%23a06b40' stroke-width='1.5' stroke-dasharray='3 4'%3E%3Cpath d='M4 91C40 77 74 73 98 39 104 29 116 25 128 27'/%3E%3Cpath d='M2 109C34 99 62 95 86 91 110 87 122 71 146 71'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat; pointer-events: none; }
+
+.sec-title { position: relative; margin-bottom: 30px; font: 700 clamp(2.2rem, 5.2vw, 4.2rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: .02em; color: #3b3c2f; filter: var(--carve); }
+.og-stage { display: block; margin-bottom: 3px; color: var(--moss-d); font: 500 15.5px/1.4 var(--font-mono); letter-spacing: .06em; }
+.sec h3 { font: 700 1.5rem/1.15 var(--font-display); color: var(--ink); margin-bottom: 8px; }
+
+/* Stage 1 */
+.feel-body { max-width: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; font-size: 1.06rem; }
+.feel-body p { margin: 0; }
+.mood-words { gap: 8px; margin: 26px 0 30px; }
+.mood-words li { padding: 4px 15px; border: 0; background: radial-gradient(circle at 30% 30%, #e3e4ae, #c7cd8d 70%); border-radius: 55% 45% 52% 48% / 58% 48% 52% 42%; color: #1f2415; font: 500 15.5px/1.3 var(--font-mono); }
+.mood-words li:nth-child(3n) { background: radial-gradient(circle at 30% 30%, #e7cf86, #d5b35e 70%); }
+
+/* Heritage plaques: bronze going to verdigris, with a green streak running down the wall below */
+.origins, .specs { position: relative; max-width: none; margin: 0; padding: 26px 32px 28px; background: linear-gradient(115deg, rgb(109 160 138 / .36), transparent 34%, transparent 70%, rgb(109 160 138 / .24)), linear-gradient(180deg, #3b3825, #2c2a1b); color: var(--plate-ink); box-shadow: 0 2px 0 rgb(255 248 200 / .28) inset, 0 -2px 0 rgb(0 0 0 / .5) inset, 0 8px 14px rgb(20 20 10 / .55); }
+.origins::before, .specs::before { content: ''; position: absolute; left: 8px; right: 8px; top: 8px; bottom: 8px; border: 1px solid rgb(239 233 205 / .36); pointer-events: none; }
+.origins::after, .specs::after { content: ''; position: absolute; left: 7%; top: 100%; width: 150px; height: 44px; background: radial-gradient(5px 44px at 10px 0, rgb(92 148 124 / .6), transparent), radial-gradient(7px 30px at 62px 0, rgb(92 148 124 / .5), transparent), radial-gradient(4px 38px at 118px 0, rgb(92 148 124 / .55), transparent); pointer-events: none; }
+.origins h3, .specs h3 { color: var(--plate-ink); }
+
+/* Stage 2: fallen masonry, each block chipped and settled at its own angle */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 20px; padding: 6px 0 14px; }
+.core-item { position: relative; isolation: isolate; padding: 36px 24px 44px; background: none; border: 0; }
+.core-item::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--fringe) calc(var(--o, 0) * 1px) 0 / 220px 38px repeat-x, linear-gradient(160deg, rgb(255 253 238 / .42), transparent 40%), var(--stone-2); clip-path: var(--c); }
+.core-item::after { content: counter(core, decimal-leading-zero); position: absolute; right: 14px; bottom: 6px; color: rgb(60 62 44 / .42); font: 700 2.5rem/1 var(--font-display); }
+.core-item:nth-child(1) { --o: 40; --c: polygon(0 10px, 22px 0, 100% 6px, 100% 86%, 92% 100%, 4px 100%, 0 94%); transform: rotate(-.7deg); }
+.core-item:nth-child(2) { --o: 90; --c: polygon(3px 0, 86% 0, 94% 16px, 100% 22px, 100% 100%, 12px 100%, 0 92%); transform: translateY(12px) rotate(.5deg); }
+.core-item:nth-child(3) { --o: 170; --c: polygon(0 16px, 8% 4px, 96% 0, 100% 10px, 100% 100%, 0 100%); transform: translateY(-5px) rotate(-.3deg); }
+.core-item:nth-child(4) { --o: 11; --c: polygon(0 0, 100% 8px, 100% 96%, 90% 100%, 7px 100%, 0 88%); transform: translateY(4px) rotate(.4deg); }
+.core-item:nth-child(5) { --o: 210; --c: polygon(8px 6px, 100% 0, 100% 90%, 94% 100%, 0 100%, 0 20px); transform: translateY(14px) rotate(-.5deg); }
+.core-item:nth-child(6) { --o: 130; --c: polygon(0 0, 92% 4px, 100% 18px, 100% 100%, 8% 100%, 0 94%); transform: rotate(.7deg); }
+.core-item h3 { padding-right: 8px; font-size: 1.44rem; }
+.core-item p { font-size: .96rem; line-height: 1.47; }
+
+/* Stage 3: a broken staircase going down the slab, with grass on each tread */
+.steps { gap: 0; max-width: none; counter-reset: step; }
+.step { position: relative; margin-left: calc(var(--n) * 26px); padding: 22px 24px 38px 92px; background: linear-gradient(180deg, rgb(255 253 238 / .34), rgb(60 60 40 / .05) 60%, rgb(50 50 30 / .13)); border-top: 7px solid #9b9987; box-shadow: inset 0 2px 0 rgb(255 255 245 / .55); }
+.step::before { left: 18px; top: 16px; width: auto; height: auto; background: none; color: #4b4c3c; font: 700 3.5rem/1 var(--font-display); filter: var(--carve); }
+.step::after { content: ''; position: absolute; left: 0; right: 0; top: -38px; height: 32px; background: var(--grass) calc(var(--n) * 137px) 100% / 300px 32px repeat-x; -webkit-mask-image: linear-gradient(90deg, #000 0 9%, transparent 21%, transparent 74%, #000 90%); mask-image: linear-gradient(90deg, #000 0 9%, transparent 21%, transparent 74%, #000 90%); pointer-events: none; }
+.step:nth-child(1) { --n: 0; }
+.step:nth-child(2) { --n: 1; }
+.step:nth-child(3) { --n: 2; }
+.step:nth-child(4) { --n: 3; }
+.step:nth-child(5) { --n: 4; }
+.step:nth-child(6) { --n: 5; }
+.step:nth-child(7) { --n: 6; }
+.step h3 { font-size: 1.5rem; }
+.step p { font-size: 1rem; line-height: 1.5; }
+.how-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 54px; align-items: start; }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 10px; padding: 7px 0; border-top: 1px solid rgb(239 233 205 / .24); font-size: .95rem; line-height: 1.4; }
+.spec:first-child { border-top: 0; }
+.spec dt { font: 500 15.5px/1.4 var(--font-mono); color: #d3dcc0; }
+.dodont { gap: 18px; }
+.do, .avoid { padding: 22px 24px 20px; }
+.do { background: linear-gradient(170deg, rgb(255 253 238 / .3), transparent 40%), #c8cf9d; box-shadow: 0 7px 12px rgb(30 34 14 / .3); }
+.avoid { background: linear-gradient(170deg, rgb(255 210 170 / .1), transparent 34%), var(--rust); color: #fbeedd; box-shadow: 0 7px 12px rgb(30 24 14 / .4); }
+.avoid h3 { color: #fff3e2; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; padding-left: 24px; margin-bottom: 7px; font-size: .96rem; line-height: 1.42; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .34em; width: 13px; height: 13px; background: currentColor; -webkit-mask: var(--leaf-m) center / contain no-repeat; mask: var(--leaf-m) center / contain no-repeat; --leaf-m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-14 -26 28 28'%3E%3Cpath d='M0 0C-3-2-9-2-12-6-9-7-8-9-9-12-6-11-4-13-4-16-2-17-1-21 0-24 1-21 2-17 4-16 4-13 6-11 9-12 8-9 9-7 12-6 9-2 3-2 0 0Z'/%3E%3C/svg%3E"); }
+.avoid li::before { --leaf-m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 1l5 5 5-5 2 2-5 5 5 5-2 2-5-5-5 5-2-2 5-5-5-5z'/%3E%3C/svg%3E"); }
+.learn { margin-top: 44px; }
+.learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 34px; }
+.ref-item { margin-bottom: 12px; line-height: 1.38; }
+.ref-item a { color: var(--moss-d); font-weight: 600; text-underline-offset: 3px; }
+.ref-meta { color: var(--ink-2); font: 500 14.5px var(--font-mono); }
+.ref-note { color: var(--ink); font-size: .95rem; line-height: 1.42; }
+.brief { margin-top: 32px; justify-content: center; }
+.btn { padding: 8px 18px; background: var(--moss-d); color: #f3efd9; border: 0; font: 600 15.5px/1.3 var(--font-body); box-shadow: 0 3px 0 #161d10, inset 0 1px 0 rgb(255 255 220 / .2); }
+.btn:hover { background: #3b4c30; }
+.brief-note, .palette-note { color: var(--ink-2); font-size: 15px; }
+
+/* Palette: soil strata, wavy bands stacked like a dug trench */
+.swatches { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.swatch button { display: grid; grid-template-columns: minmax(0, 1fr) 190px 88px; align-items: center; column-gap: 16px; padding: 0; background: none; border: 0; overflow: visible; }
+.chip { height: var(--h, 52px); margin: -3px 0; clip-path: var(--w); }
+.swatch:nth-child(1) { --h: 34px; --w: polygon(0 18%, 14% 8%, 30% 16%, 46% 4%, 62% 14%, 80% 2%, 100% 12%, 100% 90%, 82% 100%, 60% 84%, 40% 98%, 22% 86%, 0 100%); }
+.swatch:nth-child(2) { --h: 62px; --w: polygon(0 10%, 18% 0, 36% 12%, 58% 2%, 76% 14%, 100% 4%, 100% 94%, 78% 88%, 52% 100%, 30% 90%, 12% 100%, 0 90%); }
+.swatch:nth-child(3) { --h: 44px; --w: polygon(0 8%, 22% 16%, 40% 2%, 62% 14%, 84% 4%, 100% 16%, 100% 88%, 80% 100%, 58% 90%, 34% 100%, 0 84%); }
+.swatch:nth-child(4) { --h: 78px; --w: polygon(0 12%, 16% 2%, 42% 10%, 64% 0, 86% 12%, 100% 2%, 100% 96%, 74% 88%, 48% 98%, 22% 90%, 0 100%); }
+.swatch:nth-child(5) { --h: 40px; --w: polygon(0 16%, 26% 2%, 50% 18%, 74% 6%, 100% 14%, 100% 90%, 70% 100%, 44% 86%, 18% 100%, 0 88%); }
+.swatch:nth-child(6) { --h: 70px; --w: polygon(0 6%, 20% 14%, 44% 2%, 68% 12%, 88% 2%, 100% 10%, 100% 92%, 84% 100%, 62% 90%, 36% 100%, 14% 90%, 0 100%); }
+.swatch:nth-child(7) { --h: 52px; --w: polygon(0 12%, 30% 2%, 54% 14%, 78% 0, 100% 10%, 100% 94%, 72% 100%, 42% 88%, 16% 100%, 0 90%); }
+.swatch:nth-child(8) { --h: 92px; --w: polygon(0 8%, 24% 0, 48% 10%, 72% 2%, 100% 8%, 100% 100%, 0 100%); }
+.swatch-name { padding: 0; color: var(--ink); font-size: 15.5px; font-weight: 600; line-height: 1.2; }
+.swatch-hex { padding: 0; color: var(--ink-2); font: 500 15px var(--font-mono); }
+.swatch button:hover .swatch-name { text-decoration: underline; text-underline-offset: 3px; }
+.palette-note { max-width: none; margin-top: 22px; }
+.palette-actions { margin-top: 18px; }
+
+/* Stage 5: motion through more holes, and pebbles for the music */
+.loops-wrap h3, .music-wrap h3 { font-size: 1.9rem; margin-bottom: 26px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px 44px; }
+.loop video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #1c2214; }
+.og-hole { position: relative; }
+.og-hole::after { content: ''; position: absolute; inset: -18px; border: 46px solid transparent; border-image: var(--hole) 120 round; pointer-events: none; }
+.loops-wrap { margin-bottom: 44px; }
+.tracks { max-width: none; gap: 10px; }
+.track { padding: 8px 12px 6px; background: rgb(255 253 238 / .34); box-shadow: 0 3px 6px rgb(30 30 16 / .22); }
+.track-btn { padding: 2px; background: none; border: 0; }
+.track-play { width: 44px; height: 42px; background: radial-gradient(circle at 34% 26%, #7e8d64, var(--moss) 62%, var(--moss-d)); color: #f6f2d9; border-radius: 52% 48% 46% 54% / 56% 50% 50% 44%; box-shadow: 0 3px 5px rgb(20 24 10 / .5); }
+.track-btn:hover .track-title, .track.is-playing .track-title { text-decoration: underline; text-underline-offset: 3px; }
+.track.is-playing { background: rgb(205 216 150 / .8); }
+.track-title { font-weight: 600; line-height: 1.25; }
+.track-artist { color: var(--ink-2); font: 500 14.5px var(--font-mono); }
+.track-note { margin: 2px 0 4px 58px; color: var(--ink); font-size: .95rem; line-height: 1.4; }
+.track-yt { color: var(--moss-d); font-size: 14.5px; }
+.player { background: var(--stone); color: var(--ink); border: 0; box-shadow: 0 0 0 5px var(--moss-d), 0 18px 40px rgb(0 0 0 / .6); }
+.player-now { color: var(--moss-d); font: 500 14px var(--font-mono); letter-spacing: 0; text-transform: none; }
+.player-artist { color: var(--ink-2); }
+.player-close { color: var(--ink); }
+
+/* Stage 6: a whole wall of openings */
+.ref-gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 52px 34px; margin: 22px 0 48px; }
+.ref-gallery .shot { grid-column: span 2; }
+.ref-gallery .shot:nth-child(1), .ref-gallery .shot:nth-child(2) { grid-column: span 3; }
+.ref-gallery .shot:nth-child(9), .ref-gallery .shot:nth-child(10) { grid-column: span 3; }
+.ref-gallery .shot:nth-child(11) { grid-column: 2 / span 4; }
+.ref-gallery .shot-link { aspect-ratio: 3 / 2; }
+.ref-gallery .shot-link::after { inset: -16px; border-width: 38px; }
+.ref-gallery figcaption { margin-top: 20px; font-size: 14.5px; line-height: 1.3; }
+.ref-gallery .shot-meta { font-size: 14px; }
+.ref-lists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 40px; }
+.ref-list h3 { padding-bottom: 8px; margin-bottom: 14px; border-bottom: 2px solid #8b897a; font-size: 1.8rem; }
+
+/* Stage 7 */
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.related a { color: var(--ink); }
+.related img { border-radius: 50% 50% 3px 3px / 26% 26% 3px 3px; box-shadow: 0 0 0 4px #8b897a; }
+.related span { padding-top: 8px; font-size: 15.5px; line-height: 1.3; }
+.related a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+
+/* The forest floor */
+.foot { position: relative; z-index: 3; margin: 0 -24px; padding: 120px 24px 300px; border: 0; background: none; color: #e7e6c9; font-size: 15.5px; text-align: center; }
+.foot p { position: relative; z-index: 2; }
+.foot-nav { position: relative; z-index: 2; max-width: 1000px; margin: 14px auto 0; }
+.foot-nav a { color: #f6f3da; text-underline-offset: 3px; }
+.foot::after { content: ''; position: absolute; left: calc(50% - 50vw); width: 100vw; bottom: 0; height: 430px; background: url(../media/overgrown-ruins/ferns.webp) 50% 100% / 1400px 430px repeat-x; pointer-events: none; }
+
+/* The ivy. Grown by the theme script from generated paths. */
+.og-vines { position: absolute; left: 0; top: 0; width: 100%; z-index: 2; pointer-events: none; overflow: hidden; }
+.og-vines svg { position: absolute; left: 0; overflow: visible; }
+.og-stem { fill: none; stroke: #4a3f29; stroke-linecap: round; stroke-linejoin: round; }
+.og-stem2 { fill: none; stroke: #8b7a53; stroke-linecap: round; stroke-linejoin: round; opacity: .55; }
+.og-lf { transform: scale(0); transition: transform .9s cubic-bezier(.2, 1.5, .4, 1); }
+.og-lf.on { transform: none; }
+:root[data-calm] .og-lf { transform: none; }
+
+@media (max-width: 1040px) {
+  .sec { width: 92%; padding: 80px 48px 48px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .how-side, .ref-lists, .learn ul { grid-template-columns: minmax(0, 1fr); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery .shot, .ref-gallery .shot:nth-child(n) { grid-column: auto; }
+}
+@media (max-width: 720px) {
+  html { font-size: 17.5px; }
+  .decor { display: none; }
+  .page { padding: 0 12px; }
+  .atlas-here { display: none; }
+  .hero { padding-top: 62px; }
+  .hero-title { font-size: 13vw; line-height: 1; white-space: normal; filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='c' x='-3%25' y='-8%25' width='106%25' height='116%25' color-interpolation-filters='sRGB'%3E%3CfeComponentTransfer in='SourceAlpha' result='inv'%3E%3CfeFuncA type='table' tableValues='1 0'/%3E%3C/feComponentTransfer%3E%3CfeGaussianBlur in='inv' stdDeviation='1.1'/%3E%3CfeOffset dx='1.1' dy='1.8' result='b'/%3E%3CfeFlood flood-color='%23080b05' flood-opacity='.9'/%3E%3CfeComposite in2='b' operator='in'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='is'/%3E%3CfeOffset in='SourceAlpha' dx='.7' dy='1' result='o'/%3E%3CfeFlood flood-color='%23fffef2' flood-opacity='.8'/%3E%3CfeComposite in2='o' operator='in'/%3E%3CfeComposite in2='SourceAlpha' operator='out' result='rim'/%3E%3CfeMerge%3E%3CfeMergeNode in='rim'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3CfeMergeNode in='is'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E#c"); }
+  .hero-sub { letter-spacing: .1em; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 42px; margin-top: 50px; }
+  .hero-gallery .shot, .hero-gallery .shot-1, .hero-gallery .shot-2, .hero-gallery .shot-3, .hero-gallery .shot-4 { grid-column: auto; }
+  .hero-gallery .shot-link { height: auto; aspect-ratio: 16 / 10; }
+  .shot-link::after, .ref-gallery .shot-link::after { inset: -10px; border-width: 28px; }
+  .shot figcaption, .loop figcaption { margin-top: 16px; }
+  .toc { margin-top: 44px; }
+  .toc ul { gap: 8px; }
+  .toc a { padding: 7px 14px 8px; font-size: 15.5px; }
+  .sec, .sec:nth-of-type(even) { width: 100%; margin: 104px 0 0; padding: 72px 22px 36px; }
+  #feel { margin-top: 84px; padding-top: 50px; }
+  .sec-title { font-size: 9.4vw; filter: none; text-shadow: 0 1px 0 rgb(255 255 240 / .7); }
+  .og-stage { margin-bottom: 4px; }
+  .feel-body { grid-template-columns: minmax(0, 1fr); font-size: 1rem; }
+  .origins, .specs { padding: 22px 20px 24px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .core-item:nth-child(n) { transform: none; }
+  .step { margin-left: calc(var(--n) * 5px); padding: 18px 8px 32px 54px; }
+  .step::before { left: 2px; top: 16px; font-size: 2.5rem; filter: none; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .swatch button { grid-template-columns: minmax(0, 1fr) 118px; column-gap: 10px; }
+  .chip { grid-row: span 2; }
+  .swatch-name { align-self: end; font-size: 14.5px; }
+  .swatch-hex { align-self: start; font-size: 14px; }
+  .loops { grid-template-columns: minmax(0, 1fr); gap: 42px; }
+  .og-hole::after { inset: -10px; border-width: 28px; }
+  .track { padding: 8px 6px 6px; }
+  .track-note { margin-left: 6px; }
+  .ref-gallery { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+  .foot { margin: 0 -12px; padding: 90px 16px 250px; }
+  .foot::after { height: 320px; background-size: 1040px 320px; }
+  .og-grass { height: 56px; background-size: 460px 56px; }
+  .og-rebar { display: none; }
+}

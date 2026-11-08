@@ -1,0 +1,279 @@
+@font-face {
+  font-family: 'DotGothic16';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/dotgothic16-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* 16-bit / SNES: a JRPG menu screen. Blue stepped windows with pale pixel borders, a fixed command window with a pointing hand, a real Mode 7 plane in the hero
+   (themes/snes-16-bit.js), and three parallax layers behind the page that slide sideways as you read down. */
+:root {
+  --sky: linear-gradient(#182878 0 9%, #203090 9% 18%, #2c409c 18% 27%, #4050ac 27% 36%, #6060b4 36% 44%, #8870bc 44% 52%, #b080b8 52% 60%, #d890b4 60% 68%, #f0a8ac 68% 76%, #f8c0a8 76% 100%);
+  --win-bg: linear-gradient(#0810788c, #08102c);
+  --text: #ffffff; --soft: #d8e0ff; --gold: #f8e070; --cyan: #88e8ff; --red: #ff9888; --green: #98f090;
+  --bg: #182878; --surface: #081078; --ink: var(--text); --muted: var(--soft); --accent: var(--gold); --line: #a8b0d0;
+  --font-display: 'DotGothic16', 'MS Gothic', monospace;
+  --font-body: 'DotGothic16', 'MS Gothic', monospace;
+  --font-mono: 'DotGothic16', 'MS Gothic', monospace;
+  --radius: 0; --gap: 18px; --atlas-h: 38px; --menu: 216px;
+  --frame: url("../media/snes-16-bit/win.png");
+  color-scheme: dark;
+}
+html { font-size: 18px; scroll-padding-top: calc(var(--atlas-h) + 10px); }
+body { background: #182878 var(--sky) fixed; color: var(--text); line-height: 1.5; image-rendering: pixelated; }
+.shot:not(.is-pixel) img { image-rendering: auto; }
+
+/* Parallax: BG3 clouds, BG2 mountains, BG1 forest, each its own speed */
+.decor { z-index: 0; }
+.page { z-index: 1; }
+.bg-clouds, .bg-far, .bg-near { position: absolute; left: 0; width: calc(100% + 1000px); background-repeat: repeat-x; will-change: transform; }
+.bg-clouds { top: 10%; height: 240px; background-image: url("../media/snes-16-bit/bg-clouds.png"); background-size: 960px 240px; animation: snes-drift 140s linear infinite; }
+@keyframes snes-drift { to { transform: translate3d(-960px, 0, 0); } }
+.bg-far { bottom: 18vh; height: 240px; background-image: url("../media/snes-16-bit/bg-far.png"); background-size: 640px 240px; }
+.bg-near { bottom: 0; height: calc(18vh + 90px); background: url("../media/snes-16-bit/bg-near.png") 0 0 / 960px 270px repeat-x, linear-gradient(transparent 270px, #102840 270px); }
+
+/* The window. A pixel frame from a small 9-slice image, and stepped colour behind it. */
+.atlas, .toc ul, .stats, .cfg, .hero-tagline, .hero-gallery .shot, .sec-title, .feel-body, .origins, .core-item, .steps, .specs, .do, .avoid, .learn, .swatches, .palette-note, .loops-wrap, .music-wrap, .ref-gallery, .ref-lists, .sources, .related, .foot, .player {
+  border: 12px solid transparent; border-image: var(--frame) 6 / 12px / 0 stretch; border-radius: 10px;
+  background: var(--win-bg) border-box; color: var(--text); text-shadow: 1px 1px 0 #000;
+}
+
+/* Site bar: a thin window pinned to the top */
+.atlas { height: var(--atlas-h); padding: 0 6px; border-width: 8px; border-image: var(--frame) 6 / 8px / 0 stretch; border-radius: 6px; font-size: 16px; }
+.atlas a, .atlas-btn { color: var(--text); }
+.atlas-home { font-weight: 400; }
+.atlas-here { color: var(--soft); font-size: 16px; }
+.atlas-btn { height: 24px; border-radius: 0; border: 0; }
+.atlas-btn:hover, .atlas-home:hover { color: var(--gold); }
+.atlas-btn[aria-pressed="true"] { color: var(--gold); }
+
+.page { max-width: 1400px; margin: 0 auto; padding: 12px calc(var(--menu) + 44px) 60px 40px; }
+
+/* The fixed command window on the right, as on a menu screen */
+.toc { position: fixed; z-index: 930; top: calc(var(--atlas-h) + 12px); right: max(12px, calc((100vw - 1400px) / 2 + 12px)); width: var(--menu); max-height: calc(100vh - var(--atlas-h) - 24px); overflow-y: auto; scrollbar-width: none; margin: 0; display: grid; gap: 8px; align-content: start; }
+.toc ul { display: grid; gap: 0; padding: 4px 8px 4px 8px; }
+.toc li { min-width: 0; }
+.toc a, .menu-b { display: block; width: 100%; padding: 3px 4px 3px 10px; background: none; border: 0; text-align: left; color: var(--text); font: 400 16px/1.5 var(--font-body); text-decoration: none; text-shadow: 1px 1px 0 #000; }
+.toc a:hover, .menu-b:hover, .toc a:focus-visible, .menu-b:focus-visible { color: var(--gold); outline: 0; }
+.toc a[aria-current] { color: var(--gold); }
+.menu-sep { margin-top: 6px; padding-top: 6px; border-top: 2px solid rgb(168 176 208 / .6); }
+.stats { padding: 2px 8px; font-size: 16px; }
+.stats p { display: flex; justify-content: space-between; gap: 8px; margin: 0; line-height: 1.5; }
+.stats span { color: var(--cyan); }
+.stats b { font-weight: 400; font-variant-numeric: tabular-nums; }
+.cfg { padding: 6px 8px 8px; font-size: 16px; }
+.cfg[hidden] { display: none; }
+.cfg-h { margin: 0 0 4px; color: var(--cyan); }
+.cfg label { display: grid; grid-template-columns: 16px 1fr 22px; align-items: center; gap: 6px; }
+.cfg input { width: 100%; min-width: 0; accent-color: var(--gold); margin: 3px 0; }
+.cfg output { color: var(--gold); text-align: right; }
+.cfg .btn { margin-top: 6px; padding: 2px 8px; }
+
+/* The hand */
+.hand { position: fixed; left: 0; top: 0; z-index: 945; width: 32px; height: 20px; background: url("../media/snes-16-bit/hand.png") 0 0 / 32px 20px no-repeat; image-rendering: pixelated; pointer-events: none; transition: transform 70ms steps(3); filter: drop-shadow(2px 2px 0 rgb(0 0 40 / .7)); }
+.hand.off { visibility: hidden; }
+
+/* Hero: the Mode 7 plane, with the title in its sky */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); padding: 0 0 8px; }
+.m7 { grid-area: 1 / 1; position: relative; overflow: hidden; aspect-ratio: 320 / 150; min-height: 300px; border: 12px solid transparent; border-image: var(--frame) 6 / 12px / 0 stretch; border-radius: 10px; background: #182878 border-box; touch-action: pan-y; }
+.m7 canvas { position: absolute; left: 0; top: 0; display: block; image-rendering: pixelated; }
+.hero-text { grid-area: 1 / 1; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; padding: 24px 30px 24px; pointer-events: none; }
+.hero-kicker { order: 1; font-size: 16px; color: #fff; margin-bottom: 6px; -webkit-text-stroke: 4px #101048; paint-order: stroke fill; }
+.hero-title { order: 2; line-height: 0; font-size: 3rem; min-height: 126px; color: #fff; text-shadow: 3px 3px 0 #101048; }
+.logo { display: block; width: auto; height: 126px; image-rendering: pixelated; }
+.hero-sub { order: 3; margin-top: 2px; font: 400 32px/1.15 var(--font-display); color: #fff; -webkit-text-stroke: 6px #101048; paint-order: stroke fill; }
+.hero-tagline { order: 4; position: relative; margin: auto 0 0; padding: 8px 40px 8px 12px; width: min(620px, 92%); max-width: none; font-size: 18px; line-height: 1.5; pointer-events: auto; }
+.ty-off { visibility: hidden; }
+.ty-wait { visibility: hidden; }
+.typed::after { content: ''; position: absolute; right: 8px; bottom: 6px; width: 12px; height: 8px; background: #fff; clip-path: polygon(0 0, 100% 0, 50% 100%); animation: snes-ok 0.9s steps(2, jump-none) infinite; }
+.feel-body.typed::after { right: 14px; bottom: 10px; }
+.typing { cursor: pointer; }
+@keyframes snes-ok { 50% { opacity: 0; } }
+
+/* Party */
+/* Each picture keeps its true shape. Widths are set so that both pictures in a row come out the same height. */
+.hero-gallery { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; margin-top: 12px; }
+.hero-gallery .shot { padding: 0; }
+.hero-gallery .shot-1 { --ar: 1.656; width: calc(24px + (100% - 62px) * .5892); }
+.hero-gallery .shot-2 { --ar: 1.154; width: calc(24px + (100% - 62px) * .4106); }
+.hero-gallery .shot-3 { --ar: 1.142; width: calc(50% - 7px); }
+.hero-gallery .shot-4 { --ar: 1.143; width: calc(50% - 7px); }
+.hero-gallery .shot-link { aspect-ratio: var(--ar); }
+.shot-link { position: relative; display: block; background: #000; }
+.mosaic { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-gallery figcaption { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; padding: 7px 4px 2px; font-size: 16px; line-height: 1.4; }
+.shot-title { font-weight: 400; }
+.hero-gallery .shot-title { font-size: 18px; }
+.shot-meta { color: var(--soft); }
+.hero-gallery .shot-meta { grid-row: 2; }
+.party { grid-column: 2; grid-row: 1 / span 2; display: grid; justify-items: end; align-content: start; gap: 3px; }
+.party b { font-weight: 400; color: var(--gold); }
+.atb { display: block; width: 84px; height: 8px; background: #000030; box-shadow: 0 0 0 2px var(--line); }
+.atb u { display: block; height: 100%; width: 100%; background: linear-gradient(#f8f8a0 0 50%, #e0b830 50%); transform-origin: left; animation: snes-atb var(--t) steps(32) infinite; }
+@keyframes snes-atb { 0% { transform: scaleX(0); } 88%, 100% { transform: scaleX(1); } }
+
+/* Sections */
+.sec { padding: 22px 0 6px; }
+.sec-title { display: inline-block; position: relative; z-index: 1; margin: 0 0 8px; padding: 2px 16px; font: 400 32px/1.25 var(--font-display); }
+.sec h3 { font: 400 18px/1.35 var(--font-display); margin-bottom: 6px; color: var(--gold); }
+.sec-feel { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0 12px; align-items: start; }
+.sec-feel .sec-title { grid-column: 1 / -1; justify-self: start; }
+.feel-body { position: relative; max-width: none; padding: 10px 18px 18px; font-size: 18px; line-height: 1.5; }
+.origins { grid-column: 2; grid-row: 2 / span 2; margin: 0; max-width: none; padding: 10px 16px; font-size: 18px; line-height: 1.5; }
+.mood-words { grid-column: 1; margin: 10px 0 0; gap: 6px; }
+.mood-words li { padding: 2px 10px; border: 0; background: #000048; box-shadow: 0 0 0 2px var(--line); color: var(--cyan); font-size: 16px; text-shadow: 1px 1px 0 #000; }
+
+/* Abilities */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.core-item { position: relative; padding: 6px 14px 12px; }
+.core-item h3 { display: flex; align-items: center; gap: 10px; min-height: 40px; font-size: 18px; margin: 0 0 4px; }
+.core-item h3::before { content: ''; flex: none; width: 36px; height: 36px; background: url("../media/snes-16-bit/icons.png") calc(var(--i) * -36px) 0 / 252px 36px no-repeat; image-rendering: pixelated; }
+.core-item:nth-child(1) { --i: 0; } .core-item:nth-child(2) { --i: 1; } .core-item:nth-child(3) { --i: 2; } .core-item:nth-child(4) { --i: 3; } .core-item:nth-child(5) { --i: 4; } .core-item:nth-child(6) { --i: 5; }
+.core-item p { font-size: 18px; line-height: 1.45; }
+.core-item:hover { background-image: linear-gradient(#2038b0, #101868); }
+
+/* Quest log */
+.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; max-width: none; padding: 10px 18px 14px; }
+.step { padding-left: 36px; min-width: 0; }
+.step::before { left: 0; top: 0; width: 26px; height: 26px; background: #000048; color: var(--gold); box-shadow: 0 0 0 2px var(--line); font: 400 16px/1 var(--font-display); text-shadow: none; }
+.step p { font-size: 18px; line-height: 1.45; }
+
+/* Status screen */
+.how-side { grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); gap: 12px; margin-top: 12px; align-items: start; }
+.specs { padding: 8px 16px 12px; }
+.st-head { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 2px solid rgb(168 176 208 / .6); }
+.st-spr { flex: none; width: 64px; height: 68px; background: url("../media/snes-16-bit/hero.png") 0 0 / 128px 68px no-repeat; image-rendering: pixelated; animation: snes-breathe 1.4s steps(1) infinite; }
+@keyframes snes-breathe { 50% { background-position: -64px 0; } }
+.st-txt p { margin: 0; font-size: 16px; line-height: 1.4; }
+.st-txt b { font-weight: 400; font-size: 18px; }
+.st-txt .k { color: var(--cyan); }
+.st-txt small { color: var(--soft); font-size: 16px; }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); padding: 3px 0; border-top: 0; font-size: 18px; line-height: 1.35; }
+.spec dt { font-weight: 400; color: var(--cyan); }
+.dodont { gap: 12px; }
+.do, .avoid { padding: 6px 16px 10px; }
+.do h3, .avoid h3 { display: flex; align-items: center; gap: 8px; }
+.do h3::before, .avoid h3::before { content: ''; width: 36px; height: 36px; background: url("../media/snes-16-bit/icons.png") 0 0 / 252px 36px no-repeat; image-rendering: pixelated; }
+.avoid h3::before { background-position: -216px 0; }
+.avoid h3 { color: var(--red); }
+.do h3 { color: var(--green); }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; padding-left: 18px; margin-bottom: 4px; font-size: 18px; line-height: 1.4; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .55em; width: 7px; height: 7px; background: var(--gold); }
+.avoid li::before { background: var(--red); }
+.learn { margin-top: 12px; padding: 8px 16px 8px; }
+.learn ul { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px 22px; }
+.ref-item { margin-bottom: 8px; font-size: 18px; line-height: 1.35; }
+.ref-item a, .learn a, .source a { color: var(--text); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.ref-item a:hover, .learn a:hover, .source a:hover { color: var(--gold); }
+.ref-meta, .source-meta { color: var(--cyan); font-size: 16px; }
+.ref-note { margin-top: 1px; font-size: 18px; line-height: 1.35; color: var(--soft); }
+.brief, .palette-actions { margin-top: 12px; }
+.btn { padding: 3px 12px; background: #000048; border: 0; box-shadow: 0 0 0 2px var(--line); color: var(--text); font: 400 16px/1.5 var(--font-body); text-shadow: 1px 1px 0 #000; }
+.btn:hover { color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+.brief-note { padding: 1px 8px; background: #000048; color: var(--soft); font-size: 16px; text-shadow: none; }
+
+/* Colours */
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px; padding: 8px 12px 6px; }
+.swatch button { padding: 0; background: none; border: 0; color: var(--text); text-shadow: 1px 1px 0 #000; }
+.chip { height: 76px; box-shadow: 0 0 0 2px var(--line); }
+.swatch-name { padding: 6px 0 0; font-size: 16px; font-weight: 400; line-height: 1.25; }
+.swatch-hex { padding: 0 0 4px; font: 400 16px/1.25 var(--font-body); color: var(--cyan); }
+.swatch button:hover .swatch-name { color: var(--gold); }
+.palette-note { max-width: none; margin: 10px 0 0; padding: 6px 14px; font-size: 18px; }
+
+/* Motion and sound test */
+.loops-wrap { margin: 0 0 12px; padding: 6px 14px 10px; }
+.music-wrap { padding: 6px 14px 10px; }
+.loops { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.loop video { aspect-ratio: 8 / 7; object-fit: cover; background: #000; box-shadow: 0 0 0 2px var(--line); }
+.loop figcaption { padding-top: 7px; font-size: 16px; line-height: 1.35; }
+.loop .shot-title a { color: var(--text); text-decoration-color: var(--gold); }
+.tracks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; max-width: none; }
+.track { align-items: start; }
+.track-btn { gap: 10px; padding: 2px 4px; background: none; border: 0; color: var(--text); text-shadow: 1px 1px 0 #000; }
+.track-btn:hover .track-title, .track.is-playing .track-title { color: var(--gold); }
+.track-play { width: 28px; height: 28px; background: #000048; color: var(--gold); box-shadow: 0 0 0 2px var(--line); }
+.track-title { font-weight: 400; font-size: 16px; line-height: 1.35; }
+.track-artist { font-size: 16px; line-height: 1.35; color: var(--cyan); }
+.track-note { margin: 2px 0 6px 42px; font-size: 18px; line-height: 1.35; color: var(--soft); }
+.track-yt { padding-top: 4px; color: var(--cyan); font-size: 16px; }
+.player { padding: 0; background-clip: border-box; font-family: var(--font-body); }
+.player-info { font-size: 16px; }
+.player-now { color: var(--cyan); font-size: 16px; text-transform: none; letter-spacing: 0; }
+.player-title { font-weight: 400; }
+.player-artist { color: var(--soft); }
+.player-close { color: #fff; }
+.toast { background: #000048; box-shadow: 0 0 0 3px #fff; border-radius: 0; font: 400 16px/1.4 var(--font-body); }
+
+/* References: at their real size where they can be */
+.ref-gallery { grid-template-columns: repeat(auto-fill, 256px); justify-content: space-between; gap: 14px 8px; margin: 0 0 12px; padding: 8px 12px; }
+.ref-gallery .shot-link { aspect-ratio: 8 / 7; box-shadow: 0 0 0 2px var(--line); }
+.ref-gallery figcaption { padding-top: 6px; font-size: 16px; line-height: 1.35; }
+.ref-lists { gap: 22px; padding: 8px 16px; }
+.sources { padding: 12px 16px; }
+.related { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; padding: 10px 12px; }
+.related a { color: var(--text); }
+.related img { box-shadow: 0 0 0 2px var(--line); }
+.related a:hover span { color: var(--gold); }
+.related span { padding-top: 6px; font-weight: 400; font-size: 16px; line-height: 1.3; }
+.foot { margin-top: 14px; padding: 6px 14px; font-size: 18px; line-height: 1.35; color: var(--soft); }
+.foot-nav a { color: var(--text); }
+
+/* Pictures and video are scaled to fit, so they scale smoothly. The lightbox stays neutral. Pixel art keeps its own rule. */
+.related img:not(.is-pixel), .loop video, .lightbox { image-rendering: auto; }
+/* Native screens at exactly 2x on a wide window, in rows of equal height. */
+@media (min-width: 1420px) {
+  .hero-gallery .shot-1 { --ar: 1.3413; width: 582px; }
+  .hero-gallery .shot-1 img { object-position: 70% 50%; }
+  .hero-gallery .shot-2 { --ar: 1.15385; width: 504px; }
+  .hero-gallery .shot-3 { --ar: 1.1741; width: 550px; }
+  .hero-gallery .shot-3 img { object-fit: contain; }
+  .hero-gallery .shot-4 { --ar: 1.142857; width: 536px; }
+}
+@media (max-width: 1180px) {
+  .page { max-width: none; padding: 10px 14px 40px; }
+  .toc { position: static; width: auto; margin-top: 10px; grid-template-columns: minmax(0, 1fr) minmax(0, 200px); }
+  .toc ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-sep { margin-top: 0; padding-top: 0; border-top: 0; }
+  .cfg { grid-column: 1 / -1; }
+  .stats { align-self: start; }
+  .sec-feel { grid-template-columns: minmax(0, 1fr); }
+  .origins { grid-column: 1; grid-row: auto; margin-top: 10px; }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+  .page { padding: 8px 8px 30px; }
+  .m7 { aspect-ratio: auto; height: 400px; min-height: 0; }
+  .hero-text { padding: 16px 18px 18px; }
+  .logo { height: 84px; }
+  .hero-title { min-height: 84px; }
+  .hero-sub { font-size: 24px; }
+  .hero-tagline { width: 100%; }
+  .hero-gallery { gap: 8px; }
+  .hero-gallery .shot { width: 100%; }
+  .toc { grid-template-columns: minmax(0, 1fr); }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .feel-body { padding: 8px 12px 16px; }
+  .origins { padding: 8px 12px; }
+  .steps { padding: 8px 10px 12px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 4px 0; }
+  .tracks { grid-template-columns: minmax(0, 1fr); }
+  .track-note { margin-left: 4px; }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 6px 6px; }
+  .ref-gallery .is-pixel img { image-rendering: auto; }
+  .ref-lists { padding: 6px 10px; gap: 12px; }
+  .sources { padding: 8px 10px; }
+  .sec-title { font-size: 24px; padding: 2px 10px; }
+  .atlas { gap: 6px; white-space: nowrap; }
+  .atlas-actions { gap: 0; }
+  .hand { display: none; }
+  .chip { height: 56px; }
+  .swatches { gap: 8px; }
+}

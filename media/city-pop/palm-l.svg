@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 700" preserveAspectRatio="xMaxYMax meet">
+  <!-- Palms for the page edges, drawn for this page. -->
+  <defs><g id="frond">
+      <path d="M0 0 C 18 -12 42 -12 66 4 C 44 -3 22 -2 0 0 Z"/>
+      <path d="M8 -4 l 4 6 M18 -8 l 4 8 M28 -9 l 4 9 M38 -9 l 3 9 M48 -7 l 3 8" stroke-width="1.4" fill="none"/>
+    </g>
+    <g id="palm">
+      <g fill="#0b2a1e" stroke="#0b2a1e">
+        <use href="#frond" transform="rotate(-160)"/>
+        <use href="#frond" transform="rotate(-128)"/>
+        <use href="#frond" transform="rotate(-96) scale(.9)"/>
+        <use href="#frond" transform="rotate(-62)"/>
+        <use href="#frond" transform="rotate(-28)"/>
+        <use href="#frond" transform="rotate(6) scale(.92)"/>
+        <use href="#frond" transform="rotate(40) scale(.8)"/>
+        <use href="#frond" transform="rotate(150) scale(.8)"/>
+      </g>
+      <g fill="#1e7a3c" stroke="#1e7a3c" opacity=".9">
+        <use href="#frond" transform="rotate(-150) scale(.82)"/>
+        <use href="#frond" transform="rotate(-70) scale(.8)"/>
+        <use href="#frond" transform="rotate(-20) scale(.85)"/>
+      </g>
+      <circle cx="0" cy="2" r="4" fill="#3a2a1a"/>
+    </g>
+  </defs>
+  <g transform="translate(260 0) scale(-1 1)">
+    <path d="M270 720 C 230 560 200 360 196 160" stroke="#0b2a1e" stroke-width="9" fill="none"/>
+    <use href="#palm" transform="translate(196 160) scale(1.9)"/>
+    <path d="M280 720 C 262 600 250 470 252 360" stroke="#0b2a1e" stroke-width="7" fill="none"/>
+    <use href="#palm" transform="translate(252 360) scale(1.4) rotate(-14)"/>
+  </g>
+</svg>
