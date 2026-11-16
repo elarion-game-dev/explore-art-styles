@@ -1,0 +1,487 @@
+@font-face {
+  font-family: 'Sansita Swashed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/sansita-swashed-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita Swashed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/sansita-swashed-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita Swashed';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/sansita-swashed-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/sansita-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/sansita-latin-700-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/sansita-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/sansita-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Mexican Folk Art / Día de Muertos: a street dressed for the Day of the Dead, with the ofrenda at its head.
+   The cover is a night vigil: a big string of papel picado, an arch of cempasúchil and cresta de gallo over the title,
+   and the four pictures set out on the two tiers of an altar, each tier's cloth cut into papel picado along its front edge.
+   Every section below is a house wall painted in its own colour with a darker zócalo along its foot, and a string of
+   tissue-paper flags hangs across the top of each one (themes/mexican-folk-art.js strings them). The flags are cut from
+   five SVG patterns used as masks (calavera, cempasúchil, dove, star, heart), so the holes are real holes; each throws a
+   coloured shadow on the wall, sways on its own, and flutters when the pointer or a scroll blows past.
+   The core elements are Lotería cards, the origins a Posada broadside on coloured paper, the palette a string of flags. */
+:root {
+  --m: var(--pp1);
+  --night: #170a33; --night-2: #22104a;
+  --plum: #3a1670; --plum-2: #2c1160; --violet: #5b23a8; --calaca: #ab2bef;
+  --pink: #e8078d; --pink-wall: #c4087a; --pink-d: #9e0a68; --pink-l: #ff8cc6; --pink-pale: #ffd8ee;
+  --mari: #f59a1b; --mari-d: #d97130; --gold: #ffc23a; --yellow: #ffd23f;
+  --turq: #14b4c9; --teal: #0a5f6c; --teal-d: #07434c;
+  --lime: #9ccf2b; --green: #2f7d32; --blue: #24369e; --red: #f2283c;
+  --bone: #fff4d6; --card: #fdf3d7; --wash: #f4ecdc; --broadside: #f2a160;
+  --ink-d: #2b1238; --ink-2: #5a3a5e;
+  --bg: var(--night); --surface: var(--card); --ink: var(--bone); --muted: #e6d3ff; --accent: var(--gold); --line: rgb(255 244 214 / .25);
+  --font-display: 'Sansita Swashed', 'Sansita', Georgia, serif;
+  --font-body: 'Sansita', 'Trebuchet MS', sans-serif;
+  --font-mono: 'Sansita', 'Trebuchet MS', sans-serif;
+  --radius: 4px; --max: 1180px; --gap: 26px; --atlas-h: 50px;
+  --pad: max(16px, calc((100% - var(--max)) / 2));
+  --pp-band: 128px;
+  --cord: #f4e6c8;
+  --drop: 0 2px 2px rgb(20 4 30 / .25), 0 12px 22px -6px rgb(20 4 30 / .55);
+  /* Lime-wash on a painted wall: a lighter patch top left, a darker one bottom right and faint brush strokes. */
+  --wash-tex: radial-gradient(110% 70% at 18% 8%, rgb(255 255 255 / .07), transparent 60%), radial-gradient(90% 80% at 88% 92%, rgb(0 0 0 / .14), transparent 62%), repeating-linear-gradient(97deg, rgb(255 255 255 / .022) 0 34px, transparent 34px 80px, rgb(0 0 0 / .03) 80px 96px, transparent 96px 150px);
+  color-scheme: dark;
+}
+html { font-size: 18px; }
+body { background: var(--night); font-weight: 400; line-height: 1.55; }
+::selection { background: var(--gold); color: var(--ink-d); }
+:where(.page) a { color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+:where(.page) a:hover { color: var(--pink-l); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Site bar: a dark strip with a cut-paper edge of Mexican pink ---------- */
+.atlas { height: var(--atlas-h); padding: 0 16px; background: #12072a; border-bottom: 0; color: var(--bone); font: 700 16px/1 var(--font-body); box-shadow: 0 3px 0 var(--pink), 0 8px 14px rgb(0 0 0 / .4); }
+.atlas::after { content: ''; position: absolute; left: 0; right: 0; top: calc(100% + 3px); height: 7px; background: linear-gradient(-45deg, transparent 4.9px, var(--pink) 5px) 0 0 / 10px 7px repeat-x, linear-gradient(45deg, transparent 4.9px, var(--pink) 5px) 0 0 / 10px 7px repeat-x; pointer-events: none; }
+.atlas a, .atlas-btn { color: var(--bone); }
+.atlas-home span { font: 700 20px/1 var(--font-display); color: var(--gold); }
+.atlas-here { color: var(--pink-l); font-size: 15px; letter-spacing: .04em; }
+.atlas-btn { border-radius: 16px; font-weight: 700; }
+.atlas-btn:hover { background: rgb(255 244 214 / .12); border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--gold); }
+
+/* ---------- Frame: every block runs edge to edge as a wall, with the content centred inside ---------- */
+.page { max-width: none; padding: 0; }
+.hero, .toc, .sec, .foot { padding-left: var(--pad); padding-right: var(--pad); }
+.sec, .hero, .foot { position: relative; overflow-x: clip; }
+
+/* ---------- Papel picado (strung by the theme script) ---------- */
+.pp-string { position: absolute; left: 0; right: 0; top: 0; height: var(--pp-band); pointer-events: none; z-index: 3; overflow-x: clip; }
+.pp-cord { position: absolute; left: 0; top: 0; width: 100%; overflow: visible; }
+.pp-cord path { fill: none; stroke: var(--cord); stroke-width: 1.8; vector-effect: non-scaling-stroke; }
+.pp-flag { position: absolute; top: 0; width: var(--pp-w); aspect-ratio: 100 / 118; translate: 0 var(--y); rotate: calc(var(--r) + var(--wind, 0deg) * var(--k, 1)); transform-origin: 50% 0; pointer-events: auto; }
+.pp-flag > i, .pp-flag > i > b { position: relative; display: block; height: 100%; transform-origin: 50% 2%; }
+.pp-flag b::before, .pp-flag b::after, .swatch .chip, .swatch button::before { -webkit-mask: var(--m) 0 0 / 100% 100% no-repeat; mask: var(--m) 0 0 / 100% 100% no-repeat; }
+.pp-flag b::before, .pp-flag b::after { content: ''; position: absolute; inset: 0; }
+/* The hem folded over the string is a shade darker than the rest of the sheet. */
+.pp-flag b::before { background: linear-gradient(rgb(20 0 30 / .22) 0 5.6%, transparent 5.6%), linear-gradient(170deg, rgb(255 255 255 / .16), transparent 45%), var(--c); }
+/* The coloured shadow: the same cut sheet, offset onto the wall behind and softened. */
+.pp-flag b::after { z-index: -1; background: var(--c); opacity: var(--pp-sh, .42); translate: var(--pp-sx, 7px) var(--pp-sy, 15px); filter: blur(1.3px); }
+.pp-live .pp-flag > i { animation: mexican-folk-art-sway var(--d, 5s) ease-in-out var(--dl, 0s) infinite alternate; }
+.pp-flag.gust > i > b { animation: mexican-folk-art-gust 1.7s cubic-bezier(.25, .7, .35, 1) var(--gd, 0s) both; }
+@keyframes mexican-folk-art-sway { from { rotate: calc(var(--a, 2deg) * -1); } to { rotate: var(--a, 2deg); } }
+@keyframes mexican-folk-art-gust {
+  0% { transform: none; }
+  16% { transform: rotate(var(--gs, 12deg)) skewX(calc(var(--gs, 12deg) * -.45)) scaleY(.93); }
+  40% { transform: rotate(calc(var(--gs, 12deg) * -.55)) skewX(calc(var(--gs, 12deg) * .2)); }
+  64% { transform: rotate(calc(var(--gs, 12deg) * .28)); }
+  84% { transform: rotate(calc(var(--gs, 12deg) * -.1)); }
+  100% { transform: none; }
+}
+
+/* ---------- Cover: a night vigil before the ofrenda ---------- */
+.hero { isolation: isolate; padding-top: calc(var(--pp-band) + 18px); padding-bottom: 30px; --pp-band: 170px; --pp-sh: .5;
+  background:
+    radial-gradient(1.6px 1.6px at 12% 22%, rgb(255 244 214 / .8), transparent), radial-gradient(1.2px 1.2px at 27% 61%, rgb(255 244 214 / .6), transparent),
+    radial-gradient(1.4px 1.4px at 71% 18%, rgb(255 244 214 / .7), transparent), radial-gradient(1.2px 1.2px at 88% 47%, rgb(255 244 214 / .6), transparent),
+    radial-gradient(1.6px 1.6px at 54% 9%, rgb(255 244 214 / .7), transparent), radial-gradient(1.1px 1.1px at 6% 78%, rgb(255 244 214 / .5), transparent),
+    radial-gradient(60% 40% at 50% 100%, rgb(245 154 27 / .22), transparent 70%),
+    linear-gradient(#0f0624, var(--night) 30%, #24104e 100%); }
+.hero-text { position: relative; max-width: 1010px; margin: 0 auto; padding: 66px 70px 34px; text-align: center; }
+.mfa-arch { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1; }
+.hero-kicker { margin: 0 0 6px; color: var(--pink-l); font: 700 15px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.hero-title { font: 900 clamp(2.9rem, 7.4vw, 5.4rem)/1 var(--font-display); color: var(--gold); letter-spacing: .005em; text-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--ink-d), 0 0 34px rgb(245 154 27 / .35); overflow-wrap: normal; }
+.hero-sub { margin: 10px 0 0; font: 700 clamp(1.4rem, 3vw, 2.1rem)/1.1 var(--font-display); color: var(--pink-l); text-shadow: 2px 2px 0 var(--ink-d); }
+.hero-tagline { max-width: 34em; margin: 16px auto 0; font-size: clamp(1.08rem, 1.7vw, 1.28rem); line-height: 1.45; color: var(--bone); }
+
+/* The altar: two tiers, the upper one narrower, each on a cloth whose front edge is cut papel picado. */
+.hero-gallery { position: relative; display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); column-gap: 14px; row-gap: 86px; margin-top: 26px; padding: 18px 0 0; }
+.hero-gallery::before, .hero-gallery::after { content: ''; z-index: -1; align-self: stretch; margin: -18px -20px -46px; background: var(--wash-tex), var(--cloth); box-shadow: 0 14px 26px -10px rgb(0 0 0 / .6);
+  -webkit-mask: linear-gradient(#000 0 0) top / 100% calc(100% - 30px) no-repeat, var(--pp2) left bottom / 26px 31px repeat-x;
+  mask: linear-gradient(#000 0 0) top / 100% calc(100% - 30px) no-repeat, var(--pp2) left bottom / 26px 31px repeat-x; }
+.hero-gallery::before { --cloth: var(--pink-wall); grid-column: 2 / 24; grid-row: 1; }
+.hero-gallery::after { --cloth: var(--violet); grid-column: 1 / -1; grid-row: 2; }
+.hero-gallery .shot { position: relative; z-index: 1; }
+.hero-gallery .shot-1 { grid-column: 2 / 14; grid-row: 1; }
+.hero-gallery .shot-2 { grid-column: 14 / 24; grid-row: 1; }
+.hero-gallery .shot-3 { grid-column: 1 / 13; grid-row: 2; }
+.hero-gallery .shot-4 { grid-column: 13 / -1; grid-row: 2; }
+.hero-gallery .shot-link { aspect-ratio: auto; height: clamp(220px, 29vw, 344px); background: #0c0418; border-radius: 3px; box-shadow: 0 0 0 4px var(--bone), 0 0 0 7px var(--ink-d), 0 10px 18px rgb(0 0 0 / .45); }
+.hero-gallery .shot-3 .shot-link, .hero-gallery .shot-4 .shot-link { height: clamp(220px, 33vw, 400px); }
+.hero-gallery .shot-link img { transition: transform .5s ease; }
+.hero-gallery .shot-link:hover img { transform: scale(1.03); }
+.hero-gallery figcaption { padding-top: 12px; color: var(--bone); font-size: 14px; text-align: center; }
+.hero-gallery .shot-meta { color: var(--pink-pale); }
+.hero-gallery .shot-3 .shot-meta, .hero-gallery .shot-4 .shot-meta { color: #e6d3ff; }
+/* Candles at the ends of the upper tier (added by the theme script). */
+.mfa-candle { position: relative; z-index: 2; grid-row: 1; align-self: end; justify-self: center; width: 16px; height: 58px; margin-bottom: 8px; border-radius: 3px 3px 2px 2px; background: linear-gradient(90deg, #e9dcc0, #fffaf0 40%, #e3d3b2); box-shadow: 0 6px 8px rgb(0 0 0 / .4); }
+.mfa-candle.c-l { grid-column: 1; }
+.mfa-candle.c-r { grid-column: 24; }
+.mfa-candle::before { content: ''; position: absolute; left: 50%; bottom: 100%; width: 12px; height: 22px; margin-left: -6px; border-radius: 50% 50% 45% 45% / 62% 62% 38% 38%; background: radial-gradient(circle at 50% 72%, #fff7d0 0 22%, var(--yellow) 40%, var(--mari) 72%, transparent 74%); transform-origin: 50% 100%; animation: mexican-folk-art-flame 2.6s ease-in-out infinite alternate; }
+.mfa-candle::after { content: ''; position: absolute; left: 50%; bottom: calc(100% + 4px); width: 80px; height: 80px; margin: 0 0 -40px -40px; border-radius: 50%; background: radial-gradient(circle, rgb(255 200 90 / .32), transparent 65%); pointer-events: none; }
+.mfa-candle.c-r::before { animation-duration: 3.1s; animation-delay: -1.2s; }
+@keyframes mexican-folk-art-flame { 0% { transform: scale(1, 1) rotate(-2deg); } 50% { transform: scale(.94, 1.06) rotate(2deg); } 100% { transform: scale(1.04, .95) rotate(-1deg); } }
+/* Marigold petals strewn in front of the altar: the path that leads the dead home. */
+.hero-gallery .mfa-petals { grid-column: 1 / -1; grid-row: 3; height: 44px; margin: -42px -20px 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 44' width='150' height='44'%3E%3Cellipse cx='4.6' cy='23.7' rx='4.0' ry='2.4' fill='%23f59a1b' transform='rotate(21 4.6 23.7)'/%3E%3Cellipse cx='14.1' cy='10.2' rx='4.5' ry='2.3' fill='%23d97130' transform='rotate(158 14.1 10.2)'/%3E%3Cellipse cx='22.2' cy='29.9' rx='3.7' ry='2.4' fill='%23ffc23a' transform='rotate(118 22.2 29.9)'/%3E%3Cellipse cx='31.3' cy='26.8' rx='4.5' ry='2.4' fill='%23f59a1b' transform='rotate(28 31.3 26.8)'/%3E%3Cellipse cx='40.4' cy='9.4' rx='5.2' ry='2.1' fill='%23e8078d' transform='rotate(169 40.4 9.4)'/%3E%3Cellipse cx='51.2' cy='34.8' rx='4.3' ry='2.4' fill='%23d97130' transform='rotate(34 51.2 34.8)'/%3E%3Cellipse cx='61.9' cy='15.9' rx='5.2' ry='2.4' fill='%23ffc23a' transform='rotate(31 61.9 15.9)'/%3E%3Cellipse cx='68.8' cy='23.3' rx='3.8' ry='2.6' fill='%23f59a1b' transform='rotate(59 68.8 23.3)'/%3E%3Cellipse cx='78.9' cy='17.8' rx='5.1' ry='2.2' fill='%23d97130' transform='rotate(14 78.9 17.8)'/%3E%3Cellipse cx='91.2' cy='21.2' rx='4.6' ry='2.3' fill='%23ffd23f' transform='rotate(42 91.2 21.2)'/%3E%3Cellipse cx='99.9' cy='26.3' rx='4.0' ry='2.4' fill='%23f59a1b' transform='rotate(24 99.9 26.3)'/%3E%3Cellipse cx='105.5' cy='9.3' rx='4.7' ry='2.5' fill='%23c4087a' transform='rotate(74 105.5 9.3)'/%3E%3Cellipse cx='119.7' cy='17.1' rx='4.4' ry='2.4' fill='%23ffc23a' transform='rotate(79 119.7 17.1)'/%3E%3Cellipse cx='128.5' cy='20.6' rx='4.0' ry='2.2' fill='%23d97130' transform='rotate(79 128.5 20.6)'/%3E%3Cellipse cx='137.3' cy='11.7' rx='4.8' ry='2.7' fill='%23f59a1b' transform='rotate(49 137.3 11.7)'/%3E%3Cellipse cx='147.9' cy='34.0' rx='4.8' ry='2.5' fill='%23ffc23a' transform='rotate(155 147.9 34.0)'/%3E%3C/svg%3E") 0 0 / 150px 44px repeat-x; }
+
+/* Contents: a string of flags across the foot of the cover, the words on the uncut part of each sheet. */
+.toc { margin: 0; padding-top: 6px; padding-bottom: 44px; background: #24104e; }
+.toc ul { position: relative; justify-content: center; gap: 12px 14px; padding-top: 12px; }
+.toc li { position: relative; }
+.toc li::before { content: ''; position: absolute; left: -9px; right: -9px; top: -6px; height: 2px; background: var(--cord); }
+.toc a { position: relative; display: block; min-width: 132px; padding: 12px 16px 24px; background: linear-gradient(rgb(20 0 30 / .2) 0 6px, transparent 6px), var(--fc, var(--pink)); color: var(--ink-d); font: 700 17px/1.15 var(--font-body); text-align: center; text-decoration: none;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9px), 93.75% 100%, 87.5% calc(100% - 9px), 81.25% 100%, 75% calc(100% - 9px), 68.75% 100%, 62.5% calc(100% - 9px), 56.25% 100%, 50% calc(100% - 9px), 43.75% 100%, 37.5% calc(100% - 9px), 31.25% 100%, 25% calc(100% - 9px), 18.75% 100%, 12.5% calc(100% - 9px), 6.25% 100%, 0 calc(100% - 9px));
+  transform-origin: 50% 0; transition: rotate .3s ease; }
+.toc a::after { content: ''; position: absolute; left: 8px; right: 8px; bottom: 14px; height: 4px; background: radial-gradient(circle, var(--ink-d) 0 1.4px, transparent 1.8px) 0 0 / 8px 4px repeat-x; opacity: .35; }
+.toc a:hover { rotate: -3deg; }
+.toc li:nth-child(1) a { --fc: var(--pink-l); }
+.toc li:nth-child(2) a { --fc: var(--mari); }
+.toc li:nth-child(3) a { --fc: var(--lime); }
+.toc li:nth-child(4) a { --fc: var(--turq); }
+.toc li:nth-child(5) a { --fc: var(--yellow); }
+.toc li:nth-child(6) a { --fc: #c9a2f2; }
+
+/* ---------- Sections: painted walls, each with its zócalo ---------- */
+.sec { --wall: var(--plum); --zoc: var(--mari-d); --trim: var(--gold); --t-fill: var(--gold); --t-sh: var(--pink-d);
+  padding-top: calc(var(--pp-band) + 6px); padding-bottom: 82px; background: var(--wash-tex), var(--wall); color: var(--bone); }
+.sec::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 26px; background: linear-gradient(rgb(0 0 0 / .12), transparent 40%), var(--zoc); box-shadow: 0 -4px 0 var(--trim); }
+.sec-title { position: relative; display: table; margin: 0 0 28px; font: 900 clamp(2.2rem, 5vw, 3.5rem)/1.05 var(--font-display); color: var(--t-fill); text-shadow: 3px 3px 0 var(--t-sh), 5px 5px 0 rgb(0 0 0 / .22); }
+.sec h3 { font-family: var(--font-body); font-weight: 700; }
+
+.sec-feel { --wall: var(--plum); --zoc: var(--mari-d); --trim: var(--gold); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: auto auto 1fr; column-gap: 48px; align-items: start; }
+.sec-core { --wall: var(--pink-wall); --zoc: var(--plum); --trim: var(--mari); --t-fill: var(--bone); --t-sh: var(--plum); }
+.sec-how { --wall: var(--teal); --zoc: var(--pink-wall); --trim: var(--gold); }
+.sec-palette { --wall: var(--wash); --zoc: var(--turq); --trim: var(--pink); --t-fill: var(--pink-d); --t-sh: var(--gold); color: var(--ink-d); --pp-sh: .32; }
+.sec-vibe { --wall: var(--blue); --zoc: var(--mari-d); --trim: var(--pink-l); }
+.sec-refs { --wall: var(--plum-2); --zoc: var(--lime); --trim: var(--pink); }
+.sec-sources { --wall: var(--wash); --zoc: var(--pink-wall); --trim: var(--mari); --t-fill: var(--pink-d); --t-sh: var(--gold); color: var(--ink-d); --pp-sh: .32; }
+.sec-related { --wall: var(--pink-wall); --zoc: var(--night); --trim: var(--gold); --t-fill: var(--bone); --t-sh: var(--plum); }
+
+/* ---------- The feel, and the origins as a Posada broadside on coloured paper ---------- */
+.sec-feel .sec-title { grid-column: 1 / -1; }
+.feel-body { grid-column: 1; max-width: none; font-size: 1.12rem; line-height: 1.6; }
+.feel-body p { margin-bottom: 1em; }
+/* Six flags read 3 + 3 (2 + 2 + 2 on phones), never 5 + 1. */
+.mood-words { grid-column: 1; display: grid; grid-template-columns: repeat(3, max-content); width: fit-content; gap: 16px 10px; margin: 22px 0 0; padding-top: 12px; position: relative; }
+.mood-words::before { content: ''; position: absolute; left: -8px; right: -8px; top: 4px; height: 2px; background: var(--cord); border-radius: 2px; }
+.mood-words li { position: relative; padding: 9px 14px 19px; border: 0; border-radius: 0; background: linear-gradient(rgb(20 0 30 / .2) 0 5px, transparent 5px), var(--fc, var(--mari)); color: var(--ink-d); font: 700 16px/1.1 var(--font-body);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), 87.5% 100%, 75% calc(100% - 7px), 62.5% 100%, 50% calc(100% - 7px), 37.5% 100%, 25% calc(100% - 7px), 12.5% 100%, 0 calc(100% - 7px)); }
+.mood-words li:nth-child(6n+1) { --fc: var(--mari); }
+.mood-words li:nth-child(6n+2) { --fc: var(--pink-l); }
+.mood-words li:nth-child(6n+3) { --fc: var(--lime); }
+.mood-words li:nth-child(6n+4) { --fc: var(--turq); }
+.mood-words li:nth-child(6n+5) { --fc: var(--yellow); }
+.mood-words li:nth-child(6n+6) { --fc: #c9a2f2; }
+.origins { grid-column: 2; grid-row: 2 / span 2; max-width: none; margin: 4px 0 0; padding: 92px 30px 30px; position: relative; color: #22100a; font-size: 17px; line-height: 1.55; rotate: .8deg;
+  background: radial-gradient(circle at 20% 30%, rgb(255 255 255 / .12), transparent 50%), repeating-linear-gradient(8deg, rgb(120 50 0 / .035) 0 2px, transparent 2px 7px), var(--broadside);
+  box-shadow: inset 0 0 0 10px var(--broadside), inset 0 0 0 13px #22100a, inset 0 0 0 16px var(--broadside), inset 0 0 0 17px #22100a, var(--drop); }
+.origins::before { content: ''; position: absolute; left: 50%; top: 24px; width: 84px; height: 58px; margin-left: -42px; background: url("../media/mexican-folk-art/calavera-print.svg") center / contain no-repeat; }
+.origins h3 { margin: 0 0 12px; padding-bottom: 10px; border-bottom: 3px double #22100a; font: 700 1.5rem/1.1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; text-align: center; color: #22100a; }
+.origins a { color: #6b1500; }
+.origins .cite a:hover { color: var(--pink-d); }
+
+/* ---------- Core elements as Lotería cards ---------- */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 28px; }
+.core-item { --fr: var(--pink); position: relative; padding: 18px 18px 22px; background: radial-gradient(circle at 30% 20%, #fffaf0, transparent 60%), var(--card); border: 0; border-radius: 8px; color: var(--ink-d); font-size: 17px; line-height: 1.5;
+  box-shadow: inset 0 0 0 3px var(--ink-d), inset 0 0 0 8px var(--card), inset 0 0 0 11px var(--fr), 0 3px 0 rgb(43 18 56 / .4), 0 18px 26px -8px rgb(40 0 30 / .6); transition: translate .25s ease, rotate .25s ease; }
+.core-item:nth-child(odd) { rotate: -.6deg; }
+.core-item:nth-child(even) { rotate: .5deg; }
+.core-item:hover { translate: 0 -4px; rotate: 0deg; }
+.core-item::before { content: ''; display: block; aspect-ratio: 3 / 2; margin: 0 0 14px; background: var(--pic) center / cover no-repeat, #fff; border: 3px solid var(--ink-d); border-radius: 2px; }
+.core-item::after { content: counter(core); position: absolute; left: 25px; top: 25px; min-width: 38px; padding: 4px 6px 2px; background: var(--card); border: 3px solid var(--ink-d); border-radius: 3px; color: var(--ink-d); font: 700 22px/1 var(--font-body); text-align: center; }
+.core-item h3 { margin: 0 0 12px; padding-bottom: 10px; border-bottom: 3px solid var(--ink-d); font: 700 1.16rem/1.15 var(--font-body); letter-spacing: .07em; text-transform: uppercase; text-align: center; color: var(--ink-d); }
+.core-item a { color: var(--pink-d); }
+.core-item:nth-child(1) { --pic: url("../media/mexican-folk-art/lot-1.svg"); --fr: var(--pink); }
+.core-item:nth-child(2) { --pic: url("../media/mexican-folk-art/lot-2.svg"); --fr: var(--mari); }
+.core-item:nth-child(3) { --pic: url("../media/mexican-folk-art/lot-3.svg"); --fr: var(--turq); }
+.core-item:nth-child(4) { --pic: url("../media/mexican-folk-art/lot-4.svg"); --fr: var(--violet); }
+.core-item:nth-child(5) { --pic: url("../media/mexican-folk-art/lot-5.svg"); --fr: var(--lime); }
+.core-item:nth-child(6) { --pic: url("../media/mexican-folk-art/lot-6.svg"); --fr: var(--red); }
+
+/* ---------- How to do it: planks, each painted at one end like an alebrije ---------- */
+.steps { max-width: none; gap: 16px; }
+.step { --sc: var(--pink); --sc2: var(--gold); display: grid; grid-template-columns: 96px minmax(0, 290px) minmax(0, 1fr); column-gap: 26px; align-items: start; padding: 20px 26px 20px 0; background: var(--card); color: var(--ink-d); border-radius: 4px; font-size: 17px; line-height: 1.5; box-shadow: var(--drop); overflow: hidden; }
+.step::before { content: counter(step); position: relative; left: auto; top: auto; grid-row: 1 / span 2; align-self: stretch; width: auto; height: auto; min-height: 96px; margin: -20px 0; display: grid; place-items: center; border-radius: 0; color: var(--ink-d); font: 900 34px/1 var(--font-display);
+  background: radial-gradient(circle, var(--card) 0 23px, var(--ink-d) 23.5px 26px, transparent 26.5px) center / 100% 100% no-repeat,
+    radial-gradient(circle, var(--sc2) 0 2.2px, transparent 2.8px) 4px 4px / 15px 15px,
+    repeating-linear-gradient(180deg, transparent 0 16px, rgb(20 0 30 / .55) 16px 18px, var(--sc2) 18px 22px, rgb(20 0 30 / .55) 22px 24px, transparent 24px 40px),
+    var(--sc);
+  box-shadow: inset -3px 0 0 var(--ink-d); }
+.step h3 { grid-column: 2; margin: 0; font: 700 1.3rem/1.2 var(--font-body); color: var(--ink-d); }
+.step p { grid-column: 3; grid-row: 1 / span 2; }
+.step a { color: var(--pink-d); }
+.step:nth-child(7n+1) { --sc: var(--pink); --sc2: var(--gold); }
+.step:nth-child(7n+2) { --sc: var(--mari); --sc2: var(--violet); }
+.step:nth-child(7n+3) { --sc: var(--turq); --sc2: var(--pink); }
+.step:nth-child(7n+4) { --sc: var(--violet); --sc2: var(--lime); }
+.step:nth-child(7n+5) { --sc: var(--lime); --sc2: var(--red); }
+.step:nth-child(7n+6) { --sc: var(--red); --sc2: var(--yellow); }
+.step:nth-child(7n+7) { --sc: var(--yellow); --sc2: var(--turq); }
+
+.how-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; margin-top: 40px; align-items: start; }
+.specs, .do, .avoid, .learn { position: relative; background: var(--card); color: var(--ink-d); border: 0; border-radius: 0 0 4px 4px; box-shadow: var(--drop); }
+/* A lace edge of small half-moons cut along the top of every paper sheet. */
+.specs::before, .do::before, .avoid::before, .learn::before { content: ''; position: absolute; left: 0; right: 0; top: -7px; height: 8px; background: radial-gradient(circle at 7px 0, transparent 4.2px, var(--card) 4.8px) 0 0 / 14px 8px repeat-x; }
+.specs { padding: 22px 24px 18px; }
+.specs h3, .do h3, .avoid h3, .learn h3 { margin: 0 0 10px; font: 900 1.7rem/1.1 var(--font-display); color: var(--pink-d); }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 14px; padding: 9px 0; border-top: 2px dotted rgb(43 18 56 / .35); font-size: 16.5px; }
+.spec dt { font-weight: 700; color: var(--pink-d); }
+.spec .cite a, .dodont .cite a, .learn .cite a { color: var(--ink-d); }
+.dodont { gap: 30px; }
+/* Side by side under the cheat sheet, Do and Avoid are two sheets of one height. */
+.how-c .do, .how-c .avoid { align-self: stretch !important; }
+.do, .avoid { padding: 0 24px 18px; }
+.do h3, .avoid h3 { margin: 0 -24px 14px; padding: 12px 24px 18px; color: var(--bone); background: var(--hc); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), 95% 100%, 90% calc(100% - 7px), 85% 100%, 80% calc(100% - 7px), 75% 100%, 70% calc(100% - 7px), 65% 100%, 60% calc(100% - 7px), 55% 100%, 50% calc(100% - 7px), 45% 100%, 40% calc(100% - 7px), 35% 100%, 30% calc(100% - 7px), 25% 100%, 20% calc(100% - 7px), 15% 100%, 10% calc(100% - 7px), 5% 100%, 0 calc(100% - 7px)); }
+.do { --hc: var(--green); }
+.avoid { --hc: var(--pink-d); }
+.do::before { background: radial-gradient(circle at 7px 0, transparent 4.2px, var(--green) 4.8px) 0 0 / 14px 8px repeat-x; }
+.avoid::before { background: radial-gradient(circle at 7px 0, transparent 4.2px, var(--pink-d) 4.8px) 0 0 / 14px 8px repeat-x; }
+.dodont ul { padding-left: 0; list-style: none; }
+.dodont li { position: relative; margin-bottom: 10px; padding-left: 26px; font-size: 16.5px; line-height: 1.5; }
+.dodont li::before { content: ''; position: absolute; left: 0; top: .32em; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle, var(--yellow) 0 2.6px, var(--mari) 3px 5px, var(--mari-d) 5.4px 6.4px, transparent 6.8px), conic-gradient(from 10deg, var(--mari) 0 10%, var(--mari-d) 0 20%, var(--mari) 0 30%, var(--mari-d) 0 40%, var(--mari) 0 50%, var(--mari-d) 0 60%, var(--mari) 0 70%, var(--mari-d) 0 80%, var(--mari) 0 90%, var(--mari-d) 0); }
+.avoid li::before { background: radial-gradient(circle, var(--card) 0 2px, var(--ink-d) 2.4px 3.6px, transparent 4px), radial-gradient(circle, var(--pink-l) 0 7.4px, transparent 7.8px); }
+.learn { margin-top: 40px; padding: 22px 24px 18px; }
+.learn h3 { color: var(--teal); }
+.learn ul { gap: 14px 30px; }
+/* Three tools sit in three columns on a wide screen and one under another below that, never two over one. */
+.learn ul:has(> li:nth-child(3):last-child) { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .learn ul:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.learn .ref-item { margin: 0; }
+.learn .ref-item > a { color: var(--teal); font-weight: 700; }
+.learn .ref-meta { color: var(--ink-2); }
+.learn .ref-note { font-size: 16px; }
+.brief { margin-top: 30px; }
+.btn { padding: 10px 18px; background: var(--pink); border: 0; border-radius: 22px; color: var(--bone); font: 700 16px/1.2 var(--font-body); box-shadow: 0 3px 0 var(--pink-d), 0 8px 14px rgb(0 0 0 / .3); }
+.btn:hover { background: #ff2aa0; }
+.brief-note { color: var(--bone); font-size: 15px; }
+.sec-palette .brief-note { color: var(--ink-2); }
+
+/* ---------- Palette: the colours as tissue-paper flags on one string ---------- */
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 30px 16px; padding-top: 6px; }
+.swatch { position: relative; }
+.swatch::before { content: ''; position: absolute; left: -10px; right: -10px; top: 3px; height: 2px; background: var(--ink-d); opacity: .75; }
+.swatch button { position: relative; background: transparent; border: 0; border-radius: 0; overflow: visible; color: var(--ink-d); text-align: center; }
+.swatch .chip { position: relative; height: auto; aspect-ratio: 100 / 118; background: linear-gradient(rgb(20 0 30 / .22) 0 5.6%, transparent 5.6%), linear-gradient(170deg, rgb(255 255 255 / .16), transparent 45%), var(--c); box-shadow: inset 0 0 0 1.5px rgb(43 18 56 / .55); transform-origin: 50% 2%; transition: rotate .4s ease; }
+.swatch button:hover .chip, .swatch button:focus-visible .chip { rotate: 4deg; }
+.swatch button::before { content: ''; position: absolute; left: 0; right: 0; top: 0; aspect-ratio: 100 / 118; translate: 6px 12px; background: #2b1238; opacity: .3; filter: blur(1.2px); transform-origin: 50% 2%; transition: rotate .4s ease; }
+.swatch button:hover::before, .swatch button:focus-visible::before { rotate: 4deg; }
+.swatch:nth-child(5n+1) { --m: var(--pp1); }
+.swatch:nth-child(5n+2) { --m: var(--pp2); }
+.swatch:nth-child(5n+3) { --m: var(--pp3); }
+.swatch:nth-child(5n+4) { --m: var(--pp4); }
+.swatch:nth-child(5n+5) { --m: var(--pp5); }
+.swatch-name { padding: 12px 2px 0; font-size: 16px; line-height: 1.2; color: var(--ink-d); }
+.swatch-hex { padding: 3px 2px 0; font-size: 15px; color: var(--ink-2); letter-spacing: .03em; }
+.palette-note { color: var(--ink-2); }
+.palette-actions .btn { background: var(--teal); box-shadow: 0 3px 0 var(--teal-d), 0 8px 14px rgb(0 0 0 / .2); }
+.palette-actions .btn:hover { background: #0c7685; }
+
+/* ---------- Feel the vibe: loops in punched-tin frames, tracks on paper tickets ---------- */
+.sec-vibe h3, .sec-refs .ref-gallery + .ref-lists h3 { font: 900 1.8rem/1.1 var(--font-display); color: var(--gold); text-shadow: 2px 2px 0 var(--ink-d); margin-bottom: 14px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+@media (min-width: 1061px) { .loops { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.loop { padding: 12px; border-radius: 4px; background: radial-gradient(circle, rgb(255 255 255 / .75) 0 1.1px, transparent 1.6px) 3px 3px / 9px 9px, radial-gradient(circle, rgb(80 60 20 / .45) 0 1.1px, transparent 1.6px) 4px 4px / 9px 9px, linear-gradient(135deg, #c9c0a6, #f4efe0 28%, #a99f84 55%, #f0e9d4 78%, #b6ac90); box-shadow: inset 0 0 0 2px rgb(60 45 15 / .5), var(--drop); }
+/* One shape for every clip, so the captions line up; each caption sits on a plain paper label, off the punched tin. */
+.loop video { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 2px; box-shadow: 0 0 0 2px rgb(40 30 10 / .7); }
+.loop figcaption { margin-top: 9px; padding: 6px 8px; background: var(--card); border-radius: 2px; box-shadow: inset 0 0 0 1px rgb(60 45 15 / .35); color: var(--ink-d); font-size: 14px; }
+.loop figcaption a { color: var(--ink-d); }
+.loop .shot-meta { color: #3d2c4c; }
+.tracks { max-width: none; gap: 14px; }
+/* Each track is a paper ticket with its note written on the wall beside it. */
+.track { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) auto; column-gap: 24px; }
+.track-btn { padding: 12px 14px; background: var(--card); border: 0; border-radius: 3px; color: var(--ink-d); box-shadow: var(--drop); }
+.track-btn:hover, .track.is-playing .track-btn { box-shadow: inset 0 0 0 3px var(--gold), var(--drop); }
+.track-play { width: 38px; height: 38px; border-radius: 50%; background: var(--pink); color: var(--bone); }
+.track-title { font-size: 17px; }
+.track-artist { color: var(--ink-2); font-size: 15px; }
+.track-note { grid-column: 2; grid-row: 1; margin: 0; color: var(--bone); font-size: 16px; line-height: 1.45; }
+.track-yt { grid-column: 3; grid-row: 1; color: var(--gold); font-size: 15px; }
+.player { background: var(--card); color: var(--ink-d); border: 0; border-radius: 4px; box-shadow: 0 0 0 3px var(--pink), 0 12px 30px rgb(0 0 0 / .5); }
+.player-now, .player-artist { color: var(--ink-2); }
+.player-close { color: var(--ink-d); }
+
+/* ---------- More references: pictures in painted frames, lists on paper ---------- */
+.ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 26px; margin-bottom: 44px; }
+/* On a wide screen the pictures hang in rows of three and four: ten read as 3 + 3 + 4, eleven as 3 + 4 + 4, eight as 4 + 4. */
+@media (min-width: 900px) {
+  .ref-gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .ref-gallery .shot { grid-column: span 4; }
+  .ref-gallery .shot:first-child:nth-last-child(7) ~ .shot:nth-child(n+4), .ref-gallery .shot:first-child:nth-last-child(8), .ref-gallery .shot:first-child:nth-last-child(8) ~ .shot,
+  .ref-gallery .shot:first-child:nth-last-child(10) ~ .shot:nth-child(n+7), .ref-gallery .shot:first-child:nth-last-child(11) ~ .shot:nth-child(n+4) { grid-column: span 3; }
+}
+.ref-gallery .shot-link { border-radius: 2px; box-shadow: 0 0 0 3px var(--ink-d), 0 0 0 9px var(--fr, var(--mari)), 0 0 0 11px var(--ink-d), var(--drop); }
+.ref-gallery .shot:nth-child(5n+1) { --fr: var(--mari); }
+.ref-gallery .shot:nth-child(5n+2) { --fr: var(--pink); }
+.ref-gallery .shot:nth-child(5n+3) { --fr: var(--turq); }
+.ref-gallery .shot:nth-child(5n+4) { --fr: var(--lime); }
+.ref-gallery .shot:nth-child(5n+5) { --fr: var(--yellow); }
+.ref-gallery figcaption { padding-top: 16px; color: var(--bone); font-size: 14px; }
+.ref-gallery .shot-meta { color: #e6d3ff; }
+.ref-lists { gap: 30px; }
+/* Stacked, a list of three games runs in three columns instead of leaving one empty slot. */
+.rl-stack > .ref-list > ul:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.ref-list { position: relative; padding: 22px 24px 14px; background: var(--card); color: var(--ink-d); border-radius: 0 0 4px 4px; box-shadow: var(--drop); }
+.ref-list::before { content: ''; position: absolute; left: 0; right: 0; top: -7px; height: 8px; background: radial-gradient(circle at 7px 0, transparent 4.2px, var(--card) 4.8px) 0 0 / 14px 8px repeat-x; }
+.ref-list h3 { margin: 0 0 12px; font: 900 1.7rem/1.1 var(--font-display); color: var(--pink-d); }
+.ref-item { margin-bottom: 14px; }
+.ref-item > a { color: var(--pink-d); font-weight: 700; font-size: 17px; }
+.ref-meta { color: var(--ink-2); font-size: 14px; }
+.ref-note { font-size: 16px; line-height: 1.5; }
+.ref-list .cite a { color: var(--ink-d); }
+
+/* ---------- Sources: printed small, on lime-washed plaster ---------- */
+.sources { font-size: 16px; gap: 6px 30px; }
+.source { padding: 8px 6px; border-bottom: 1px dashed rgb(43 18 56 / .25); border-radius: 0; }
+.source-n { color: var(--pink-d); font-family: var(--font-display); font-weight: 900; font-size: 18px; }
+.source a { color: var(--ink-d); font-weight: 700; }
+.source a:hover { color: var(--pink-d); }
+.source-meta { color: var(--ink-2); font-size: 14px; }
+.source:target { outline-color: var(--pink-d); }
+
+/* ---------- Related styles: three more Lotería cards ---------- */
+/* Three cards read three across, four read 4 or 2 + 2; below that one column of cards laid on their side, never 2 + 1. */
+.related { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; counter-reset: rel; }
+.related:has(> :nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1060px) { .related:has(> :nth-child(4)) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 773px) {
+  .related:not(:has(> :nth-child(4))) { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .related:not(:has(> :nth-child(4))) a { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); align-items: center; column-gap: 18px; padding: 14px 18px 14px 14px; }
+  .related:not(:has(> :nth-child(4))) span { padding-top: 0; text-align: left; }
+}
+@media (max-width: 560px) { .related:has(> :nth-child(4)) { grid-template-columns: minmax(0, 1fr); } }
+.related-item { counter-increment: rel; }
+.related a { position: relative; padding: 12px 12px 14px; background: var(--card); border-radius: 6px; color: var(--ink-d); box-shadow: inset 0 0 0 3px var(--ink-d), inset 0 0 0 7px var(--card), inset 0 0 0 9px var(--mari), var(--drop); transition: translate .25s ease; }
+.related a:hover { translate: 0 -4px; }
+.related a::after { content: counter(rel); position: absolute; left: 18px; top: 18px; min-width: 30px; padding: 3px 5px 1px; background: var(--card); border: 2.5px solid var(--ink-d); border-radius: 3px; font: 700 18px/1 var(--font-body); text-align: center; }
+.related img { border: 2.5px solid var(--ink-d); background: var(--night); }
+.related span { padding-top: 10px; font-size: 16px; text-align: center; text-transform: uppercase; letter-spacing: .05em; }
+
+/* ---------- Foot: the night again, with candles along the edge ---------- */
+.foot { padding-top: calc(var(--pp-band) + 6px); padding-bottom: 40px; border-top: 0; background: radial-gradient(60% 60% at 50% 100%, rgb(245 154 27 / .16), transparent 70%), var(--night); color: #e6d3ff; font-size: 15px; }
+.foot-nav { margin-top: 18px; }
+.foot-nav a { color: var(--gold); font-weight: 700; font-size: 16px; }
+
+@media (max-width: 1060px) {
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .step { grid-template-columns: 84px minmax(0, 1fr); row-gap: 8px; padding-right: 22px; }
+  .step::before { grid-row: 1 / span 2; }
+  .step h3 { grid-column: 2; }
+  .step p { grid-column: 2; grid-row: 2; }
+}
+@media (max-width: 1000px) and (min-width: 721px) {
+  .toc ul { display: grid; grid-template-columns: repeat(3, minmax(0, 200px)); justify-content: center; }
+  .toc a { min-width: 0; }
+}
+@media (max-width: 860px) {
+  .track { grid-template-columns: minmax(0, 1fr) auto; }
+  .track-note { grid-column: 1 / -1; grid-row: 2; margin: 8px 0 4px 4px; }
+  .track-yt { grid-column: 2; }
+  .sec-feel { grid-template-columns: minmax(0, 1fr); }
+  .feel-body, .mood-words, .origins { grid-column: 1; grid-row: auto; }
+  .origins { margin-top: 34px; rotate: .4deg; }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  :root { --atlas-h: 48px; }
+  .hero { --pp-band: 108px; }
+  .hero-text { padding: 54px 30px 28px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); row-gap: 22px; padding-bottom: 0; }
+  .hero-gallery::before { grid-column: 1; grid-row: 1 / 3; margin: -14px -10px -40px; }
+  .hero-gallery::after { grid-column: 1; grid-row: 3 / 5; margin: 30px -10px -40px; }
+  .hero-gallery .shot-1, .hero-gallery .shot-2, .hero-gallery .shot-3, .hero-gallery .shot-4 { grid-column: 1; }
+  .hero-gallery .shot-1 { grid-row: 1; }
+  .hero-gallery .shot-2 { grid-row: 2; }
+  .hero-gallery .shot-3 { grid-row: 3; }
+  .hero-gallery .shot-4 { grid-row: 4; }
+  .hero-gallery .shot-3 { margin-top: 44px; }
+  .hero-gallery .shot-link, .hero-gallery .shot-3 .shot-link, .hero-gallery .shot-4 .shot-link { height: auto; aspect-ratio: 16 / 10; }
+  .hero-gallery .mfa-petals { grid-row: 5; margin: 20px -10px 0; }
+  .track-btn { grid-column: 1 / -1; }
+  .track-note { grid-column: 1; grid-row: 2; }
+  .track-yt { grid-column: 2; grid-row: 2; align-self: start; margin-top: 8px; }
+  .mfa-candle { display: none; }
+  /* Six flags read 3 + 3 (2 + 2 + 2 on narrow phones), never with one left alone on a row. */
+  .toc ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toc li { display: flex; }
+  .toc a { flex: 1; min-width: 0; padding: 10px 12px 21px; font-size: 16px; }
+  .sec { --pp-band: 96px; padding-bottom: 66px; }
+  .foot { --pp-band: 96px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .step { grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; padding: 16px 18px 16px 0; }
+  .step::before { margin: -16px 0; min-height: 80px; font-size: 28px; background-size: auto, 15px 15px, auto, auto; background: radial-gradient(circle, var(--card) 0 19px, var(--ink-d) 19.5px 22px, transparent 22.5px) center / 100% 100% no-repeat, radial-gradient(circle, var(--sc2) 0 2.2px, transparent 2.8px) 4px 4px / 15px 15px, repeating-linear-gradient(180deg, transparent 0 16px, rgb(20 0 30 / .55) 16px 18px, var(--sc2) 18px 22px, rgb(20 0 30 / .55) 22px 24px, transparent 24px 40px), var(--sc); }
+  .step h3 { font-size: 1.18rem; }
+  .origins { padding: 86px 28px 24px; }
+  .specs, .do, .avoid, .learn, .ref-list { padding-left: 18px; padding-right: 18px; }
+  .do h3, .avoid h3 { margin-left: -18px; margin-right: -18px; padding-left: 18px; padding-right: 18px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 12px; }
+  .ref-gallery, .loops { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 440px) {
+  .hero-text { padding: 50px 24px 24px; }
+  .hero-title { text-shadow: 2px 2px 0 var(--pink), 4px 4px 0 var(--ink-d); }
+  .toc ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) { .mood-words { grid-template-columns: repeat(2, max-content); } }
+
+/* masks:start: papel picado masks, written by .work/build/mexican-folk-art/theme-tools/masks.mjs (calavera, cempasúchil, dove, star, heart) */
+:root {
+  --pp1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cdefs%3E%3CclipPath id='f'%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/clipPath%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='100' height='118'%3E%3Cg fill='white'%3E%3Cpath d='M0 0H100V112A5 5 0 0 1 90 112A5 5 0 0 1 80 112A5 5 0 0 1 70 112A5 5 0 0 1 60 112A5 5 0 0 1 50 112A5 5 0 0 1 40 112A5 5 0 0 1 30 112A5 5 0 0 1 20 112A5 5 0 0 1 10 112A5 5 0 0 1 0 112Z'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M9 8.3L10.9 10.6L9 12.9L7.1 10.6Z'/%3E%3Cpath d='M17.2 8.3L19.1 10.6L17.2 12.9L15.3 10.6Z'/%3E%3Cpath d='M25.4 8.3L27.3 10.6L25.4 12.9L23.5 10.6Z'/%3E%3Cpath d='M33.6 8.3L35.5 10.6L33.6 12.9L31.7 10.6Z'/%3E%3Cpath d='M41.8 8.3L43.7 10.6L41.8 12.9L39.9 10.6Z'/%3E%3Cpath d='M50 8.3L51.9 10.6L50 12.9L48.1 10.6Z'/%3E%3Cpath d='M58.2 8.3L60.1 10.6L58.2 12.9L56.3 10.6Z'/%3E%3Cpath d='M66.4 8.3L68.3 10.6L66.4 12.9L64.5 10.6Z'/%3E%3Cpath d='M74.6 8.3L76.5 10.6L74.6 12.9L72.7 10.6Z'/%3E%3Cpath d='M82.8 8.3L84.7 10.6L82.8 12.9L80.9 10.6Z'/%3E%3Cpath d='M91 8.3L92.9 10.6L91 12.9L89.1 10.6Z'/%3E%3Ccircle cx='4' cy='19' r='1.35'/%3E%3Ccircle cx='96' cy='19' r='1.35'/%3E%3Ccircle cx='4' cy='26.5' r='1.35'/%3E%3Ccircle cx='96' cy='26.5' r='1.35'/%3E%3Ccircle cx='4' cy='34' r='1.35'/%3E%3Ccircle cx='96' cy='34' r='1.35'/%3E%3Ccircle cx='4' cy='41.5' r='1.35'/%3E%3Ccircle cx='96' cy='41.5' r='1.35'/%3E%3Ccircle cx='4' cy='49' r='1.35'/%3E%3Ccircle cx='96' cy='49' r='1.35'/%3E%3Ccircle cx='4' cy='56.5' r='1.35'/%3E%3Ccircle cx='96' cy='56.5' r='1.35'/%3E%3Ccircle cx='4' cy='64' r='1.35'/%3E%3Ccircle cx='96' cy='64' r='1.35'/%3E%3Ccircle cx='4' cy='71.5' r='1.35'/%3E%3Ccircle cx='96' cy='71.5' r='1.35'/%3E%3Ccircle cx='4' cy='79' r='1.35'/%3E%3Ccircle cx='96' cy='79' r='1.35'/%3E%3Ccircle cx='4' cy='86.5' r='1.35'/%3E%3Ccircle cx='96' cy='86.5' r='1.35'/%3E%3Ccircle cx='4' cy='94' r='1.35'/%3E%3Ccircle cx='96' cy='94' r='1.35'/%3E%3Ccircle cx='4' cy='101.5' r='1.35'/%3E%3Ccircle cx='96' cy='101.5' r='1.35'/%3E%3Cpath d='M10 106.9L11.3 108.8L10 110.7L8.7 108.8Z'/%3E%3Cpath d='M20 106.9L21.3 108.8L20 110.7L18.7 108.8Z'/%3E%3Cpath d='M30 106.9L31.3 108.8L30 110.7L28.7 108.8Z'/%3E%3Cpath d='M40 106.9L41.3 108.8L40 110.7L38.7 108.8Z'/%3E%3Cpath d='M50 106.9L51.3 108.8L50 110.7L48.7 108.8Z'/%3E%3Cpath d='M60 106.9L61.3 108.8L60 110.7L58.7 108.8Z'/%3E%3Cpath d='M70 106.9L71.3 108.8L70 110.7L68.7 108.8Z'/%3E%3Cpath d='M80 106.9L81.3 108.8L80 110.7L78.7 108.8Z'/%3E%3Cpath d='M90 106.9L91.3 108.8L90 110.7L88.7 108.8Z'/%3E%3Ccircle cx='5' cy='113' r='1.5'/%3E%3Ccircle cx='15' cy='113' r='1.5'/%3E%3Ccircle cx='25' cy='113' r='1.5'/%3E%3Ccircle cx='35' cy='113' r='1.5'/%3E%3Ccircle cx='45' cy='113' r='1.5'/%3E%3Ccircle cx='55' cy='113' r='1.5'/%3E%3Ccircle cx='65' cy='113' r='1.5'/%3E%3Ccircle cx='75' cy='113' r='1.5'/%3E%3Ccircle cx='85' cy='113' r='1.5'/%3E%3Ccircle cx='95' cy='113' r='1.5'/%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/g%3E%3Cg clip-path='url(%23f)'%3E%3Cg fill='white'%3E%3Ccircle cx='50' cy='51' r='21'/%3E%3Crect x='37' y='58' width='26' height='25' rx='7'/%3E%3Cpath d='M50 31L50 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M29 51L8 51' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M71 51L92 51' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M50 82L50 105.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M36 36L21 27' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M64 36L79 27' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M40 80L21 93' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M60 80L79 93' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cellipse cx='18' cy='51' rx='6.5' ry='3'/%3E%3Cellipse cx='82' cy='51' rx='6.5' ry='3'/%3E%3Ccircle cx='17' cy='23.5' r='6'/%3E%3Cpath d='M17 23.5L8 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='23.5' r='6'/%3E%3Cpath d='M83 23.5L92 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='96.5' r='6'/%3E%3Cpath d='M17 96.5L8 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='96.5' r='6'/%3E%3Cpath d='M83 96.5L92 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='41.5' cy='50' r='6.2'/%3E%3Ccircle cx='58.5' cy='50' r='6.2'/%3E%3Cpath d='M50 57.5 46.6 64.2Q50 66.4 53.4 64.2Z'/%3E%3Crect x='40.6' y='69.5' width='2.5' height='8.5' rx='1'/%3E%3Crect x='44.7' y='69.5' width='2.5' height='8.5' rx='1'/%3E%3Crect x='48.8' y='69.5' width='2.5' height='8.5' rx='1'/%3E%3Crect x='52.9' y='69.5' width='2.5' height='8.5' rx='1'/%3E%3Crect x='57' y='69.5' width='2.5' height='8.5' rx='1'/%3E%3Ccircle cx='50' cy='33.5' r='1.5'/%3E%3Ccircle cx='53.46' cy='35.5' r='1.5'/%3E%3Ccircle cx='53.46' cy='39.5' r='1.5'/%3E%3Ccircle cx='50' cy='41.5' r='1.5'/%3E%3Ccircle cx='46.54' cy='39.5' r='1.5'/%3E%3Ccircle cx='46.54' cy='35.5' r='1.5'/%3E%3Ccircle cx='50' cy='37.5' r='1.3'/%3E%3Ccircle cx='35.5' cy='62' r='1.5'/%3E%3Ccircle cx='64.5' cy='62' r='1.5'/%3E%3Cellipse cx='18' cy='51' rx='4' ry='0.8'/%3E%3Cellipse cx='82' cy='51' rx='4' ry='0.8'/%3E%3Ccircle cx='17' cy='23.5' r='1.8'/%3E%3Ccircle cx='17' cy='19.78' r='1.05'/%3E%3Ccircle cx='20.22' cy='21.64' r='1.05'/%3E%3Ccircle cx='20.22' cy='25.36' r='1.05'/%3E%3Ccircle cx='17' cy='27.22' r='1.05'/%3E%3Ccircle cx='13.78' cy='25.36' r='1.05'/%3E%3Ccircle cx='13.78' cy='21.64' r='1.05'/%3E%3Ccircle cx='83' cy='23.5' r='1.8'/%3E%3Ccircle cx='83' cy='19.78' r='1.05'/%3E%3Ccircle cx='86.22' cy='21.64' r='1.05'/%3E%3Ccircle cx='86.22' cy='25.36' r='1.05'/%3E%3Ccircle cx='83' cy='27.22' r='1.05'/%3E%3Ccircle cx='79.78' cy='25.36' r='1.05'/%3E%3Ccircle cx='79.78' cy='21.64' r='1.05'/%3E%3Ccircle cx='17' cy='96.5' r='1.8'/%3E%3Ccircle cx='17' cy='92.78' r='1.05'/%3E%3Ccircle cx='20.22' cy='94.64' r='1.05'/%3E%3Ccircle cx='20.22' cy='98.36' r='1.05'/%3E%3Ccircle cx='17' cy='100.22' r='1.05'/%3E%3Ccircle cx='13.78' cy='98.36' r='1.05'/%3E%3Ccircle cx='13.78' cy='94.64' r='1.05'/%3E%3Ccircle cx='83' cy='96.5' r='1.8'/%3E%3Ccircle cx='83' cy='92.78' r='1.05'/%3E%3Ccircle cx='86.22' cy='94.64' r='1.05'/%3E%3Ccircle cx='86.22' cy='98.36' r='1.05'/%3E%3Ccircle cx='83' cy='100.22' r='1.05'/%3E%3Ccircle cx='79.78' cy='98.36' r='1.05'/%3E%3Ccircle cx='79.78' cy='94.64' r='1.05'/%3E%3C/g%3E%3Cg fill='white'%3E%3Ccircle cx='41.5' cy='46.4' r='0.9'/%3E%3Ccircle cx='44.62' cy='48.2' r='0.9'/%3E%3Ccircle cx='44.62' cy='51.8' r='0.9'/%3E%3Ccircle cx='41.5' cy='53.6' r='0.9'/%3E%3Ccircle cx='38.38' cy='51.8' r='0.9'/%3E%3Ccircle cx='38.38' cy='48.2' r='0.9'/%3E%3Ccircle cx='58.5' cy='46.4' r='0.9'/%3E%3Ccircle cx='61.62' cy='48.2' r='0.9'/%3E%3Ccircle cx='61.62' cy='51.8' r='0.9'/%3E%3Ccircle cx='58.5' cy='53.6' r='0.9'/%3E%3Ccircle cx='55.38' cy='51.8' r='0.9'/%3E%3Ccircle cx='55.38' cy='48.2' r='0.9'/%3E%3Ccircle cx='41.5' cy='50' r='1.6'/%3E%3Ccircle cx='58.5' cy='50' r='1.6'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='100' height='118' mask='url(%23m)'/%3E%3C/svg%3E");
+  --pp2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cdefs%3E%3CclipPath id='f'%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/clipPath%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='100' height='118'%3E%3Cg fill='white'%3E%3Cpath d='M0 0H100V112L95 117.5L90 112L85 117.5L80 112L75 117.5L70 112L65 117.5L60 112L55 117.5L50 112L45 117.5L40 112L35 117.5L30 112L25 117.5L20 112L15 117.5L10 112L5 117.5L0 112Z'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M9 8.3L10.9 10.6L9 12.9L7.1 10.6Z'/%3E%3Cpath d='M17.2 8.3L19.1 10.6L17.2 12.9L15.3 10.6Z'/%3E%3Cpath d='M25.4 8.3L27.3 10.6L25.4 12.9L23.5 10.6Z'/%3E%3Cpath d='M33.6 8.3L35.5 10.6L33.6 12.9L31.7 10.6Z'/%3E%3Cpath d='M41.8 8.3L43.7 10.6L41.8 12.9L39.9 10.6Z'/%3E%3Cpath d='M50 8.3L51.9 10.6L50 12.9L48.1 10.6Z'/%3E%3Cpath d='M58.2 8.3L60.1 10.6L58.2 12.9L56.3 10.6Z'/%3E%3Cpath d='M66.4 8.3L68.3 10.6L66.4 12.9L64.5 10.6Z'/%3E%3Cpath d='M74.6 8.3L76.5 10.6L74.6 12.9L72.7 10.6Z'/%3E%3Cpath d='M82.8 8.3L84.7 10.6L82.8 12.9L80.9 10.6Z'/%3E%3Cpath d='M91 8.3L92.9 10.6L91 12.9L89.1 10.6Z'/%3E%3Ccircle cx='4' cy='19' r='1.35'/%3E%3Ccircle cx='96' cy='19' r='1.35'/%3E%3Ccircle cx='4' cy='26.5' r='1.35'/%3E%3Ccircle cx='96' cy='26.5' r='1.35'/%3E%3Ccircle cx='4' cy='34' r='1.35'/%3E%3Ccircle cx='96' cy='34' r='1.35'/%3E%3Ccircle cx='4' cy='41.5' r='1.35'/%3E%3Ccircle cx='96' cy='41.5' r='1.35'/%3E%3Ccircle cx='4' cy='49' r='1.35'/%3E%3Ccircle cx='96' cy='49' r='1.35'/%3E%3Ccircle cx='4' cy='56.5' r='1.35'/%3E%3Ccircle cx='96' cy='56.5' r='1.35'/%3E%3Ccircle cx='4' cy='64' r='1.35'/%3E%3Ccircle cx='96' cy='64' r='1.35'/%3E%3Ccircle cx='4' cy='71.5' r='1.35'/%3E%3Ccircle cx='96' cy='71.5' r='1.35'/%3E%3Ccircle cx='4' cy='79' r='1.35'/%3E%3Ccircle cx='96' cy='79' r='1.35'/%3E%3Ccircle cx='4' cy='86.5' r='1.35'/%3E%3Ccircle cx='96' cy='86.5' r='1.35'/%3E%3Ccircle cx='4' cy='94' r='1.35'/%3E%3Ccircle cx='96' cy='94' r='1.35'/%3E%3Ccircle cx='4' cy='101.5' r='1.35'/%3E%3Ccircle cx='96' cy='101.5' r='1.35'/%3E%3Cpath d='M10 106.9L11.3 108.8L10 110.7L8.7 108.8Z'/%3E%3Cpath d='M20 106.9L21.3 108.8L20 110.7L18.7 108.8Z'/%3E%3Cpath d='M30 106.9L31.3 108.8L30 110.7L28.7 108.8Z'/%3E%3Cpath d='M40 106.9L41.3 108.8L40 110.7L38.7 108.8Z'/%3E%3Cpath d='M50 106.9L51.3 108.8L50 110.7L48.7 108.8Z'/%3E%3Cpath d='M60 106.9L61.3 108.8L60 110.7L58.7 108.8Z'/%3E%3Cpath d='M70 106.9L71.3 108.8L70 110.7L68.7 108.8Z'/%3E%3Cpath d='M80 106.9L81.3 108.8L80 110.7L78.7 108.8Z'/%3E%3Cpath d='M90 106.9L91.3 108.8L90 110.7L88.7 108.8Z'/%3E%3Ccircle cx='5' cy='113.2' r='1.1'/%3E%3Ccircle cx='15' cy='113.2' r='1.1'/%3E%3Ccircle cx='25' cy='113.2' r='1.1'/%3E%3Ccircle cx='35' cy='113.2' r='1.1'/%3E%3Ccircle cx='45' cy='113.2' r='1.1'/%3E%3Ccircle cx='55' cy='113.2' r='1.1'/%3E%3Ccircle cx='65' cy='113.2' r='1.1'/%3E%3Ccircle cx='75' cy='113.2' r='1.1'/%3E%3Ccircle cx='85' cy='113.2' r='1.1'/%3E%3Ccircle cx='95' cy='113.2' r='1.1'/%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/g%3E%3Cg clip-path='url(%23f)'%3E%3Cg fill='white'%3E%3Cg transform='rotate(0 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(25.71 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(51.43 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(77.14 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(102.86 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(128.57 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(154.29 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(180 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(205.71 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(231.43 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(257.14 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(282.86 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(308.57 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Cg transform='rotate(334.29 50 56)'%3E%3Cellipse cx='50' cy='35' rx='5.3' ry='10'/%3E%3C/g%3E%3Ccircle cx='50' cy='56' r='14.5'/%3E%3Cpath d='M50 25L50 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M19 56L8 56' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M81 56L92 56' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M50 87L50 105.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Cellipse cx='40' cy='97' rx='8.5' ry='3.6' transform='rotate(-28 40 97)'/%3E%3Cellipse cx='60' cy='97' rx='8.5' ry='3.6' transform='rotate(28 60 97)'/%3E%3Ccircle cx='8' cy='14.5' r='12'/%3E%3Ccircle cx='92' cy='14.5' r='12'/%3E%3Ccircle cx='8' cy='105.5' r='12'/%3E%3Ccircle cx='92' cy='105.5' r='12'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cg transform='rotate(0 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(25.71 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(51.43 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(77.14 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(102.86 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(128.57 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(154.29 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(180 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(205.71 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(231.43 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(257.14 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(282.86 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(308.57 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Cg transform='rotate(334.29 50 56)'%3E%3Cellipse cx='50' cy='33.5' rx='1.2' ry='5.2'/%3E%3C/g%3E%3Ccircle cx='50' cy='46.4' r='1.75'/%3E%3Ccircle cx='55.64' cy='48.23' r='1.75'/%3E%3Ccircle cx='59.13' cy='53.03' r='1.75'/%3E%3Ccircle cx='59.13' cy='58.97' r='1.75'/%3E%3Ccircle cx='55.64' cy='63.77' r='1.75'/%3E%3Ccircle cx='50' cy='65.6' r='1.75'/%3E%3Ccircle cx='44.36' cy='63.77' r='1.75'/%3E%3Ccircle cx='40.87' cy='58.97' r='1.75'/%3E%3Ccircle cx='40.87' cy='53.03' r='1.75'/%3E%3Ccircle cx='44.36' cy='48.23' r='1.75'/%3E%3Ccircle cx='50' cy='56' r='4.4'/%3E%3Cellipse cx='40' cy='97' rx='6' ry='0.8' transform='rotate(-28 40 97)'/%3E%3Cellipse cx='60' cy='97' rx='6' ry='0.8' transform='rotate(28 60 97)'/%3E%3Ccircle cx='8' cy='14.5' r='8'/%3E%3Ccircle cx='92' cy='14.5' r='8'/%3E%3Ccircle cx='8' cy='105.5' r='8'/%3E%3Ccircle cx='92' cy='105.5' r='8'/%3E%3C/g%3E%3Cg fill='white'%3E%3Ccircle cx='50' cy='56' r='1.8'/%3E%3Ccircle cx='8' cy='14.5' r='5.2'/%3E%3Ccircle cx='92' cy='14.5' r='5.2'/%3E%3Ccircle cx='8' cy='105.5' r='5.2'/%3E%3Ccircle cx='92' cy='105.5' r='5.2'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='8' cy='14.5' r='2.4'/%3E%3Ccircle cx='92' cy='14.5' r='2.4'/%3E%3Ccircle cx='8' cy='105.5' r='2.4'/%3E%3Ccircle cx='92' cy='105.5' r='2.4'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='100' height='118' mask='url(%23m)'/%3E%3C/svg%3E");
+  --pp3: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cdefs%3E%3CclipPath id='f'%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/clipPath%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='100' height='118'%3E%3Cg fill='white'%3E%3Cpath d='M0 0H100V112A5 5 0 0 1 90 112A5 5 0 0 1 80 112A5 5 0 0 1 70 112A5 5 0 0 1 60 112A5 5 0 0 1 50 112A5 5 0 0 1 40 112A5 5 0 0 1 30 112A5 5 0 0 1 20 112A5 5 0 0 1 10 112A5 5 0 0 1 0 112Z'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M9 8.3L10.9 10.6L9 12.9L7.1 10.6Z'/%3E%3Cpath d='M17.2 8.3L19.1 10.6L17.2 12.9L15.3 10.6Z'/%3E%3Cpath d='M25.4 8.3L27.3 10.6L25.4 12.9L23.5 10.6Z'/%3E%3Cpath d='M33.6 8.3L35.5 10.6L33.6 12.9L31.7 10.6Z'/%3E%3Cpath d='M41.8 8.3L43.7 10.6L41.8 12.9L39.9 10.6Z'/%3E%3Cpath d='M50 8.3L51.9 10.6L50 12.9L48.1 10.6Z'/%3E%3Cpath d='M58.2 8.3L60.1 10.6L58.2 12.9L56.3 10.6Z'/%3E%3Cpath d='M66.4 8.3L68.3 10.6L66.4 12.9L64.5 10.6Z'/%3E%3Cpath d='M74.6 8.3L76.5 10.6L74.6 12.9L72.7 10.6Z'/%3E%3Cpath d='M82.8 8.3L84.7 10.6L82.8 12.9L80.9 10.6Z'/%3E%3Cpath d='M91 8.3L92.9 10.6L91 12.9L89.1 10.6Z'/%3E%3Ccircle cx='4' cy='19' r='1.35'/%3E%3Ccircle cx='96' cy='19' r='1.35'/%3E%3Ccircle cx='4' cy='26.5' r='1.35'/%3E%3Ccircle cx='96' cy='26.5' r='1.35'/%3E%3Ccircle cx='4' cy='34' r='1.35'/%3E%3Ccircle cx='96' cy='34' r='1.35'/%3E%3Ccircle cx='4' cy='41.5' r='1.35'/%3E%3Ccircle cx='96' cy='41.5' r='1.35'/%3E%3Ccircle cx='4' cy='49' r='1.35'/%3E%3Ccircle cx='96' cy='49' r='1.35'/%3E%3Ccircle cx='4' cy='56.5' r='1.35'/%3E%3Ccircle cx='96' cy='56.5' r='1.35'/%3E%3Ccircle cx='4' cy='64' r='1.35'/%3E%3Ccircle cx='96' cy='64' r='1.35'/%3E%3Ccircle cx='4' cy='71.5' r='1.35'/%3E%3Ccircle cx='96' cy='71.5' r='1.35'/%3E%3Ccircle cx='4' cy='79' r='1.35'/%3E%3Ccircle cx='96' cy='79' r='1.35'/%3E%3Ccircle cx='4' cy='86.5' r='1.35'/%3E%3Ccircle cx='96' cy='86.5' r='1.35'/%3E%3Ccircle cx='4' cy='94' r='1.35'/%3E%3Ccircle cx='96' cy='94' r='1.35'/%3E%3Ccircle cx='4' cy='101.5' r='1.35'/%3E%3Ccircle cx='96' cy='101.5' r='1.35'/%3E%3Cpath d='M10 106.9L11.3 108.8L10 110.7L8.7 108.8Z'/%3E%3Cpath d='M20 106.9L21.3 108.8L20 110.7L18.7 108.8Z'/%3E%3Cpath d='M30 106.9L31.3 108.8L30 110.7L28.7 108.8Z'/%3E%3Cpath d='M40 106.9L41.3 108.8L40 110.7L38.7 108.8Z'/%3E%3Cpath d='M50 106.9L51.3 108.8L50 110.7L48.7 108.8Z'/%3E%3Cpath d='M60 106.9L61.3 108.8L60 110.7L58.7 108.8Z'/%3E%3Cpath d='M70 106.9L71.3 108.8L70 110.7L68.7 108.8Z'/%3E%3Cpath d='M80 106.9L81.3 108.8L80 110.7L78.7 108.8Z'/%3E%3Cpath d='M90 106.9L91.3 108.8L90 110.7L88.7 108.8Z'/%3E%3Ccircle cx='5' cy='113' r='1.5'/%3E%3Ccircle cx='15' cy='113' r='1.5'/%3E%3Ccircle cx='25' cy='113' r='1.5'/%3E%3Ccircle cx='35' cy='113' r='1.5'/%3E%3Ccircle cx='45' cy='113' r='1.5'/%3E%3Ccircle cx='55' cy='113' r='1.5'/%3E%3Ccircle cx='65' cy='113' r='1.5'/%3E%3Ccircle cx='75' cy='113' r='1.5'/%3E%3Ccircle cx='85' cy='113' r='1.5'/%3E%3Ccircle cx='95' cy='113' r='1.5'/%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/g%3E%3Cg clip-path='url(%23f)'%3E%3Cg fill='white'%3E%3Cellipse cx='49' cy='63' rx='22' ry='11.5' transform='rotate(-12 49 63)'/%3E%3Ccircle cx='68.5' cy='48.5' r='8.3'/%3E%3Cpath d='M59 57L64 44L74 51L66 62Z'/%3E%3Cpath d='M76 46.4L85.5 49.3L76 52.2Z'/%3E%3Cpath d='M32 64L13 55L17 63L12 70L18 72L14 79L33 71Z'/%3E%3Cpath d='M36 61L24 35L32 40L35 29L42 38L47 28L51 40L57 33L58 47L62 59Z'/%3E%3Cpath d='M85 49.3L92 49.3' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M13 56L8 54' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M14 78.5L8 80' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M47 29L47 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M35 30L30 14.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M8 95Q50 82 92 95' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M45 73L43.5 88.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M55 71L56 88.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M50 88.5L50 105.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cellipse cx='25' cy='91.5' rx='6.5' ry='2.9' transform='rotate(-28 25 91.5)'/%3E%3Cellipse cx='75' cy='91.5' rx='6.5' ry='2.9' transform='rotate(28 75 91.5)'/%3E%3Cellipse cx='36' cy='96.5' rx='5.5' ry='2.5' transform='rotate(25 36 96.5)'/%3E%3Cellipse cx='64' cy='96.5' rx='5.5' ry='2.5' transform='rotate(-25 64 96.5)'/%3E%3Ccircle cx='17' cy='23.5' r='5.5'/%3E%3Cpath d='M17 23.5L8 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='23.5' r='5.5'/%3E%3Cpath d='M83 23.5L92 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='96.5' r='5.5'/%3E%3Cpath d='M17 96.5L8 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='96.5' r='5.5'/%3E%3Cpath d='M83 96.5L92 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='71' cy='47' r='1.9'/%3E%3Cellipse cx='33.5' cy='46' rx='1.2' ry='6.2' transform='rotate(-22 33.5 46)'/%3E%3Cellipse cx='40.5' cy='43.5' rx='1.2' ry='6.5' transform='rotate(-8 40.5 43.5)'/%3E%3Cellipse cx='47.5' cy='44' rx='1.2' ry='6.5' transform='rotate(6 47.5 44)'/%3E%3Cellipse cx='54' cy='47' rx='1.1' ry='5.5' transform='rotate(18 54 47)'/%3E%3Ccircle cx='40' cy='66' r='1.5'/%3E%3Ccircle cx='46' cy='67.4' r='1.5'/%3E%3Ccircle cx='52' cy='67.2' r='1.5'/%3E%3Ccircle cx='58' cy='65.4' r='1.5'/%3E%3Cellipse cx='23' cy='65' rx='5.5' ry='1.1' transform='rotate(8 23 65)'/%3E%3Cellipse cx='23' cy='71.5' rx='5' ry='1' transform='rotate(-6 23 71.5)'/%3E%3Cellipse cx='25' cy='91.5' rx='4.4' ry='0.7' transform='rotate(-28 25 91.5)'/%3E%3Cellipse cx='75' cy='91.5' rx='4.4' ry='0.7' transform='rotate(28 75 91.5)'/%3E%3Ccircle cx='17' cy='23.5' r='1.8'/%3E%3Ccircle cx='17' cy='20.09' r='1.05'/%3E%3Ccircle cx='19.95' cy='21.8' r='1.05'/%3E%3Ccircle cx='19.95' cy='25.2' r='1.05'/%3E%3Ccircle cx='17' cy='26.91' r='1.05'/%3E%3Ccircle cx='14.05' cy='25.2' r='1.05'/%3E%3Ccircle cx='14.05' cy='21.79' r='1.05'/%3E%3Ccircle cx='83' cy='23.5' r='1.8'/%3E%3Ccircle cx='83' cy='20.09' r='1.05'/%3E%3Ccircle cx='85.95' cy='21.8' r='1.05'/%3E%3Ccircle cx='85.95' cy='25.2' r='1.05'/%3E%3Ccircle cx='83' cy='26.91' r='1.05'/%3E%3Ccircle cx='80.05' cy='25.2' r='1.05'/%3E%3Ccircle cx='80.05' cy='21.79' r='1.05'/%3E%3Ccircle cx='17' cy='96.5' r='1.8'/%3E%3Ccircle cx='17' cy='93.09' r='1.05'/%3E%3Ccircle cx='19.95' cy='94.8' r='1.05'/%3E%3Ccircle cx='19.95' cy='98.2' r='1.05'/%3E%3Ccircle cx='17' cy='99.91' r='1.05'/%3E%3Ccircle cx='14.05' cy='98.2' r='1.05'/%3E%3Ccircle cx='14.05' cy='94.8' r='1.05'/%3E%3Ccircle cx='83' cy='96.5' r='1.8'/%3E%3Ccircle cx='83' cy='93.09' r='1.05'/%3E%3Ccircle cx='85.95' cy='94.8' r='1.05'/%3E%3Ccircle cx='85.95' cy='98.2' r='1.05'/%3E%3Ccircle cx='83' cy='99.91' r='1.05'/%3E%3Ccircle cx='80.05' cy='98.2' r='1.05'/%3E%3Ccircle cx='80.05' cy='94.8' r='1.05'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='100' height='118' mask='url(%23m)'/%3E%3C/svg%3E");
+  --pp4: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cdefs%3E%3CclipPath id='f'%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/clipPath%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='100' height='118'%3E%3Cg fill='white'%3E%3Cpath d='M0 0H100V112L95 117.5L90 112L85 117.5L80 112L75 117.5L70 112L65 117.5L60 112L55 117.5L50 112L45 117.5L40 112L35 117.5L30 112L25 117.5L20 112L15 117.5L10 112L5 117.5L0 112Z'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M9 8.3L10.9 10.6L9 12.9L7.1 10.6Z'/%3E%3Cpath d='M17.2 8.3L19.1 10.6L17.2 12.9L15.3 10.6Z'/%3E%3Cpath d='M25.4 8.3L27.3 10.6L25.4 12.9L23.5 10.6Z'/%3E%3Cpath d='M33.6 8.3L35.5 10.6L33.6 12.9L31.7 10.6Z'/%3E%3Cpath d='M41.8 8.3L43.7 10.6L41.8 12.9L39.9 10.6Z'/%3E%3Cpath d='M50 8.3L51.9 10.6L50 12.9L48.1 10.6Z'/%3E%3Cpath d='M58.2 8.3L60.1 10.6L58.2 12.9L56.3 10.6Z'/%3E%3Cpath d='M66.4 8.3L68.3 10.6L66.4 12.9L64.5 10.6Z'/%3E%3Cpath d='M74.6 8.3L76.5 10.6L74.6 12.9L72.7 10.6Z'/%3E%3Cpath d='M82.8 8.3L84.7 10.6L82.8 12.9L80.9 10.6Z'/%3E%3Cpath d='M91 8.3L92.9 10.6L91 12.9L89.1 10.6Z'/%3E%3Ccircle cx='4' cy='19' r='1.35'/%3E%3Ccircle cx='96' cy='19' r='1.35'/%3E%3Ccircle cx='4' cy='26.5' r='1.35'/%3E%3Ccircle cx='96' cy='26.5' r='1.35'/%3E%3Ccircle cx='4' cy='34' r='1.35'/%3E%3Ccircle cx='96' cy='34' r='1.35'/%3E%3Ccircle cx='4' cy='41.5' r='1.35'/%3E%3Ccircle cx='96' cy='41.5' r='1.35'/%3E%3Ccircle cx='4' cy='49' r='1.35'/%3E%3Ccircle cx='96' cy='49' r='1.35'/%3E%3Ccircle cx='4' cy='56.5' r='1.35'/%3E%3Ccircle cx='96' cy='56.5' r='1.35'/%3E%3Ccircle cx='4' cy='64' r='1.35'/%3E%3Ccircle cx='96' cy='64' r='1.35'/%3E%3Ccircle cx='4' cy='71.5' r='1.35'/%3E%3Ccircle cx='96' cy='71.5' r='1.35'/%3E%3Ccircle cx='4' cy='79' r='1.35'/%3E%3Ccircle cx='96' cy='79' r='1.35'/%3E%3Ccircle cx='4' cy='86.5' r='1.35'/%3E%3Ccircle cx='96' cy='86.5' r='1.35'/%3E%3Ccircle cx='4' cy='94' r='1.35'/%3E%3Ccircle cx='96' cy='94' r='1.35'/%3E%3Ccircle cx='4' cy='101.5' r='1.35'/%3E%3Ccircle cx='96' cy='101.5' r='1.35'/%3E%3Cpath d='M10 106.9L11.3 108.8L10 110.7L8.7 108.8Z'/%3E%3Cpath d='M20 106.9L21.3 108.8L20 110.7L18.7 108.8Z'/%3E%3Cpath d='M30 106.9L31.3 108.8L30 110.7L28.7 108.8Z'/%3E%3Cpath d='M40 106.9L41.3 108.8L40 110.7L38.7 108.8Z'/%3E%3Cpath d='M50 106.9L51.3 108.8L50 110.7L48.7 108.8Z'/%3E%3Cpath d='M60 106.9L61.3 108.8L60 110.7L58.7 108.8Z'/%3E%3Cpath d='M70 106.9L71.3 108.8L70 110.7L68.7 108.8Z'/%3E%3Cpath d='M80 106.9L81.3 108.8L80 110.7L78.7 108.8Z'/%3E%3Cpath d='M90 106.9L91.3 108.8L90 110.7L88.7 108.8Z'/%3E%3Ccircle cx='5' cy='113.2' r='1.1'/%3E%3Ccircle cx='15' cy='113.2' r='1.1'/%3E%3Ccircle cx='25' cy='113.2' r='1.1'/%3E%3Ccircle cx='35' cy='113.2' r='1.1'/%3E%3Ccircle cx='45' cy='113.2' r='1.1'/%3E%3Ccircle cx='55' cy='113.2' r='1.1'/%3E%3Ccircle cx='65' cy='113.2' r='1.1'/%3E%3Ccircle cx='75' cy='113.2' r='1.1'/%3E%3Ccircle cx='85' cy='113.2' r='1.1'/%3E%3Ccircle cx='95' cy='113.2' r='1.1'/%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/g%3E%3Cg clip-path='url(%23f)'%3E%3Cg fill='white'%3E%3Crect x='26' y='36' width='48' height='48'/%3E%3Cpath d='M50 25L85 60L50 95L15 60Z'/%3E%3Cpath d='M50 25L50 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M50 95L50 105.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M15 60L8 60' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M85 60L92 60' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='14.5' r='14'/%3E%3Ccircle cx='92' cy='14.5' r='14'/%3E%3Ccircle cx='8' cy='105.5' r='14'/%3E%3Ccircle cx='92' cy='105.5' r='14'/%3E%3Cpath d='M26 36L18 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M74 36L82 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26 84L18 96' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M74 84L82 96' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='50' cy='60' r='15.5'/%3E%3Cpath d='M50 30L53 37L47 37Z'/%3E%3Cpath d='M50 90L53 83L47 83Z'/%3E%3Cpath d='M20 60L27 57L27 63Z'/%3E%3Cpath d='M80 60L73 57L73 63Z'/%3E%3Ccircle cx='31' cy='41' r='2.3'/%3E%3Ccircle cx='69' cy='41' r='2.3'/%3E%3Ccircle cx='31' cy='79' r='2.3'/%3E%3Ccircle cx='69' cy='79' r='2.3'/%3E%3Ccircle cx='8' cy='14.5' r='10'/%3E%3Ccircle cx='92' cy='14.5' r='10'/%3E%3Ccircle cx='8' cy='105.5' r='10'/%3E%3Ccircle cx='92' cy='105.5' r='10'/%3E%3C/g%3E%3Cg fill='white'%3E%3Ccircle cx='50' cy='60' r='11.5'/%3E%3Ccircle cx='8' cy='14.5' r='6.5'/%3E%3Ccircle cx='92' cy='14.5' r='6.5'/%3E%3Ccircle cx='8' cy='105.5' r='6.5'/%3E%3Ccircle cx='92' cy='105.5' r='6.5'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='50' cy='52.6' r='1.8'/%3E%3Ccircle cx='55.23' cy='54.77' r='1.8'/%3E%3Ccircle cx='57.4' cy='60' r='1.8'/%3E%3Ccircle cx='55.23' cy='65.23' r='1.8'/%3E%3Ccircle cx='50' cy='67.4' r='1.8'/%3E%3Ccircle cx='44.77' cy='65.23' r='1.8'/%3E%3Ccircle cx='42.6' cy='60' r='1.8'/%3E%3Ccircle cx='44.77' cy='54.77' r='1.8'/%3E%3Ccircle cx='50' cy='60' r='2.6'/%3E%3Ccircle cx='8' cy='14.5' r='3'/%3E%3Ccircle cx='92' cy='14.5' r='3'/%3E%3Ccircle cx='8' cy='105.5' r='3'/%3E%3Ccircle cx='92' cy='105.5' r='3'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='100' height='118' mask='url(%23m)'/%3E%3C/svg%3E");
+  --pp5: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cdefs%3E%3CclipPath id='f'%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/clipPath%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='100' height='118'%3E%3Cg fill='white'%3E%3Cpath d='M0 0H100V112A5 5 0 0 1 90 112A5 5 0 0 1 80 112A5 5 0 0 1 70 112A5 5 0 0 1 60 112A5 5 0 0 1 50 112A5 5 0 0 1 40 112A5 5 0 0 1 30 112A5 5 0 0 1 20 112A5 5 0 0 1 10 112A5 5 0 0 1 0 112Z'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M9 8.3L10.9 10.6L9 12.9L7.1 10.6Z'/%3E%3Cpath d='M17.2 8.3L19.1 10.6L17.2 12.9L15.3 10.6Z'/%3E%3Cpath d='M25.4 8.3L27.3 10.6L25.4 12.9L23.5 10.6Z'/%3E%3Cpath d='M33.6 8.3L35.5 10.6L33.6 12.9L31.7 10.6Z'/%3E%3Cpath d='M41.8 8.3L43.7 10.6L41.8 12.9L39.9 10.6Z'/%3E%3Cpath d='M50 8.3L51.9 10.6L50 12.9L48.1 10.6Z'/%3E%3Cpath d='M58.2 8.3L60.1 10.6L58.2 12.9L56.3 10.6Z'/%3E%3Cpath d='M66.4 8.3L68.3 10.6L66.4 12.9L64.5 10.6Z'/%3E%3Cpath d='M74.6 8.3L76.5 10.6L74.6 12.9L72.7 10.6Z'/%3E%3Cpath d='M82.8 8.3L84.7 10.6L82.8 12.9L80.9 10.6Z'/%3E%3Cpath d='M91 8.3L92.9 10.6L91 12.9L89.1 10.6Z'/%3E%3Ccircle cx='4' cy='19' r='1.35'/%3E%3Ccircle cx='96' cy='19' r='1.35'/%3E%3Ccircle cx='4' cy='26.5' r='1.35'/%3E%3Ccircle cx='96' cy='26.5' r='1.35'/%3E%3Ccircle cx='4' cy='34' r='1.35'/%3E%3Ccircle cx='96' cy='34' r='1.35'/%3E%3Ccircle cx='4' cy='41.5' r='1.35'/%3E%3Ccircle cx='96' cy='41.5' r='1.35'/%3E%3Ccircle cx='4' cy='49' r='1.35'/%3E%3Ccircle cx='96' cy='49' r='1.35'/%3E%3Ccircle cx='4' cy='56.5' r='1.35'/%3E%3Ccircle cx='96' cy='56.5' r='1.35'/%3E%3Ccircle cx='4' cy='64' r='1.35'/%3E%3Ccircle cx='96' cy='64' r='1.35'/%3E%3Ccircle cx='4' cy='71.5' r='1.35'/%3E%3Ccircle cx='96' cy='71.5' r='1.35'/%3E%3Ccircle cx='4' cy='79' r='1.35'/%3E%3Ccircle cx='96' cy='79' r='1.35'/%3E%3Ccircle cx='4' cy='86.5' r='1.35'/%3E%3Ccircle cx='96' cy='86.5' r='1.35'/%3E%3Ccircle cx='4' cy='94' r='1.35'/%3E%3Ccircle cx='96' cy='94' r='1.35'/%3E%3Ccircle cx='4' cy='101.5' r='1.35'/%3E%3Ccircle cx='96' cy='101.5' r='1.35'/%3E%3Cpath d='M10 106.9L11.3 108.8L10 110.7L8.7 108.8Z'/%3E%3Cpath d='M20 106.9L21.3 108.8L20 110.7L18.7 108.8Z'/%3E%3Cpath d='M30 106.9L31.3 108.8L30 110.7L28.7 108.8Z'/%3E%3Cpath d='M40 106.9L41.3 108.8L40 110.7L38.7 108.8Z'/%3E%3Cpath d='M50 106.9L51.3 108.8L50 110.7L48.7 108.8Z'/%3E%3Cpath d='M60 106.9L61.3 108.8L60 110.7L58.7 108.8Z'/%3E%3Cpath d='M70 106.9L71.3 108.8L70 110.7L68.7 108.8Z'/%3E%3Cpath d='M80 106.9L81.3 108.8L80 110.7L78.7 108.8Z'/%3E%3Cpath d='M90 106.9L91.3 108.8L90 110.7L88.7 108.8Z'/%3E%3Ccircle cx='5' cy='113' r='1.5'/%3E%3Ccircle cx='15' cy='113' r='1.5'/%3E%3Ccircle cx='25' cy='113' r='1.5'/%3E%3Ccircle cx='35' cy='113' r='1.5'/%3E%3Ccircle cx='45' cy='113' r='1.5'/%3E%3Ccircle cx='55' cy='113' r='1.5'/%3E%3Ccircle cx='65' cy='113' r='1.5'/%3E%3Ccircle cx='75' cy='113' r='1.5'/%3E%3Ccircle cx='85' cy='113' r='1.5'/%3E%3Ccircle cx='95' cy='113' r='1.5'/%3E%3Crect x='8' y='14.5' width='84' height='91' rx='2.5'/%3E%3C/g%3E%3Cg clip-path='url(%23f)'%3E%3Cg fill='white'%3E%3Cpath d='M50 92C24 74 15 54 27 40 36 30 46 33 50 41 54 33 64 30 73 40 85 54 76 74 50 92Z'/%3E%3Cpath d='M50 90L50 105.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M34 34L34 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M66 34L66 14.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M19 56L8 56' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M81 56L92 56' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Cellipse cx='14' cy='72' rx='5' ry='2.4' transform='rotate(50 14 72)'/%3E%3Cellipse cx='86' cy='72' rx='5' ry='2.4' transform='rotate(-50 86 72)'/%3E%3Ccircle cx='17' cy='23.5' r='5.5'/%3E%3Cpath d='M17 23.5L8 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='23.5' r='5.5'/%3E%3Cpath d='M83 23.5L92 14.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='96.5' r='5.5'/%3E%3Cpath d='M17 96.5L8 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='83' cy='96.5' r='5.5'/%3E%3Cpath d='M83 96.5L92 105.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='black'%3E%3Cpath d='M50 92C24 74 15 54 27 40 36 30 46 33 50 41 54 33 64 30 73 40 85 54 76 74 50 92Z' transform='translate(50 60) scale(.64) translate(-50 -60)'/%3E%3Ccircle cx='31.5' cy='45' r='1.6'/%3E%3Ccircle cx='68.5' cy='45' r='1.6'/%3E%3Ccircle cx='50' cy='84' r='1.5'/%3E%3Ccircle cx='23.5' cy='58' r='1.4'/%3E%3Ccircle cx='76.5' cy='58' r='1.4'/%3E%3Ccircle cx='17' cy='23.5' r='1.8'/%3E%3Ccircle cx='17' cy='20.09' r='1.05'/%3E%3Ccircle cx='19.95' cy='21.8' r='1.05'/%3E%3Ccircle cx='19.95' cy='25.2' r='1.05'/%3E%3Ccircle cx='17' cy='26.91' r='1.05'/%3E%3Ccircle cx='14.05' cy='25.2' r='1.05'/%3E%3Ccircle cx='14.05' cy='21.79' r='1.05'/%3E%3Ccircle cx='83' cy='23.5' r='1.8'/%3E%3Ccircle cx='83' cy='20.09' r='1.05'/%3E%3Ccircle cx='85.95' cy='21.8' r='1.05'/%3E%3Ccircle cx='85.95' cy='25.2' r='1.05'/%3E%3Ccircle cx='83' cy='26.91' r='1.05'/%3E%3Ccircle cx='80.05' cy='25.2' r='1.05'/%3E%3Ccircle cx='80.05' cy='21.79' r='1.05'/%3E%3Ccircle cx='17' cy='96.5' r='1.8'/%3E%3Ccircle cx='17' cy='93.09' r='1.05'/%3E%3Ccircle cx='19.95' cy='94.8' r='1.05'/%3E%3Ccircle cx='19.95' cy='98.2' r='1.05'/%3E%3Ccircle cx='17' cy='99.91' r='1.05'/%3E%3Ccircle cx='14.05' cy='98.2' r='1.05'/%3E%3Ccircle cx='14.05' cy='94.8' r='1.05'/%3E%3Ccircle cx='83' cy='96.5' r='1.8'/%3E%3Ccircle cx='83' cy='93.09' r='1.05'/%3E%3Ccircle cx='85.95' cy='94.8' r='1.05'/%3E%3Ccircle cx='85.95' cy='98.2' r='1.05'/%3E%3Ccircle cx='83' cy='99.91' r='1.05'/%3E%3Ccircle cx='80.05' cy='98.2' r='1.05'/%3E%3Ccircle cx='80.05' cy='94.8' r='1.05'/%3E%3C/g%3E%3Cg fill='white'%3E%3Ccircle cx='50' cy='59' r='5.5'/%3E%3Ccircle cx='50' cy='52.4' r='3.1'/%3E%3Ccircle cx='55.72' cy='55.7' r='3.1'/%3E%3Ccircle cx='55.72' cy='62.3' r='3.1'/%3E%3Ccircle cx='50' cy='65.6' r='3.1'/%3E%3Ccircle cx='44.28' cy='62.3' r='3.1'/%3E%3Ccircle cx='44.28' cy='55.7' r='3.1'/%3E%3Cpath d='M50 47.5L50 43.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M50 70L50 77' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='50' cy='59' r='2.2'/%3E%3Ccircle cx='50' cy='52.2' r='1.1'/%3E%3Ccircle cx='55.89' cy='55.6' r='1.1'/%3E%3Ccircle cx='55.89' cy='62.4' r='1.1'/%3E%3Ccircle cx='50' cy='65.8' r='1.1'/%3E%3Ccircle cx='44.11' cy='62.4' r='1.1'/%3E%3Ccircle cx='44.11' cy='55.6' r='1.1'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='100' height='118' mask='url(%23m)'/%3E%3C/svg%3E");
+}
+/* masks:end */

@@ -1,0 +1,435 @@
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/anton-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/arimo-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/tinos-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/tinos-latin-700-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/tinos-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/tinos-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Weirdcore: a picture that has been saved too many times. You scroll through a stack of ruined places, and everything you read is a black void pasted on top.
+   Titles are WordArt, captions rearrange themselves, and every save (yours included) makes the backdrops measurably worse. */
+:root {
+  --red: #ff0000; --yel: #ffff00; --lime: #00ff40; --cyan: #00ffff; --grey: #c0c0c0;
+  --bg: #000; --surface: #000; --ink: #fff; --muted: #d4d4d4; --accent: #ffff00; --line: #666;
+  --font-display: 'Anton', Impact, 'Arial Narrow', sans-serif; --font-body: 'Arimo', Arial, Helvetica, sans-serif; --font-mono: 'Arimo', Arial, Helvetica, sans-serif; --font-times: 'Tinos', 'Times New Roman', Times, serif;
+  --radius: 0; --max: 1280px; --gap: 20px; --atlas-h: 40px;
+  --wide: max(20px, calc(50vw - 640px));
+  color-scheme: dark;
+}
+html { font-size: 18px; background: #000; }
+body { background: #000; color: var(--ink); line-height: 1.52; }
+a { color: var(--yel); text-underline-offset: 2px; }
+a:hover { color: #000; background: var(--yel); text-decoration: none; }
+::selection { background: var(--red); color: #fff; }
+:focus-visible { outline-color: var(--cyan); }
+
+/* Site bar: the title bar of an image viewer, with the file name getting longer */
+.atlas { background: #000; border-bottom: 1px solid #fff; font: 400 15px/1 var(--font-body); }
+.atlas a, .atlas-btn { color: #fff; }
+.atlas-home { font-weight: 700; }
+.atlas a.atlas-home:hover, .atlas a.atlas-btn:hover { background: var(--yel); color: #000; }
+.atlas-here { color: #e2e2e2; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.atlas-btn:hover { background: var(--yel); color: #000; border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--yel); }
+.atlas-btn[aria-pressed="true"]:hover { color: #000; }
+
+/* ---- The stack of pictures. Each section brings its own ruined place, which stays put while its text scrolls over it. ---- */
+.page { max-width: none; padding: 0; }
+.hero { --scene: url(../media/weirdcore/bg-field-1.jpg); }
+#feel { --scene: url(../media/weirdcore/bg-hallway-1.jpg); }
+#core { --scene: url(../media/weirdcore/bg-classroom-1.jpg); }
+#how { --scene: url(../media/weirdcore/bg-bedroom-1.jpg); }
+#palette { --scene: url(../media/weirdcore/bg-pool-1.jpg); }
+#vibe { --scene: url(../media/weirdcore/bg-playground-1.jpg); }
+#refs { --scene: url(../media/weirdcore/bg-stairs-1.jpg); }
+#related { --scene: url(../media/weirdcore/bg-gridfield-1.jpg); }
+:root[data-rot="2"] .hero { --scene: url(../media/weirdcore/bg-field-2.jpg); }
+:root[data-rot="2"] #feel { --scene: url(../media/weirdcore/bg-hallway-2.jpg); }
+:root[data-rot="2"] #core { --scene: url(../media/weirdcore/bg-classroom-2.jpg); }
+:root[data-rot="2"] #how { --scene: url(../media/weirdcore/bg-bedroom-2.jpg); }
+:root[data-rot="2"] #palette { --scene: url(../media/weirdcore/bg-pool-2.jpg); }
+:root[data-rot="2"] #vibe { --scene: url(../media/weirdcore/bg-playground-2.jpg); }
+:root[data-rot="2"] #refs { --scene: url(../media/weirdcore/bg-stairs-2.jpg); }
+:root[data-rot="2"] #related { --scene: url(../media/weirdcore/bg-gridfield-2.jpg); }
+:root[data-rot="3"] .hero { --scene: url(../media/weirdcore/bg-field-3.jpg); }
+:root[data-rot="3"] #feel { --scene: url(../media/weirdcore/bg-hallway-3.jpg); }
+:root[data-rot="3"] #core { --scene: url(../media/weirdcore/bg-classroom-3.jpg); }
+:root[data-rot="3"] #how { --scene: url(../media/weirdcore/bg-bedroom-3.jpg); }
+:root[data-rot="3"] #palette { --scene: url(../media/weirdcore/bg-pool-3.jpg); }
+:root[data-rot="3"] #vibe { --scene: url(../media/weirdcore/bg-playground-3.jpg); }
+:root[data-rot="3"] #refs { --scene: url(../media/weirdcore/bg-stairs-3.jpg); }
+:root[data-rot="3"] #related { --scene: url(../media/weirdcore/bg-gridfield-3.jpg); }
+
+.hero, .sec { --pt: 74px; position: relative; isolation: isolate; overflow: clip; padding: var(--pt) var(--wide) 76px; }
+.hero::before, .sec::before { content: ''; display: block; position: sticky; top: var(--atlas-h); z-index: -1; height: calc(100vh - var(--atlas-h)); margin: calc(var(--pt) * -1) calc(var(--wide) * -1) calc(var(--pt) - 100vh + var(--atlas-h)); background: #000 var(--scene) center / cover no-repeat; image-rendering: pixelated; }
+/* Where one picture stops, the file breaks: a band of grey and wrong-coloured macroblocks. */
+.sec::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 48px; background: url(../media/weirdcore/macro.png) var(--mx, 0) 0 / 640px 48px repeat-x; image-rendering: pixelated; transform: scaleY(-1); pointer-events: none; }
+#core { --mx: -96px; } #how { --mx: -240px; } #palette { --mx: -352px; } #vibe { --mx: -64px; } #refs { --mx: -512px; } #related { --mx: -176px; }
+
+/* ---- WordArt. The theme script swaps each title for warped SVG letters, and clicking one tries the next shape. ---- */
+.wa-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.wa-box { position: relative; display: block; width: min(100%, calc(var(--n, 12) * 74px)); cursor: pointer; }
+.wa { display: block; width: 100%; height: auto; overflow: visible; }
+.wa text { font-family: var(--font-display); }
+.wa-h { position: absolute; display: none; width: 9px; height: 9px; margin: -4px 0 0 -4px; background: #fff; border: 1px solid #000; }
+.wa-h.is-tip { width: 11px; height: 11px; margin: -5px 0 0 -5px; background: var(--yel); rotate: 45deg; }
+.wa-box:hover .wa-h, .hero-title .wa-h { display: block; }
+
+.sec-title { margin: 0 0 8px; color: var(--yel); font: 400 clamp(2.6rem, 6vw, 4.6rem)/1.05 var(--font-display); text-shadow: 3px 3px 0 #000; }
+.wc-say { width: fit-content; max-width: 100%; margin: 0 0 22px; padding: 3px 10px 4px; background: #000; color: var(--red); font: 400 1.2rem/1.25 var(--font-body); }
+.wc-say span { display: inline-block; }
+
+/* ---- Hero ---- */
+.hero { --pt: 22px; padding-bottom: 88px; }
+.hero-text { position: relative; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); column-gap: 18px; align-items: center; }
+.hero-kicker { grid-column: 1 / -1; width: fit-content; margin: 0 0 2px max(0px, calc(100px - var(--wide))); padding: 2px 8px; background: #000; color: #fff; font: italic 400 1rem/1.3 var(--font-times); }
+.hero-title { margin: 0; color: var(--yel); font: 400 clamp(4rem, 12vw, 9rem)/1 var(--font-display); text-shadow: 4px 4px 0 #000; }
+.hero-title .wa-box { width: 100%; rotate: -1.6deg; margin: 0 0 0 4px; }
+.hero-tagline { width: fit-content; max-width: 100%; margin: -46px 0 0; padding: 8px 14px 10px; background: #000; color: var(--red); font: 400 clamp(1.5rem, 2.9vw, 2.5rem)/1.12 var(--font-body); }
+.hero-tagline span { display: inline-block; }
+
+.hero-gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0; margin-top: 12px; }
+.hero-gallery .shot-link { aspect-ratio: auto; }
+.hero-gallery .shot-link img { height: auto; }
+.shot-1 { grid-column: 1 / span 7; grid-row: 1; z-index: 2; rotate: -.5deg; }
+.shot-2 { grid-column: 8 / span 5; grid-row: 1; z-index: 1; margin: 44px 0 0 -12px; rotate: 1deg; }
+.shot-3 { grid-column: 2 / span 6; grid-row: 2; z-index: 3; margin-top: -16px; rotate: .8deg; }
+.shot-4 { grid-column: 8 / span 4; grid-row: 2; z-index: 4; margin: 18px 0 0 8px; rotate: -1.3deg; }
+.shot { position: relative; min-width: 0; }
+.shot-link { position: relative; background: #000; outline: 1px solid rgb(255 255 255 / .35); }
+.shot-link::after { content: ''; position: absolute; right: 0; bottom: 0; width: 44%; height: 32px; background: url(../media/weirdcore/macro.png) 0 0 / 427px 32px repeat-x; image-rendering: pixelated; transition: opacity .2s; pointer-events: none; }
+.shot-2 .shot-link::after { left: 0; right: auto; width: 30%; background-position-x: -110px; }
+.shot-3 .shot-link::after { width: 28%; background-position-x: -240px; }
+.shot-4 .shot-link::after { width: 62%; background-position-x: -330px; }
+.ref-gallery .shot-link::after { display: none; }
+.shot-link:hover::after, .shot-link:focus-visible::after { opacity: 0; }
+.shot figcaption, .loop figcaption { width: fit-content; max-width: 100%; padding: 2px 8px 3px; background: #000; color: #fff; font: italic 400 1rem/1.25 var(--font-times); }
+.shot-title { font-style: normal; font-weight: 700; }
+.shot-meta { color: #dcdcdc; }
+.shot figcaption a, .loop figcaption a { color: #fff; }
+.loop figcaption a:hover { color: #000; }
+
+/* Things drawn on top of the pictures in Paint. They get out of the way when you look properly. */
+.wc-mark { position: absolute; z-index: 2; inset: 0; pointer-events: none; transition: opacity .2s; }
+.shot-link:hover .wc-mark, .shot-link:focus-visible .wc-mark { opacity: 0; }
+.wc-mark svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.wc-mark path, .wc-mark ellipse { fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.wc-mark span { position: absolute; padding: 0 5px 1px; background: #000; color: var(--red); font: 400 clamp(.82rem, 1.5vw, 1.05rem)/1.25 var(--font-body); white-space: nowrap; }
+
+/* Cut-out eyes. They look where the pointer is, in three frames. */
+.wc-eye { position: absolute; z-index: 3; width: var(--w, 120px); aspect-ratio: 150 / 84; background: url(../media/weirdcore/eye.webp) 50% 0 / 300% 100% no-repeat; image-rendering: pixelated; filter: drop-shadow(2px 3px 0 rgb(0 0 0 / .85)); pointer-events: none; }
+.wc-eye[data-f="0"] { background-position: 0 0; }
+.wc-eye[data-f="2"] { background-position: 100% 0; }
+
+/* Contents: nothing stays where you left it */
+.toc { position: relative; z-index: 6; width: fit-content; max-width: calc(100% - 2 * var(--wide)); margin: -58px 0 -18px calc(var(--wide) + 3%); padding: 10px 18px 12px; background: #000; }
+.toc::before { content: 'contents (may have moved)'; display: block; margin-bottom: 4px; color: var(--red); font: 400 1rem/1.25 var(--font-body); }
+.toc ul { gap: 2px 20px; }
+.toc a { color: var(--yel); font-size: 1.05rem; }
+.toc a:hover { color: #000; }
+
+/* ---- Text: black voids, pasted down a little carelessly ---- */
+.feel-body, .origins, .core-item, .steps, .specs, .do, .avoid, .learn, .tracks, .ref-list, .wc-maker, .palette-note, .brief, .palette-actions, .foot { background: #000; color: #fff; }
+.sec h3 { color: var(--yel); font: 700 1.14rem/1.25 var(--font-body); }
+
+.feel-body { position: relative; max-width: 45em; padding: 24px 28px; font-size: 1.14rem; }
+.mood-words { gap: 7px 10px; margin: 16px 0 16px 12%; }
+.mood-words li { padding: 1px 9px 2px; background: #000; border: 0; color: var(--red); font: 400 1rem/1.3 var(--font-body); }
+.mood-words li:nth-child(2n) { background: var(--red); color: #000; translate: 0 5px; }
+.mood-words li:nth-child(3n) { translate: 0 -4px; }
+.origins { position: relative; max-width: 39em; margin: 0 0 0 auto; padding: 18px 24px 20px; }
+.origins p { margin: 0; }
+
+/* Core: a table that has come loose. No two rows agree on where the columns are. */
+.core-list { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.core-item { position: relative; padding: 16px 18px 18px; border: 0; }
+.core-item:nth-child(1) { grid-column: 1 / span 5; }
+.core-item:nth-child(2) { grid-column: 6 / span 4; translate: 0 22px; }
+.core-item:nth-child(3) { grid-column: 10 / span 3; translate: 0 -10px; }
+.core-item:nth-child(4) { grid-column: 2 / span 3; translate: 0 8px; }
+.core-item:nth-child(5) { grid-column: 5 / span 5; translate: 0 30px; }
+.core-item:nth-child(6) { grid-column: 10 / span 3; translate: 0 2px; }
+.core-list { padding-bottom: 34px; }
+.core-item h3::before { content: counter(core) '. '; color: var(--red); }
+.core-item p { margin: 0; font-size: .97rem; line-height: 1.46; }
+
+/* How: floats, because the backdrop has to stay sticky */
+.sec-how { display: flow-root; }
+.steps { float: left; width: 58%; max-width: none; gap: 18px; padding: 22px 24px 26px; }
+.step { padding-left: 2.5em; }
+.step::before { left: 0; top: -.18em; width: auto; height: auto; background: none; color: var(--red); font: 400 2.2rem/1 var(--font-display); }
+.step h3 { margin-bottom: 3px; }
+.step p { margin: 0; font-size: .98rem; line-height: 1.48; }
+.how-side { display: block; float: right; width: 40%; margin-top: 34px; }
+
+/* The cheat sheet is an old HTML table that nobody fixed */
+.specs { padding: 12px 12px 14px; border: 2px outset #bbb; }
+.specs h3 { margin: 0 0 6px 4px; }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 2px; margin: 2px 0; padding: 0; border: 0; font-size: .92rem; line-height: 1.32; }
+.spec:first-child { border: 0; }
+.spec:nth-child(2) { margin-left: 8px; margin-right: -6px; }
+.spec:nth-child(3) { grid-template-columns: minmax(0, 3fr) minmax(0, 4fr); }
+.spec:nth-child(4) { margin-left: -5px; margin-right: 4px; }
+.spec:nth-child(6) { margin-left: 12px; margin-right: -9px; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.spec:nth-child(7) { margin-left: -3px; }
+.spec dt, .spec dd { padding: 3px 7px 4px; border: 1px inset #9a9a9a; }
+.spec dt { background: #16164a; font-weight: 700; }
+.dodont { gap: 12px; margin-top: 14px; }
+.do, .avoid { padding: 14px 18px 12px; }
+.do h3 { color: var(--lime); }
+.avoid h3 { color: var(--red); }
+.dodont ul { padding: 0; list-style: none; }
+.dodont li { position: relative; margin-bottom: 7px; padding-left: 21px; font-size: .95rem; line-height: 1.38; }
+.do li::before, .avoid li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
+.do li::before { content: '\2713'; color: var(--lime); }
+.avoid li::before { content: '\2717'; color: var(--red); }
+
+/* The ruin machine */
+.wc-maker { clear: both; position: relative; top: 26px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px 26px; margin-bottom: 54px; padding: 20px 22px 24px; border: 2px outset #bbb; }
+.wc-maker canvas { display: block; width: 100%; height: auto; background: #111; image-rendering: pixelated; }
+.wc-maker h3 { margin: 0 0 4px; font-size: 1.32rem; }
+.wc-maker p { margin: 0 0 12px; font-size: .96rem; line-height: 1.45; }
+.wc-read { margin-top: 6px; color: var(--red); font-size: .96rem; font-variant-numeric: tabular-nums; }
+.wc-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 11px; }
+.wc-row label { font-size: .95rem; }
+.wc-row input[type="range"] { flex: 1 1 130px; min-width: 110px; accent-color: var(--red); }
+.wc-row input[type="text"] { flex: 1 1 150px; min-width: 120px; padding: 5px 7px; background: #fff; border: 2px inset #bbb; color: #000; font: 400 15px/1.2 var(--font-body); }
+.wc-file { position: relative; overflow: hidden; }
+.wc-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.btn, a.btn { display: inline-block; padding: 5px 14px 6px; background: var(--grey); border: 2px outset #fff; border-radius: 0; color: #000; font: 400 15px/1.25 var(--font-body); text-decoration: none; }
+.btn:hover, a.btn:hover { background: var(--yel); color: #000; border-color: #fff; }
+.btn:active { border-style: inset; }
+
+.learn { clear: both; padding: 18px 22px 8px; }
+.learn h3 { margin-bottom: 10px; }
+.learn ul { gap: 4px 26px; }
+.ref-item { margin-bottom: 10px; line-height: 1.32; }
+.ref-meta { color: #dcdcdc; font-size: .84rem; }
+.ref-note { font-size: .94rem; line-height: 1.38; }
+.brief, .palette-actions { width: fit-content; max-width: 100%; margin-top: 14px; padding: 10px 14px; }
+.brief-note { color: #e2e2e2; font-size: .88rem; }
+
+/* Palette: the colour box from Paint */
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; padding: 26px 6px 6px; background: var(--grey) linear-gradient(90deg, #000080, #1084d0) 0 0 / 100% 22px no-repeat; border: 2px outset #fff; position: relative; }
+.swatches::before { content: 'Colors'; position: absolute; left: 7px; top: 3px; color: #fff; font: 700 13px/16px var(--font-body); }
+.swatch button { padding: 3px; background: var(--grey); border: 2px outset #fff; color: #000; overflow: visible; }
+.swatch button:active { border-style: inset; }
+.swatch button:hover { background: #d8d8d8; }
+.chip { height: clamp(58px, 7vw, 92px); border: 2px inset #fff; }
+.swatch-name, .swatch-hex { padding: 0 2px; color: #000; line-height: 1.2; }
+.swatch-name { padding-top: 5px; font-size: 14px; font-weight: 700; }
+.swatch-hex { padding-bottom: 2px; color: #101010; font-size: 14px; }
+.palette-note { max-width: 42em; margin-top: 14px; padding: 12px 16px; color: #fff; }
+
+/* Vibe: pasted-on clips and a void full of songs */
+.sec-vibe .loops-wrap { margin-bottom: 34px; }
+.loops-wrap > h3, .music-wrap > h3 { width: fit-content; margin: 0 0 8px; padding: 2px 10px 3px; background: #000; }
+.loops { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px 12px; align-items: start; }
+.loop { min-width: 0; }
+.loop:nth-child(1) { grid-column: 1 / span 5; rotate: -.5deg; }
+.loop:nth-child(2) { grid-column: 6 / span 4; rotate: .8deg; margin-top: 24px; }
+.loop:nth-child(3) { grid-column: 10 / span 3; rotate: -1deg; margin-top: 4px; }
+.loop:nth-child(4) { grid-column: 2 / span 4; rotate: .6deg; margin-top: -6px; }
+.loop:nth-child(5) { grid-column: 6 / span 3; rotate: -.7deg; margin-top: 8px; }
+.loop video { outline: 1px solid rgb(255 255 255 / .35); }
+.tracks { max-width: 50em; gap: 4px; padding: 14px 18px; }
+.track-btn { padding: 5px 4px; background: none; border: 0; color: #fff; }
+.track-btn:hover .track-title, .track.is-playing .track-title { color: var(--yel); }
+.track-play { width: 30px; height: 30px; background: var(--red); color: #000; }
+.track-title { font-weight: 700; line-height: 1.25; }
+.track-artist { color: #e2e2e2; font-size: .86rem; line-height: 1.3; }
+.track-note { margin: 0 0 8px 46px; color: #fff; font-size: .94rem; line-height: 1.4; }
+.track-yt { color: var(--yel); font-size: .84rem; }
+.player { background: #000; border: 2px outset #bbb; box-shadow: 6px 6px 0 rgb(255 0 0 / .85); color: #fff; }
+.player-now { color: var(--red); letter-spacing: 0; text-transform: none; font-size: 13px; }
+.player-artist { color: #e2e2e2; }
+.player-close { color: #fff; }
+
+/* References: a pile of JPEGs at their own sizes */
+.ref-gallery { display: block; columns: 4 230px; column-gap: 12px; margin-bottom: 30px; }
+.ref-gallery .shot { break-inside: avoid; margin: 0 0 14px; }
+.ref-gallery .shot:nth-child(3n+1) { rotate: -.6deg; }
+.ref-gallery .shot:nth-child(3n) { rotate: .7deg; }
+.ref-gallery .shot-link { aspect-ratio: auto; }
+.ref-gallery .shot-link img { height: auto; }
+.ref-gallery figcaption { font-size: 16px; }
+.ref-lists { gap: 12px; }
+.ref-list { padding: 18px 22px 8px; }
+.ref-list h3 { margin-bottom: 10px; font-size: 1.3rem; }
+
+.related { display: flex; flex-wrap: wrap; gap: 14px 16px; }
+.related-item { width: min(100%, 250px); }
+.related-item:nth-child(2n) { rotate: 1deg; translate: 0 12px; }
+.related-item:nth-child(2n+1) { rotate: -.7deg; }
+.related a { color: #fff; }
+.related a:hover { background: none; color: #fff; }
+.related a:hover span { background: var(--yel); color: #000; }
+.related img { outline: 1px solid rgb(255 255 255 / .35); }
+.related span { display: block; width: fit-content; padding: 2px 8px 3px; background: #000; font: 700 1rem/1.25 var(--font-body); }
+
+/* The end: the dialog you get when you try to close it */
+.foot { padding: 34px var(--wide) 46px; border: 0; color: #e2e2e2; font-size: .88rem; }
+.foot-nav { margin-top: 16px; }
+.foot-nav a { color: var(--yel); }
+.foot-nav a:hover { color: #000; }
+.wc-close { width: min(100%, 480px); margin: 0 0 26px; background: var(--grey); border: 2px outset #fff; color: #000; }
+.wc-close b { display: block; padding: 3px 7px; background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-size: 14px; font-weight: 700; }
+.wc-close p { margin: 0; padding: 16px 16px 12px; font-size: 15px; line-height: 1.35; overflow-wrap: anywhere; }
+.wc-close div { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 12px 14px; }
+.toast { background: #000; color: var(--red); border: 1px solid var(--red); border-radius: 0; font: 400 15px var(--font-body); }
+
+/* Corner readout, as in Petscop */
+.decor .wc-hud { position: absolute; left: 8px; top: calc(var(--atlas-h) + 10px); display: grid; gap: 1px; color: #fff; font: 700 14px/1.2 var(--font-body); text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; }
+.decor .wc-hud b { font-weight: 700; }
+/* A faint 8 by 8 block grid over everything, scaled up with the backdrops */
+.decor .wc-blocks { position: absolute; inset: 0; opacity: .05; background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 16px 16px; mix-blend-mode: overlay; }
+
+@media (max-width: 1040px) {
+  .hero-text { grid-template-columns: minmax(0, 1fr); }
+  .hero-tagline { margin: 6px 0 0 3%; }
+  .hero-text .wc-eye { display: none; }
+  .steps, .how-side { float: none; width: auto; }
+  .how-side { margin-top: 14px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .core-item:nth-child(n) { grid-column: auto; translate: none; }
+  .core-item:nth-child(2n) { translate: 0 14px; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loop:nth-child(n) { grid-column: auto; margin-top: 0; }
+  .wc-maker { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+  :root { --wide: 12px; }
+  .hero, .sec { --pt: 58px; padding-bottom: 54px; }
+  .hero { --pt: 14px; padding-bottom: 76px; }
+  .decor .wc-hud { display: none; }
+  .hero-title .wa-box { margin: 0; }
+  .hero-gallery { display: block; }
+  .shot-1, .shot-2, .shot-3, .shot-4 { margin: 0 0 12px; rotate: none; }
+  .shot:nth-child(2n) { rotate: .5deg; }
+  .shot:nth-child(2n+1) { rotate: -.4deg; }
+  .wc-eye { --w: 84px !important; }
+  .toc { margin: -44px 12px -8px; width: auto; max-width: none; rotate: none; }
+  .toc ul { gap: 2px 16px; }
+  .feel-body { padding: 16px; font-size: 1.04rem; rotate: none; }
+  .mood-words { margin-left: 0; }
+  .origins { padding: 14px 16px 16px; rotate: none; }
+  .core-list { grid-template-columns: minmax(0, 1fr); gap: 10px; padding-bottom: 0; }
+  .core-item:nth-child(n) { translate: none; }
+  .core-item:nth-child(2n) { margin-left: 14px; }
+  .core-item:nth-child(2n+1) { margin-right: 14px; }
+  .steps { padding: 16px 14px 18px; }
+  .step { padding-left: 2.1em; }
+  .spec { grid-template-columns: minmax(0, 1fr) !important; margin: 3px 0 !important; }
+  .spec dt { border-bottom: 0; }
+  .wc-maker { padding: 14px; }
+  .learn, .ref-list { padding: 14px 14px 6px; }
+  .learn ul, .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .loop:nth-child(n) { rotate: none; }
+  .track-note { margin-left: 2px; }
+  .ref-gallery { columns: 2 150px; column-gap: 8px; }
+  .ref-gallery figcaption { font-size: 15px; }
+  .ref-gallery .shot:nth-child(n) { rotate: none; }
+  .related-item { width: calc(50% - 8px); }
+  .related-item:nth-child(n) { rotate: none; translate: none; }
+}

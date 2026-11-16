@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+  <!-- A poolside in the manner of an 80s Japanese record sleeve: drawn for this page from scratch. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#061a66"/>
+      <stop offset=".55" stop-color="#1647b5"/>
+      <stop offset="1" stop-color="#4c98e6"/>
+    </linearGradient>
+    <linearGradient id="pool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f9be4"/>
+      <stop offset="1" stop-color="#5fcdf3"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#efe0c0"/>
+      <stop offset="1" stop-color="#f7eedb"/>
+    </linearGradient>
+    <g id="frond">
+      <path d="M0 0 C 18 -12 42 -12 66 4 C 44 -3 22 -2 0 0 Z"/>
+      <path d="M8 -4 l 4 6 M18 -8 l 4 8 M28 -9 l 4 9 M38 -9 l 3 9 M48 -7 l 3 8" stroke-width="1.4" fill="none"/>
+    </g>
+    <g id="palm">
+      <g fill="#0b2a1e" stroke="#0b2a1e">
+        <use href="#frond" transform="rotate(-160)"/>
+        <use href="#frond" transform="rotate(-128)"/>
+        <use href="#frond" transform="rotate(-96) scale(.9)"/>
+        <use href="#frond" transform="rotate(-62)"/>
+        <use href="#frond" transform="rotate(-28)"/>
+        <use href="#frond" transform="rotate(6) scale(.92)"/>
+        <use href="#frond" transform="rotate(40) scale(.8)"/>
+        <use href="#frond" transform="rotate(150) scale(.8)"/>
+      </g>
+      <g fill="#1e7a3c" stroke="#1e7a3c" opacity=".9">
+        <use href="#frond" transform="rotate(-150) scale(.82)"/>
+        <use href="#frond" transform="rotate(-70) scale(.8)"/>
+        <use href="#frond" transform="rotate(-20) scale(.85)"/>
+      </g>
+      <circle cx="0" cy="2" r="4" fill="#3a2a1a"/>
+    </g>
+  </defs>
+
+  <rect width="400" height="240" fill="url(#sky)"/>
+  <!-- the sea and the far shore -->
+  <rect y="236" width="400" height="9" fill="#0d3fa8"/>
+  <path d="M0 238.5 H400" stroke="#9fd2ff" stroke-width=".8" opacity=".7"/>
+  <path d="M0 245 C 40 239 70 241 110 243 S 190 238 240 242 S 330 239 400 243 V 256 H0 Z" fill="#11522b"/>
+  <g fill="#e2468a">
+    <circle cx="22" cy="246" r="3"/><circle cx="30" cy="248" r="2.4"/><circle cx="16" cy="250" r="2"/>
+    <circle cx="350" cy="245" r="3.2"/><circle cx="360" cy="248" r="2.4"/><circle cx="342" cy="249" r="2"/>
+    <circle cx="200" cy="246" r="1.6"/><circle cx="206" cy="247" r="1.2"/>
+  </g>
+  <!-- the deck -->
+  <rect y="254" width="400" height="146" fill="url(#deck)"/>
+  <path d="M0 256 H400" stroke="#d9c69e" stroke-width="1"/>
+  <!-- a white parasol and chairs on the far side -->
+  <g fill="#fff">
+    <path d="M268 246 a 13 5 0 0 1 26 0 z"/>
+    <rect x="280.4" y="246" width="1.2" height="13"/>
+    <rect x="272" y="254" width="7" height="1.4"/><rect x="284" y="254" width="7" height="1.4"/>
+    <rect x="272.5" y="255" width=".9" height="4"/><rect x="290" y="255" width=".9" height="4"/>
+    <rect x="304" y="257" width="14" height="1.6"/><rect x="304" y="254.5" width="1.6" height="4"/>
+    <rect x="236" y="257" width="14" height="1.6"/><rect x="248.4" y="254.5" width="1.6" height="4"/>
+  </g>
+  <!-- the pool, with its white coping and a blue shadow along the near edge -->
+  <path d="M-10 300 L 250 266 L 410 312 L 410 410 L -10 410 Z" fill="#ffffff"/>
+  <path d="M-10 306 L 250 272 L 410 318 L 410 410 L -10 410 Z" fill="url(#pool)"/>
+  <path d="M-10 306 L 250 272 L 410 318 L 410 330 L 250 282 L -10 318 Z" fill="#1d5fc4" opacity=".55"/>
+  <!-- ladder -->
+  <g stroke="#e9eef7" stroke-width="1.6" fill="none" stroke-linecap="round">
+    <path d="M208 270 c 0 -8 7 -8 7 0 v 16"/><path d="M220 271 c 0 -8 7 -8 7 0 v 16"/>
+    <path d="M215 278 h 12 M215 284 h 12"/>
+  </g>
+  <!-- light on the water: white lozenges, denser towards the edge -->
+  <g fill="#ffffff" opacity=".85">
+    <path d="M30 330 q 8 -3 16 0 q -8 2 -16 0z"/><path d="M70 322 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M118 318 q 7 -2 14 0 q -7 2 -14 0z"/>
+    <path d="M160 306 q 9 -3 18 0 q -9 2 -18 0z"/><path d="M196 300 q 6 -2 12 0 q -6 2 -12 0z"/><path d="M260 300 q 9 -3 18 0 q -9 2 -18 0z"/>
+    <path d="M300 312 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M340 322 q 8 -2 16 0 q -8 2 -16 0z"/><path d="M372 330 q 8 -3 16 0 q -8 2 -16 0z"/>
+    <path d="M50 346 q 12 -3 24 0 q -12 2 -24 0z"/><path d="M110 340 q 8 -2 16 0 q -8 2 -16 0z"/><path d="M150 330 q 14 -4 28 0 q -14 3 -28 0z"/>
+    <path d="M222 322 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M280 330 q 12 -3 24 0 q -12 2 -24 0z"/><path d="M330 344 q 10 -3 20 0 q -10 2 -20 0z"/>
+    <path d="M20 368 q 14 -4 28 0 q -14 3 -28 0z"/><path d="M96 362 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M190 352 q 16 -4 32 0 q -16 3 -32 0z"/>
+    <path d="M250 360 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M310 370 q 14 -4 28 0 q -14 3 -28 0z"/><path d="M370 360 q 8 -2 16 0 q -8 2 -16 0z"/>
+    <path d="M60 388 q 18 -4 36 0 q -18 3 -36 0z"/><path d="M150 380 q 12 -3 24 0 q -12 2 -24 0z"/><path d="M226 390 q 18 -4 36 0 q -18 3 -36 0z"/>
+  </g>
+  <g fill="#bfe8ff" opacity=".7">
+    <path d="M90 334 q 6 -2 12 0 q -6 2 -12 0z"/><path d="M178 342 q 8 -2 16 0 q -8 2 -16 0z"/><path d="M262 344 q 6 -2 12 0 q -6 2 -12 0z"/>
+    <path d="M128 372 q 10 -3 20 0 q -10 2 -20 0z"/><path d="M286 386 q 8 -2 16 0 q -8 2 -16 0z"/><path d="M30 352 q 6 -2 12 0 q -6 2 -12 0z"/>
+  </g>
+  <!-- palms leaning in from the right -->
+  <path d="M410 300 C 380 230 360 150 352 62" stroke="#3b2a1c" stroke-width="5" fill="none"/>
+  <path d="M410 300 C 380 230 360 150 352 62" stroke="#6b4b2c" stroke-width="1.6" fill="none" stroke-dasharray="2 5"/>
+  <use href="#palm" transform="translate(352 62)"/>
+  <path d="M412 300 C 400 210 398 150 404 104" stroke="#3b2a1c" stroke-width="4.4" fill="none"/>
+  <use href="#palm" transform="translate(404 104) scale(.85)"/>
+  <path d="M-10 300 C 10 250 26 200 30 150" stroke="#3b2a1c" stroke-width="3.6" fill="none"/>
+  <use href="#palm" transform="translate(30 150) scale(.66) rotate(10)"/>
+</svg>

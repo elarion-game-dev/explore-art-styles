@@ -1,0 +1,8 @@
+/* The admin's card preview: the site's browse styles, with the cards centred in the frame. */
+html, body { min-height: 100%; }
+body.card-preview { margin: 0; padding: 24px; background: var(--bg); }
+.card-preview .intro { max-width: 760px; margin: 0 auto 22px; }
+.card-preview .grid { max-width: 420px; margin: 0 auto; grid-template-columns: minmax(0, 1fr); }
+.card-preview .grid.many { max-width: 1120px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.card-preview .grid.small { max-width: 260px; }
+.card-preview .grid.small.many { max-width: 820px; grid-template-columns: repeat(auto-fill, minmax(226px, 1fr)); }

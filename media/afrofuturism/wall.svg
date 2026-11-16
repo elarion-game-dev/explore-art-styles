@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+<!-- Mud plaster: a warm earth wall with soft hand-smoothed blotches and fine grit. -->
+<filter id="b" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="3" seed="4" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .42  0 0 0 0 .24  0 0 0 0 .1  1.3 0 0 0 -.62"/></filter>
+<filter id="g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="9" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .17  0 0 0 0 .06  0 0 0 -2.4 1.32"/></filter>
+<rect width="320" height="320" fill="#cfa77c"/>
+<rect width="320" height="320" filter="url(#b)"/>
+<rect width="320" height="320" filter="url(#g)" opacity=".5"/>
+</svg>

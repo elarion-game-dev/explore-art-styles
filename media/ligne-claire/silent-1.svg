@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" preserveAspectRatio="xMidYMax slice">
+<style>path,circle{stroke:#03161d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}.n{stroke:none}.f{stroke-opacity:.45}.m{stroke-opacity:.75}.s{fill:rgb(56 46 140 / .3);stroke:none}</style>
+<path class="n" fill="#a9dcf4" d="M-10 -10H410V450H-10Z"/>
+<g transform="translate(240 150) rotate(-14)">
+<path class="f" fill="none" d="M-190 0A190 30 0 0 1 -85.9 -26.8M85.9 -26.8A190 30 0 0 1 190 0"/>
+<circle class="f" r="90" fill="#f6f1e2"/>
+<path class="f" fill="none" d="M-40 -30a14 8 0 1 0 28 0a14 8 0 1 0 -28 0M18 22a10 6 0 1 0 20 0a10 6 0 1 0 -20 0M-20 48a7 4 0 1 0 14 0a7 4 0 1 0 -14 0"/>
+<path class="s" d="M30.8 -84.6A90 90 0 1 1 -84.6 30.8A115 115 0 0 0 30.8 -84.6Z"/>
+<path class="f" fill="none" d="M190 0A190 30 0 0 1 -190 0"/>
+</g>
+<path class="f" fill="#fff" d="M250 286C258 276 280 273 292 279C304 267 332 265 346 274C364 262 398 264 410 276V286Z"/>
+<path class="f" fill="#f0d6c4" d="M-10 344V318H30L36 310H90L96 318H150L156 324H230L236 314H300L306 320H360L366 312H410V344Z"/>
+<path class="f" fill="#f5e6a6" d="M-10 332H410V450H-10Z"/>
+<path class="m" fill="#eba596" d="M10 404C14 340 20 290 24 250C26 228 22 214 30 204H78C82 220 80 236 84 260C90 310 98 360 106 404Z"/>
+<path class="s" d="M58 204H78C82 220 80 236 84 260C90 310 98 360 106 404H76C74 350 70 300 68 260C66 236 62 220 58 204Z"/>
+<path class="m" fill="none" d="M26 244H70M22 286H76M18 330H84M14 372H92"/>
+<path class="m" fill="#bfead9" d="M18 206L26 194H84L92 206Z"/>
+<path fill="#f29849" d="M-10 394C80 380 180 368 280 374C340 378 380 386 410 392V450H-10Z"/>
+<path class="s" d="M298 375L214 384L218 388L308 376Z"/>
+<path fill="none" d="M60 420h14M150 402h12M200 432h14M330 420h12M370 404h12"/>
+<path fill="#d8000e" d="M302 352C312 346 322 352 334 347C326 357 314 358 302 356Z"/>
+<path fill="#2f74a0" d="M294 375L296 354C296 347 306 347 306 354L308 375Z"/>
+<circle fill="#f4ead6" cx="301" cy="344" r="5.5"/>
+</svg>

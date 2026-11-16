@@ -1,0 +1,370 @@
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-symbols2-400-normal.woff2) format('woff2');
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-symbols2-400-normal.woff2) format('woff2');
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/cascadia-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* ASCII / Text Mode: the page is a text screen. Everything sits on one grid of character cells in one monospaced face,
+   in the sixteen text-mode colours on black. Windows are framed in double box lines with their titles set into the top
+   line, labels are in inverse video, and the hero holds a small roguelike (themes/ascii-text-mode.js): six glyphs on the
+   map stand for the six sections, and the contents list is the map's key. Width is counted in columns: 80 on a desktop,
+   as many as fit on a phone. No glow, no scanlines: modern roguelikes draw crisp text, and so does this page. */
+:root {
+  --c0: #000000; --c1: #0000AA; --c2: #00AA00; --c3: #00AAAA; --c4: #AA0000; --c5: #AA00AA; --c6: #AA5500; --c7: #AAAAAA;
+  --c8: #555555; --c9: #5555FF; --c10: #55FF55; --c11: #55FFFF; --c12: #FF5555; --c13: #FF55FF; --c14: #FFFF55; --c15: #FFFFFF;
+  --bg: #000; --surface: #000; --ink: var(--c7); --muted: var(--c7); --accent: var(--c14); --line: var(--c8);
+  --font-display: 'Cascadia Mono', ui-monospace, Consolas, monospace;
+  --font-body: 'Cascadia Mono', ui-monospace, Consolas, monospace;
+  --font-mono: 'Cascadia Mono', ui-monospace, Consolas, monospace;
+  --radius: 0; --gap: 2ch; --atlas-h: 40px;
+  --cols: 80ch;        /* the screen is 80 columns wide */
+  --dbl: .3rem;        /* a double box line, as thick as the glyph's two strokes */
+  --sgl: 2px;          /* a single box line */
+  --fc: var(--c7);     /* the frame colour of the current window; --lb and --lt colour its inverse-video labels */
+  color-scheme: dark;
+  scrollbar-color: var(--c8) #000;
+}
+html { font-size: clamp(16px, calc(10.4px + .62vw), 20px); }
+body { background: #000; color: var(--c7); font: 400 1rem/1.5 var(--font-body); font-variant-ligatures: none; }
+::selection { background: var(--c7); color: #000; }
+:focus-visible { outline: 2px solid var(--c14); outline-offset: 2px; }
+.page a { color: var(--c11); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.page a:hover { color: var(--c15); background: var(--c1); }
+.page .cite a:hover { background: transparent; color: var(--c14); }
+.atm-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Site bar: the inverse-video menu line along the top of the screen */
+.atlas { background: var(--c7); color: #000; border: 0; height: var(--atlas-h); font: 400 16px/1 var(--font-body); }
+.atlas a, .atlas-btn { color: #000; }
+.atlas-home { font-weight: 700; padding: 0 1ch; height: 32px; white-space: nowrap; }
+.atlas-btn { white-space: nowrap; }
+.atlas-home:hover, .atlas-btn:hover { background: #000; color: var(--c15); border-color: transparent; }
+.atlas-here { color: #000; font-size: 16px; }
+.atlas-here::before { content: 'Style '; }
+.atlas-btn { border-radius: 0; }
+.atlas-btn[aria-pressed="true"] { color: var(--c1); }
+.atlas-btn[aria-pressed="true"]:hover { color: var(--c11); }
+.atlas :focus-visible { outline-color: #000; outline-offset: -3px; }
+.atlas :focus-visible:hover { outline-color: var(--c14); }
+
+/* The screen: a column 80 characters wide */
+.page { max-width: calc(var(--cols) + 4ch); padding: 0 2ch 3rem; }
+
+/* ---- hero: the title screen and the game ---- */
+.hero { padding: 1.6rem 0 1rem; }
+.hero-text { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "kick kick" "title sub" "title tag"; column-gap: 3ch; align-items: end; }
+.hero-kicker { grid-area: kick; margin: 0 0 1rem; font-size: 1rem; line-height: 1.5; color: var(--c7); }
+.hero-kicker::before { content: 'C:\\STYLES> '; color: var(--c8); }
+.hero-title { grid-area: title; margin: 0; font: 700 clamp(2.6rem, 9vw, 5rem)/1 var(--font-display); color: var(--c14); overflow-wrap: normal; }
+.hero-title.has-logo { font-size: clamp(16px, 1.95vw, 1.56rem); line-height: 1.2; font-weight: 400; }
+/* The blocks get a hard shadow in their own colour, a hair above, below and to the side, which closes the seams a browser leaves between neighbouring blocks */
+.atm-logo { display: block; padding-top: .2em; white-space: pre; color: var(--c14); text-shadow: 0 .05em currentColor, 0 -.05em currentColor, .03em 0 currentColor; }
+.atm-logo i { font-style: normal; color: var(--c6); text-shadow: none; }
+.hero-sub { grid-area: sub; margin: 0; font: 700 clamp(1.4rem, 2.6vw, 2rem)/1.2 var(--font-display); color: var(--c11); letter-spacing: .02em; }
+.hero-tagline { grid-area: tag; margin: .7rem 0 0; max-width: 34ch; font-size: 1rem; line-height: 1.5; color: var(--c7); }
+.hero-tagline::after { content: '_'; color: var(--c15); animation: atm-cursor 1.07s steps(1) infinite; }
+@keyframes atm-cursor { 50% { opacity: 0; } }
+
+/* The game window: message line, map, key and status line, framed like every window on the page */
+.atm-game { position: relative; display: grid; grid-template-columns: max-content minmax(0, 1fr); grid-template-areas: "msg msg" "map side" "stat stat"; margin-top: 2rem; padding: 1.1rem 1.4ch .6rem; border: var(--dbl) double var(--c7); }
+.atm-game::before { content: 'Dungeon level 1'; position: absolute; top: calc(var(--dbl) / -2); left: 2ch; translate: 0 -50%; padding: 0 1ch; background: #000; color: var(--c15); font-weight: 700; line-height: 1.2; white-space: nowrap; }
+.atm-msg { grid-area: msg; margin: 0 0 .5rem; min-height: 1.5em; color: var(--c15); }
+.atm-msg:empty::before { content: '\a0'; }
+.atm-view { grid-area: map; position: relative; overflow: hidden; cursor: pointer; outline-offset: 3px; }
+.atm-map { width: max-content; margin: 0; font: inherit; line-height: 1.25; white-space: pre; color: var(--c7); touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+.atm-map b { font-weight: 400; }
+.atm-map .u { color: transparent; }
+.atm-map .me { font-weight: 700; }
+.atm-map .hi { background: var(--c7); color: #000; }
+.k0 { color: var(--c0); } .k1 { color: var(--c1); } .k2 { color: var(--c2); } .k3 { color: var(--c3); }
+.k4 { color: var(--c4); } .k5 { color: var(--c5); } .k6 { color: var(--c6); } .k7 { color: var(--c7); }
+.k8 { color: var(--c8); } .k9 { color: var(--c9); } .k10 { color: var(--c10); } .k11 { color: var(--c11); }
+.k12 { color: var(--c12); } .k13 { color: var(--c13); } .k14 { color: var(--c14); } .k15 { color: var(--c15); }
+.atm-side { grid-area: side; min-width: 0; margin-left: 1.4ch; padding-left: 1.4ch; border-left: var(--sgl) solid var(--c8); }
+.atm-status { grid-area: stat; display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 2ch; margin-top: .6rem; padding-top: .5rem; border-top: var(--sgl) solid var(--c8); }
+.atm-stats { color: var(--c14); white-space: pre; }
+.atm-help { flex-basis: 100%; color: var(--c7); }
+.atm-torch, .atm-pad button { padding: 0 1ch; background: var(--c7); color: #000; border: 0; border-radius: 0; font: 700 1rem/1.5 var(--font-body); }
+.atm-torch:hover, .atm-pad button:hover { background: var(--c15); }
+.atm-torch[aria-pressed="false"] { background: var(--c14); }
+.atm-pad { display: none; gap: 1ch; }
+.atm-pad button { min-width: 44px; min-height: 40px; }
+
+/* The contents list is the key to the map. Without the script it sits under the hero as a menu line. */
+.toc { margin: 1.4rem 0 0; }
+.toc ul { display: flex; flex-wrap: wrap; gap: .2rem 3ch; }
+.toc li { white-space: nowrap; }
+.toc a { color: var(--c15); font-size: 1rem; text-decoration: none; }
+.toc a::before { display: inline-block; width: 2ch; font-weight: 700; }
+.toc li:nth-child(1) a::before { content: '?'; color: var(--c11); }
+.toc li:nth-child(2) a::before { content: '*'; color: var(--c14); }
+.toc li:nth-child(3) a::before { content: '+'; color: var(--c10); }
+.toc li:nth-child(4) a::before { content: '!'; color: var(--c13); }
+.toc li:nth-child(5) a::before { content: '('; color: var(--c9); }
+.toc li:nth-child(6) a::before { content: '>'; color: var(--c12); }
+.toc a:hover, .toc a:focus-visible { background: var(--c7); color: #000; outline: 0; }
+.toc a:hover::before, .toc a:focus-visible::before { color: #000; }
+.atm-side .toc { margin: 0; }
+.atm-side .toc::before { content: 'Key'; display: inline-block; margin-bottom: .5rem; padding: 0 1ch; background: var(--c7); color: #000; font-weight: 700; }
+.atm-side .toc ul { display: grid; gap: 0; }
+.atm-side .toc a { display: block; padding: .05rem 0; line-height: 1.5; }
+
+/* Four hero images, each in a single-line frame. Screenshots keep their whole frame on black. On a wide window the
+   images step out of the 80-column screen, so each column is at least 640px and the text-mode heroes show at 1:1. */
+.hero-gallery { --hw: max(100%, min(1400px, 100vw - 6ch)); width: var(--hw); margin: 1.6rem 0 0 calc((100% - var(--hw)) / 2); gap: 1.6rem 2ch; }
+.hero-gallery .shot-link { aspect-ratio: 16 / 9; }
+.shot-link { background: #000; border: var(--sgl) solid var(--c8); }
+.page .shot-link:hover { border-color: var(--c14); background: #000; }
+.shot-link img { object-fit: contain; }
+/* Text-mode screenshots are never enlarged. Shown smaller than their pixels, the script marks them soft, so the
+   downscale averages each stroke instead of dropping whole rows and columns of the characters. */
+.is-pixel .shot-link img { object-fit: scale-down; }
+/* The game sits between the two rows of images, back at the screen's 80 columns */
+.hero-gallery > .atm-game { grid-column: 1 / -1; justify-self: center; width: min(100%, var(--cols)); margin: .5rem 0 .4rem; }
+.is-pixel .shot-link img.atm-soft { image-rendering: auto; }
+.shot figcaption, .loop figcaption { padding-top: .35rem; font-size: 1rem; line-height: 1.45; }
+.shot-title { font-weight: 700; color: var(--c15); }
+.shot-title a { color: var(--c15); }
+.shot-meta { color: var(--c7); }
+
+/* ---- windows: every section is framed in a double line, its title set into the top edge ---- */
+main { display: grid; gap: 3rem; margin-top: 3rem; }
+.sec { position: relative; padding: 2rem 2.4ch 1.6rem; border: var(--dbl) double var(--fc); scroll-margin-top: calc(var(--atlas-h) + 1.4rem); }
+.sec-title { position: absolute; top: calc(var(--dbl) / -2); left: 2ch; translate: 0 -50%; max-width: calc(100% - 4ch); margin: 0; padding: 0 1ch; background: #000; font: 700 clamp(1.05rem, 1.6vw, 1.3rem)/1.2 var(--font-display); color: var(--c15); text-transform: uppercase; letter-spacing: .14em; white-space: nowrap; overflow: hidden; text-overflow: clip; }
+.sec-title::before { content: var(--g) '\a0'; color: var(--fc); letter-spacing: 0; }
+.sec-title:focus { outline: 0; }
+.sec-title:focus-visible { outline: 2px solid var(--c14); }
+#feel { --fc: var(--c11); --g: '?'; }
+#core { --fc: var(--c14); --g: '*'; }
+#how { --fc: var(--c10); --g: '+'; }
+#palette { --fc: var(--c13); --g: '!'; }
+#vibe { --fc: var(--c9); --lb: var(--c1); --lt: var(--c15); --g: '('; }
+#refs { --fc: var(--c12); --g: '>'; }
+#sources { --fc: var(--c7); --g: '\a7'; }
+#related { --fc: var(--c6); --lb: var(--c6); --lt: var(--c15); --g: '<'; }
+
+/* Boxes inside a window: a single line, with an inverse-video label on the top edge */
+.origins, .specs, .do, .avoid, .learn, .loops-wrap, .music-wrap, .ref-list { position: relative; padding: 1.5rem 2ch 1.1rem; border: var(--sgl) solid var(--c8); }
+:is(.origins, .specs, .do, .avoid, .learn, .loops-wrap, .music-wrap, .ref-list) > h3 { position: absolute; top: calc(var(--sgl) / -2); left: 1.5ch; translate: 0 -50%; max-width: calc(100% - 3ch); margin: 0; padding: 0 1ch; background: var(--lb, var(--fc)); color: var(--lt, #000); font: 700 1rem/1.5 var(--font-body); white-space: nowrap; overflow: hidden; }
+.sec h3 { font-family: var(--font-body); }
+
+/* The feel */
+.feel-body { max-width: none; font-size: 1rem; }
+.feel-body p { line-height: 1.55; }
+.mood-words { display: grid; grid-template-columns: repeat(3, minmax(0, max-content)); gap: .1rem 5ch; margin: 1.6rem 0 2.2rem; counter-reset: mw; }
+.mood-words li { counter-increment: mw; padding: 0; border: 0; font-size: 1rem; line-height: 1.5; color: var(--c15); }
+.mood-words li::before { content: counter(mw, lower-alpha) ' - '; color: var(--c11); }
+.origins { max-width: none; margin-top: 0; }
+.origins p { line-height: 1.55; }
+
+/* Core elements: six look-at boxes in two columns */
+.core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2ch; }
+.core-item { padding: 1rem 2ch 1.1rem; background: transparent; border: var(--sgl) solid var(--c8); }
+.core-item:hover { border-color: var(--c14); }
+.core-item h3 { margin-bottom: .45rem; font: 700 1rem/1.4 var(--font-body); color: var(--c14); }
+.core-item h3::before { content: counter(core) ')\a0'; color: var(--c6); }
+.core-item p { line-height: 1.55; }
+
+/* How to do it: numbered like keys in a menu */
+.steps { max-width: none; gap: 1.3rem; }
+.step { padding-left: 5ch; }
+.step::before { content: counter(step); left: 0; top: 0; width: 3ch; height: auto; display: block; text-align: center; background: var(--c10); color: #000; font: 700 1rem/1.4 var(--font-body); border-radius: 0; }
+.step h3 { margin-bottom: .3rem; font: 700 1rem/1.4 var(--font-body); color: var(--c15); }
+.step p { line-height: 1.55; }
+.how-side { gap: 2rem 2ch; margin-top: 2.4rem; grid-template-columns: minmax(0, 1fr); }
+.dodont { gap: 2rem; }
+.specs { background: transparent; border-radius: 0; }
+.spec { grid-template-columns: minmax(0, 15ch) minmax(0, 1fr); gap: 0 1ch; padding: .2rem 0; border: 0; line-height: 1.45; }
+.spec dt { display: flex; align-items: baseline; font-weight: 400; color: var(--c15); }
+.spec dt::after { content: ' . . . . . . . . . . . . . . . . . . . .'; flex: 1 1 0; min-width: 1ch; overflow: hidden; white-space: nowrap; color: var(--c8); }
+.spec dd { color: var(--c7); }
+.do { border-color: var(--c2); --lb: var(--c10); }
+.avoid { border-color: var(--c4); --lb: var(--c12); --lt: #000; }
+.dodont ul { padding: 0; list-style: none; }
+.dodont li { position: relative; margin-bottom: .55rem; padding-left: 2ch; line-height: 1.5; }
+.dodont li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
+.do li::before { content: '+'; color: var(--c10); }
+.avoid li::before { content: '-'; color: var(--c12); }
+.learn { margin-top: 2.4rem; }
+.learn ul { gap: .9rem 3ch; grid-template-columns: minmax(0, 1fr); }
+/* Tools and references as a listing: the name and its line of detail on the left, the note beside them */
+.learn .ref-item, .ref-list .ref-item { display: grid; grid-template-columns: minmax(0, 22ch) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 3ch; align-items: start; }
+.learn .ref-item > a, .ref-list .ref-item > a { grid-column: 1; }
+.learn .ref-meta, .ref-list .ref-meta { grid-column: 1; grid-row: 2; }
+.learn .ref-note, .ref-list .ref-note { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+.ref-item { line-height: 1.45; }
+.ref-item > a { font-weight: 700; }
+.ref-meta { color: var(--c3); font-size: 1rem; }
+.ref-note { margin-top: .15rem; font-size: 1rem; line-height: 1.5; color: var(--c7); }
+.brief, .palette-actions { gap: .8rem 2ch; margin-top: 1.8rem; }
+.btn { padding: 0 1ch; background: var(--c7); color: #000; border: 0; border-radius: 0; font: 700 1rem/1.6 var(--font-body); box-shadow: 1ch .35rem 0 var(--c8); }
+.btn::before { content: '[\a0'; }
+.btn::after { content: '\a0]'; }
+.btn:hover { background: var(--c15); }
+.btn:active { translate: 1ch .35rem; box-shadow: none; }
+.brief-note { margin-left: 1ch; color: var(--c7); font-size: 1rem; }
+
+/* Palette: each colour as rows of full and shaded blocks, the way text mode fakes a gradient */
+.swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem 2ch; }
+.swatch button { padding: 0; background: transparent; border: 0; border-radius: 0; text-align: left; overflow: visible; }
+.chip { position: relative; height: auto; overflow: hidden; background: linear-gradient(var(--c), var(--c)) 0 0 / 100% 3.75em no-repeat; color: var(--c); font: 400 1rem/1.25 var(--font-body); white-space: pre; outline: var(--sgl) solid var(--c8); outline-offset: 3px; }
+.chip::before { content: '\A\A\A▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\A▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\A░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░'; display: block; }
+.swatch button:hover .chip, .swatch button:focus-visible .chip { outline-color: var(--c15); }
+.swatch-name, .swatch-hex { padding: 0; font-size: 1rem; line-height: 1.45; }
+.swatch-name { padding-top: .6rem; font-weight: 700; color: var(--c15); }
+.swatch-hex { color: var(--c7); }
+.palette-note { max-width: none; margin-top: 1.4rem; color: var(--c7); }
+
+/* Feel the vibe: the loops, and the music as a menu with an inverse-video bar */
+.loops-wrap { margin-bottom: 2.2rem; }
+/* The strongest loop across the box, the other two side by side under it */
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2ch; }
+.loop:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+.loop video { aspect-ratio: 16 / 10; object-fit: contain; background: #000; border: var(--sgl) solid var(--c8); }
+.loop video:hover { border-color: var(--c9); }
+.tracks { max-width: none; gap: .5rem; }
+.track { column-gap: 2ch; }
+.track-btn { gap: 1ch; padding: .1rem 1ch; background: transparent; border: 0; border-radius: 0; }
+.track-btn:hover, .track.is-playing .track-btn { background: var(--c7); }
+.track-btn:hover :is(.track-title, .track-artist, .track-play), .track.is-playing .track-btn :is(.track-title, .track-artist, .track-play) { color: #000; }
+.track-play { width: 2ch; height: auto; background: transparent; color: var(--c9); border-radius: 0; }
+.track-text { line-height: 1.4; }
+.track-title { display: inline; font-weight: 700; color: var(--c15); line-height: 1.4; }
+.track-artist { display: inline; font-size: 1rem; line-height: 1.4; color: var(--c7); }
+.track-artist::before { content: '\a0\a0'; }
+.track-note { margin: .1rem 0 .6rem 4ch; font-size: 1rem; line-height: 1.5; color: var(--c7); }
+.track-yt { font-size: 1rem; color: var(--c11) !important; }
+.player { background: #000; border: var(--dbl) double var(--c9); border-radius: 0; box-shadow: 1ch .5rem 0 var(--c8); font-family: var(--font-body); }
+.player-info { font-size: 1rem; line-height: 1.4; }
+.player-now { color: var(--c11); font-size: 14px; }
+.player-title { color: var(--c15); }
+.player-artist { color: var(--c7); }
+
+/* More references */
+.ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem 2ch; margin-bottom: 2.6rem; }
+.ref-gallery .shot-link { aspect-ratio: 16 / 10; }.ref-lists { gap: 2rem 2ch; grid-template-columns: minmax(0, 1fr); }
+.ref-list ul { display: grid; gap: .9rem; }
+.ref-item { margin: 0; }
+
+/* Sources */
+.sources { gap: .3rem 3ch; font-size: 1rem; line-height: 1.45; }
+.source { grid-template-columns: 4ch minmax(0, 1fr); gap: 0 1ch; padding: .2rem 0; }
+.source-n { color: var(--c14); text-align: left; }
+.source-n::before { content: '['; color: var(--c8); }
+.source-n::after { content: ']'; color: var(--c8); }
+.source-meta { color: var(--c7); font-size: 1rem; }
+.source:target { outline: var(--sgl) solid var(--c14); outline-offset: 2px; }
+
+/* Related styles */
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem 2ch; }
+.related img { border: var(--sgl) solid var(--c8); background: #000; }
+.related a { color: var(--c15); text-decoration: none; }
+.related a:hover { background: transparent; }
+.related a:hover img { border-color: var(--c6); }
+.related a:hover span { background: var(--c7); color: #000; }
+.related span { padding: .35rem 0 0; font-size: 1rem; font-weight: 700; line-height: 1.4; }
+
+/* Footer: the last line of the screen */
+.foot { margin-top: 3rem; padding-top: 1rem; border-top: var(--dbl) double var(--c8); color: var(--c7); font-size: 1rem; line-height: 1.5; }
+.foot p::before { content: '* '; color: var(--c8); }
+.foot-nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: .6rem 3ch; }
+.foot-nav a { color: var(--c15); text-decoration: none; padding: 0 1ch; }
+.foot-nav a[rel=next] { justify-self: end; text-align: right; }
+.foot-nav a svg { flex: none; }
+.foot-nav a:hover { background: var(--c7); color: #000; }
+
+/* ---- smaller screens: fewer columns, the map scrolls with the @ ---- */
+@media (max-width: 1060px) {
+  .atm-game { grid-template-columns: minmax(0, 1fr); grid-template-areas: "msg" "map" "stat" "side"; }
+  /* The map grows to fill the window's width; on a phone it stays at 16px and the view follows the @ instead */
+  .atm-view { container-type: inline-size; }
+  .atm-map { font-size: clamp(16px, 100cqi / 33.6, 1.5rem); }
+  .atm-side { margin: .9rem 0 0; padding: .9rem 0 0; border-left: 0; border-top: var(--sgl) solid var(--c8); }
+  .atm-side .toc ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, 20ch), 1fr)); column-gap: 3ch; }
+  .atm-pad { display: inline-flex; }
+}
+@media (pointer: coarse) { .atm-pad { display: inline-flex; } }
+@media (max-width: 860px) {
+  .hero-text { grid-template-columns: minmax(0, 1fr); grid-template-areas: "kick" "title" "sub" "tag"; }
+  .hero-sub { margin-top: 1rem; }
+  .hero-tagline { max-width: none; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .page { padding: 0 12px 2.4rem; }
+  .hero { padding-top: 1.1rem; }
+  .hero-title.has-logo { font-size: min(16px, calc((100vw - 24px) / 18.2)); }
+  .atm-game { padding: 1rem 1ch .5rem; }
+  .atm-msg { min-height: 3em; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); }
+  .sec { padding-top: 1.9rem; padding-bottom: 1.4rem; }
+  .sec-title { left: 1ch; letter-spacing: .06em; }
+  .mood-words { grid-template-columns: repeat(2, minmax(0, max-content)); column-gap: 3ch; }
+  .spec { grid-template-columns: minmax(0, 1fr); }
+  .spec dt::after { display: none; }
+  .spec dt { color: var(--c14); }
+  .step { padding-left: 4ch; }
+  .ref-gallery, .loops { grid-template-columns: minmax(0, 1fr); }
+  /* The YouTube link gets its own line under the note, so the title and artist use the whole width */
+  .track { grid-template-columns: minmax(0, 1fr); }
+  .track-yt { grid-row: auto; grid-column: 1; justify-self: start; margin: 0 0 .7rem 1ch; }
+  .track-note { margin-bottom: .15rem; }
+  .foot-nav { grid-template-columns: minmax(0, 1fr); }
+  .foot-nav a[rel=next] { justify-self: start; text-align: left; }
+  .track-note { margin-left: 1ch; }
+  .atlas { gap: 6px; padding: 0 6px; font-size: 14px; }
+  .atlas-home { padding: 0 6px; }
+  .atlas-btn { padding: 0 6px; }
+  .sec { padding-left: 1ch; padding-right: 1ch; }
+  .origins, .specs, .do, .avoid, .learn, .loops-wrap, .music-wrap, .ref-list { padding-left: 0; padding-right: 0; padding-bottom: .4rem; border-width: var(--sgl) 0 0; }
+  :is(.origins, .specs, .do, .avoid, .learn, .loops-wrap, .music-wrap, .ref-list) > h3 { left: 0; }
+  .source { display: block; }
+  .learn .ref-item, .ref-list .ref-item { display: block; }
+  .learn .ref-note, .ref-list .ref-note { margin-top: .15rem; }
+  .source-n { display: inline; margin-right: 1ch; }
+}

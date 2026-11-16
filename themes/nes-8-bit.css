@@ -1,0 +1,426 @@
+@font-face {
+  font-family: 'Jersey 10';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/jersey-10-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Kode Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/kode-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Kode Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/kode-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* 8-bit / NES Pixel Art: the NES seen through a developer's debugger. The four hero screens sit in a nametable viewer, every section is a tool
+   window drawn in its own four-colour palette, and the Palette section holds a working tile painter that keeps to the console's background rules
+   (themes/nes-8-bit.js). Every colour below is an entry in the NES master palette, with the hex values the hero screenshots use.
+   No gradients except hard-edged grid lines, no rounded corners, no soft shadows. Jersey 10 sits on a 75-unit pixel grid in a 1400-unit em,
+   so its crisp sizes are multiples of 18.667px: 37.333px (2px pixels), 56px (3px), 74.667px (4px), 112px (6px) and 224px (12px). */
+:root {
+  --k: #000000;       /* $0F */
+  --w: #FCFCFC;       /* $30 */
+  --g0: #747474;      /* $00 */
+  --g1: #BCBCBC;      /* $10 */
+  --g2: #C4C4C4;      /* $3D */
+  --slate: #183C5C;   /* $0C */
+  --navy: #24188C;    /* $01 */
+  --dblue: #0000A8;   /* $02 */
+  --blue: #0070EC;    /* $11 */
+  --royal: #2038EC;   /* $12 */
+  --sky: #5C94FC;     /* $22 */
+  --cyan: #3CBCFC;    /* $21 */
+  --ice: #A8E4FC;     /* $31 */
+  --red: #D82800;     /* $16 */
+  --brick: #C84C0C;   /* $17 */
+  --maroon: #7C0800;  /* $07 */
+  --orange: #FC9838;  /* $27 */
+  --gold: #F0BC3C;    /* $28 */
+  --olive: #887000;   /* $18 */
+  --cream: #FCE4A0;   /* $38 */
+  --green: #00A800;   /* $1A */
+  --leaf: #4CDC48;    /* $2A */
+  --salmon: #FC7460;  /* $26 */
+  --rose: #FC74B4;    /* $25 */
+  --magenta: #BC00BC; /* $14 */
+  --pink: #E40058;    /* $15 */
+  --lilac: #CC88FC;   /* $23 */
+  --violet: #8000F0;  /* $13 */
+
+  --bg: var(--sky); --surface: var(--w); --ink: var(--k); --muted: var(--slate); --accent: var(--royal); --line: var(--k);
+  --font-display: 'Jersey 10', 'Courier New', monospace;
+  --font-body: 'Kode Mono', Consolas, monospace;
+  --font-mono: 'Kode Mono', Consolas, monospace;
+  --radius: 0; --max: 1168px; --gap: 24px; --atlas-h: 48px;
+  --j2: 37.333px; --j3: 56px; --j4: 74.667px;
+  /* each window's palette: a light and a dark colour beside black and white */
+  --a1: var(--cyan); --a2: var(--blue);
+  color-scheme: light;
+}
+html { font-size: 18px; }
+body { background: var(--sky); color: var(--k); font: 400 18px/1.6 var(--font-body); }
+::selection { background: var(--k); color: var(--w); }
+:focus-visible { outline: 4px solid var(--pink); outline-offset: 2px; }
+a { color: var(--dblue); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.page a:hover { color: var(--pink); }
+
+/* Site bar: the emulator's menu strip */
+.atlas { height: var(--atlas-h); padding: 0 16px; background: var(--k); border-bottom: 4px solid var(--royal); font: 400 28px/1 var(--font-display); }
+.atlas a, .atlas-btn { color: var(--w); }
+.atlas-home { gap: 8px; font-weight: 400; }
+.atlas-here { color: var(--cyan); font: 400 16px/1 var(--font-body); }
+.atlas-here::before { content: 'CART '; color: var(--g1); }
+.atlas-btn { height: 36px; padding: 0 10px; border: 0; font: 400 28px/1 var(--font-display); }
+.atlas-btn:hover, .atlas-home:hover { background: var(--w); color: var(--k); }
+.atlas-home { padding: 4px 10px 4px 6px; }
+.atlas-btn[aria-pressed="true"] { color: var(--gold); }
+.atlas-btn[aria-pressed="true"]:hover { color: var(--k); }
+.atlas :focus-visible { outline-color: var(--gold); outline-offset: -2px; }
+
+.page { padding: 0 24px 72px; }
+
+/* Hero: a title drawn in a tile editor, then the four screens in a nametable viewer */
+.hero { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "kick kick" "title sub" "title tag" "title jump" "gal gal"; column-gap: 40px; padding: 40px 0 0; align-items: start; }
+.hero-text { display: contents; }
+.hero-kicker { grid-area: kick; justify-self: start; margin: 0 0 24px; padding: 4px 12px 2px; background: var(--k); color: var(--w); font: 400 16px/24px var(--font-body); letter-spacing: .08em; text-transform: uppercase; }
+/* One font pixel is 12px here, and the grid behind the title is that pixel grid: thin lines every pixel, heavy lines every 8 pixels (one tile). */
+.hero-title { grid-area: title; margin: 0; padding: 0 36px 0 24px; font: 400 224px/168px var(--font-display); letter-spacing: 0; color: var(--k); overflow-wrap: normal; white-space: nowrap;
+  background-color: var(--w);
+  background-image: linear-gradient(90deg, var(--g0) 2px, transparent 2px), linear-gradient(var(--g0) 2px, transparent 2px), linear-gradient(90deg, var(--g2) 1px, transparent 1px), linear-gradient(var(--g2) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 12px 12px, 12px 12px; background-position: -1px -1px, -1px -1px, 0 0, 0 0;
+  border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); text-shadow: 12px 12px 0 var(--orange); }
+/* The shadow colour cycles like a palette swap, three entries in turn */
+:root:not([data-calm]) .hero-title { animation: nes-cycle 1.8s steps(1, end) infinite; }
+@keyframes nes-cycle { 0% { text-shadow: 12px 12px 0 var(--orange); } 50% { text-shadow: 12px 12px 0 var(--brick); } 75% { text-shadow: 12px 12px 0 var(--maroon); } }
+.hero-sub { grid-area: sub; align-self: end; margin: 0; font: 400 var(--j4)/1 var(--font-display); color: var(--k); text-transform: uppercase; letter-spacing: 0; }
+.hero-tagline { grid-area: tag; max-width: 30em; margin: 20px 0 0; padding: 14px 20px; background: var(--w); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); font-size: 20px; line-height: 1.5; }
+.nes-jump { grid-area: jump; justify-self: start; margin-top: 28px; padding: 8px 16px 6px; background: var(--k); color: var(--w); font: 400 var(--j2)/1 var(--font-display); text-decoration: none; box-shadow: 6px 6px 0 var(--navy); }
+.nes-jump::before { content: '\25B6\FE0E  '; color: var(--gold); white-space: pre; font-size: 24px; vertical-align: 6px; }
+.nes-jump:hover { background: var(--w); color: var(--k); box-shadow: 6px 6px 0 var(--k); }
+.nes-jump:hover::before { color: var(--brick); }
+
+/* Nametable viewer: four screens in a 2 by 2 grid, as a debugger lays out the console's four nametables. At full width each NES frame shows at exactly 2x. */
+.hero-gallery { grid-area: gal; position: relative; grid-template-columns: repeat(2, minmax(0, 512px)); justify-content: center; gap: 28px 24px; margin-top: 48px; padding: 64px 20px 24px; background: var(--k); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); }
+.hero-gallery::before { content: 'Nametables'; position: absolute; left: 0; right: 0; top: 0; height: 44px; padding: 3px 16px 0; background: var(--g1); color: var(--k); font: 400 var(--j2)/40px var(--font-display); }
+.hero-gallery::after { content: '$2000\2013$2FFF'; position: absolute; right: 16px; top: 10px; color: var(--k); font: 400 16px/24px var(--font-body); }
+/* each screen spans three rows of the viewer (readout, picture, caption), so the pictures in a row line up even when a readout wraps */
+.hero-gallery .shot { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+.hero-gallery .shot-link { align-self: start; aspect-ratio: 16 / 15; background: var(--k); outline: 2px solid var(--g0); outline-offset: 0; }
+.nes-cell-head { align-self: end; }
+.hero-gallery .shot-link:hover { outline-color: var(--gold); }
+.hero-gallery figcaption { color: var(--w); font-size: 16px; padding-top: 10px; }
+.hero-gallery .shot-meta { color: var(--g1); }
+.nes-cell-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 24px; margin-bottom: 8px; color: var(--g1); font: 400 16px/24px var(--font-body); }
+.nes-addr { color: var(--cyan); }
+.nes-used { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; }
+.nes-used b { font-weight: 400; margin-right: 6px; }
+.nes-used i { width: 10px; height: 10px; background: var(--c); box-shadow: inset 0 0 0 1px var(--g0); }
+
+/* Images */
+.shot-link { background: var(--k); }
+.shot figcaption, .loop figcaption { font-size: 16px; line-height: 1.45; padding-top: 8px; }
+.shot-title { font-weight: 700; }
+.shot-meta { color: var(--slate); }
+
+/* Contents: the sprite list, one entry per section */
+.toc { margin: 48px 0 0; padding: 10px 20px 8px; background: var(--k); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); }
+.toc ul { counter-reset: oam -1; gap: 2px 30px; }
+.toc li { counter-increment: oam; }
+.toc a { color: var(--w); font: 400 28px/40px var(--font-display); text-decoration: none; }
+.toc a::before { content: '$0' counter(oam) ' '; color: var(--cyan); }
+.toc a:hover { color: var(--gold); }
+.toc :focus-visible { outline-color: var(--gold); }
+
+/* Sections: tool windows. Each draws its trim from one palette of four colours, named in its title bar. */
+#feel { --a1: var(--cyan); --a2: var(--blue); }
+#core { --a1: var(--orange); --a2: var(--brick); }
+#how { --a1: var(--leaf); --a2: var(--green); }
+#palette { --a1: var(--salmon); --a2: var(--red); }
+#vibe { --a1: var(--rose); --a2: var(--magenta); }
+#refs { --a1: var(--gold); --a2: var(--olive); }
+#sources { --a1: var(--g1); --a2: var(--g0); }
+#related { --a1: var(--lilac); --a2: var(--violet); }
+.sec { position: relative; margin: 56px 0 0; padding: 0 32px 36px; background: var(--w); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--a2); }
+.sec-title { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin: 0 -32px 32px; padding: 8px 32px 4px; background: var(--k); color: var(--w); font: 400 var(--j3)/1.15 var(--font-display); border-bottom: 8px solid var(--a1); letter-spacing: 0; }
+.nes-tag { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; color: var(--g1); font: 400 16px/1 var(--font-body); letter-spacing: .06em; }
+.nes-tag i { width: 16px; height: 16px; margin-left: 2px; box-shadow: inset 0 0 0 1px var(--g0); }
+.nes-tag i:nth-of-type(1) { margin-left: 10px; background: var(--k); }
+.nes-tag i:nth-of-type(2) { background: var(--w); }
+.nes-tag i:nth-of-type(3) { background: var(--a1); }
+.nes-tag i:nth-of-type(4) { background: var(--a2); }
+.sec h3 { font: 400 var(--j2)/1.1 var(--font-display); letter-spacing: 0; }
+.cite a { color: var(--dblue); }
+
+/* Header bars for the small windows inside a section */
+.origins h3, .specs h3, .do h3, .avoid h3, .learn h3, .ref-list h3, .loops-wrap h3, .music-wrap h3, .nes-sub-h { margin: 0 -24px 18px; padding: 6px 24px 2px; background: var(--a1); color: var(--k); border-bottom: 4px solid var(--k); }
+
+/* The feel */
+#feel { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); grid-template-areas: "t t" "b o" "m o"; column-gap: 40px; align-items: start; }
+#feel > .sec-title { grid-area: t; }
+.feel-body { grid-area: b; max-width: none; font-size: 19px; line-height: 1.65; }
+.mood-words { grid-area: m; gap: 8px; margin: 28px 0 0; }
+.mood-words li { padding: 3px 12px 1px; background: var(--w); border: 2px solid var(--k); box-shadow: 4px 4px 0 var(--a1); font: 400 16px/26px var(--font-body); }
+.origins { grid-area: o; max-width: none; margin: 0; padding: 0 24px 22px; background: var(--w); border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+.origins p { font-size: 17px; line-height: 1.6; }
+
+/* Core elements: a pattern table of six cells, each with a sprite drawn from 2-bit tile data */
+.core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 0; background: var(--k); border: 4px solid var(--k); counter-reset: core -1; }
+.core-item { position: relative; padding: 20px 24px 26px; background: var(--w); border: 0; counter-increment: core; }
+.core-item::before { content: 'TILE $0' counter(core); position: absolute; top: 12px; right: 14px; color: var(--slate); font: 400 14px/1 var(--font-body); letter-spacing: .06em; }
+.core-item h3 { margin: 0 0 12px; }
+.nes-ico { display: block; height: 48px; width: auto; margin: 4px 0 14px; image-rendering: pixelated; }
+.core-item p { font-size: 17px; line-height: 1.6; }
+
+/* How to do it */
+.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; max-width: none; }
+.step { padding-left: 76px; min-height: 60px; }
+.step::before { content: counter(step, decimal-leading-zero); width: 56px; height: 56px; background: var(--k); color: var(--w); font: 400 var(--j2)/1 var(--font-display); box-shadow: 4px 4px 0 var(--a1); }
+.step h3 { margin: 6px 0 10px; }
+.step p { font-size: 17px; line-height: 1.6; }
+.how-side { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px; margin-top: 48px; align-items: start; }
+.specs { padding: 0 24px 14px; background: var(--w); border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+.specs h3 { background: var(--k); color: var(--w); border-bottom-color: var(--a1); }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 14px; padding: 10px 0; border-top: 2px dashed var(--g1); }
+.spec:first-child { border-top: 0; }
+.spec dt { font: 400 28px/1.05 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
+.spec dd { font-size: 16px; line-height: 1.5; }
+.dodont { gap: 24px; }
+.do, .avoid { padding: 0 24px 16px; background: var(--w); border: 4px solid var(--k); }
+.do { box-shadow: 6px 6px 0 var(--green); }
+.avoid { --a1: var(--salmon); box-shadow: 6px 6px 0 var(--red); }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 12px; padding-left: 30px; font-size: 17px; line-height: 1.55; }
+/* pixel bullets: a tick and a cross on an 6 by 6 grid */
+.do li::before, .avoid li::before { content: ''; position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: var(--k); }
+.do li::before { background: var(--green); clip-path: polygon(0 50%, 16.6% 50%, 16.6% 66.6%, 33.3% 66.6%, 33.3% 50%, 50% 50%, 50% 33.3%, 66.6% 33.3%, 66.6% 16.6%, 83.3% 16.6%, 83.3% 0, 100% 0, 100% 33.3%, 83.3% 33.3%, 83.3% 50%, 66.6% 50%, 66.6% 66.6%, 50% 66.6%, 50% 83.3%, 33.3% 83.3%, 33.3% 100%, 16.6% 100%, 16.6% 83.3%, 0 83.3%); }
+.avoid li::before { background: var(--red); clip-path: polygon(0 0, 33.3% 0, 33.3% 16.6%, 66.6% 16.6%, 66.6% 0, 100% 0, 100% 33.3%, 83.3% 33.3%, 83.3% 66.6%, 100% 66.6%, 100% 100%, 66.6% 100%, 66.6% 83.3%, 33.3% 83.3%, 33.3% 100%, 0 100%, 0 66.6%, 16.6% 66.6%, 16.6% 33.3%, 0 33.3%); }
+.learn { margin-top: 44px; padding: 0 24px 20px; border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+.learn ul { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px 36px; }
+.ref-item { margin-bottom: 14px; }
+.ref-item > a, .learn a { font-weight: 700; color: var(--dblue); }
+.ref-meta { color: var(--slate); font-size: 16px; }
+.ref-note { font-size: 16px; line-height: 1.55; }
+.brief { margin-top: 32px; }
+.brief-note { color: var(--slate); font-size: 16px; }
+.btn { padding: 8px 16px 6px; background: var(--k); color: var(--w); border: 0; font: 400 28px/1 var(--font-display); box-shadow: 4px 4px 0 var(--a2); }
+.btn:hover { background: var(--w); color: var(--k); box-shadow: 4px 4px 0 var(--k); outline: 2px solid var(--k); outline-offset: -2px; }
+
+/* Palette: the swatches are palette RAM entries, labelled with their master palette index where they have one */
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; background: var(--k); border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+/* a column, so every chip sits at the top of its button even when a name wraps in the next swatch */
+.swatch button { position: relative; display: flex; flex-direction: column; height: 100%; background: var(--w); border: 0; }
+.chip { height: 96px; }
+.swatch-name { padding: 8px 10px 0; font-size: 16px; line-height: 1.3; font-weight: 700; }
+.swatch-hex { padding: 2px 10px 10px; color: var(--slate); font-size: 16px; }
+.nes-idx { position: absolute; left: 6px; top: 6px; padding: 2px 5px 0; background: var(--k); color: var(--w); font: 400 14px/18px var(--font-body); }
+.palette-note { max-width: 52em; margin-top: 20px; color: var(--k); font-size: 17px; }
+.palette-actions { margin-top: 24px; }
+
+/* The tile painter, built by the theme script */
+.nes-ppu { position: relative; margin-top: 44px; padding: 0 24px 24px; background: var(--w); border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); scroll-margin-top: calc(var(--atlas-h) + 16px); }
+.nes-ppu-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin: 0 -24px 18px; padding: 6px 24px 2px; background: var(--k); color: var(--w); border-bottom: 4px solid var(--a1); }
+.nes-ppu-head h3 { margin: 0; color: var(--w); }
+.nes-ppu-head span { margin-left: auto; color: var(--g1); font: 400 16px/1 var(--font-body); }
+.nes-help { max-width: 60em; margin: 0 0 20px; font-size: 17px; line-height: 1.55; }
+.nes-ppu-main { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.nes-left { min-width: 0; }
+.nes-canvas-wrap { display: inline-block; max-width: 100%; line-height: 0; background: var(--k); border: 4px solid var(--k); }
+.nes-canvas { display: block; touch-action: none; cursor: crosshair; image-rendering: pixelated; }
+.nes-canvas:focus-visible { outline: 4px solid var(--pink); outline-offset: 2px; }
+.nes-readout { min-height: 24px; margin: 8px 0 0; color: var(--slate); font: 400 16px/24px var(--font-body); white-space: pre-wrap; }
+.nes-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.nes-tools button, .nes-tools label { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 4px 12px 2px; background: var(--w); color: var(--k); border: 2px solid var(--k); font: 400 28px/1 var(--font-display); cursor: pointer; }
+.nes-tools button:hover, .nes-tools label:hover { background: var(--cream); }
+.nes-tools button[aria-pressed="true"] { background: var(--k); color: var(--w); }
+.nes-tools input { width: 18px; height: 18px; margin: 0 0 3px; accent-color: var(--k); }
+.nes-tools .nes-gap { width: 8px; }
+.nes-status { min-height: 52px; margin: 14px 0 0; padding: 10px 14px; background: var(--cream); border: 2px solid var(--k); font-size: 16px; line-height: 1.5; }
+.nes-status.is-clash { background: var(--salmon); }
+.nes-right { min-width: 0; display: grid; gap: 18px; }
+.nes-pals { display: grid; gap: 6px; }
+.nes-pal { display: grid; grid-template-columns: 60px repeat(4, 44px); gap: 4px; align-items: center; padding: 3px; border: 2px solid transparent; }
+.nes-pal.on { border-color: var(--k); background: var(--cream); }
+.nes-pal-name { font: 400 28px/1 var(--font-display); }
+.nes-slot { position: relative; width: 44px; height: 44px; padding: 0; background: var(--c); border: 2px solid var(--k); }
+.nes-slot.is-bd::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: repeating-linear-gradient(90deg, var(--k) 0 4px, var(--w) 4px 8px); }
+.nes-slot[aria-pressed="true"] { outline: 4px solid var(--k); outline-offset: 2px; box-shadow: 0 0 0 2px var(--w) inset; }
+.nes-slot:hover { outline: 2px solid var(--k); outline-offset: 2px; }
+.nes-brush { margin: 0; font-size: 16px; line-height: 1.5; }
+.nes-brush i { display: inline-block; width: 16px; height: 16px; margin: 0 4px -2px 0; background: var(--c); border: 2px solid var(--k); }
+.nes-right h4, .nes-chr h4 { margin: 0 0 8px; font: 400 28px/1 var(--font-display); }
+.nes-right h4 span, .nes-chr h4 span { font: 400 16px/1 var(--font-body); color: var(--slate); margin-left: 8px; }
+.nes-right h4 span { white-space: nowrap; } /* an address range moves to the next line whole */
+.nes-chart { display: grid; grid-template-columns: 34px repeat(var(--cols, 16), minmax(0, 1fr)); gap: 2px; max-width: 470px; padding: 2px; background: var(--g0); border: 2px solid var(--k); }
+.nes-chart span { display: grid; place-items: center; background: var(--k); color: var(--g1); font: 400 14px/1 var(--font-body); }
+.nes-chart button { aspect-ratio: 1; min-width: 0; padding: 0; background: var(--c); border: 0; }
+.nes-chart button:hover { outline: 2px solid var(--w); outline-offset: -2px; z-index: 1; }
+.nes-chart button.on { outline: 3px solid var(--w); outline-offset: -3px; box-shadow: inset 0 0 0 5px var(--k); }
+.nes-chart button:focus-visible { outline: 3px solid var(--pink); outline-offset: -3px; }
+.nes-pick { min-height: 24px; margin: 6px 0 0; color: var(--slate); font-size: 16px; }
+.nes-chr { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "h h" "t n" "t tip"; grid-template-rows: auto auto 1fr; gap: 0 24px; align-items: start; margin-top: 24px; padding-top: 18px; border-top: 4px solid var(--k); }
+.nes-chr h4 { grid-area: h; }
+.nes-chr-wrap { grid-area: t; justify-self: start; display: inline-block; max-width: 100%; line-height: 0; background: var(--k); border: 2px solid var(--k); }
+.nes-chr canvas { display: block; max-width: 100%; cursor: pointer; image-rendering: pixelated; touch-action: manipulation; }
+.nes-chr-note { grid-area: n; max-width: 34em; margin: 0; font-size: 16px; line-height: 1.55; }
+.nes-chr-tip { grid-area: tip; min-height: 24px; margin: 12px 0 0; font-size: 16px; font-weight: 700; }
+
+/* Feel the vibe: loops in screens, music as a sound test */
+.loops-wrap, .music-wrap { padding: 0 24px 24px; border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+.loops-wrap { margin-bottom: 36px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.loop video { aspect-ratio: 4 / 3; object-fit: contain; background: var(--k); border: 4px solid var(--k); image-rendering: pixelated; }
+.loop .shot-title a { color: var(--dblue); }
+.tracks { counter-reset: bgm; max-width: none; gap: 4px; padding: 14px 16px; background: var(--k); border: 4px solid var(--k); color: var(--w); }
+.track { counter-increment: bgm; }
+.track-btn { gap: 14px; padding: 8px 10px; background: transparent; border: 0; color: var(--w); }
+.track-btn:hover, .track.is-playing .track-btn { background: var(--royal); }
+.track-play { width: 34px; height: 34px; background: var(--w); color: var(--k); }
+.track-text::before { content: 'BGM ' counter(bgm, decimal-leading-zero); display: block; color: var(--rose); font: 400 14px/1.4 var(--font-body); letter-spacing: .08em; }
+.track-title { font: 400 28px/1.1 var(--font-display); }
+.track-artist { color: var(--g1); font-size: 16px; }
+.track-note { margin: 2px 0 12px 58px; color: var(--g2); font-size: 16px; line-height: 1.5; }
+.track-note .cite a { color: var(--cyan); } /* citation markers on the black sound test */
+.track-note .cite a:hover { color: var(--gold); }
+.track-yt { color: var(--cyan); font-size: 16px; }
+.tracks :focus-visible { outline-color: var(--gold); }
+.player { background: var(--w); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); }
+.player-info { font-size: 16px; }
+.player-now { color: var(--slate); font-size: 14px; }
+.player-title { font: 400 28px/1.05 var(--font-display); }
+.player-artist { color: var(--slate); }
+.player-close { color: var(--k); }
+
+/* More references */
+.ref-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; margin-bottom: 40px; }
+.ref-gallery .shot-link { aspect-ratio: 16 / 15; border: 4px solid var(--k); }
+.ref-gallery .shot-link:hover { border-color: var(--olive); }
+.ref-lists { gap: 32px; }
+.ref-list { padding: 0 24px 12px; border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+
+/* Sources */
+.sources { gap: 6px 32px; font-size: 16px; }
+.source { padding: 8px; border-bottom: 2px dashed var(--g1); }
+.source-n { display: grid; place-items: center; width: 2em; height: 1.7em; background: var(--k); color: var(--w); font: 400 14px/1 var(--font-body); }
+.source-meta { color: var(--slate); font-size: 14px; }
+.source:target { outline: 4px solid var(--pink); }
+
+/* Related styles */
+.related { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.related img { border: 4px solid var(--k); }
+.related a { color: var(--k); }
+.related a:hover img { border-color: var(--violet); }
+.related span { font: 400 28px/1.05 var(--font-display); padding-top: 8px; }
+
+/* Footer: the status bar */
+.foot { margin-top: 56px; padding: 22px 28px; background: var(--k); color: var(--w); border: 4px solid var(--k); box-shadow: 8px 8px 0 var(--navy); font-size: 16px; }
+.foot p { color: var(--g2); }
+.foot .nes-foot-note { margin-bottom: 10px; color: var(--w); }
+.toast { background: var(--k); color: var(--w); border: 2px solid var(--w); border-radius: 0; font: 400 16px/1.4 var(--font-body); }
+.foot .nes-foot-note::before { content: ''; display: inline-block; width: 64px; height: 16px; margin: 0 12px -2px 0; background: linear-gradient(90deg, var(--k) 0 16px, var(--w) 16px 32px, var(--sky) 32px 48px, var(--brick) 48px); box-shadow: inset 0 0 0 1px var(--g0); }
+.foot-nav a { color: var(--w); font: 400 28px/1 var(--font-display); }
+.foot-nav a:hover { color: var(--gold); }
+.foot :focus-visible { outline-color: var(--gold); }
+
+/* Scanline demo in the core list, built by the theme script */
+.nes-oam { margin-top: 24px; padding: 0 24px 20px; border: 4px solid var(--k); box-shadow: 6px 6px 0 var(--a2); }
+.nes-oam-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.nes-oam-bar p { margin: 0; font-size: 16px; }
+.nes-oam-bar output { font: 400 var(--j2)/1 var(--font-display); }
+.nes-line { position: relative; display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; padding: 14px 12px; background: var(--k); }
+.nes-spr { position: relative; width: 48px; height: 48px; }
+.nes-spr canvas { display: block; width: 48px; height: 48px; image-rendering: pixelated; }
+.nes-spr b { position: absolute; left: 0; right: 0; bottom: -2px; color: var(--g2); font: 400 12px/1 var(--font-body); text-align: center; }
+.nes-spr.off canvas { visibility: hidden; }
+.nes-spr.off { box-shadow: inset 0 0 0 2px var(--g0); }
+.nes-spr.off b { color: var(--salmon); }
+.nes-oam .btn { font-size: 28px; padding: 6px 14px 4px; }
+
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "kick" "title" "sub" "tag" "jump" "gal"; }
+  .hero-title { justify-self: start; }
+  .hero-sub { margin-top: 28px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nes-ppu-main { grid-template-columns: minmax(0, 1fr); }
+  .nes-chr { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "t" "tip" "n"; grid-template-rows: none; }
+  .nes-chr-tip { margin: 8px 0 4px; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  #feel { grid-template-columns: minmax(0, 1fr); grid-template-areas: "t" "b" "m" "o"; }
+  .origins { margin-top: 28px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+  body { font-size: 17px; }
+  .page { padding: 0 14px 56px; }
+  .atlas { padding: 0 8px; gap: 6px; }
+  .atlas-btn { padding: 0 6px; }
+  .hero { padding-top: 24px; }
+  .hero-kicker { font-size: 14px; margin-bottom: 18px; }
+  /* half the zoom: one font pixel is 6px */
+  .hero-title { padding: 0 18px 0 12px; font-size: 112px; line-height: 84px; background-size: 48px 48px, 48px 48px, 6px 6px, 6px 6px; text-shadow: 6px 6px 0 var(--orange); box-shadow: 6px 6px 0 var(--navy); }
+  @keyframes nes-cycle { 0% { text-shadow: 6px 6px 0 var(--orange); } 50% { text-shadow: 6px 6px 0 var(--brick); } 75% { text-shadow: 6px 6px 0 var(--maroon); } }
+  .hero-sub { font-size: var(--j2); margin-top: 22px; }
+  .hero-tagline { font-size: 18px; padding: 12px 14px; box-shadow: 6px 6px 0 var(--navy); }
+  .nes-jump { font-size: 28px; }
+  .hero-gallery { padding: 56px 12px 18px; gap: 24px; box-shadow: 6px 6px 0 var(--navy); }
+  .hero-gallery::after { display: none; }
+  .toc { padding: 8px 12px 6px; }
+  .toc ul { gap: 0 18px; }
+  .sec { margin-top: 40px; padding: 0 12px 22px; box-shadow: 6px 6px 0 var(--a2); }
+  .sec-title { margin: 0 -12px 24px; padding: 6px 12px 2px; font-size: var(--j2); border-bottom-width: 6px; }
+  .nes-tag { margin-left: 0; width: 100%; font-size: 14px; padding-bottom: 6px; }
+  /* on a phone the small windows inside a section lose their side walls, so lines stay long enough to read */
+  .origins, .specs, .do, .avoid, .learn, .ref-list, .loops-wrap, .music-wrap, .nes-oam { padding-left: 0; padding-right: 0; border-left: 0; border-right: 0; box-shadow: none; }
+  .origins h3, .specs h3, .do h3, .avoid h3, .learn h3, .ref-list h3, .loops-wrap h3, .music-wrap h3, .nes-sub-h { margin: 0 0 16px; padding: 6px 10px 2px; }
+  .feel-body { font-size: 17px; line-height: 1.6; }
+  .origins p, .core-item p, .step p, .dodont li, .palette-note, .nes-help { font-size: 16px; line-height: 1.55; }
+  .dodont li { padding-left: 26px; }
+  .nes-ppu { padding: 0 12px 16px; }
+  .nes-ppu-head { margin: 0 -12px 16px; padding: 6px 12px 2px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .core-item { padding: 18px 16px 22px; }
+  /* the number tile floats beside the heading, and the step text below it gets the full width */
+  .step { padding-left: 0; }
+  .step::before { position: static; float: left; margin: 0 14px 4px 0; width: 48px; height: 48px; font-size: 28px; }
+  .step h3 { min-height: 48px; }
+  .step p { clear: left; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .tracks { padding: 6px; }
+  .track-btn { padding: 8px 6px; gap: 10px; }
+  .track-title { font-size: 24px; }
+  .track-note { margin: 2px 0 6px 50px; }
+  .track-yt { grid-row: 3; grid-column: 1; justify-self: start; margin: 0 0 14px 50px; }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .learn ul { grid-template-columns: minmax(0, 1fr); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .related span { font-size: 22px; }
+  .nes-pal { grid-template-columns: 52px repeat(4, minmax(0, 44px)); }
+  .nes-chart { grid-template-columns: 30px repeat(var(--cols, 16), minmax(0, 1fr)); }
+  .foot { padding: 18px 16px; }
+  .nes-spr, .nes-spr canvas { width: 32px; height: 32px; }
+}
+@media (max-width: 400px) {
+  .atlas { gap: 4px; padding: 0 4px; font-size: 24px; }
+  .atlas-home { gap: 4px; padding: 4px 6px 4px 4px; }
+  .atlas-btn { min-width: 28px; padding: 0 5px; font-size: 24px; }
+  .atlas-home, .atlas-btn { white-space: nowrap; }
+}

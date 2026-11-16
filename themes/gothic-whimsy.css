@@ -1,0 +1,433 @@
+@font-face {
+  font-family: 'Mystery Quest';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/mystery-quest-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/quattrocento-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/quattrocento-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/quattrocento-sans-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/quattrocento-sans-latin-700-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/quattrocento-sans-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/quattrocento-sans-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Gothic Whimsy: a crooked pop-up storybook, opened at night.
+   Bone-white leaves hang crooked on a violet-black night, ruled in scratchy ink. Between them the book pops up:
+   a diorama of Spiral Hill and a bent house that sway, frames hung on strings, a signpost, a street of leaning houses.
+   A crow hops from rail to rail as you read (themes/gothic-whimsy.js). One sickly accent: moonlight. */
+:root {
+  --night: #1b1520; --night-hi: #2c2234; --coal: #120e15; --bone: #ebe4d3; --leaf: #f2ecdf; --stone: #2e2635; --stone-hi: #43394b;
+  --moon: #d9dc6c; --moon-ink: #7c7f1c; --ash: #bdb3c5; --ink-soft: #54495b;
+  --bg: var(--night); --surface: var(--bone); --ink: var(--bone); --muted: var(--ash); --accent: var(--moon); --line: #4a3f52;
+  --font-display: 'Mystery Quest', 'Trebuchet MS', cursive; --font-body: 'Quattrocento', Georgia, serif; --font-ui: 'Quattrocento Sans', 'Trebuchet MS', sans-serif; --font-mono: var(--font-ui);
+  --radius: 0; --max: 1160px; --gap: 26px; --atlas-h: 48px;
+  --crow: clamp(48px, 5.4vw, 78px);
+  --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .27 0 0 0 0 .22 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --scratch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg stroke='%23ece6d6' stroke-opacity='.055' stroke-width='1.3' stroke-linecap='round' fill='none'%3E%3Cpath d='M14 40l17-33M44 104l21-40M104 44l13-27M140 136l18-35M76 168l15-29M160 76l9-19M22 140l12-25M110 112l8-16M58 30l6-12M124 172l7-14'/%3E%3C/g%3E%3C/svg%3E");
+  --flourish: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 30'%3E%3Cpath d='M3 17C40 9 82 23 132 15S212 7 247 15C263 19 276 21 284 14C291 8 286 2 279 4C272 6 273 15 280 15' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  --curl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M2 22C10 21 18 18 22 12C26 6 33 6 35 12C37 18 31 23 26 20C22 18 24 13 28 14' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --string: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40' preserveAspectRatio='none'%3E%3Cpath d='M12 40L50 3L88 40' fill='none' stroke='%23d8d0bd' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+html { font-size: 19px; }
+body { background: var(--scratch) 0 0 / 180px, radial-gradient(ellipse 70% 50% at 80% 0, rgb(217 220 108 / .09), transparent 70%), linear-gradient(180deg, #2b2133, var(--night) 55%, #141017); background-attachment: fixed; color: var(--bone); line-height: 1.6; }
+::selection { background: var(--moon); color: var(--coal); }
+a { color: var(--moon); text-underline-offset: 3px; }
+
+/* ---------- Site bar: a black awning with a striped hem ---------- */
+.atlas { height: var(--atlas-h); padding: 0 16px 6px; border: 0; background: repeating-linear-gradient(90deg, var(--bone) 0 14px, var(--coal) 14px 28px) 0 100% / 100% 6px no-repeat, #0e0b11; font: 700 15px/1 var(--font-ui); letter-spacing: .02em; box-shadow: 0 8px 18px rgb(0 0 0 / .45); }
+.atlas a, .atlas-btn { color: var(--bone); }
+.atlas-home:hover, .atlas-btn:hover { color: var(--moon); border-color: transparent; }
+.atlas-here { color: var(--ash); font: 400 18px/1 var(--font-display); }
+.atlas-btn[aria-pressed="true"] { color: var(--moon); }
+
+/* ---------- Hero: the title page and its pop-up diorama ---------- */
+.page { padding: 0 var(--gap) 40px; }
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); padding: 34px 0 0; }
+.gw-ready .hero { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); column-gap: 18px; align-items: center; }
+.hero-text { position: relative; z-index: 2; padding: 30px 0 20px; }
+.hero-kicker { margin: 0 0 16px 4px; color: var(--moon); font: 700 15px/1.3 var(--font-ui); letter-spacing: .2em; text-transform: uppercase; }
+.hero-title { font: 400 clamp(3.4rem, 9.6vw, 8.6rem)/.92 var(--font-display); letter-spacing: .01em; color: var(--bone); overflow-wrap: normal; text-shadow: 0 6px 0 rgb(0 0 0 / .35); }
+.hero-sub { margin: 10px 0 0 6px; font: 400 clamp(1.6rem, 3.4vw, 2.5rem)/1 var(--font-display); color: var(--moon); rotate: -3deg; transform-origin: 0 50%; }
+.hero-tagline { max-width: 24em; margin: 20px 0 0 4px; font: italic 400 clamp(1.1rem, 1.9vw, 1.35rem)/1.4 var(--font-ui); color: var(--bone); }
+
+/* Crooked letters, set by the script. Each one rocks between its own lean and the opposite one.
+   .gw-sr keeps the plain words for screen readers; the letters are aria-hidden. */
+.gw-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.gw-w { display: inline-block; white-space: nowrap; }
+.gw-l { display: inline-block; rotate: var(--r); translate: 0 var(--y); animation: gw-rock var(--t, 3s) ease-in-out var(--d, 0s) infinite alternate; }
+@keyframes gw-rock { to { rotate: calc(var(--r) * -.7); translate: 0 calc(var(--y) * -.7); } }
+
+/* The diorama: six cut-paper layers. Each sways about its own base; the pointer shifts them for depth. */
+.gw-stage { position: relative; z-index: 1; aspect-ratio: 6 / 5; margin: 0 -8px 0 0; overflow: clip; -webkit-mask-image: linear-gradient(#000 90%, transparent); mask-image: linear-gradient(#000 90%, transparent); }
+.gw-layer { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; user-select: none; translate: calc(var(--mx, 0) * var(--d, 0) * -14px) calc(var(--my, 0) * var(--d, 0) * -8px); transition: translate .6s cubic-bezier(.2, .7, .3, 1); }
+.gw-sky { --d: 1; }
+.gw-hill { --d: .7; filter: drop-shadow(0 10px 8px rgb(0 0 0 / .5)); }
+.gw-curl { --d: .7; transform-origin: 41.6% 66%; animation: gw-sway 9s ease-in-out -3s infinite alternate; --sw: 2.4deg; filter: drop-shadow(0 8px 6px rgb(0 0 0 / .45)); }
+.gw-house { --d: .45; transform-origin: 85.3% 96.4%; animation: gw-sway 6.5s ease-in-out -1s infinite alternate; --sw: 2.6deg; filter: drop-shadow(-6px 10px 8px rgb(0 0 0 / .55)); }
+.gw-trees { --d: .25; transform-origin: 11% 98.4%; animation: gw-sway 5.2s ease-in-out -2s infinite alternate; --sw: 1.8deg; filter: drop-shadow(0 8px 6px rgb(0 0 0 / .5)); }
+.gw-front { --d: 0; filter: drop-shadow(0 8px 6px rgb(0 0 0 / .55)); }
+@keyframes gw-sway { from { rotate: calc(var(--sw) * -1); } to { rotate: var(--sw); } }
+
+/* The four plates, hung crooked on strings. Hover straightens a frame; the lightbox shows the art plain. */
+.hero-gallery { grid-column: 1 / -1; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 78px 34px; margin-top: 40px; padding-top: 34px; align-items: start; }
+.shot { position: relative; }
+.hero-gallery .shot::before, .ref-gallery .shot::before, .loop::before { content: ''; position: absolute; left: 22%; right: 22%; top: -34px; height: 40px; background: radial-gradient(circle at 50% 4px, #a99f8a 0 3px, var(--coal) 3.5px 4.5px, transparent 5px), var(--string) 0 0 / 100% 100%; pointer-events: none; }
+.shot-link { position: relative; padding: 9px; background: var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), inset 0 0 0 9px var(--leaf), inset 0 0 0 10.5px var(--coal), 0 16px 26px rgb(0 0 0 / .55); rotate: calc(var(--tilt, 0deg) * var(--tm, 1)); transform-origin: 50% -34px; transition: rotate .7s cubic-bezier(.3, 1.6, .5, 1); }
+.shot-link img { box-shadow: 0 0 0 1.5px var(--coal); background: #1a141d; }
+.shot-link:hover, .shot-link:focus-visible { rotate: 0deg; }
+.shot-link:focus-visible { outline: 3px solid var(--moon); outline-offset: 4px; }
+.hero-gallery .shot-link { aspect-ratio: auto; }
+.shot-1 { grid-column: span 7; --tilt: -1.3deg; }
+.shot-2 { grid-column: span 5; --tilt: 1.7deg; margin-top: 54px; }
+.shot-3 { grid-column: span 6; --tilt: 1.1deg; }
+.shot-4 { grid-column: span 6; --tilt: -1.5deg; margin-top: -26px; }
+.shot-1 img { aspect-ratio: 1.66; }
+.shot-2 img { aspect-ratio: 1.42; }
+.shot-3 img { aspect-ratio: 1.74; }
+.shot-4 img { aspect-ratio: 1.42; background: #675d37; }
+.shot figcaption, .loop figcaption { margin-top: 12px; padding: 0 6px; text-align: center; font: 400 16px/1.4 var(--font-ui); color: var(--bone); }
+.shot-title { font-weight: 700; }
+.shot-meta { color: var(--ash); }
+.is-contain .shot-link img { object-fit: contain; }
+
+/* Contents: a signpost at the crossroads */
+.toc { position: relative; max-width: 660px; margin: 86px auto 0; padding: 46px 0 70px; }
+.toc::before { content: ''; position: absolute; left: 50%; top: 18px; bottom: 0; width: 15px; margin-left: -7px; background: linear-gradient(90deg, #08060a, #3a2f42 45%, #0b080d); border-radius: 7px 7px 2px 2px; rotate: 1.6deg; box-shadow: 4px 10px 14px rgb(0 0 0 / .5); }
+.toc::after { content: ''; position: absolute; left: 50%; top: -6px; width: 40px; height: 40px; margin-left: -12px; background: var(--bone); -webkit-mask: var(--curl) center / contain no-repeat; mask: var(--curl) center / contain no-repeat; rotate: -20deg; }
+.toc ul { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 0; }
+.toc li { position: relative; }
+.toc li:nth-child(odd) { justify-self: end; margin-right: -4px; }
+.toc li:nth-child(even) { justify-self: start; margin-left: -4px; }
+.toc li:nth-child(1) { rotate: -5deg; } .toc li:nth-child(2) { rotate: 4deg; } .toc li:nth-child(3) { rotate: 3deg; }
+.toc li:nth-child(4) { rotate: -3deg; } .toc li:nth-child(5) { rotate: -2deg; } .toc li:nth-child(6) { rotate: 5deg; }
+.toc a { display: block; padding: 10px 26px 12px 40px; background: var(--paper) 0 0 / 240px, linear-gradient(transparent 46%, rgb(18 14 21 / .08) 46% 50%, transparent 50%), var(--bone); color: var(--coal); font: 400 1.32rem/1 var(--font-display); text-decoration: none; white-space: nowrap; clip-path: polygon(0 50%, 26px 0, 100% 0, 100% 100%, 26px 100%); filter: drop-shadow(0 6px 4px rgb(0 0 0 / .5)); transition: background-color .2s; }
+.toc li:nth-child(even) a { padding: 10px 40px 12px 26px; clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%, calc(100% - 26px) 100%, 0 100%); }
+.toc a:hover, .toc a:focus-visible { background-color: var(--moon); }
+.toc a:focus-visible { outline: 3px solid var(--coal); outline-offset: -6px; }
+
+/* ---------- Rails between the leaves, where the crow perches (added by the script) ---------- */
+.gw-perch { position: relative; height: 122px; }
+.gw-rail { position: absolute; left: 6%; right: 6%; top: 80px; height: 15px; border-radius: 8px; background: linear-gradient(rgb(255 255 255 / .28), transparent 38%, rgb(0 0 0 / .38)), repeating-linear-gradient(-56deg, var(--bone) 0 9px, var(--coal) 9px 18px); box-shadow: 0 0 0 2.5px var(--coal), 0 10px 12px rgb(0 0 0 / .5); rotate: var(--a, 0deg); }
+.gw-rail::before, .gw-rail::after { content: ''; position: absolute; top: -26px; width: 42px; height: 42px; background: var(--bone); -webkit-mask: var(--curl) center / contain no-repeat; mask: var(--curl) center / contain no-repeat; }
+.gw-rail::before { left: -36px; scale: -1 1; }
+.gw-rail::after { right: -36px; }
+
+/* The crow */
+.gw-flight { position: absolute; inset: 0; z-index: 6; overflow: clip; pointer-events: none; }
+.gw-crow { position: absolute; left: 0; top: 0; width: var(--crow); aspect-ratio: 72 / 64; pointer-events: none; will-change: transform; }
+.gw-crow svg { display: block; width: 100%; height: 100%; overflow: visible; transform-origin: 58% 93%; }
+.gw-crow.is-left svg { scale: -1 1; }
+.gw-crow .gw-c-up, .gw-crow .gw-c-down { display: none; }
+.gw-crow.is-flying .gw-c-fold, .gw-crow.is-flying .gw-c-legs { display: none; }
+.gw-crow.is-flying .gw-c-up, .gw-crow.is-flying .gw-c-down { display: inline; }
+.gw-crow.is-flying .gw-c-up { animation: gw-flap .26s steps(1) infinite; }
+.gw-crow.is-flying .gw-c-down { animation: gw-flap .26s steps(1) -.13s infinite; }
+@keyframes gw-flap { 50% { opacity: 0; } }
+.gw-crow:not(.is-flying) svg { animation: gw-peck 7s steps(1) 2s infinite; }
+@keyframes gw-peck { 0%, 86% { rotate: 0deg; } 88% { rotate: 14deg; } 90% { rotate: 2deg; } 92% { rotate: 12deg; } 94%, 100% { rotate: 0deg; } }
+.gw-crow.is-landing svg { animation: gw-land .36s steps(3) both; }
+@keyframes gw-land { 0% { scale: 1.08 .86; } 60% { scale: .96 1.06; } 100% { scale: 1 1; } }
+.gw-crow.is-left.is-landing svg { animation-name: gw-land-l; }
+@keyframes gw-land-l { 0% { scale: -1.08 .86; } 60% { scale: -.96 1.06; } 100% { scale: -1 1; } }
+
+/* ---------- Leaves: bone paper, a scratchy double rule, hung a little crooked ---------- */
+main { position: relative; }
+.sec { position: relative; margin-top: 46px; padding: 0; }
+.gw-ready .sec { margin-top: 0; scroll-margin-top: 110px; }
+.sec-title { position: relative; display: inline-block; margin: 0 0 26px; font: 400 clamp(2.3rem, 5.2vw, 3.7rem)/1.05 var(--font-display); color: var(--bone); }
+.sec-title::after { content: ''; display: block; width: min(300px, 92%); height: 26px; margin-top: 2px; background: currentColor; -webkit-mask: var(--flourish) 0 0 / 100% 100% no-repeat; mask: var(--flourish) 0 0 / 100% 100% no-repeat; }
+.sec h3 { font: 400 1.5rem/1.15 var(--font-display); letter-spacing: .01em; margin-bottom: 10px; }
+
+.sec-feel, .sec-how, .sec-sources, .ref-lists { --line: var(--coal); color: var(--coal); background: var(--paper) 0 0 / 240px, var(--bone); padding: 52px 64px 60px; box-shadow: 0 2px 0 #cfc5ae, 5px 7px 0 -1px #b9ae96, 0 24px 40px rgb(0 0 0 / .55); }
+.sec-feel::before, .sec-how::before, .sec-sources::before, .ref-lists::before { content: ''; position: absolute; inset: 14px; border: 1.6px solid var(--coal); outline: 1.2px solid var(--coal); outline-offset: -6px; pointer-events: none; }
+.gw-ready .sec-feel::before, .gw-ready .sec-how::before, .gw-ready .sec-sources::before, .gw-ready .ref-lists::before { filter: url(#gw-rough); }
+.sec-feel { rotate: -.45deg; }
+.sec-how { rotate: .35deg; }
+.sec-sources { rotate: -.3deg; }
+.sec-feel .sec-title, .sec-how .sec-title, .sec-sources .sec-title { color: var(--coal); }
+.sec-feel a, .sec-how a, .sec-sources a, .ref-lists a { color: var(--coal); text-decoration: underline wavy var(--moon-ink); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.sec-feel a:hover, .sec-how a:hover, .sec-sources a:hover, .ref-lists a:hover { background: var(--moon); text-decoration-color: var(--coal); }
+.sec-feel :focus-visible, .sec-how :focus-visible, .sec-sources :focus-visible, .ref-lists :focus-visible { outline-color: var(--coal); }
+
+/* The feel: text on the left, a pasted-in note on the right, a row of little gravestones below */
+.sec-feel { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); column-gap: 46px; align-items: start; }
+.sec-feel .sec-title { grid-column: 1 / -1; justify-self: start; }
+.feel-body { grid-column: 1; grid-row: 2; max-width: none; font-size: 1.06rem; line-height: 1.66; }
+.feel-body p:first-child::first-letter { float: left; margin: 6px 10px 0 0; padding: 8px 10px 4px; font: 400 3.6em/.8 var(--font-display); color: var(--bone); background: var(--coal); box-shadow: 4px 4px 0 var(--moon-ink); }
+.origins { grid-column: 2; grid-row: 2 / span 2; margin: 4px 0 0; padding: 30px 30px 28px; max-width: none; background: var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), inset 0 0 0 6px var(--leaf), inset 0 0 0 7.2px var(--coal), 6px 8px 0 rgb(18 14 21 / .14); rotate: 1.2deg; }
+.origins h3 { text-align: center; font-size: 1.45rem; }
+.origins h3::after { content: ''; display: block; width: 120px; height: 14px; margin: 6px auto 4px; background: currentColor; -webkit-mask: var(--flourish) 0 0 / 100% 100% no-repeat; mask: var(--flourish) 0 0 / 100% 100% no-repeat; }
+.origins p { font-size: 1rem; line-height: 1.62; }
+.mood-words { grid-column: 1; grid-row: 3; align-self: end; align-items: flex-end; gap: 24px 18px; margin: 40px 0 0; padding: 0 8px 6px; }
+.mood-words li { position: relative; padding: var(--pt, 20px) 14px 8px; border: 0; border-radius: 46% 46% 3px 3px / 30px 30px 3px 3px; background: linear-gradient(transparent 70%, rgb(18 14 21 / .14)), #a49aa9; box-shadow: inset 0 0 0 2px var(--coal), inset 3px 3px 0 rgb(255 255 255 / .25); color: var(--coal); font: 400 20px/1.1 var(--font-display); rotate: var(--r, 0deg); transform-origin: 50% 100%; }
+.mood-words li::before { content: ''; display: block; width: 22px; height: 22px; margin: 0 auto 6px; background: #5f5466; -webkit-mask: var(--curl) center / contain no-repeat; mask: var(--curl) center / contain no-repeat; }
+.mood-words li::after { content: ''; position: absolute; left: -10px; right: -10px; bottom: -6px; height: 8px; background: var(--coal); border-radius: 50% 50% 2px 2px / 100% 100% 2px 2px; }
+.mood-words li:nth-child(6n+1) { --pt: 18px; --r: -4deg; } .mood-words li:nth-child(6n+2) { --pt: 12px; --r: 3deg; } .mood-words li:nth-child(6n+3) { --pt: 24px; --r: -2deg; }
+.mood-words li:nth-child(6n+4) { --pt: 14px; --r: 5deg; } .mood-words li:nth-child(6n+5) { --pt: 20px; --r: -3deg; } .mood-words li:nth-child(6n) { --pt: 10px; --r: 2deg; }
+
+/* Core elements: six plates on the night, a hatched initial in each */
+.sec-core { padding: 10px 0 0; }
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 34px; align-items: start; }
+.core-item { position: relative; padding: 34px 30px 30px; background: var(--paper) 0 0 / 240px, var(--leaf); border: 0; color: var(--coal); box-shadow: inset 0 0 0 1.5px var(--coal), inset 0 0 0 7px var(--leaf), inset 0 0 0 8.5px var(--coal), 0 18px 28px rgb(0 0 0 / .5); rotate: var(--r, 0deg); }
+.core-item:nth-child(1) { --r: -1.2deg; } .core-item:nth-child(2) { --r: .8deg; translate: 0 18px; } .core-item:nth-child(3) { --r: -.6deg; }
+.core-item:nth-child(4) { --r: 1deg; } .core-item:nth-child(5) { --r: -.9deg; translate: 0 18px; } .core-item:nth-child(6) { --r: .7deg; }
+.core-item::before { content: 'Plate ' counter(core, upper-roman); display: block; margin-bottom: 12px; color: var(--ink-soft); font: 700 13.5px/1 var(--font-ui); letter-spacing: .24em; text-transform: uppercase; text-align: center; }
+.core-item h3 { display: flow-root; font-size: 1.42rem; line-height: 1.12; margin-bottom: 12px; }
+.core-item h3::first-letter { float: left; margin: 0 12px 2px 0; padding: 10px 11px 6px; font-size: 2.15em; line-height: .78; color: var(--coal); background: repeating-linear-gradient(-45deg, rgb(18 14 21 / .26) 0 1.4px, transparent 1.4px 5px), var(--moon); border: 2px solid var(--coal); }
+.core-item p { font-size: 1rem; line-height: 1.6; }
+.core-item a { color: var(--coal); }
+
+/* How to do it: a crooked staircase on the left, a headstone and two notes on the right */
+.sec-how { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); column-gap: 50px; align-items: start; }
+.sec-how .sec-title { grid-column: 1 / -1; justify-self: start; }
+.steps { grid-column: 1; gap: 0; max-width: none; margin-top: 8px; }
+.step { padding: 16px 0 22px 70px; margin-left: calc(var(--i, 0) * 16px); border-top: 2.5px solid var(--coal); border-left: 2.5px solid var(--coal); rotate: var(--r, 0deg); transform-origin: 0 0; }
+.step:nth-child(1) { --i: 0; --r: -.4deg; } .step:nth-child(2) { --i: 1; --r: .3deg; } .step:nth-child(3) { --i: 2; --r: -.2deg; } .step:nth-child(4) { --i: 3; --r: .4deg; }
+.step:nth-child(5) { --i: 4; --r: -.3deg; } .step:nth-child(6) { --i: 5; --r: .2deg; } .step:nth-child(7) { --i: 6; --r: -.35deg; }
+.step:last-child { border-bottom: 2.5px solid var(--coal); }
+.step::before { left: 12px; top: 14px; width: 44px; height: 44px; border-radius: 50%; background: var(--coal); color: var(--bone); font: 400 1.5rem/1 var(--font-display); box-shadow: 0 0 0 3px var(--bone), 0 0 0 4.5px var(--coal); }
+.step h3 { font-size: 1.4rem; }
+.step p { font-size: 1rem; line-height: 1.6; }
+.how-side { grid-column: 2; grid-row: 2 / span 2; display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); margin: 0; }
+
+/* The cheat sheet, carved on a headstone */
+.specs { position: relative; padding: 92px 32px 40px; border: 0; color: var(--bone); background: var(--scratch) 0 0 / 180px, radial-gradient(ellipse 80% 50% at 50% 0, var(--stone-hi), transparent 70%), var(--stone); border-radius: 50% 50% 8px 8px / 150px 150px 8px 8px; box-shadow: inset 0 0 0 3px var(--coal), inset 0 0 0 9px var(--stone), inset 0 0 0 10.5px #6b5f73, 0 22px 0 -8px var(--coal), 0 26px 30px rgb(0 0 0 / .45); rotate: -1.2deg; }
+.specs::before { content: ''; position: absolute; left: 50%; top: 34px; width: 46px; height: 46px; margin-left: -23px; background: var(--moon); -webkit-mask: var(--curl) center / contain no-repeat; mask: var(--curl) center / contain no-repeat; }
+.specs h3 { color: var(--bone); text-align: center; font-size: 1.6rem; margin-bottom: 14px; }
+.spec { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 10px 0 11px; border-top: 1.5px dashed rgb(235 228 211 / .3); }
+.spec:first-child { border-top: 0; }
+.spec dt { color: var(--moon); font: 700 14px/1.3 var(--font-ui); letter-spacing: .18em; text-transform: uppercase; }
+.spec dd { font-size: 1rem; line-height: 1.45; }
+.specs a { color: var(--bone); text-decoration: underline; text-decoration-color: var(--moon); }
+.specs a:hover { background: none; color: var(--moon); }
+.specs :focus-visible { outline-color: var(--moon); }
+
+.dodont { gap: 30px; }
+.do, .avoid { position: relative; padding: 28px 26px 24px; background: var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), 5px 6px 0 rgb(18 14 21 / .16); }
+.do { rotate: .9deg; }
+.avoid { rotate: -.8deg; background: repeating-linear-gradient(90deg, var(--coal) 0 12px, var(--bone) 12px 24px) 0 0 / 100% 10px no-repeat, var(--leaf); padding-top: 34px; }
+.do::after { content: ''; position: absolute; right: -10px; top: -14px; width: 74px; height: 22px; background: rgb(217 220 108 / .78); rotate: 8deg; box-shadow: 0 1px 2px rgb(0 0 0 / .2); }
+.do h3, .avoid h3 { font-size: 1.55rem; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: .98rem; line-height: 1.55; }
+.dodont li::before { content: ''; position: absolute; left: 0; top: 4px; width: 20px; height: 20px; background: var(--coal); -webkit-mask: var(--curl) center / contain no-repeat; mask: var(--curl) center / contain no-repeat; }
+.avoid li::before { -webkit-mask: none; mask: none; background: linear-gradient(45deg, transparent 44%, var(--coal) 44% 56%, transparent 56%), linear-gradient(-45deg, transparent 44%, var(--coal) 44% 56%, transparent 56%); width: 16px; height: 16px; top: 6px; left: 2px; }
+
+.learn { grid-column: 1 / -1; margin-top: 46px; padding-top: 30px; border-top: 2.5px solid var(--coal); }
+.learn h3 { font-size: 1.6rem; margin-bottom: 16px; }
+.learn ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 34px; }
+.ref-item a { font: 700 1.02rem/1.35 var(--font-ui); }
+.ref-meta { display: block; margin-top: 2px; color: var(--ink-soft); font: 400 15px/1.3 var(--font-ui); }
+.ref-note { margin-top: 4px; font-size: .95rem; line-height: 1.55; }
+.brief { grid-column: 1 / -1; margin-top: 34px; }
+.brief-note { color: var(--ink-soft); font: 400 15px/1.3 var(--font-ui); }
+.btn { padding: 11px 20px 12px; background: var(--coal); color: var(--bone); border: 0; font: 700 16px/1 var(--font-ui); letter-spacing: .03em; box-shadow: 4px 4px 0 var(--moon-ink); rotate: -1deg; transition: rotate .2s, background-color .2s; }
+.btn:hover, .btn:focus-visible { background: var(--moon); color: var(--coal); rotate: 1deg; }
+
+/* ---------- Palette: a street of leaning houses under the moon ---------- */
+.sec-palette { padding: 10px 0 10px; }
+.swatches { position: relative; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0 8px; align-items: end; padding: 70px 18px 0; background: radial-gradient(circle at 74% 40%, #e7e59a 0 90px, rgb(217 220 108 / .28) 92px, rgb(217 220 108 / 0) 190px); }
+.swatches::after { content: ''; position: absolute; left: 0; right: 0; bottom: 80px; height: 14px; background: var(--coal); border-radius: 50% 50% 0 0 / 100% 100% 0 0; box-shadow: 0 10px 0 var(--coal); pointer-events: none; }
+.swatch { position: relative; z-index: 1; }
+.swatch button { padding: 0; background: none; border: 0; text-align: center; }
+.chip { height: var(--h, 170px); margin: 0 auto; width: var(--w, 100%); background: linear-gradient(var(--win) 0 0) 28% 30% / 18% 9% no-repeat, linear-gradient(var(--win) 0 0) 72% 30% / 18% 9% no-repeat, linear-gradient(var(--win) 0 0) 28% 56% / 18% 9% no-repeat, linear-gradient(var(--win) 0 0) 72% 56% / 18% 9% no-repeat, linear-gradient(var(--door, var(--win)) 0 0) 50% 100% / 22% 15% no-repeat, var(--c); clip-path: var(--roof); transform: skewX(var(--k, 0deg)); transform-origin: 50% 100%; transition: transform .4s cubic-bezier(.3, 1.6, .5, 1); }
+.swatch button:hover .chip, .swatch button:focus-visible .chip { transform: skewX(calc(var(--k, 0deg) * -1)) translateY(-6px); }
+.swatch button:focus-visible { outline: 3px solid var(--moon); outline-offset: 4px; }
+.swatch:nth-child(8n+1) { --h: 190px; --k: -4deg; --win: #d9dc6c; --roof: polygon(8% 100%, 10% 30%, 0 32%, 50% 0, 100% 30%, 90% 30%, 92% 100%); }
+.swatch:nth-child(8n+2) { --h: 230px; --w: 82%; --k: 3deg; --win: #d9dc6c; --roof: polygon(10% 100%, 6% 26%, 40% 6%, 48% 0, 54% 6%, 94% 22%, 88% 100%); }
+.swatch:nth-child(8n+3) { --h: 160px; --k: -2deg; --win: #120e15; --door: #2a2131; --roof: polygon(10% 100%, 12% 40%, 0 42%, 26% 14%, 60% 0, 100% 34%, 88% 34%, 90% 100%); }
+.swatch:nth-child(8n+4) { --h: 250px; --w: 74%; --k: 4deg; --win: #120e15; --roof: polygon(16% 100%, 16% 28%, 6% 28%, 50% 0, 94% 28%, 84% 28%, 84% 100%); }
+.swatch:nth-child(8n+5) { --h: 180px; --k: -3deg; --win: #120e15; --roof: polygon(8% 100%, 8% 36%, 30% 36%, 30% 10%, 58% 0, 64% 36%, 92% 30%, 92% 100%); }
+.swatch:nth-child(8n+6) { --h: 214px; --w: 86%; --k: 2deg; --win: #120e15; --roof: polygon(12% 100%, 10% 30%, 2% 30%, 44% 0, 98% 26%, 90% 28%, 88% 100%); }
+.swatch:nth-child(8n+7) { --h: 168px; --k: -4deg; --win: #120e15; --roof: polygon(10% 100%, 10% 34%, 0 36%, 50% 2%, 100% 36%, 90% 34%, 90% 100%); }
+.swatch:nth-child(8n) { --h: 200px; --w: 80%; --k: 3deg; --win: #120e15; --roof: polygon(14% 100%, 12% 24%, 50% 0, 88% 24%, 86% 100%); }
+.swatch-name, .swatch-hex { padding: 0 2px; }
+/* Every name gets two lines' room, so the houses all stand on the same ground. */
+.swatch-name { min-height: 2.3em; margin-top: 22px; color: var(--bone); font: 400 19px/1.15 var(--font-display); }
+.swatch-hex { margin-top: 2px; padding-bottom: 0; color: var(--ash); font: 400 15px/1.3 var(--font-ui); letter-spacing: .04em; }
+.palette-note { color: var(--ash); }
+.palette-actions { margin-top: 30px; }
+.palette-actions .brief-note, .sec-vibe .brief-note { color: var(--ash); }
+.sec-palette .btn { background: var(--bone); color: var(--coal); box-shadow: 4px 4px 0 var(--moon-ink); }
+.sec-palette .btn:hover, .sec-palette .btn:focus-visible { background: var(--moon); }
+
+/* ---------- Feel the vibe: moving pictures on strings, and a music card ---------- */
+.sec-vibe { padding: 10px 0 0; }
+.loops-wrap h3, .music-wrap h3 { font-size: 1.9rem; margin-bottom: 18px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px 40px; padding-top: 40px; }
+.loop { position: relative; }
+.loop video { padding: 9px; background: var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), 0 16px 26px rgb(0 0 0 / .55); aspect-ratio: 16 / 9; object-fit: cover; rotate: calc(var(--tilt, 0deg) * var(--tm, 1)); transform-origin: 50% -34px; transition: rotate .7s cubic-bezier(.3, 1.6, .5, 1); }
+.loop:nth-child(1) { --tilt: -1.4deg; } .loop:nth-child(2) { --tilt: 1.2deg; margin-top: 30px; } .loop:nth-child(3) { --tilt: 1deg; } .loop:nth-child(4) { --tilt: -1.1deg; margin-top: 30px; }
+.loop video:hover { rotate: 0deg; }
+.loop figcaption a { color: var(--bone); text-decoration-color: var(--moon); }
+.music-wrap { margin-top: 70px; padding: 40px 44px 36px; color: var(--coal); background: var(--paper) 0 0 / 240px, var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), inset 0 0 0 7px var(--leaf), inset 0 0 0 8.5px var(--coal), 0 20px 34px rgb(0 0 0 / .5); rotate: .5deg; }
+.tracks { max-width: none; gap: 10px; }
+.track-btn { padding: 10px 12px; background: transparent; border: 0; border-bottom: 1.5px dashed rgb(18 14 21 / .35); }
+.track-btn:hover, .track.is-playing .track-btn { background: rgb(217 220 108 / .5); }
+.track-btn:focus-visible { outline-color: var(--coal); }
+.track-play { width: 38px; height: 38px; border-radius: 50%; background: var(--coal); color: var(--bone); }
+.track.is-playing .track-play { background: var(--moon); color: var(--coal); box-shadow: 0 0 0 2px var(--coal); }
+.track-title { font: 700 1.04rem/1.3 var(--font-ui); }
+.track-artist { color: var(--ink-soft); font: 400 15px/1.3 var(--font-ui); }
+.track-note { margin: 4px 0 10px 62px; color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+.track-yt { color: var(--coal); font: 700 15px/1 var(--font-ui); }
+.music-wrap a { color: var(--coal); }
+.player { background: var(--leaf); color: var(--coal); border: 0; box-shadow: inset 0 0 0 1.5px var(--coal), inset 0 0 0 5px var(--leaf), inset 0 0 0 6.5px var(--coal), 0 14px 30px rgb(0 0 0 / .55); font-family: var(--font-ui); }
+.player-frame { margin: 10px 10px 0; }
+.player-info { font-size: 15px; }
+.player-now { color: var(--ink-soft); font-size: 12.5px; font-weight: 700; }
+.player-title { font-weight: 700; }
+.player-artist { color: var(--ink-soft); }
+.player-close { color: var(--coal); }
+
+/* ---------- More references: a crooked picture wall, then two pages of lists ---------- */
+.sec-refs { padding: 10px 0 0; }
+.ref-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 84px 30px; padding-top: 40px; margin-bottom: 70px; }
+.ref-gallery .shot-link { aspect-ratio: 4 / 3; }
+.ref-gallery .shot:nth-child(4n+1) { --tilt: -1.6deg; } .ref-gallery .shot:nth-child(4n+2) { --tilt: 1.2deg; margin-top: 22px; }
+.ref-gallery .shot:nth-child(4n+3) { --tilt: -.8deg; } .ref-gallery .shot:nth-child(4n) { --tilt: 1.5deg; margin-top: 22px; }
+.ref-gallery .is-contain .shot-link img { background: var(--leaf); }
+.ref-lists { position: relative; gap: 50px; rotate: .3deg; }
+.ref-list h3 { font-size: 1.7rem; margin-bottom: 16px; }
+.ref-list .ref-item { margin-bottom: 18px; }
+
+/* ---------- Sources ---------- */
+.sec-sources .sources { gap: 4px 30px; font: 400 16px/1.5 var(--font-ui); }
+.source { padding: 6px 4px; }
+.source-n { font-family: var(--font-display); font-size: 19px; font-weight: 400; line-height: 1.2; }
+.source-meta { color: var(--ink-soft); font-size: 15px; }
+.source:target { outline: 2px solid var(--coal); background: rgb(217 220 108 / .4); }
+/* Citations all sit on paper: plain underlines, and coal on moonlight when pointed at. */
+.sec-feel .cite a, .sec-how .cite a, .core-item .cite a, .music-wrap .cite a, .ref-lists .cite a { background: none; text-decoration: underline; text-decoration-thickness: 1px; }
+.sec-feel .cite a:hover, .sec-how .cite a:hover, .core-item .cite a:hover, .music-wrap .cite a:hover, .ref-lists .cite a:hover { color: var(--coal); background: var(--moon); }
+
+/* ---------- Related styles and the last page ---------- */
+.sec-related { padding: 10px 0 0; }
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 30px; }
+.related a { color: var(--bone); text-align: center; }
+.related img { padding: 7px; background: var(--leaf); box-shadow: inset 0 0 0 1.5px var(--coal), 0 14px 22px rgb(0 0 0 / .5); rotate: var(--tilt, 0deg); transition: rotate .5s cubic-bezier(.3, 1.6, .5, 1); }
+.related-item:nth-child(odd) { --tilt: -1.4deg; } .related-item:nth-child(even) { --tilt: 1.3deg; }
+.related a:hover img { rotate: 0deg; }
+.related span { padding-top: 12px; font: 400 1.25rem/1.15 var(--font-display); }
+.foot { margin-top: 80px; padding: 34px 0 10px; border-top: 0; background: repeating-linear-gradient(90deg, var(--bone) 0 14px, var(--coal) 14px 28px) 0 0 / 100% 8px no-repeat; color: var(--ash); font: 400 16px/1.5 var(--font-ui); text-align: center; }
+.foot-nav { justify-content: center; gap: 18px 34px; margin-top: 22px; }
+.foot-nav a { padding: 9px 20px 10px; background: var(--paper) 0 0 / 240px, var(--bone); color: var(--coal); font: 400 1.15rem/1 var(--font-display); text-decoration: none; rotate: -2deg; filter: drop-shadow(0 5px 4px rgb(0 0 0 / .45)); }
+.foot-nav a[rel="prev"] { padding-left: 30px; clip-path: polygon(0 50%, 20px 0, 100% 0, 100% 100%, 20px 100%); }
+.foot-nav a[rel="next"] { padding-right: 30px; clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%); rotate: 2deg; }
+.foot-nav a:hover, .foot-nav a:focus-visible { background-color: var(--moon); }
+
+/* ---------- Narrower screens ---------- */
+@media (max-width: 1180px) {
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1000px) {
+  /* One column for the feel and how leaves from here down, so text keeps a readable measure. */
+  .sec-feel, .sec-how { grid-template-columns: minmax(0, 1fr); }
+  .feel-body, .origins, .mood-words, .steps, .how-side { grid-column: 1; grid-row: auto; }
+  .origins { margin-top: 30px; rotate: .6deg; }
+  .mood-words { margin-top: 30px; align-self: start; }
+  .how-side { margin-top: 40px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .core-item:nth-child(n) { translate: none; }
+  .learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ref-gallery .shot:nth-child(n) { margin-top: 0; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 40px; background-image: radial-gradient(circle at 80% 22%, #e7e59a 0 76px, rgb(217 220 108 / .28) 78px, rgb(217 220 108 / 0) 170px); }
+  .swatches::after { display: none; }
+  .swatch .swatch-name { min-height: calc(2.3em + 22px); margin-top: 0; padding-top: 14px; border-top: 8px solid var(--coal); }
+}
+@media (max-width: 820px) {
+  html { font-size: 18px; }
+  :root { --tm: .5; }
+  .page { padding: 0 14px 30px; }
+  .gw-ready .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-top: 20px; }
+  .hero-text { padding: 18px 0 0; }
+  .gw-stage { width: 100%; max-width: 620px; margin: 8px auto 0; }
+  .hero-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 70px 26px; margin-top: 24px; }
+  .shot-1, .shot-2, .shot-3, .shot-4 { grid-column: auto; margin-top: 0; }
+  .shot-1 img, .shot-2 img, .shot-3 img { aspect-ratio: 1.5; }
+  .shot-4 img { aspect-ratio: 1.5; }
+  .sec-feel, .sec-how, .sec-sources, .ref-lists { padding: 40px 26px 44px; }
+  /* The how leaf is the tallest; at this width a .35deg tilt pushes its corners past the page edge. */
+  .sec-how { rotate: .15deg; }
+  .sec-feel::before, .sec-how::before, .sec-sources::before, .ref-lists::before { inset: 9px; }
+  .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .loops { grid-template-columns: minmax(0, 1fr); gap: 66px; }
+  .loop:nth-child(n) { margin-top: 0; }
+  .music-wrap { padding: 32px 22px 26px; }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 66px; }
+  .shot-1 img, .shot-2 img { aspect-ratio: 1.66; }
+  .shot-4 img { aspect-ratio: 1.3; }
+  .core-list { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .learn ul { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 66px 18px; }
+  .toc { margin-top: 70px; padding-bottom: 50px; }
+  .toc ul { display: flex; flex-direction: column; gap: 12px; }
+  .toc li:nth-child(odd) { align-self: flex-end; margin-right: calc(50% - 6px); }
+  .toc li:nth-child(even) { align-self: flex-start; margin-left: calc(50% - 6px); }
+  .toc a { font-size: 1.1rem; padding: 9px 16px 10px 34px; clip-path: polygon(0 50%, 22px 0, 100% 0, 100% 100%, 22px 100%); }
+  .toc li:nth-child(even) a { padding: 9px 34px 10px 16px; clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%); }
+  .step { padding: 14px 0 18px 14px; margin-left: calc(var(--i, 0) * 4px); }
+  .step::before { left: 10px; top: 12px; width: 36px; height: 36px; font-size: 1.25rem; }
+  .step h3 { min-height: 36px; padding: 4px 0 0 48px; }
+  .core-item { padding: 28px 22px 24px; }
+  .gw-perch { height: 92px; }
+  .gw-rail { top: 60px; left: 9%; right: 9%; }
+  .sec-feel, .sec-how, .sec-sources, .ref-lists { padding: 34px 20px 38px; }
+  .sec-feel, .sec-how, .sec-sources { rotate: 0deg; }
+  .specs { padding: 84px 22px 34px; border-radius: 50% 50% 8px 8px / 110px 110px 8px 8px; }
+  .swatches { margin: 0 -6px; padding: 40px 0 0; gap: 34px 6px; background-image: radial-gradient(circle at 82% 20%, #e7e59a 0 54px, rgb(217 220 108 / .28) 56px, rgb(217 220 108 / 0) 130px); }
+  .swatch .swatch-name { padding: 14px 0 0; font-size: clamp(14px, 3.85vw, 16px); }
+  .swatch-hex { font-size: 14px; letter-spacing: 0; }
+}
+@media (max-width: 400px) {
+  .toc a { font-size: 1.02rem; }
+}

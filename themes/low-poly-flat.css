@@ -1,0 +1,380 @@
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/outfit-latin-200-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/manrope-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/manrope-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/manrope-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/manrope-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../fonts/manrope-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Low-Poly / Flat Minimal: a trail down a faceted mountain.
+   At the top, a real height field of flat-shaded triangles under a graded sky (built by themes/low-poly-flat.js). One sun lights it:
+   move the pointer and the faces re-shade one by one, nearest the sun first; the buttons give dawn, day, dusk and night.
+   The contents is the trail map, and every section is a stop on a path that turns only at 45 degrees, marked by a small solid lit by the
+   same sun. The page itself stays pale and calm: one flat colour per surface, blocks with two flat-shaded sides, a lot of empty space. */
+:root {
+  --cream: #f5eee3; --paper: #fffcf6; --sand: #e3d2b9; --sand-2: #c9b291;
+  --ink-1: #24203d; --ink-2: #57526e; --shade: #2b2347;
+  --lagoon: #29dbc9; --lagoon-d: #1d7c74; --coral: #e88f69; --coral-d: #b4532f; --red: #df201a; --indigo: #5a57ae; --indigo-d: #3c3990;
+  --pink: #fe98cf; --sun: #f9f98c; --dune: #48210c; --trail: #e2492f;
+  --bg: var(--cream); --surface: var(--paper); --ink: var(--ink-1); --muted: var(--ink-2); --accent: var(--indigo-d); --line: #ddd0bd;
+  --font-display: 'Outfit', 'Segoe UI', sans-serif; --font-body: 'Manrope', 'Segoe UI', sans-serif; --font-mono: 'Manrope', 'Segoe UI', sans-serif;
+  --radius: 0; --max: 1240px; --gap: 22px; --atlas-h: 48px;
+  --gut: 92px; --stop: 76px; --d: 10px;
+  /* Block faces: --top is the face you read on, --slab tints the two sides. The script sets --lp-kr and --lp-kb from the sun. */
+  --top: var(--paper); --slab: var(--sand); --lp-kr: 30%; --lp-kb: 60%;
+  color-scheme: light;
+}
+html { font-size: 17px; }
+body { background: var(--cream); color: var(--ink); line-height: 1.65; }
+::selection { background: var(--lagoon); color: var(--ink-1); }
+:focus-visible { outline: 3px solid var(--indigo-d); outline-offset: 3px; }
+a { color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+h1, h2, h3 { font-weight: 500; }
+
+/* Blocks: the top face is the panel; the right and bottom faces are flat colours, bevelled at 45 degrees where they meet. */
+.origins, .core-item, .specs, .do, .avoid, .toc, .tracks, .ref-list, .sources, .lp-panel,
+.hero-gallery .shot-link img, .ref-gallery .shot-link img, .loop video, .related img, .chip {
+  --side-r: color-mix(in srgb, var(--slab), var(--shade) var(--lp-kr));
+  --side-b: color-mix(in srgb, var(--slab), var(--shade) var(--lp-kb));
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(var(--top), var(--top)) 0 0 / calc(100% - var(--d)) calc(100% - var(--d)) no-repeat,
+    linear-gradient(225deg, transparent 50%, var(--side-r) 50%) 100% 0 / var(--d) var(--d) no-repeat,
+    linear-gradient(var(--side-r), var(--side-r)) 100% var(--d) / var(--d) calc(100% - 2 * var(--d)) no-repeat,
+    linear-gradient(45deg, var(--side-b) 50%, var(--side-r) 50%) 100% 100% / var(--d) var(--d) no-repeat,
+    linear-gradient(var(--side-b), var(--side-b)) var(--d) 100% / calc(100% - 2 * var(--d)) var(--d) no-repeat,
+    linear-gradient(45deg, transparent 50%, var(--side-b) 50%) 0 100% / var(--d) var(--d) no-repeat;
+}
+
+/* Site bar: a plain strip with the trail's colour along its edge */
+.atlas { background: var(--paper); border-bottom: 0; box-shadow: 0 4px 0 var(--trail); font: 600 14px/1 var(--font-body); color: var(--ink); }
+.atlas a, .atlas-btn { color: var(--ink); }
+.atlas-home span { font: 500 15px/1 var(--font-display); letter-spacing: .02em; }
+.atlas-here { font: 600 12px/1 var(--font-display); letter-spacing: .16em; color: var(--muted); }
+.atlas-btn { border-radius: 999px; }
+.atlas-btn:hover { border-color: var(--ink); }
+.atlas-btn[aria-pressed="true"] { color: var(--indigo-d); }
+
+/* ---- The summit ---- */
+.page { padding: 0 var(--gap); }
+.hero { padding: 0; }
+.hero-text {
+  /* Short enough that the first row of main images starts on the first screen */
+  --mesh-h: clamp(250px, 32vh, 390px);
+  /* The script draws the sky (--sky-grad) and picks the ink that suits it (--sky-ink); these are the daytime defaults. */
+  --sky-ink: #14122b;
+  position: relative; z-index: 0; isolation: isolate; overflow: hidden;
+  margin: 0 calc(50% - 50vw); min-height: clamp(520px, 64vh, 720px);
+  padding: clamp(36px, 6vh, 76px) max(var(--gap), calc(50vw - 560px)) var(--mesh-h);
+  background: var(--sky-grad, linear-gradient(180deg, #8fd3e8 0%, #eaf6f0 60%));
+  color: var(--sky-ink); touch-action: pan-y pinch-zoom;
+}
+.lp-scene { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.lp-mesh { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lp-land polygon { stroke-width: .9; stroke-linejoin: round; }
+.lp-mesh.is-wire .lp-land polygon { stroke: rgb(255 255 255 / .85); stroke-width: 1.2; }
+.lp-dark-sky .lp-mesh.is-wire .lp-land polygon { stroke: rgb(255 250 242 / .7); }
+.hero-kicker { margin: 0 0 20px; font: 600 13px/1.3 var(--font-display); letter-spacing: .3em; text-transform: uppercase; color: inherit; }
+.hero-title { margin: 0; font: 300 clamp(3.5rem, 8.4vw, 7.4rem)/.9 var(--font-display); letter-spacing: -.035em; color: inherit; overflow-wrap: normal; }
+.hero-sub { margin: 20px 0 0; font: 500 clamp(1rem, 1.6vw, 1.28rem)/1.25 var(--font-display); letter-spacing: .42em; text-transform: uppercase; color: inherit; }
+.hero-tagline { margin: 26px 0 0; max-width: 23em; font: 500 clamp(1.08rem, 1.45vw, 1.26rem)/1.5 var(--font-body); color: inherit; }
+
+/* The light controls: a plaque standing on the foothills */
+.lp-panel {
+  position: absolute; z-index: 2; left: max(var(--gap), calc(50vw - 560px)); bottom: 28px; max-width: min(620px, calc(100% - 2 * var(--gap)));
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 16px calc(18px + var(--d)) calc(14px + var(--d)) 18px;
+  --slab: var(--coral); color: var(--ink);
+}
+.lp-panel-label { font: 600 12.5px/1 var(--font-display); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.lp-times { display: flex; flex-wrap: wrap; gap: 6px; }
+.lp-panel button { padding: 7px 14px; border: 2px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); font: 600 14px/1 var(--font-display); letter-spacing: .02em; }
+.lp-panel button:hover { background: var(--cream); }
+.lp-panel button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.lp-wire { margin-left: auto; }
+.lp-readout { flex-basis: 100%; margin: 2px 0 0; font: 500 15px/1.45 var(--font-body); color: var(--muted); }
+.hero > .lp-panel { position: relative; left: auto; bottom: auto; max-width: none; margin: 22px 0 0; }
+.lp-stats { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* The four main images: blocks on the ground below the mountain */
+.hero-gallery { max-width: 1080px; margin: 40px auto 0; gap: 46px 40px; }
+.hero-gallery .shot-link, .ref-gallery .shot-link { background: none; overflow: visible; }
+.hero-gallery .shot-link img, .ref-gallery .shot-link img { padding: 0 var(--d) var(--d) 0; }
+.hero-gallery .shot-link img { --slab: var(--coral); }
+.shot figcaption, .loop figcaption { padding-top: 12px; font: 400 15px/1.45 var(--font-body); color: var(--ink); }
+.shot-title { font: 600 15px/1.35 var(--font-display); letter-spacing: .02em; }
+.shot-meta { color: var(--muted); }
+
+/* The contents is the trail map: one line, one station per section, the same solids as the stops */
+.toc { max-width: 1080px; margin: 96px auto 0; padding: 30px calc(30px + var(--d)) calc(26px + var(--d)) 30px; --slab: var(--trail); }
+.toc ul { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 6px; }
+.toc ul::before { content: ''; position: absolute; left: calc(100% / 12); right: calc(100% / 12); top: 27px; height: 8px; margin-top: -4px; background: var(--trail); border-radius: 4px; }
+.toc li { position: relative; display: flex; justify-content: center; }
+.toc a { display: block; min-width: 66px; padding-top: 66px; color: var(--ink); font: 500 15.5px/1.3 var(--font-display); text-align: center; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc li:hover .lp-tstop { box-shadow: inset 0 0 0 5px var(--trail); }
+/* The station sits over the top of its link and lets clicks through to it */
+.lp-tstop { position: absolute; left: 50%; top: 0; width: 54px; height: 54px; margin-left: -27px; display: grid; place-items: center; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 5px var(--ink); pointer-events: none; }
+.lp-tstop svg { width: 40px; height: 40px; }
+
+/* ---- The trail ---- */
+main { position: relative; margin: 130px auto 0; counter-reset: stop; }
+.lp-trail { position: absolute; left: 0; top: 0; z-index: 0; overflow: visible; pointer-events: none; }
+.lp-trail path { fill: none; stroke: var(--trail); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+.sec { position: relative; z-index: 1; margin: 150px 0 0; padding: 0 var(--gut); counter-increment: stop; }
+.sec-feel { margin-top: 0; }
+.lp-stop { position: absolute; z-index: 2; top: -8px; left: calc((var(--gut) - var(--stop)) / 2); width: var(--stop); height: var(--stop); display: grid; place-items: center; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 6px var(--ink); cursor: default; }
+.lp-stop svg { width: 60px; height: 60px; }
+.sec.lp-r .lp-stop { left: auto; right: calc((var(--gut) - var(--stop)) / 2); }
+.sec.lp-r > .sec-title { text-align: right; }
+.sec-title { margin: 0 0 40px; font: 300 clamp(2.1rem, 4vw, 3.25rem)/1.05 var(--font-display); letter-spacing: -.02em; color: var(--ink); }
+.sec-title::before { content: 'Stop ' counter(stop); display: block; margin-bottom: 12px; font: 600 12.5px/1 var(--font-display); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.sec h3 { font: 500 1.24rem/1.25 var(--font-display); letter-spacing: -.005em; color: var(--ink); }
+
+/* Stop 1: the feel */
+.feel-body { max-width: 40em; font-size: 1.14rem; line-height: 1.72; }
+.mood-words { gap: 10px; margin: 32px 0 0; }
+.mood-words li { display: flex; align-items: center; gap: 9px; padding: 7px 15px 7px 13px; border: 0; border-radius: 999px; background: var(--paper); font: 500 15px/1.2 var(--font-display); letter-spacing: .03em; }
+.mood-words li::before { content: ''; width: 11px; height: 10px; background: var(--coral-d); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.origins { max-width: 48em; margin-top: 46px; padding: 28px calc(30px + var(--d)) calc(28px + var(--d)) 30px; --slab: var(--coral); }
+.origins h3 { margin-bottom: 12px; }
+.origins p { line-height: 1.7; }
+
+/* Stop 2: core elements, each numbered on a pyramid seen from above */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 30px; }
+.core-item { padding: 26px calc(24px + var(--d)) calc(26px + var(--d)) 24px; --slab: var(--lagoon); }
+.core-item h3 { margin-bottom: 10px; }
+.core-item h3::before { content: counter(core, decimal-leading-zero); display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; color: #fff; font: 600 14px/1 var(--font-display); letter-spacing: .04em;
+  background: conic-gradient(from 45deg, #135b5a 0 25%, #0a3b3e 0 50%, #1a726c 0 75%, #1f8077 0); }
+.core-item p { line-height: 1.65; }
+
+/* Stop 3: how to do it */
+.steps { display: block; max-width: none; columns: 2; column-gap: 52px; }
+.steps > .step { break-inside: avoid; margin-bottom: 40px; }
+.step { padding-left: 84px; min-height: 62px; }
+.step::before { left: 0; top: 0; width: 62px; height: 56px; padding-top: 22px; place-items: center; border-radius: 0; color: #fff; font: 600 17px/1 var(--font-display);
+  background: linear-gradient(90deg, var(--coral-d) 50%, #8a3c22 50%); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.step h3 { margin-bottom: 8px; padding-top: 4px; }
+.step p { line-height: 1.65; }
+.how-side { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 36px; margin-top: 70px; align-items: start; }
+.specs { padding: 26px calc(28px + var(--d)) calc(22px + var(--d)) 28px; --slab: var(--indigo); }
+.specs h3 { margin-bottom: 14px; }
+.spec { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 16px; padding: 11px 0; border-top: 1px solid var(--line); }
+.spec dt { padding-top: 3px; font: 600 13.5px/1.4 var(--font-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.spec dd { line-height: 1.55; }
+.dodont { gap: 30px; }
+.do, .avoid { padding: 24px calc(26px + var(--d)) calc(22px + var(--d)) 26px; }
+.do { --slab: var(--lagoon); }
+.avoid { --slab: var(--red); }
+.do h3, .avoid h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.do h3::before, .do li::before { content: ''; border-radius: 50%; background: var(--lagoon-d); }
+.avoid h3::before, .avoid li::before { content: ''; background: var(--red); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.do h3::before { width: 18px; height: 18px; }
+.avoid h3::before { width: 21px; height: 19px; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 10px; padding-left: 24px; line-height: 1.6; }
+.dodont li::before { position: absolute; left: 1px; top: .5em; width: 11px; height: 11px; }
+.avoid li::before { width: 12px; height: 11px; }
+.learn { margin-top: 70px; }
+.learn h3 { margin-bottom: 18px; }
+.learn ul { gap: 22px 40px; }
+.ref-item a, .learn a, .ref-list a { font-weight: 700; color: var(--accent); }
+.ref-meta { font-size: 14px; color: var(--muted); }
+.ref-note { margin-top: 4px; font-size: 16px; line-height: 1.6; }
+.brief { margin-top: 44px; }
+.btn { padding: 11px 22px; border: 0; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 15px/1.2 var(--font-display); letter-spacing: .03em; }
+.btn:hover { background: var(--indigo-d); }
+.brief-note { font-size: 14.5px; color: var(--muted); }
+
+/* Stop 4: palette, each colour a small block */
+.swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 30px; }
+.swatch button { background: none; border: 0; overflow: visible; }
+.chip { height: auto; aspect-ratio: 1.7; --top: var(--c); --slab: var(--c); --d: 9px; }
+.swatch-name { padding: 12px 0 0; font: 600 15.5px/1.3 var(--font-display); color: var(--ink); }
+.swatch-hex { padding: 2px 0 0; font: 500 14.5px/1.3 var(--font-body); letter-spacing: .06em; color: var(--muted); }
+.palette-note { max-width: 46em; margin-top: 32px; color: var(--ink); }
+.palette-actions { margin-top: 26px; }
+
+/* Stop 5: motion and sound */
+.loops-wrap h3, .music-wrap h3 { margin-bottom: 18px; }
+.loops-wrap { margin-bottom: 52px; }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+.loop video { aspect-ratio: 16 / 10; object-fit: cover; padding: 0 var(--d) var(--d) 0; --slab: var(--indigo); }
+.loop figcaption a { color: var(--ink); font-weight: 600; }
+.tracks { max-width: 860px; gap: 0; padding: 14px calc(22px + var(--d)) calc(14px + var(--d)) 22px; --slab: var(--indigo); }
+.track { border-bottom: 1px solid var(--line); padding: 6px 0; }
+.track:last-child { border-bottom: 0; }
+.track-btn { padding: 10px 6px; background: transparent; border: 0; border-radius: 0; }
+.track-btn:hover, .track.is-playing .track-btn { background: var(--cream); }
+.track-play { width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: var(--paper); }
+.track.is-playing .track-play { background: var(--trail); }
+.track-title { font: 600 16px/1.35 var(--font-display); }
+.track-artist { font-size: 14.5px; color: var(--muted); }
+.track-note { margin: 0 0 8px 56px; font-size: 16px; line-height: 1.55; color: var(--ink); }
+.track-yt { font-size: 14px; color: var(--accent); }
+.player { border: 0; border-radius: 0; background: var(--paper); box-shadow: 8px 8px 0 color-mix(in srgb, var(--indigo), var(--shade) 50%); }
+.player-now { color: var(--muted); font-weight: 700; }
+.player-title { font-family: var(--font-display); }
+.player-artist { color: var(--muted); }
+.player-close { color: var(--ink); }
+
+/* Stop 6: more references */
+.ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 32px; margin-bottom: 56px; }
+.ref-gallery .shot-link { aspect-ratio: 4 / 3; }
+.ref-gallery .shot-link img { --slab: var(--sand-2); }
+.ref-lists { gap: 32px; }
+.ref-list { padding: 26px calc(26px + var(--d)) calc(20px + var(--d)) 26px; --slab: var(--sun); }
+.ref-list h3 { margin-bottom: 16px; }
+.ref-item { margin-bottom: 16px; }
+
+/* Sources */
+.sources { padding: 24px calc(24px + var(--d)) calc(20px + var(--d)) 24px; font-size: 15.5px; line-height: 1.5; --slab: var(--sand-2); }
+.source-n { color: var(--muted); }
+.source a { font-weight: 600; }
+.source-meta { font-size: 14px; color: var(--muted); }
+.source:target { outline-color: var(--trail); }
+
+/* Stop 8: related styles */
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+.related img { padding: 0 var(--d) var(--d) 0; --slab: var(--lagoon); }
+.related a { color: var(--ink); }
+.related span { padding-top: 10px; font: 600 15.5px/1.3 var(--font-display); }
+.related a:hover span { text-decoration: underline; }
+
+.foot { margin-top: 110px; padding: 30px 0 50px; border-top: 0; font-size: 14.5px; color: var(--muted); }
+.foot-nav a { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 1100px) {
+  :root { --gut: 80px; --stop: 64px; }
+  .lp-stop svg { width: 50px; height: 50px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .toc a { font-size: 14.5px; }
+}
+@media (max-width: 860px) {
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .steps { columns: 1; }
+  .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ref-gallery, .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  html { font-size: 16.5px; }
+  :root { --gap: 14px; --gut: 46px; --stop: 40px; --d: 7px; }
+  .atlas { padding: 0 8px; gap: 6px; }
+  .atlas-home span { font-size: 14px; }
+  .hero-text { --mesh-h: clamp(220px, 30vh, 250px); min-height: 0; padding-top: 30px; }
+  .hero-kicker { font-size: 12px; letter-spacing: .22em; margin-bottom: 14px; }
+  .hero-sub { letter-spacing: .3em; margin-top: 14px; }
+  .hero-tagline { margin-top: 18px; }
+  .hero > .lp-panel { margin-top: 16px; }
+  .lp-panel { padding: 12px calc(14px + var(--d)) calc(10px + var(--d)) 14px; gap: 8px 6px; }
+  .lp-panel-label { flex-basis: 100%; }
+  .lp-panel button { padding: 6px 8px; font-size: 13.5px; }
+  .lp-wire { margin-left: 0; }
+  .lp-readout { font-size: 14px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 30px; margin-top: 28px; }
+  .toc { margin-top: 64px; padding: 20px calc(18px + var(--d)) calc(16px + var(--d)) 18px; }
+  .toc ul { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .toc ul::before { left: 25px; right: auto; top: 25px; bottom: 25px; width: 8px; height: auto; margin: 0 0 0 -4px; }
+  .toc li { justify-content: flex-start; }
+  .toc a { display: flex; align-items: center; min-height: 50px; padding: 0 0 0 66px; text-align: left; font-size: 16px; }
+  .lp-tstop { left: 0; top: 0; width: 50px; height: 50px; margin-left: 0; }
+  .lp-tstop svg { width: 36px; height: 36px; }
+  main { margin-top: 84px; }
+  .sec { margin-top: 96px; padding: 0 0 0 var(--gut); }
+  .lp-stop { top: -4px; box-shadow: inset 0 0 0 4px var(--ink); }
+  .lp-stop svg { width: 30px; height: 30px; }
+  .sec.lp-r .lp-stop { left: calc((var(--gut) - var(--stop)) / 2); right: auto; }
+  .sec.lp-r > .sec-title { text-align: left; }
+  .sec-title { margin-bottom: 28px; font-size: 2.05rem; }
+  .sec-title::before { margin-bottom: 10px; font-size: 12px; }
+  .feel-body { font-size: 1.06rem; }
+  .core-list, .ref-gallery, .loops, .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+  .related { gap: 20px 16px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .step { padding-left: 64px; }
+  .step::before { width: 48px; height: 44px; padding-top: 18px; font-size: 15px; }
+  .origins, .core-item, .specs, .do, .avoid, .ref-list, .sources, .tracks { padding-left: 18px; padding-right: calc(18px + var(--d)); }
+  .track-note { margin-left: 12px; }
+  .foot { margin-top: 80px; }
+}

@@ -1,0 +1,359 @@
+@font-face {
+  font-family: 'Gloock';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/gloock-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/literata-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Heavy Ink / Painted Comic: the page is a painted graphic-novel spread. The paper is black ink, so every gutter is black,
+   and each section is a panel of painted colour cut out of it with a brushed edge. One light falls from the upper left
+   across the whole book: each panel glows on that side, and on the far side the black floods back in as big chipped
+   shapes that throw off loose shards, the way the ink breaks up in Hades' key art. Each panel has its own dominant hue,
+   so the contents read as a colour script. Titles are lettered on tongues of ink that run in from the gutter, notes sit in
+   pale caption boxes, and the splash page carries a portrait (heavy-ink-painterly.js) whose slider turns soft painted
+   shadows into the solid black shapes an inker spots in. Ink shapes: public/media/heavy-ink-painterly/ink-*.svg, made by
+   .work/build/heavy-ink-painterly/theme-tools/ink.mjs, which also prints --rough. */
+:root {
+  --black: #0a0807; --bone: #ece4d2; --bone-2: #ddd2bb; --paper: #ebe2cc; --paper-ink: #17110c;
+  --flame: #ffd15b; --red: #b51c21; --hot: #dd2529; --rust: #653324; --tan: #c49872;
+  --bg: var(--black); --surface: #17120e; --ink: var(--bone); --muted: var(--bone-2); --accent: var(--flame); --line: #3b3027;
+  --font-display: 'Gloock', 'Georgia', serif; --font-body: 'Literata', 'Georgia', serif; --font-mono: ui-monospace, 'Consolas', monospace;
+  --radius: 0; --max: 1240px; --gap: 22px; --atlas-h: 48px;
+  --g0: #2e0e08; --g1: #5a2014; --g2: #8a3822;
+  /* Broad, soft strokes of paint, lighter and darker, tiled over every painted ground. */
+  --brush-lite: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0028 .014' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.92 0 0 0 0 0.78 .62 0 0 0 -.33'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --brush-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0022 .016' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 -.52'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --ink-a: url(../media/heavy-ink-painterly/ink-corner-a.svg);
+  --ink-b: url(../media/heavy-ink-painterly/ink-corner-b.svg);
+  --ink-c: url(../media/heavy-ink-painterly/ink-corner-c.svg);
+  --ink-foot: url(../media/heavy-ink-painterly/ink-foot.svg);
+  /* A panel edge cut with a loaded brush: points a few pixels in from each side, with now and then a deeper bite. */
+  --rough: polygon(calc(0% + 0.3px) 10.9px, calc(2.5% - 0.1px) 3.3px, 5% 1.7px, calc(7.5% - 0.3px) 0.9px, 10% 8.7px, calc(12.5% + 0.5px) 7.8px, calc(15% + 0.6px) 2px, calc(17.5% - 0.8px) 1.3px, 20% 0.4px, calc(22.5% + 0.7px) 3px, calc(25% - 0.6px) 2.7px, calc(27.5% + 0.8px) 3.9px, calc(30% + 0.3px) 1.2px, calc(32.5% + 0.7px) 1.8px, calc(35% + 0.2px) 4px, 37.5% 3.8px, calc(40% + 0.2px) 3.3px, calc(42.5% + 0.5px) 4.1px, calc(45% + 0.2px) 0.8px, calc(47.5% + 0.6px) 9.1px, calc(50% + 0.4px) 9.8px, calc(52.5% + 0.4px) 0px, calc(55% - 0.6px) 3.8px, calc(57.5% - 0.3px) 1.8px, 60% 1.6px, calc(62.5% + 0.3px) 3.1px, calc(65% - 0.1px) 4px, calc(67.5% - 0.2px) 8.7px, calc(70% + 0.7px) 2px, calc(72.5% + 0.5px) 1.7px, calc(75% - 0.3px) 8.6px, calc(77.5% - 0.8px) 2.2px, calc(80% + 0.1px) 1.9px, calc(82.5% - 0.4px) 4px, calc(85% - 0.6px) 3.8px, calc(87.5% + 0.2px) 0.1px, calc(90% + 0.1px) 0.9px, calc(92.5% + 0.2px) 3.6px, calc(95% - 0.7px) 2.2px, calc(97.5% + 0.4px) 2.4px, calc(100% - 1.5px) calc(0% + 0.3px), calc(100% - 0.6px) calc(4.2% + 0.5px), calc(100% - 9.4px) calc(8.3% + 0.8px), calc(100% - 2.1px) calc(12.5% - 0.6px), calc(100% - 0.8px) calc(16.7% - 0.5px), calc(100% - 3px) calc(20.8% - 0.4px), calc(100% - 0.4px) calc(25% + 0.6px), calc(100% - 3.6px) calc(29.2% - 0.7px), calc(100% - 3.8px) calc(33.3% + 0.2px), calc(100% - 0.5px) calc(37.5% + 0.7px), calc(100% - 1.7px) calc(41.7% - 0.8px), calc(100% - 1.5px) calc(45.8% - 0.4px), calc(100% - 1.3px) calc(50% - 0.7px), calc(100% - 3.5px) calc(54.2% + 0.6px), calc(100% - 1px) calc(58.3% - 0.8px), calc(100% - 1.2px) calc(62.5% + 0.4px), calc(100% - 3.8px) calc(66.7% - 0.7px), calc(100% - 1.4px) calc(70.8% - 0.7px), calc(100% - 0.6px) calc(75% + 0.5px), calc(100% - 0.9px) calc(79.2% + 0.3px), calc(100% - 2.3px) calc(83.3% + 0.2px), calc(100% - 1.3px) calc(87.5% - 0.6px), calc(100% - 1px) calc(91.7% + 0.5px), calc(100% - 3.3px) calc(95.8% + 0.2px), calc(100% + 0.8px) calc(100% - 0.9px), calc(97.5% - 0.6px) calc(100% - 1.2px), calc(95% + 0.5px) calc(100% - 1.6px), calc(92.5% - 0.6px) calc(100% - 2.4px), calc(90% + 0.7px) calc(100% - 3.3px), calc(87.5% - 0.3px) calc(100% - 3.8px), calc(85% - 0.2px) calc(100% - 3.7px), calc(82.5% - 0.8px) calc(100% - 3.8px), calc(80% - 0.4px) calc(100% - 2.9px), calc(77.5% - 0.7px) calc(100% - 1px), calc(75% + 0.1px) calc(100% - 3.7px), calc(72.5% - 0.3px) calc(100% - 0.5px), calc(70% + 0.4px) calc(100% - 1.7px), calc(67.5% - 0.1px) calc(100% - 1.3px), calc(65% + 0.5px) calc(100% - 1px), calc(62.5% - 0.1px) calc(100% - 0.3px), calc(60% - 0.7px) calc(100% - 3px), calc(57.5% - 0.5px) calc(100% - 2.3px), calc(55% + 0.1px) calc(100% - 1.2px), calc(52.5% - 0.8px) calc(100% - 0.9px), calc(50% + 0.4px) calc(100% - 0.1px), calc(47.5% - 0.1px) calc(100% - 2.1px), calc(45% + 0.5px) calc(100% - 4.1px), calc(42.5% - 0.1px) calc(100% - 1.2px), calc(40% + 0.8px) calc(100% - 1.1px), calc(37.5% - 0.8px) calc(100% - 2.6px), calc(35% + 0.1px) calc(100% - 3.6px), calc(32.5% + 0.3px) calc(100% - 0.1px), calc(30% - 0.5px) calc(100% - 3.5px), calc(27.5% - 0.2px) calc(100% - 2.8px), calc(25% - 0.6px) calc(100% - 8.1px), calc(22.5% - 0.6px) calc(100% - 1.8px), calc(20% - 0.4px) calc(100% - 3.5px), calc(17.5% + 0.7px) calc(100% - 0.5px), calc(15% - 0.5px) calc(100% - 2.6px), calc(12.5% - 0.5px) calc(100% - 2.2px), 10% calc(100% - 1.1px), calc(7.5% - 0.4px) calc(100% - 0px), calc(5% - 0.2px) calc(100% - 1.4px), calc(2.5% + 0.3px) calc(100% - 3.4px), 1.8px 100%, 2px calc(95.8% + 0.6px), 1.1px calc(91.7% - 0.4px), 1.1px calc(87.5% - 0.5px), 3.4px calc(83.3% + 0.5px), 3.9px calc(79.2% + 0.4px), 3.1px calc(75% + 0.6px), 3.9px calc(70.8% - 0.5px), 2.4px calc(66.7% - 0.3px), 2.1px calc(62.5% - 0.4px), 4.2px calc(58.3% + 0.3px), 3.6px calc(54.2% + 0.6px), 3.1px calc(50% - 0.1px), 1.3px calc(45.8% - 0.6px), 1.2px calc(41.7% + 0.1px), 2.4px calc(37.5% + 0.2px), 2px calc(33.3% - 0.2px), 2.8px calc(29.2% + 0.4px), 3.8px calc(25% - 0.5px), 2.4px calc(20.8% - 0.8px), 7.9px calc(16.7% + 0.7px), 10px calc(12.5% + 0.4px), 1.1px calc(8.3% - 0.2px), 1.3px calc(4.2% + 0.4px));
+  color-scheme: dark;
+}
+html { font-size: 18px; }
+body { background: var(--black); line-height: 1.6; }
+::selection { background: var(--flame); color: var(--paper-ink); }
+:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+a { color: var(--flame); text-underline-offset: 3px; }
+a:hover { color: #fff1c4; }
+
+/* ---- site bar: a strip of the black page, lettered in bone ---- */
+.atlas { background: var(--black); color: var(--bone); border-bottom: 2px solid #2b221b; font: 600 15px/1 var(--font-body); letter-spacing: .02em; }
+.atlas a, .atlas-btn { color: var(--bone); }
+.atlas-home span { font: 400 19px/1 var(--font-display); letter-spacing: .01em; }
+.atlas-here { color: var(--bone-2); font: 400 15px/1 var(--font-display); }
+.atlas-btn { border: 2px solid transparent; }
+.atlas-btn:hover { border-color: var(--flame); color: var(--flame); }
+.atlas-btn[aria-pressed="true"] { color: var(--flame); }
+
+/* ---- the black page ---- */
+.page { padding: 26px 24px 64px; }
+
+/* A painted panel: the section's own hue lit from the upper left, brush streaks, and ink flooding in at the far corner. */
+.hero-text, .sec {
+  position: relative; clip-path: var(--rough);
+  background:
+    var(--panel-ink, none) right bottom / var(--ink-size, min(66%, 780px)) auto no-repeat,
+    var(--brush-dark) 140px 90px / 520px 520px,
+    var(--brush-lite) 0 0 / 480px 480px,
+    radial-gradient(120% 95% at 0 0, var(--g2), var(--g1) 52%, var(--g0)) ;
+}
+
+/* ---- the splash page ---- */
+.hero { padding: 0; }
+.hero-text {
+  display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; justify-items: start;
+  min-height: 520px; padding: 50px 54px 54px;
+  --g0: #3c120a; --g1: #a3432a; --g2: #ffd27a;
+  background:
+    url(../media/heavy-ink-painterly/ink-splash.svg) right top / var(--splash-w, 690px) 100% no-repeat,
+    var(--brush-dark) 140px 90px / 520px 520px,
+    var(--brush-lite) 0 0 / 480px 480px,
+    radial-gradient(64% 92% at 22% 40%, #ffd98a 0, #f6ac52 24%, #d8682f 46%, #9b3a22 70%, #4a160d 100%);
+}
+.hero-text:has(.hi-card) { grid-template-columns: minmax(0, 1fr) minmax(300px, 400px); grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 44px; }
+.hero-text:has(.hi-card) > :not(.hi-card) { grid-column: 1; }
+.hero-kicker { grid-row: 2; margin: 0 0 6px; color: var(--paper-ink); font: 700 15px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.hero-title { grid-row: 3; color: var(--paper-ink); font: 400 clamp(3.6rem, 10.5vw, 8.8rem)/.9 var(--font-display); letter-spacing: -.01em; overflow-wrap: normal; }
+.hero-sub { grid-row: 4; margin: 24px 0 0; padding: 4px 16px 6px; background: var(--paper); border: 2px solid var(--paper-ink); color: var(--paper-ink); font: 400 clamp(1.4rem, 2.6vw, 2.1rem)/1.1 var(--font-display); }
+.hero-tagline { grid-row: 5; max-width: 27em; margin: 14px 0 0; padding: 12px 18px 13px; background: var(--paper); border: 2px solid var(--paper-ink); color: var(--paper-ink); font: italic 400 1.12rem/1.45 var(--font-body); }
+
+/* The portrait card, built by the theme script: a character card with a slider that spots the blacks. */
+.hi-card { grid-column: 2; grid-row: 1 / -1; align-self: center; width: 100%; margin: 0; padding: 12px 12px 0; background: var(--black); box-shadow: 0 0 0 2px #2b221b; }
+.hi-frame { position: relative; aspect-ratio: 3 / 4; background: #4a160d; box-shadow: inset 0 0 0 1px rgb(236 228 210 / .25); }
+.hi-frame svg { display: block; width: 100%; height: 100%; }
+.hi-plate { display: grid; gap: 4px; margin: 12px -12px 0; padding: 12px 16px 14px; background: var(--paper); color: var(--paper-ink); border-top: 3px solid var(--black); }
+.hi-name { font: 400 1.35rem/1.1 var(--font-display); }
+.hi-how { font: 400 15.5px/1.35 var(--font-body); }
+.hi-range { width: 100%; height: 34px; margin: 2px 0 0; background: transparent; cursor: pointer; -webkit-appearance: none; appearance: none; }
+.hi-range::-webkit-slider-runnable-track { height: 12px; border-radius: 0; background: linear-gradient(90deg, #b5754a, #6b3a24 45%, #0a0807 80%); box-shadow: 0 0 0 2px var(--paper-ink); }
+.hi-range::-moz-range-track { height: 12px; background: linear-gradient(90deg, #b5754a, #6b3a24 45%, #0a0807 80%); box-shadow: 0 0 0 2px var(--paper-ink); }
+.hi-range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -7px; border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; background: var(--black); border: 3px solid var(--flame); }
+.hi-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; background: var(--black); border: 3px solid var(--flame); }
+.hi-range:focus-visible { outline: 3px solid var(--paper-ink); outline-offset: 2px; }
+.hi-ends { display: flex; justify-content: space-between; gap: 10px; font: 600 14.5px/1.2 var(--font-body); }
+.hi-read { position: relative; margin-top: 6px; padding-top: 8px; font: 400 15.5px/1.3 var(--font-body); }
+.hi-read b { font: 400 1.25rem/1 var(--font-display); }
+.hi-read-text { display: block; min-height: 1.5em; }
+.hi-meter[hidden] { visibility: hidden; }
+.hi-meter { position: relative; display: block; height: 8px; margin-top: 6px; background: #c9bb9c; }
+.hi-meter i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--black-pc, 0%); background: var(--black); }
+.hi-meter::after { content: ''; position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--hot); }
+
+/* The four main pictures: a splash panel and a tier of three, cut apart by slanted black gutters. */
+.hero-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 14px; margin-top: 26px; }
+.hero-gallery .shot-1 { grid-column: 1 / -1; }
+.hero-gallery .shot-1 .shot-link { aspect-ratio: 2 / 1; }
+.hero-gallery .shot-1 img { object-position: 50% 12%; }
+.hero-gallery .shot-link { aspect-ratio: 16 / 10; background: #000; }
+.hero-gallery .shot-2 .shot-link { clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%); }
+.hero-gallery .shot-3 .shot-link { clip-path: polygon(22px 0, 100% 0, calc(100% - 22px) 100%, 0 100%); }
+.hero-gallery .shot-4 .shot-link { clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%); }
+.shot figcaption, .loop figcaption { padding-top: 8px; color: var(--bone); font: 400 15px/1.4 var(--font-body); }
+.shot-title { font: 400 1.05rem/1.25 var(--font-display); }
+.shot-meta { color: var(--bone-2); }
+.hero-gallery .shot-3 figcaption, .hero-gallery .shot-4 figcaption { padding-left: 22px; }
+.shot-link img { transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.shot-link:hover img { transform: scale(1.03); }
+.is-contain .shot-link { background: #000; }
+
+/* ---- contents: the colour script. Each link carries a thumbnail of its section's hue, lit from the upper left. ---- */
+.toc { margin: 26px 0 0; }
+.toc::before { content: 'Colour script'; content: 'Colour script' / ''; display: block; margin-bottom: 10px; color: var(--bone-2); font: italic 400 15px/1.2 var(--font-body); }
+.toc ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.toc li { --g0: #2e0e08; --g1: #5a2014; --g2: #8a3822; }
+.toc li:nth-child(2) { --g0: #22170c; --g1: #45301a; --g2: #7a5530; }
+.toc li:nth-child(3) { --g0: #250709; --g1: #4a1214; --g2: #7e2422; }
+.toc li:nth-child(4) { --g0: #120f0d; --g1: #221d19; --g2: #3e362e; }
+.toc li:nth-child(5) { --g0: #0a1b12; --g1: #153524; --g2: #2f6a48; }
+.toc li:nth-child(6) { --g0: #08181d; --g1: #11303a; --g2: #24555c; }
+.toc a { display: block; text-decoration: none; color: var(--bone); font: 400 1.05rem/1.2 var(--font-display); }
+.toc a::before { content: ''; display: block; height: 54px; margin-bottom: 8px; clip-path: var(--rough);
+  background: var(--ink-a) right bottom / 72% auto no-repeat, radial-gradient(120% 120% at 0 0, var(--g2), var(--g1) 55%, var(--g0)); transition: transform .2s; }
+.toc li:nth-child(even) a::before { background-image: var(--ink-b), radial-gradient(120% 120% at 0 0, var(--g2), var(--g1) 55%, var(--g0)); }
+.toc a:hover { color: var(--flame); }
+.toc a:hover::before { transform: translateY(-3px); }
+
+/* ---- sections: one painted panel each, with its own dominant hue ---- */
+.sec { margin-top: 30px; padding: 56px 56px 60px; --panel-ink: var(--ink-a); }
+.sec-feel { --g0: #2e0e08; --g1: #5a2014; --g2: #8a3822; }
+.sec-core { --g0: #22170c; --g1: #45301a; --g2: #7a5530; --panel-ink: var(--ink-b); }
+.sec-how { --g0: #250709; --g1: #4a1214; --g2: #7e2422; --panel-ink: var(--ink-c); --ink-size: min(56%, 680px); }
+.sec-palette { --g0: #120f0d; --g1: #221d19; --g2: #3e362e; --panel-ink: var(--ink-b); --ink-size: min(44%, 520px); }
+.sec-vibe { --g0: #0a1b12; --g1: #153524; --g2: #2f6a48; }
+.sec-refs { --g0: #08181d; --g1: #11303a; --g2: #24555c; --panel-ink: var(--ink-c); --ink-size: min(50%, 620px); }
+.sec-sources { --g0: #110e0c; --g1: #1b1714; --g2: #2c2620; --panel-ink: none; }
+.sec-related { --g0: #160b19; --g1: #2a1630; --g2: #4e2a50; --panel-ink: var(--ink-b); --ink-size: min(40%, 480px); }
+
+/* Titles are lettered in flame on a tongue of ink that runs in from the gutter. */
+.sec-title { display: table; justify-self: start; width: fit-content; margin: 0 0 30px -56px; padding: 10px 34px 12px 56px; background: var(--black); color: var(--flame);
+  font: 400 clamp(2rem, 4.4vw, 3.3rem)/1.02 var(--font-display); letter-spacing: -.005em;
+  clip-path: polygon(0 0, calc(100% - 26px) 0, calc(100% - 12px) 22%, calc(100% - 22px) 38%, 100% 58%, calc(100% - 16px) 80%, calc(100% - 6px) 100%, 0 100%); }
+.sec h3 { font: 400 1.4rem/1.15 var(--font-display); margin-bottom: 10px; }
+
+/* Caption boxes: pale paper with a thin black rule, as in the narration boxes of a comic. */
+.origins, .do, .avoid { background: var(--paper); color: var(--paper-ink); border: 2px solid var(--paper-ink); box-shadow: 0 0 0 4px var(--black); }
+.origins a, .do a, .avoid a { color: #7a1416; }
+
+/* Feel: the text on the panel, the origins in a caption box beside it */
+.sec-feel { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); grid-template-rows: auto auto 1fr; column-gap: 46px; }
+.sec-feel > .sec-title { grid-column: 1 / -1; }
+.feel-body { grid-column: 1; max-width: none; font-size: 1.14rem; line-height: 1.62; }
+.mood-words { grid-column: 1; align-self: start; gap: 10px; margin: 26px 0 0; }
+.mood-words li { padding: 4px 14px 6px; background: var(--black); border: 0; color: var(--bone); font: italic 400 16px/1.3 var(--font-body); }
+.origins { grid-column: 2; grid-row: 2 / span 2; align-self: start; max-width: none; margin: 4px 0 0; padding: 20px 24px 22px; font-size: 1rem; line-height: 1.58; }
+.origins h3 { display: inline-block; margin: 0 0 10px; padding: 2px 10px 4px; background: var(--paper-ink); color: var(--paper); font-size: 1.15rem; }
+
+/* Core: six character cards of pale paper, numbered, with the black flooding in at the foot */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.core-item { position: relative; padding: 22px 24px 64px; background: var(--ink-foot) right bottom / 100% auto no-repeat, var(--paper); border: 0; color: var(--paper-ink); box-shadow: 0 0 0 4px var(--black); }
+.core-item h3 { display: flex; align-items: baseline; gap: 12px; font-size: 1.45rem; margin-bottom: 12px; }
+.core-item h3::before { content: counter(core); flex: none; display: grid; place-items: center; width: 44px; height: 44px; background: var(--black); color: var(--flame); font: 400 1.5rem/1 var(--font-display); border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; transform: translateY(6px); }
+.core-item p { font-size: 1rem; line-height: 1.56; }
+.core-item a { color: #7a1416; }
+
+/* How: numbered steps in two columns, each number spotted in a blot of ink */
+.steps { display: block; max-width: none; column-count: 2; column-gap: 54px; }
+.step { display: inline-block; width: 100%; break-inside: avoid; padding: 0 0 26px 66px; }
+.step::before { content: counter(step); top: 0; width: 48px; height: 48px; background: var(--black); color: var(--flame); font: 400 1.6rem/1 var(--font-display); border-radius: 52% 48% 45% 55% / 48% 55% 45% 52%; }
+.step h3 { font-size: 1.38rem; color: var(--bone); }
+.step p { font-size: 1.02rem; line-height: 1.58; }
+.how-side { gap: 30px; margin-top: 18px; }
+.specs { padding: 22px 24px 18px; background: var(--black); border: 0; color: var(--bone); }
+.specs h3 { color: var(--flame); }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; padding: 9px 0; border-top: 1px dashed rgb(236 228 210 / .32); line-height: 1.45; }
+.spec dt { font: 400 1.05rem/1.3 var(--font-display); color: var(--bone); }
+.how-c .spec { grid-template-columns: 12em minmax(0, 1fr); }
+.spec dd { font-size: .95rem; color: var(--bone); }
+.dodont { gap: 30px; }
+.do, .avoid { padding: 20px 24px 18px; }
+.do h3, .avoid h3 { display: inline-block; padding: 2px 12px 4px; font-size: 1.2rem; }
+.do h3 { background: var(--paper-ink); color: var(--paper); }
+.avoid h3 { background: var(--red); color: #fff4e0; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 9px; padding-left: 22px; font-size: .98rem; line-height: 1.5; }
+.dodont li::before { content: ''; position: absolute; left: 0; top: .5em; width: 10px; height: 10px; background: var(--paper-ink); border-radius: 46% 54% 50% 50%; }
+.avoid li::before { background: var(--red); }
+.learn { margin-top: 34px; }
+.learn h3 { color: var(--bone); }
+.learn ul { gap: 14px 34px; }
+.ref-item a, .learn a, .ref-list a { font-weight: 600; }
+.ref-meta { color: var(--bone-2); font-size: 15px; }
+.ref-note { font-size: 16px; line-height: 1.5; color: var(--bone); }
+.brief-note, .palette-note { color: var(--bone-2); font-size: 15px; }
+.btn { padding: 10px 18px 11px; background: var(--black); color: var(--flame); border: 2px solid var(--flame); font: 400 1.05rem/1.1 var(--font-display); }
+.btn:hover { background: var(--flame); color: var(--paper-ink); border-color: var(--flame); }
+
+/* Palette: daubs of paint inside an inked frame */
+.swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.swatch button { background: #1e1712; border: 0; padding: 10px 10px 12px; }
+.chip { height: 104px; clip-path: var(--rough); background: linear-gradient(100deg, rgb(255 255 255 / .08), transparent 35% 70%, rgb(0 0 0 / .1)), var(--c); }
+.swatch-name { padding: 10px 2px 0; color: var(--bone); font: 400 1.1rem/1.2 var(--font-display); }
+.swatch-hex { padding: 2px 2px 0; color: var(--bone-2); font-size: 15px; }
+.swatch button:hover .swatch-name { color: var(--flame); }
+.palette-note { max-width: 52em; margin-top: 20px; font-size: 1rem; color: var(--bone); }
+
+/* Motion and music: the loops as a page of panels, the tracks on a black card */
+.loops-wrap h3, .music-wrap h3 { color: var(--bone); }
+.loops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 22px; }
+.loop video { background: #000; box-shadow: 0 0 0 4px var(--black); }
+.tracks { max-width: none; gap: 4px; padding: 14px; background: var(--black); }
+.track-btn { padding: 10px 12px; background: transparent; border: 0; }
+.track-btn:hover, .track.is-playing .track-btn { background: #241a14; }
+.track-play { width: 36px; height: 36px; background: var(--flame); color: var(--paper-ink); border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; }
+.track-title { font: 400 1.1rem/1.3 var(--font-display); color: var(--bone); }
+.track-artist { font-size: 15px; color: var(--bone-2); }
+.track-note { margin: 0 0 10px 60px; font-size: 16px; line-height: 1.5; color: var(--bone); }
+.track-yt { font-size: 15px; color: var(--flame); }
+.player { background: var(--black); border: 2px solid var(--flame); box-shadow: 0 12px 30px rgb(0 0 0 / .6); color: var(--bone); }
+.player-now { color: var(--flame); font-size: 12px; }
+.player-title { font: 400 1.05rem/1.3 var(--font-display); }
+.player-artist { color: var(--bone-2); }
+.player-close { color: var(--bone); }
+
+/* References: a comic page of panels with black gutters, then the lists */
+.ref-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 16px; margin-bottom: 36px; }
+.ref-gallery .shot:first-child { grid-column: span 2; }
+.ref-gallery .shot-link { aspect-ratio: auto; height: 220px; box-shadow: 0 0 0 4px var(--black); }
+.ref-gallery .shot figcaption { font-size: 14.5px; }
+.ref-lists { gap: 30px 48px; }
+.ref-list h3, .learn h3 { display: inline-block; padding: 2px 12px 4px; background: var(--black); color: var(--flame); font-size: 1.25rem; }
+.ref-item { margin-bottom: 16px; }
+
+/* Sources: a plain dark panel, kept quiet so it stays easy to read */
+.sources { font-size: 16px; line-height: 1.5; color: var(--bone); }
+.source-n { color: var(--flame); font-family: var(--font-display); font-weight: 400; }
+.source-meta { color: var(--bone-2); font-size: 14.5px; }
+.source:target { outline-color: var(--flame); background: rgb(0 0 0 / .4); }
+
+/* Related styles: small panels */
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.related img { box-shadow: 0 0 0 4px var(--black); }
+.related a { color: var(--bone); }
+.related span { padding-top: 10px; font: 400 1.1rem/1.25 var(--font-display); }
+.related a:hover span { color: var(--flame); }
+
+.foot { margin-top: 30px; padding: 26px 4px 0; border-top: 2px solid #2b221b; color: var(--bone-2); font-size: 15px; }
+.foot-nav a { color: var(--bone); font: 400 1.05rem/1.2 var(--font-display); }
+.foot-nav a:hover { color: var(--flame); }
+
+/* Narrower screens: fewer columns, the portrait under the title, smaller gutters. */
+@media (max-width: 1100px) {
+  .hero-text:has(.hi-card) { grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); column-gap: 30px; }
+  .hero-text { --splash-w: 560px; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toc ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  /* The title first, on the lit part of the splash; the portrait under it, on the ink. */
+  .hero-text:has(.hi-card) { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .hero-kicker, .hero-title, .hero-sub, .hero-tagline { grid-row: auto; }
+  .hi-card { grid-column: 1; grid-row: auto; justify-self: center; max-width: 420px; margin-top: 34px; }
+  .hero-text { background:
+    url(../media/heavy-ink-painterly/ink-splash.svg) right bottom / auto 66% no-repeat,
+    var(--brush-dark) 140px 90px / 520px 520px,
+    var(--brush-lite) 0 0 / 480px 480px,
+    radial-gradient(130% 46% at 26% 15%, #ffd98a 0, #f6ac52 26%, #d8682f 50%, #9b3a22 74%, #4a160d 100%); }
+  .sec-feel { grid-template-columns: minmax(0, 1fr); }
+  .origins { grid-column: 1; grid-row: auto; margin-top: 28px; }
+  .steps { column-count: 1; }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+  .page { padding: 14px 10px 48px; }
+  .hero-text { min-height: 0; padding: 34px 22px 30px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .hero-gallery .shot-1 .shot-link { aspect-ratio: 16 / 10; }
+  .hero-gallery .shot-link, .hero-gallery .shot-2 .shot-link, .hero-gallery .shot-3 .shot-link, .hero-gallery .shot-4 .shot-link { clip-path: none; }
+  .hero-gallery .shot-3 figcaption, .hero-gallery .shot-4 figcaption { padding-left: 0; }
+  .toc ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sec { margin-top: 18px; padding: 36px 20px 40px; }
+  .sec-title { margin-left: -20px; padding-left: 20px; padding-right: 30px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .core-item { padding: 18px 18px 50px; }
+  .step { padding-left: 58px; }
+  .ref-gallery { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery .shot:first-child { grid-column: auto; }
+  .ref-gallery .shot-link { height: auto; aspect-ratio: 16 / 10; }
+  .ref-lists { grid-template-columns: minmax(0, 1fr); }
+  .track-note { margin-left: 12px; }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+}
+@media (max-width: 420px) {
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .chip { height: 80px; }
+}

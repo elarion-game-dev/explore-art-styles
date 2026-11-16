@@ -1,0 +1,406 @@
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/unbounded-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/unbounded-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/unbounded-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/figtree-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/figtree-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/figtree-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Afrofuturism: a city at nightfall under a big gold sun, built from earth architecture and cloth.
+   The cover is the skyline: earth buildings in the manner of Djenné (tapered walls, buttresses rising into pinnacles,
+   rows of toron beams) in front of slim towers of glass and light, some with thatched cone tops.
+   Below it, every section is a cloth from a named tradition, and the dividers between them are kente-style strips that a
+   narrow-strip loom weaves from the page's own palette as you scroll (themes/afrofuturism.js):
+   the feel is a panel of Bamana bògòlanfini (motifs left bare in black clay), the core elements are six strips sewn edge to
+   edge with their weft blocks offset, the how-to is an Asante adinkra cloth ruled in triple lines and stamped, and the
+   palette hangs as woven strips on a mud wall. */
+:root {
+  --night: #170d3d; --night-2: #120a31; --indigo: #291566; --violet: #6351bc; --cyan: #9de3f3; --gold: #ebb818;
+  --crimson: #bb305a; --laterite: #864715; --plaster: #cca57d; --clay: #21170c;
+  --cream: #f6ead3; --cotton: #f1e5cc; --ink-2: #5a3d24; --link: #9a1f45; --lav: #d6cdf6; --lav-2: #b9aee8;
+  --bg: var(--night); --surface: var(--cream); --ink: #f6ead3; --muted: var(--lav-2); --accent: var(--gold); --line: rgb(214 205 246 / .25);
+  --font-display: 'Unbounded', 'Arial Black', sans-serif;
+  --font-body: 'Figtree', 'Segoe UI', sans-serif;
+  --font-mono: 'Figtree', 'Segoe UI', sans-serif;
+  --radius: 0; --max: 1200px; --gap: 24px; --atlas-h: 52px;
+  /* warp stripes along a strip, used for small woven bands */
+  --warp: linear-gradient(var(--clay) 0 2px, var(--gold) 2px 5px, var(--crimson) 5px 7px, var(--gold) 7px 9px, var(--clay) 9px 11px);
+  --triple: linear-gradient(var(--clay) 0 2px, transparent 2px 5px, var(--clay) 5px 7px, transparent 7px 10px, var(--clay) 10px 12px, transparent 12px);
+  --triple-v: linear-gradient(90deg, var(--clay) 0 2px, transparent 2px 5px, var(--clay) 5px 7px, transparent 7px 10px, var(--clay) 10px 12px, transparent 12px);
+  --stamp: radial-gradient(circle, transparent 0 15px, var(--clay) 15.5px 18px, transparent 18.5px 22px, var(--clay) 22.5px 25px, transparent 25.5px 29px, var(--clay) 29.5px 32px, transparent 32.5px);
+  color-scheme: dark;
+}
+html { font-size: 18px; }
+body { background: var(--night); color: var(--ink); font-weight: 400; line-height: 1.6; }
+::selection { background: var(--gold); color: var(--clay); }
+:where(.page) a { color: var(--cyan); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+:where(.page) a:hover { color: var(--gold); }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+/* on the cream, cotton and mud panels a cyan ring barely shows, so the ring there is black clay */
+:is(.sec-feel, .core-list, .sec-how, .sec-palette, .ref-list, .sec-sources) :focus-visible { outline-color: var(--clay); }
+
+/* ---------- Site bar: a dark strip with a woven band along its foot ---------- */
+.atlas { padding: 0 18px 8px; background: var(--warp) 0 100% / 100% 11px no-repeat, var(--night-2); border: 0; color: var(--cream); font: 600 15px/1 var(--font-body); }
+.atlas::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 11px; background: repeating-linear-gradient(90deg, transparent 0 46px, var(--violet) 46px 58px, var(--cyan) 58px 61px, var(--violet) 61px 73px, transparent 73px 120px); pointer-events: none; }
+.atlas a, .atlas-btn { color: var(--cream); }
+.atlas-home span { font: 600 14px/1 var(--font-display); letter-spacing: .02em; }
+.atlas-here { color: var(--gold); font: 400 12px/1 var(--font-display); letter-spacing: .1em; }
+.atlas-btn { border-radius: 4px; }
+.atlas-btn:hover { background: rgb(246 234 211 / .12); border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--gold); }
+
+/* ---------- The cover: the sky, the sun and the city ---------- */
+.page { padding: 0 var(--gap) 40px; }
+.hero { position: relative; isolation: isolate; padding: 0 0 10px; }
+.hero::before { content: ''; position: absolute; z-index: -3; top: 0; left: 50%; width: 100vw; height: 340px; translate: -50% 0; pointer-events: none;
+  background:
+    radial-gradient(1.4px 1.4px at 22px 34px, #fff 60%, transparent), radial-gradient(1px 1px at 97px 12px, #fff 60%, transparent),
+    radial-gradient(1.2px 1.2px at 150px 80px, #fff 60%, transparent), radial-gradient(1.6px 1.6px at 60px 118px, var(--cyan) 60%, transparent),
+    radial-gradient(1px 1px at 128px 140px, #fff 60%, transparent), radial-gradient(1.3px 1.3px at 181px 52px, var(--gold) 60%, transparent);
+  background-size: 200px 160px;
+  /* stars only above the words and to the right of them, so none can pass for an accent on a letter */
+  -webkit-mask: linear-gradient(90deg, transparent 66%, #000 74%), linear-gradient(#000 0 34px, transparent 60px); mask: linear-gradient(90deg, transparent 66%, #000 74%), linear-gradient(#000 0 34px, transparent 60px); }
+.hero-text { position: relative; min-height: 610px; padding: 60px 0 270px; }
+/* the sky fades back into the night at its foot, so it never ends in a hard line below the city */
+.hero-text::before { content: ''; position: absolute; z-index: -4; top: 0; bottom: 0; left: 50%; width: 100vw; translate: -50% 0; background: linear-gradient(var(--night) 0%, var(--indigo) 36%, #45349a 66%, var(--violet) 86%, var(--night) 100%); pointer-events: none; }
+/* skyline.svg is 3600 x 600, so at 480px tall it is 2880px wide; in a wider window its ends fade into the sky */
+.hero-text::after { content: ''; position: absolute; z-index: -2; bottom: 0; left: 50%; width: 100vw; height: 480px; translate: -50% 0; background: url("../media/afrofuturism/skyline.svg") 50% 100% / auto 100% no-repeat; pointer-events: none;
+  -webkit-mask: linear-gradient(90deg, transparent calc(50% - 1440px), #000 calc(50% - 1180px), #000 calc(50% + 1180px), transparent calc(50% + 1440px)); mask: linear-gradient(90deg, transparent calc(50% - 1440px), #000 calc(50% - 1180px), #000 calc(50% + 1180px), transparent calc(50% + 1440px)); }
+:root:not([data-calm]) .hero-text::after { animation: af-rise 2.4s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes af-rise { from { background-position: 50% calc(100% + 26px); opacity: .4; } }
+
+.hero-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 7px 14px 7px 10px; background: rgb(18 10 49 / .7); color: var(--gold); font: 400 12px/1.2 var(--font-display); letter-spacing: .14em; text-transform: uppercase; box-shadow: inset 0 -3px 0 var(--crimson); }
+.hero-kicker::before { content: ''; flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 2px var(--night-2), 0 0 0 3.5px var(--gold); }
+.hero-title { max-width: none; margin: 0; font: 900 min(5.6rem, calc((100vw - 48px) / 9.4))/1.02 var(--font-display); letter-spacing: -.012em; overflow-wrap: normal; white-space: nowrap; color: var(--gold);
+  background: linear-gradient(180deg, #ffe27a 0 34%, var(--crimson) 34% 40%, #ffd23a 40% 46%, var(--clay) 46% 49%, #ffd23a 49% 55%, var(--crimson) 55% 61%, #f0ae16 61% 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 1px var(--clay)) drop-shadow(0 .055em 0 var(--clay)); }
+.hero-sub { margin: 16px 0 0; color: var(--cyan); font: 400 clamp(1rem, 2vw, 1.35rem)/1.2 var(--font-display); letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 0 14px rgb(157 227 243 / .55); }
+.hero-tagline { position: relative; max-width: 27em; margin: 26px 0 0; padding: 14px 20px 15px 30px; background: rgb(18 10 49 / .9); color: var(--cream); font: 500 clamp(1.05rem, 1.6vw, 1.25rem)/1.5 var(--font-body); }
+.hero-tagline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 11px; background: var(--warp); background-size: 11px 100%; transform-origin: 0 0; }
+.hero-tagline::before { background: linear-gradient(90deg, var(--clay) 0 2px, var(--gold) 2px 5px, var(--crimson) 5px 7px, var(--gold) 7px 9px, var(--clay) 9px 11px); }
+
+/* The four pictures in two rows, each at its own shape, so nothing is cropped. The theme script sets each picture's
+   flex-grow and aspect-ratio from the width and height on its img; these values are the fallback for the current files. */
+.hero-gallery { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 8px; }
+.hero-gallery::after { content: ''; order: 3; flex: 0 0 100%; height: 0; }
+.hero-gallery .shot { position: relative; margin-bottom: 26px; }
+.shot-1 { order: 1; flex: 1.778 1 0; } .shot-4 { order: 2; flex: 1.132 1 0; }
+.shot-2 { order: 4; flex: 1.885 1 0; } .shot-3 { order: 4; flex: 1.758 1 0; }
+.hero-gallery .shot-1 .shot-link { aspect-ratio: 1600 / 900; } .hero-gallery .shot-4 .shot-link { aspect-ratio: 1290 / 1140; }
+.hero-gallery .shot-2 .shot-link { aspect-ratio: 1600 / 849; } .hero-gallery .shot-3 .shot-link { aspect-ratio: 1600 / 910; }
+.shot-link { background: var(--night-2); box-shadow: 0 0 0 2px var(--gold), 0 0 0 6px var(--night), 0 0 0 7px rgb(235 184 24 / .45); }
+.shot figcaption, .loop figcaption { padding-top: 12px; font-size: 15px; line-height: 1.45; color: var(--lav); }
+.shot-title { color: var(--cream); font-weight: 700; }
+.shot-meta { color: var(--lav-2); }
+.shot-link img { transition: transform .5s ease; }
+.shot-link:hover img { transform: scale(1.03); }
+
+/* ---------- Contents: one woven strip, a weft block for each section ---------- */
+.toc { margin: 18px 0 0; padding: 11px 0; background: var(--warp) 0 0 / 100% 11px repeat-x, var(--warp) 0 100% / 100% 11px repeat-x, var(--clay); }
+.toc ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; }
+.toc li { display: flex; }
+.toc a { flex: 1; display: grid; place-items: center; min-height: 54px; padding: 8px 10px; background: var(--b); color: var(--t, var(--clay)); font: 600 13px/1.2 var(--font-display); letter-spacing: .04em; text-align: center; text-decoration: none; box-shadow: inset 4px 0 0 var(--clay); transition: filter .2s; }
+.toc a:hover { filter: brightness(1.12); color: var(--t, var(--clay)); text-decoration: underline; text-decoration-thickness: 2px; }
+.toc li:nth-child(1) a { --b: var(--gold); } .toc li:nth-child(2) a { --b: var(--crimson); --t: #fff4e2; } .toc li:nth-child(3) a { --b: var(--violet); --t: #fff4e2; }
+.toc li:nth-child(4) a { --b: var(--laterite); --t: #fff4e2; } .toc li:nth-child(5) a { --b: var(--cyan); } .toc li:nth-child(6) a { --b: var(--plaster); }
+
+/* ---------- The loom: a strip woven from the palette above every section ---------- */
+.af-loom { position: relative; height: 64px; margin: 44px 0 26px; }
+.af-loom > * { position: absolute; }
+.af-beam { left: 0; top: 4px; bottom: 4px; width: 18px; border-radius: 9px; background: linear-gradient(90deg, #4a230c, #a3622a 45%, #5a2c0e); box-shadow: 0 3px 6px rgb(0 0 0 / .5); z-index: 3; }
+.af-warp { left: 18px; right: 66px; top: 14px; height: 36px; background: repeating-linear-gradient(180deg, rgb(235 184 24 / .8) 0 1px, transparent 1px 3px, rgb(214 205 246 / .55) 3px 4px, transparent 4px 6px); }
+.af-fan { right: 26px; top: 14px; width: 40px; height: 36px; }
+.af-fan svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.af-stone { right: 0; top: 18px; width: 30px; height: 26px; border-radius: 48% 52% 44% 56% / 55% 50% 50% 45%; background: radial-gradient(circle at 35% 30%, #8d7f9e, #4b3f60 60%, #2a2140); box-shadow: 0 3px 5px rgb(0 0 0 / .5); }
+.af-cloth { left: 18px; right: 66px; top: 14px; height: 36px; overflow: hidden; clip-path: inset(0 calc(100% - var(--p, 1) * 100%) 0 0); box-shadow: 0 4px 10px rgb(0 0 0 / .45); }
+.af-cloth { background: 0 0 / 2600px 36px no-repeat; } /* the woven strip, set by the script as one image */
+.af-edge { left: 18px; width: 0; top: 0; bottom: 0; transform: translateX(var(--x, 0)); pointer-events: none; transition: opacity .4s; }
+.af-reed { position: absolute; left: -2px; top: 6px; bottom: 6px; width: 7px; background: repeating-linear-gradient(180deg, #e9cf86 0 1px, transparent 1px 3px), linear-gradient(90deg, #6b3a12, #c99848 50%, #6b3a12); border-radius: 2px; box-shadow: 0 0 0 1px rgb(0 0 0 / .4); }
+.af-shuttle { position: absolute; left: 8px; top: 30px; width: 38px; height: 12px; border-radius: 50%; background: linear-gradient(#f5d37a, #b9832a); box-shadow: inset 0 -2px 0 rgb(0 0 0 / .3), 0 2px 4px rgb(0 0 0 / .5); }
+.af-shuttle::after { content: ''; position: absolute; left: 11px; right: 11px; top: 3px; height: 6px; border-radius: 3px; background: var(--crimson); }
+.af-done .af-edge { opacity: 0; }
+.af-weaving .af-shuttle { animation: af-pass .36s ease-in-out infinite alternate; }
+@keyframes af-pass { from { translate: 0 -16px; } to { translate: 0 14px; } }
+:root[data-calm] .af-edge { display: none; }
+
+/* ---------- Sections ---------- */
+.sec { position: relative; padding: 0; }
+.sec-title { display: flex; align-items: center; gap: 18px; margin: 0 0 26px; color: var(--gold); font: 700 clamp(1.6rem, 3.2vw, 2.35rem)/1.15 var(--font-display); letter-spacing: -.01em; }
+.sec-title::before { content: ''; flex: none; width: 38px; height: 38px; background: repeating-linear-gradient(90deg, var(--s, var(--gold)) 0 6px, var(--clay) 6px 8px), var(--s, var(--gold)); box-shadow: 0 0 0 3px var(--clay), 0 0 0 5px var(--s, var(--gold)); }
+.sec-title::after { content: ''; flex: 1; height: 2px; min-width: 30px; background: linear-gradient(90deg, var(--cyan), transparent); box-shadow: 0 0 8px rgb(157 227 243 / .6); }
+.sec h3 { font: 700 1.05rem/1.3 var(--font-display); letter-spacing: 0; margin-bottom: 10px; }
+
+/* The feel: a panel of bògòlanfini. Text sits on bare cloth inside the black-clay ground. */
+.sec-feel { --s: var(--plaster); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; gap: 0 30px; padding: 30px; background: url("../media/afrofuturism/bogolan.svg") 0 0 / 128px; box-shadow: 0 0 0 4px var(--clay), 0 0 0 6px var(--plaster), 0 18px 40px rgb(0 0 0 / .5); }
+.sec-feel .sec-title { grid-column: 1 / -1; width: fit-content; max-width: 100%; padding: 12px 22px; background: var(--clay); color: #f0d9ac; }
+.sec-feel .sec-title::after { display: none; }
+.feel-body { grid-column: 1; grid-row: 2; max-width: none; padding: 26px 30px; background: var(--cream); color: var(--clay); font-size: 1.08rem; line-height: 1.65; }
+.mood-words { grid-column: 1; grid-row: 3; align-self: start; gap: 10px; margin: 22px 0 0; }
+.mood-words li { padding: 6px 14px 7px; border: 0; border-radius: 0; background: var(--clay); color: #f0d9ac; font: 600 14px/1.2 var(--font-display); letter-spacing: .06em; box-shadow: 0 0 0 2px #d6bb8f; }
+.origins { grid-column: 2; grid-row: 2 / span 2; max-width: none; margin: 0; padding: 26px 28px; background: #efdcb8; color: var(--clay); box-shadow: inset 0 0 0 2px var(--clay), inset 0 0 0 5px #efdcb8, inset 0 0 0 7px var(--clay); }
+.origins h3 { color: var(--clay); font-size: 1.15rem; }
+.origins p { font-size: 17px; line-height: 1.6; }
+.sec-feel a, .sec-how a, .sec-palette a, .ref-list a, .sec-sources a { color: var(--link); }
+.sec-feel a:hover, .sec-how a:hover, .sec-palette a:hover, .ref-list a:hover, .sec-sources a:hover { color: var(--clay); }
+
+/* Core elements: six strips sewn edge to edge into one cloth. Weft blocks sit at the top of one strip and the foot of
+   the next, so the blocks alternate across the cloth as they do in kente. */
+.sec-core { --s: var(--gold); }
+.core-list { position: relative; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; box-shadow: 0 0 0 3px var(--clay), 0 0 0 5px var(--gold), 0 22px 40px rgb(0 0 0 / .5); }
+.core-list::after { content: ''; position: absolute; left: 6px; right: 6px; top: 100%; height: 16px; margin-top: 5px; background: repeating-linear-gradient(90deg, #e9d6b0 0 2px, transparent 2px 5px); -webkit-mask: linear-gradient(#000, rgb(0 0 0 / .2)); mask: linear-gradient(#000, rgb(0 0 0 / .2)); }
+.core-item { position: relative; padding: 74px 26px 30px; background: var(--cream); color: var(--clay); border: 0; border-radius: 0; }
+.core-item + .core-item { box-shadow: inset 2px 0 0 rgb(33 23 12 / .18); }
+.core-item::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 46px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 18px, var(--k2) 18px 26px, transparent 26px 32px, var(--k2) 32px 40px, transparent 40px 58px) 0 9px / 100% 28px no-repeat,
+    linear-gradient(var(--clay) 0 3px, var(--k) 3px 6px, var(--k3) 6px 9px, var(--k) 9px calc(100% - 9px), var(--k3) calc(100% - 9px) calc(100% - 6px), var(--k) calc(100% - 6px) calc(100% - 3px), var(--clay) calc(100% - 3px)); }
+.core-item h3 { display: flex; align-items: baseline; gap: 12px; font-size: 1.04rem; }
+.core-item h3::before { content: counter(core, decimal-leading-zero); flex: none; color: var(--k-ink, var(--link)); font: 900 .9rem/1 var(--font-display); }
+.core-item p { font-size: 17px; line-height: 1.6; }
+.core-item:nth-child(3n+2) { padding: 30px 26px 74px; }
+.core-item:nth-child(3n+2)::before { top: auto; bottom: 0; }
+.core-item:nth-child(1) { --k: var(--gold); --k2: var(--clay); --k3: var(--crimson); }
+.core-item:nth-child(2) { --k: var(--crimson); --k2: var(--gold); --k3: var(--clay); }
+.core-item:nth-child(3) { --k: var(--violet); --k2: var(--cyan); --k3: var(--gold); }
+.core-item:nth-child(4) { --k: var(--laterite); --k2: var(--plaster); --k3: var(--gold); }
+.core-item:nth-child(5) { --k: var(--cyan); --k2: var(--indigo); --k3: var(--violet); }
+.core-item:nth-child(6) { --k: var(--indigo); --k2: var(--gold); --k3: var(--cyan); }
+.core-item:nth-child(n+4) { box-shadow: inset 0 2px 0 rgb(33 23 12 / .18), inset 2px 0 0 rgb(33 23 12 / .18); }
+.core-item:nth-child(4) { box-shadow: inset 0 2px 0 rgb(33 23 12 / .18); }
+
+/* How to do it: an adinkra cloth, ruled into cells with triple lines and stamped */
+.sec-how { --s: var(--crimson); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 0 34px; align-items: start; padding: 34px 34px 36px; background: var(--cotton); color: var(--clay); box-shadow: inset 0 0 0 12px var(--cotton), inset 0 0 0 14px var(--clay), inset 0 0 0 17px var(--cotton), inset 0 0 0 19px var(--clay), inset 0 0 0 22px var(--cotton), inset 0 0 0 24px var(--clay), 0 18px 40px rgb(0 0 0 / .5); }
+.sec-how > * { position: relative; }
+.sec-how .sec-title { grid-column: 1 / -1; margin: 6px 0 22px; color: var(--clay); }
+.sec-how .sec-title::after { background: var(--triple) 0 50% / 100% 12px no-repeat; height: 12px; box-shadow: none; }
+.steps { grid-column: 1; grid-row: 2; max-width: none; gap: 0; }
+.step { display: grid; grid-template-columns: 86px minmax(0, 1fr); column-gap: 22px; padding: 22px 0 22px; background: var(--triple) 0 0 / 100% 12px no-repeat; }
+.step:first-child { background: none; padding-top: 4px; }
+.step::before { position: relative; grid-column: 1; grid-row: 1 / span 2; align-self: start; width: 86px; height: 86px; margin: 0; padding: 0; display: grid; place-items: center; background: var(--stamp); border-radius: 0; color: var(--clay); font: 900 1.1rem/1 var(--font-display); opacity: .92; }
+.step h3, .step p { grid-column: 2; }
+.step h3 { margin: 6px 0 8px; font-size: 1.08rem; }
+.step p { font-size: 17px; line-height: 1.62; }
+.how-side { grid-column: 2; grid-row: 2; grid-template-columns: minmax(0, 1fr); gap: 28px; margin: 4px 0 0; }
+.specs, .do, .avoid { position: relative; padding: 24px 24px 20px; background: #f8eedb; border: 0; border-radius: 0; color: var(--clay); box-shadow: inset 0 0 0 2px var(--clay), inset 0 0 0 5px #f8eedb, inset 0 0 0 7px var(--clay), inset 0 0 0 10px #f8eedb, inset 0 0 0 12px var(--clay); }
+.specs { padding-top: 26px; }
+.specs h3, .do h3, .avoid h3 { display: flex; align-items: center; gap: 10px; margin: 2px 0 10px; font-size: 1rem; }
+.specs h3::before, .do h3::before, .avoid h3::before { content: ''; flex: none; width: 22px; height: 22px; background: radial-gradient(circle, var(--clay) 0 2.5px, transparent 3px 5px, var(--clay) 5.5px 7px, transparent 7.5px 9.5px, var(--clay) 10px 11px, transparent 11.5px); }
+.spec { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 12px; padding: 9px 0; border-top: 2px dotted rgb(33 23 12 / .4); font-size: 16px; line-height: 1.45; }
+.spec:first-child { border-top: 0; }
+.spec dt { font-weight: 700; }
+.spec dd { overflow-wrap: anywhere; }
+.dodont { gap: 28px; }
+.do { background-color: #f8eedb; }
+.do::after, .avoid::after { content: ''; position: absolute; left: 12px; right: 12px; top: 12px; height: 8px; background: var(--b); }
+.do { --b: repeating-linear-gradient(90deg, var(--gold) 0 14px, var(--clay) 14px 16px); }
+.avoid { --b: repeating-linear-gradient(90deg, var(--crimson) 0 14px, var(--clay) 14px 16px); }
+.do h3, .avoid h3 { margin-top: 12px; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 10px; padding-left: 22px; font-size: 16.5px; line-height: 1.55; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .52em; width: 10px; height: 10px; }
+.do li::before { background: var(--gold); box-shadow: 0 0 0 2px var(--clay); }
+.avoid li::before { background: var(--crimson); box-shadow: 0 0 0 2px var(--clay); transform: rotate(45deg); }
+/* Tools and tutorials hang under the cheat sheet, beside the long steps, so the right column runs as long as the left */
+.sec-how { grid-template-rows: auto auto 1fr; } /* any extra height from the long steps goes below the tutorials */
+.steps { grid-row: 2 / span 2; }
+.learn { grid-column: 2; grid-row: 3; align-self: start; margin-top: 34px; padding-top: 24px; background: var(--triple) 0 0 / 100% 12px no-repeat; }
+.learn ul { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.learn .ref-note { color: var(--ink-2); }
+.brief { grid-column: 1 / -1; }
+.brief-note, .palette-note { color: var(--ink-2); font-size: 15px; }
+.btn { padding: 11px 18px; background: var(--clay); color: #f6dfa6; border: 0; border-radius: 0; font: 600 13px/1.2 var(--font-display); letter-spacing: .04em; box-shadow: 0 0 0 2px var(--clay), 0 0 0 4px var(--gold); }
+.btn:hover { background: var(--crimson); color: #fff4e2; }
+
+/* Palette: woven strips hung from a pole on a mud wall */
+.sec-palette { --s: var(--laterite); padding: 30px 34px 34px; background: url("../media/afrofuturism/wall.svg") 0 0 / 320px, var(--plaster); color: var(--clay); box-shadow: 0 18px 40px rgb(0 0 0 / .5); }
+.sec-palette .sec-title { color: var(--clay); }
+.sec-palette .sec-title::after { background: linear-gradient(90deg, var(--clay), transparent); box-shadow: none; }
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 18px; padding-top: 6px; background: linear-gradient(180deg, #8a4c1c, #4a2209) 0 12px / 100% 13px no-repeat; }
+.swatch button { position: relative; background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.chip { position: relative; height: 230px; margin: 0 4px; background:
+  linear-gradient(90deg, var(--sh) 0 4px, transparent 4px 7px, var(--sh) 7px 8px, transparent 8px calc(100% - 8px), var(--sh) calc(100% - 8px) calc(100% - 7px), transparent calc(100% - 7px) calc(100% - 4px), var(--sh) calc(100% - 4px)),
+  repeating-linear-gradient(180deg, transparent 0 34px, var(--sh) 34px 38px, transparent 38px 42px, var(--sh) 42px 44px, transparent 44px 150px),
+  var(--c); box-shadow: 0 6px 10px rgb(60 30 5 / .45); --sh: color-mix(in srgb, var(--c) 62%, #000); }
+.chip::before { content: ''; position: absolute; left: 50%; top: 4px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #d39550, #6a3510); box-shadow: 0 2px 3px rgb(0 0 0 / .4); }
+.chip::after { content: ''; position: absolute; left: 6px; right: 6px; top: 100%; height: 14px; background: repeating-linear-gradient(90deg, var(--c) 0 2px, transparent 2px 5px); }
+.swatch-name, .swatch-hex { padding: 0 2px; color: var(--clay); }
+.swatch-name { margin-top: 22px; padding-top: 0; font: 700 15px/1.3 var(--font-body); }
+.swatch-hex { padding-bottom: 0; color: #36210d; font: 500 14px/1.4 var(--font-body); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.swatch button:hover .chip { translate: 0 3px; }
+.palette-note { max-width: 60em; margin-top: 22px; color: var(--clay); font-size: 16px; }
+.sec-palette .brief-note { color: #3f2a14; }
+
+/* Mood and music: the spirit world at night, outlined in cyan light */
+.sec-vibe { --s: var(--cyan); padding: 30px 34px 36px; background: radial-gradient(ellipse 70% 60% at 20% 0, rgb(99 81 188 / .75), transparent 70%), radial-gradient(ellipse 60% 70% at 100% 100%, rgb(187 48 90 / .35), transparent 70%), #1f1257; box-shadow: 0 0 0 2px rgb(157 227 243 / .5), 0 0 26px rgb(157 227 243 / .25), 0 18px 40px rgb(0 0 0 / .5); }
+.sec-vibe .sec-title { grid-column: 1 / -1; color: var(--cyan); text-shadow: 0 0 16px rgb(157 227 243 / .5); }
+.sec-vibe h3 { color: var(--gold); }
+.loops-wrap { margin: 0; }
+.loops { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 20px; }
+.music-wrap { margin-top: 34px; }
+.loop video { aspect-ratio: 16 / 9; object-fit: cover; background: var(--night-2); box-shadow: 0 0 0 2px var(--cyan), 0 0 16px rgb(157 227 243 / .45); }
+.tracks { max-width: none; gap: 10px; }
+.track { grid-template-columns: minmax(0, .95fr) minmax(0, 1.25fr) auto; column-gap: 22px; }
+.track-btn { grid-column: 1; grid-row: 1; }
+.track-yt { grid-column: 3; grid-row: 1; }
+.track-btn { padding: 10px 12px; background: rgb(18 10 49 / .82); border: 0; border-radius: 0; box-shadow: inset 0 0 0 1px rgb(157 227 243 / .35); }
+.track-btn:hover, .track.is-playing .track-btn { box-shadow: inset 0 0 0 2px var(--gold); }
+.track-play { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--clay); box-shadow: 0 0 0 3px rgb(235 184 24 / .3), 0 0 14px rgb(235 184 24 / .5); }
+.track-title { color: var(--cream); font-weight: 700; }
+.track-artist { color: var(--cyan); font-size: 14px; }
+.track-note { grid-column: 2; grid-row: 1; margin: 0; color: var(--lav); font-size: 15px; line-height: 1.5; }
+.track-yt { color: var(--cyan); font-size: 14px; }
+.player { background: var(--night-2); border: 0; border-radius: 0; color: var(--cream); box-shadow: 0 0 0 2px var(--gold), 0 14px 30px rgb(0 0 0 / .6); }
+.player-now { color: var(--gold); }
+.player-artist { color: var(--cyan); }
+.player-close { color: var(--cream); }
+
+/* References: pictures on the night, the lists on bare cloth */
+.sec-refs { --s: var(--violet); }
+.ref-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-flow: dense; gap: 26px 20px; margin-bottom: 40px; }
+.ref-gallery .shot:first-child { grid-column: span 2; }
+.ref-gallery .shot-link { aspect-ratio: 4 / 3; }
+.ref-gallery .shot:first-child .shot-link { aspect-ratio: 2.75; }
+.ref-lists { gap: 26px; }
+.ref-list { position: relative; padding: 52px 28px 18px; background: var(--cream); color: var(--clay); }
+.ref-list::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 30px; background: repeating-linear-gradient(90deg, transparent 0 26px, var(--clay) 26px 30px, var(--gold) 30px 38px, var(--clay) 38px 42px, transparent 42px 84px), linear-gradient(var(--clay) 0 3px, var(--violet) 3px 6px, var(--cyan) 6px 8px, var(--violet) 8px calc(100% - 8px), var(--cyan) calc(100% - 8px) calc(100% - 6px), var(--violet) calc(100% - 6px) calc(100% - 3px), var(--clay) calc(100% - 3px)); }
+.ref-media::before { background: repeating-linear-gradient(90deg, transparent 0 26px, var(--clay) 26px 30px, var(--plaster) 30px 38px, var(--clay) 38px 42px, transparent 42px 84px), linear-gradient(var(--clay) 0 3px, var(--crimson) 3px 6px, var(--gold) 6px 8px, var(--crimson) 8px calc(100% - 8px), var(--gold) calc(100% - 8px) calc(100% - 6px), var(--crimson) calc(100% - 6px) calc(100% - 3px), var(--clay) calc(100% - 3px)); }
+.ref-list h3 { color: var(--clay); }
+.ref-item { margin-bottom: 16px; line-height: 1.5; }
+.ref-item a { font-weight: 700; }
+.ref-meta { color: var(--ink-2); font-size: 14px; }
+.ref-note { color: var(--clay); font-size: 15.5px; line-height: 1.55; }
+
+/* Sources: a plain cloth panel, kept easy to read */
+.sec-sources { --s: var(--plaster); padding: 30px 34px 30px; background: var(--cream); color: var(--clay); }
+.sec-sources .sec-title { color: var(--clay); }
+.sec-sources .sec-title::after { background: linear-gradient(90deg, var(--clay), transparent); box-shadow: none; }
+.source-meta { color: var(--ink-2); }
+.source:target { outline-color: var(--crimson); }
+
+.sec-related { --s: var(--cyan); }
+.related { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.related img { box-shadow: 0 0 0 2px var(--gold), 0 0 0 5px var(--night), 0 0 0 6px rgb(235 184 24 / .4); }
+.related a { color: var(--cream); }
+.related span { padding-top: 12px; font: 600 14px/1.35 var(--font-display); }
+.related a:hover span { color: var(--gold); }
+
+.foot { margin-top: 60px; padding-top: 30px; border: 0; background: var(--warp) 0 0 / 100% 11px no-repeat; color: var(--lav); font-size: 15px; }
+.foot-nav a { color: var(--cyan); }
+.af-key { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 40px; margin: 0 0 22px; padding: 0; }
+.af-key li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center; color: var(--lav); font-size: 14.5px; line-height: 1.4; }
+.af-key li::before { content: ''; width: 44px; height: 44px; background: var(--sw); box-shadow: 0 0 0 2px var(--clay), 0 0 0 3px rgb(235 184 24 / .5); }
+.af-key b { display: block; color: var(--cream); font: 600 13px/1.3 var(--font-display); }
+.af-key .k-kente { --sw: repeating-linear-gradient(90deg, transparent 0 8px, var(--clay) 8px 11px, transparent 11px 22px), linear-gradient(var(--gold) 0 30%, var(--crimson) 30% 38%, var(--gold) 38% 62%, var(--crimson) 62% 70%, var(--gold) 70%); }
+.af-key .k-bogolan { --sw: url("../media/afrofuturism/bogolan.svg") 0 0 / 64px; }
+.af-key .k-adinkra { --sw: radial-gradient(circle, transparent 0 5.5px, var(--clay) 6px 8px, transparent 8.5px 11px, var(--clay) 11.5px 13.5px, transparent 14px 16.5px, var(--clay) 17px 19px, transparent 19.5px), var(--cotton); }
+.af-key .k-djenne { --sw: url("../media/afrofuturism/skyline.svg") 55.2% 96% / 780px auto no-repeat, var(--violet); }
+
+/* ---------- Phones and narrow windows ---------- */
+@media (max-width: 1000px) {
+  .sec-feel { grid-template-columns: minmax(0, 1fr); }
+  .feel-body, .mood-words, .origins { grid-column: 1; grid-row: auto; }
+  .origins { margin-top: 24px; }
+  .sec-how { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .steps, .how-side, .learn { grid-column: 1; grid-row: auto; }
+  .learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 40px; }
+  .how-side { margin-top: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .track { grid-template-columns: minmax(0, 1fr) auto; column-gap: 14px; }
+  .track-note { grid-column: 1 / -1; grid-row: 2; margin: 8px 0 10px 4px; }
+  .track-yt { grid-column: 2; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 30px; background-image: none; }
+  .ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .core-item, .core-item:nth-child(n) { padding: 74px 24px 30px; box-shadow: inset 0 2px 0 rgb(33 23 12 / .18); }
+  .core-item::before, .core-item:nth-child(n)::before { top: 0; bottom: auto; }
+  .core-item:nth-child(4n+2), .core-item:nth-child(4n+3) { padding: 30px 24px 74px; }
+  .core-item:nth-child(4n+2)::before, .core-item:nth-child(4n+3)::before { top: auto; bottom: 0; }
+}
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+  .page { --gap: 16px; }
+  .hero::before { height: 40px; }
+  .hero-text { min-height: 0; padding: 40px 0 300px; }
+  .hero-text::after { height: 340px; }
+  .hero-sub { letter-spacing: .14em; }
+  .hero-tagline { padding: 12px 14px 13px 24px; }
+  .hero-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .hero-gallery::after { display: none; }
+  .toc ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toc a { min-height: 48px; font-size: 12px; padding: 8px 4px; }
+  .sec-title { gap: 12px; }
+  .sec-title::before { width: 28px; height: 28px; }
+  .sec-feel, .sec-how, .sec-palette, .sec-vibe, .sec-sources { padding: 22px 16px 24px; }
+  .sec-how { padding: 28px 22px 28px; box-shadow: inset 0 0 0 6px var(--cotton), inset 0 0 0 8px var(--clay), inset 0 0 0 11px var(--cotton), inset 0 0 0 13px var(--clay), 0 18px 40px rgb(0 0 0 / .5); }
+  .feel-body, .origins { padding: 20px 18px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .core-item:nth-child(n) { padding: 70px 20px 26px; }
+  .core-item:nth-child(n)::before { top: 0; bottom: auto; }
+  .core-item:nth-child(even) { padding: 26px 20px 70px; }
+  .core-item:nth-child(even)::before { top: auto; bottom: 0; }
+  .step { grid-template-columns: 56px minmax(0, 1fr); column-gap: 12px; align-items: center; }
+  .step::before { grid-row: 1; width: 56px; height: 56px; background: radial-gradient(circle, transparent 0 11px, var(--clay) 11.5px 13.5px, transparent 14px 17px, var(--clay) 17.5px 19.5px, transparent 20px 23px, var(--clay) 23.5px 25.5px, transparent 26px); font-size: .85rem; }
+  .step h3 { margin: 0; }
+  .step p { grid-column: 1 / -1; margin-top: 12px; }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .specs, .do, .avoid { padding: 22px 16px 16px; box-shadow: inset 0 0 0 2px var(--clay), inset 0 0 0 5px #f8eedb, inset 0 0 0 7px var(--clay); }
+  .do::after, .avoid::after { left: 7px; right: 7px; top: 7px; }
+  .dodont li { padding-left: 20px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .chip { height: 150px; }
+  .swatches { gap: 26px 10px; }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .track { grid-template-columns: minmax(0, 1fr); }
+  .track-yt { grid-column: 1; grid-row: 3; justify-self: end; margin-bottom: 6px; }
+  .learn ul { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .ref-list { padding: 46px 18px 14px; }
+  .af-key { grid-template-columns: minmax(0, 1fr); }
+  .af-loom { margin: 34px 0 20px; }
+}
+/* On a phone the palette hangs as two rows of four would squeeze every name onto one word a line: hang two across */
+@media (max-width: 480px) {
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .chip { height: 116px; }
+}

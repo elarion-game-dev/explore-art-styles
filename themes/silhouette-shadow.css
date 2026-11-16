@@ -1,0 +1,401 @@
+@font-face {
+  font-family: 'Italiana';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/italiana-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../fonts/mulish-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Silhouette / Shadow Play: a backlit shadow theatre.
+   The page is the screen: grey translucent paper with a lamp behind it, and its light (the bright patch in the fog) follows
+   the pointer. The cover is the stage, where everything is a puppet at some distance from the screen: the far hills are
+   painted on the screen, the tree line, the ground and the jointed puppet sit just off it, and the bird, the reeds and the
+   hanging branch are out near the lamp, so their shadows are large, soft and swing far (themes/silhouette-shadow.js).
+   Between sections, scenery flats in three greys slide at three speeds. Panels are black card: the core elements are cut
+   with a border of punched stars, as Lotte Reiniger cut her figures, and the light shows through the holes.
+   Colour is kept for one thing: the red gel of the puppet's lantern. Black on grey, film grain over everything. */
+:root {
+  --black: #0a0a0a; --char: #161615; --fog: #9a9995; --fog-lo: #8e8d8a; --mist: #d7d6d1; --paper: #ecebe6;
+  --white: #ecebe6; --white-2: #c4c3be; --white-3: #9c9b97; --ink-2: #1f1f1e; --red: #b8281c; --red-d: #8f1f15;
+  --bg: #070707; --surface: var(--char); --ink: var(--black); --muted: var(--ink-2); --accent: var(--black); --line: rgb(10 10 10 / .45);
+  --font-display: 'Italiana', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-body: 'Mulish', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Mulish', 'Segoe UI', system-ui, sans-serif;
+  --radius: 0; --max: 1240px; --gap: 26px; --atlas-h: 50px; --pad: 52px;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 1.5'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045' numOctaves='4' stitchTiles='stitch' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 -.58'/%3E%3C/filter%3E%3Crect width='640' height='640' filter='url(%23f)'/%3E%3C/svg%3E");
+  --stars: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Cpath fill-rule='evenodd' d='M0 0h18v18H0zM9 3.6l1.25 4.15L14.4 9l-4.15 1.25L9 14.4l-1.25-4.15L3.6 9l4.15-1.25z'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+html { font-size: 18px; }
+body { background: radial-gradient(70% 55% at 50% 22%, #1b1b1a, #070707 72%) fixed, #070707; color: var(--ink); font-weight: 400; line-height: 1.65; }
+::selection { background: var(--black); color: var(--paper); }
+:where(.page) a { color: var(--black); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+:where(.page) a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+/* The skip link: light card on the black site bar (the shared rule swaps --ink and --bg, both near black here) */
+.skip { top: calc(var(--atlas-h) + 8px); background: var(--paper); color: var(--black); font: 700 15px/1.2 var(--font-body); box-shadow: 0 0 0 2px var(--black); }
+/* Italiana's hairlines thin out below about 32px on ordinary screens: a fine stroke in the text's own colour holds them */
+.atlas-home span, .sec h3, .step::before { -webkit-text-stroke: .45px currentColor; }
+@media (max-width: 900px) { .hero-sub { -webkit-text-stroke: .45px currentColor; } }
+
+/* ---------- Site bar: the black masking above the screen ---------- */
+.atlas { height: var(--atlas-h); padding: 0 20px; background: #050505; border: 0; color: var(--white); font: 600 15px/1 var(--font-body); box-shadow: 0 8px 22px rgb(0 0 0 / .55); }
+.atlas a, .atlas-btn { color: var(--white); }
+.atlas-home span { font: 400 22px/1 var(--font-display); letter-spacing: .06em; }
+.atlas-here { color: var(--white-3); font-size: 13px; letter-spacing: .2em; }
+.atlas-btn { border-radius: 0; }
+.atlas-btn:hover { background: #222220; border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--white); }
+[data-save][aria-pressed="true"] { color: #ff8f80; }
+
+/* ---------- The screen ---------- */
+.page { max-width: var(--max); margin: 26px auto 64px; padding: 0 var(--pad) 0; isolation: isolate; clip-path: inset(0); background: var(--fibre) 0 0 / 640px, var(--fog); }
+/* The lamp behind the screen. The script moves it with the pointer; without the script it stays up and to the right. */
+.ss-lamp { position: fixed; left: 0; top: 0; z-index: -1; width: 1500px; height: 1500px; margin: -750px 0 0 -750px; border-radius: 50%; pointer-events: none; will-change: transform; transform: translate3d(66vw, 34vh, 0); background: radial-gradient(closest-side, rgb(255 254 250 / .97), rgb(255 254 249 / .78) 14%, rgb(252 251 246 / .44) 36%, rgb(248 247 242 / .16) 64%, rgb(245 244 240 / 0)); }
+:root:not(.ss-js) .page { background: radial-gradient(60% 40% at 66% 20%, rgb(255 254 250 / .85), transparent), var(--fibre) 0 0 / 640px, var(--fog); }
+
+/* ---------- The cover: the stage ---------- */
+.hero { padding: 0; }
+.hero-text { --ground: 176px; position: relative; overflow: hidden; min-height: clamp(620px, 84vh, 760px); margin: 0 calc(-1 * var(--pad)); padding: 64px var(--pad) 280px; }
+.hero-text > :is(.hero-kicker, .hero-title, .hero-sub, .hero-tagline) { position: relative; }
+.ss-stage { position: absolute; inset: 0; pointer-events: none; }
+.ss-stage svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.ss-far { position: absolute; left: 0; right: 0; bottom: calc(var(--ground) - 30px); height: 46%; }
+.ss-far svg { overflow: hidden; }
+.ss-pp { position: absolute; transform-origin: 0 0; will-change: transform; }
+.ss-mid { left: -10%; width: 120%; bottom: calc(var(--ground) - 22px); height: 240px; }
+/* The ground's drawing is 400 units tall at a scale of 1, with its surface 40 units down: it meets --ground exactly */
+.ss-ground { left: -15%; width: 130%; bottom: calc(var(--ground) + 40px - 400px); height: 400px; }
+.ss-fig { left: 61%; bottom: calc(var(--ground) - 12px); height: clamp(170px, 33%, 250px); aspect-ratio: 140 / 280; }
+.ss-bird { left: 74%; top: 35%; width: clamp(64px, 7.5%, 96px); aspect-ratio: 120 / 70; }
+.ss-bird.ss-flip .ss-bird-in { transform: scaleX(-1); transform-origin: 60px 35px; }
+.ss-branch { right: -3%; top: 13%; width: clamp(240px, 34%, 430px); aspect-ratio: 480 / 360; }
+.ss-reeds { right: -2%; bottom: calc(var(--ground) - 120px); height: clamp(200px, 44%, 330px); aspect-ratio: 360 / 430; }
+/* Early cinema's iris: the corners of the frame fall into shadow, away from the words */
+.ss-iris { position: absolute; inset: 0; background: radial-gradient(125% 115% at 30% 28%, transparent 52%, rgb(8 8 8 / .5) 100%); }
+:root:not([data-calm]) .ss-iris { animation: ss-iris 4.6s ease-in-out infinite alternate; }
+@keyframes ss-iris { from { opacity: .82; } to { opacity: 1; } }
+
+/* The jointed puppet moves at shoulder and elbow, and its lantern swings */
+.ss-fig :is(.ss-arm, .ss-fore, .ss-lantern, .ss-head), .ss-wing, .ss-wing-far { transform-box: view-box; }
+.ss-arm { transform-origin: 74px 64px; }
+.ss-fore { transform-origin: 60px 92px; }
+.ss-lantern { transform-origin: 14px -14px; }
+.ss-head { transform-origin: 78px 50px; }
+.ss-wing { transform-origin: 50px 37px; }
+.ss-wing-far { transform-origin: 60px 35px; }
+:root:not([data-calm]) .ss-arm { animation: ss-arm 7s ease-in-out infinite alternate; }
+:root:not([data-calm]) .ss-fore { animation: ss-fore 5.2s ease-in-out infinite alternate; }
+:root:not([data-calm]) .ss-lantern { animation: ss-lantern 2.8s ease-in-out infinite alternate; }
+:root:not([data-calm]) .ss-head { animation: ss-head 6.1s ease-in-out infinite alternate; }
+:root:not([data-calm]) .ss-wing { animation: ss-flap 1.1s ease-in-out infinite; }
+:root:not([data-calm]) .ss-wing-far { animation: ss-flap 1.1s ease-in-out -.08s infinite; }
+@keyframes ss-arm { from { rotate: -7deg; } to { rotate: 5deg; } }
+@keyframes ss-fore { from { rotate: 5deg; } to { rotate: -6deg; } }
+@keyframes ss-lantern { from { rotate: -7deg; } to { rotate: 7deg; } }
+@keyframes ss-head { from { rotate: -3deg; } to { rotate: 3deg; } }
+@keyframes ss-flap { 0%, 100% { scale: 1 1; } 50% { scale: 1 -.62; } }
+/* On a slow device (the script notices) the small movements stop; the lamp and the shadows still follow the pointer */
+.ss-lite .ss-stage *, .ss-lite .decor .ss-grain { animation-play-state: paused !important; }
+
+.hero-kicker { display: table; margin: 0 0 22px; padding: 7px 12px 8px; background: var(--black); color: var(--white); font: 700 12.5px/1.2 var(--font-body); letter-spacing: .3em; text-transform: uppercase; }
+.hero-title { max-width: 100%; font: 400 clamp(60px, 13.2vw, 176px)/1 var(--font-display); letter-spacing: .005em; color: #050505; margin-left: -.05em; overflow-wrap: normal; }
+.hero-sub { margin: 16px 0 0 .2em; font: 400 clamp(21px, 2.7vw, 34px)/1.1 var(--font-display); letter-spacing: .42em; text-transform: uppercase; color: #0c0c0c; }
+.hero-tagline { max-width: 25em; margin: 30px 0 0; padding: 14px 20px 15px; background: rgb(236 235 230 / .9); border-left: 4px solid var(--black); color: var(--black); font: 400 clamp(17.5px, 1.5vw, 20px)/1.55 var(--font-body); }
+
+/* The controls stand on the black ground of the stage */
+.ss-ctl { position: absolute; z-index: 1; left: var(--pad); bottom: 20px; width: min(460px, calc(100% - 2 * var(--pad))); color: var(--white); font: 400 15px/1.4 var(--font-body); }
+.ss-hint { margin: 0 0 6px; color: var(--white); font-weight: 700; }
+.ss-range { display: grid; gap: 4px; font-size: 14px; color: var(--white-2); }
+.ss-range input { width: 100%; margin: 0; accent-color: #d9d8d3; cursor: pointer; }
+.ss-read { display: block; margin-top: 2px; min-height: 2.8em; color: var(--white-2); font-size: 14px; font-variant-numeric: tabular-nums; }
+/* Holding the lamp in towards the screen */
+:root.ss-js:not([data-calm]) .hero-text { cursor: grab; }
+.hero-text.ss-held { cursor: grabbing; }
+.hero-text :is(a, .ss-ctl) { cursor: auto; }
+.hero-text .ss-range input { cursor: pointer; }
+.ss-ctl :focus-visible { outline-color: var(--white); }
+
+/* ---------- The four pictures: one large, three beside it ---------- */
+.hero-gallery { grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr); grid-template-rows: repeat(3, auto); gap: 22px 26px; margin-top: 40px; }
+.hero-gallery .shot-link { aspect-ratio: 16 / 9; }
+.hero-gallery .shot-1 { grid-row: 1 / span 3; display: flex; flex-direction: column; }
+.hero-gallery .shot-1 .shot-link { flex: 1; aspect-ratio: auto; min-height: 0; }
+/* The large picture fills the height of the three beside it and adds none of its own */
+.hero-gallery .shot-1 .shot-link img { position: absolute; inset: 0; }
+.shot-link { position: relative; background: var(--black); border: 5px solid var(--black); box-shadow: 0 7px 12px -7px rgb(0 0 0 / .5); }
+.shot-link::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 26px 2px rgb(0 0 0 / .45); transition: opacity .25s; pointer-events: none; }
+.shot-link:hover::after { opacity: 0; }
+.shot figcaption, .loop figcaption { padding-top: 12px; font-size: 15px; line-height: 1.4; }
+.shot-title { font-weight: 700; }
+.shot-meta { color: var(--ink-2); }
+.is-contain .shot-link img { object-fit: contain; background: #1a1a19; }
+
+/* ---------- Contents: a theatre programme ---------- */
+.toc { margin: 46px 0 0; padding: 14px 0 15px; border-block: 1px solid var(--black); box-shadow: 0 4px 0 -3px var(--black), 0 -4px 0 -3px var(--black); }
+.toc ul { justify-content: center; gap: 4px 30px; }
+.toc a { color: var(--black); font: 700 14px/1.9 var(--font-body); letter-spacing: .24em; text-transform: uppercase; text-decoration: none; }
+.toc a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+
+/* ---------- Scenery flats between the scenes ---------- */
+.ss-flats { position: relative; height: 150px; margin: 18px calc(-1 * var(--pad)) 0; overflow: hidden; pointer-events: none; }
+.ss-flat { position: absolute; left: 0; bottom: 0; width: 150%; height: 100%; will-change: transform; }
+.ss-flat svg { display: block; width: 100%; height: 100%; }
+.ss-f-mid { opacity: .5; }
+
+/* ---------- Scenes ---------- */
+main { counter-reset: scene; }
+.sec { position: relative; padding: 30px 0 46px; counter-increment: scene; }
+.sec-title { margin-bottom: 30px; font: 400 clamp(42px, 5.4vw, 66px)/1 var(--font-display); letter-spacing: .02em; color: #050505; }
+.sec-title::before { content: 'Scene ' counter(scene, upper-roman); display: block; margin-bottom: 12px; font: 700 12.5px/1 var(--font-body); letter-spacing: .34em; text-transform: uppercase; color: var(--black); }
+.sec-sources, .sec-related { counter-increment: none; }
+.sec-sources .sec-title::before, .sec-related .sec-title::before { content: none; }
+.sec h3 { font: 400 1.6rem/1.15 var(--font-display); letter-spacing: .02em; margin-bottom: 10px; }
+
+/* The feel, with the origins on a black intertitle card */
+.sec-feel { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 54px; align-items: start; }
+.sec-feel .sec-title { grid-column: 1 / -1; }
+.feel-body { grid-column: 1; grid-row: 2; max-width: none; font-size: 19.5px; line-height: 1.7; }
+.feel-body p:first-child::first-letter { float: left; margin: .1em .1em 0 0; font: 400 5.1em/.78 var(--font-display); color: #050505; }
+.mood-words { grid-column: 1; grid-row: 3; gap: 10px; margin: 26px 0 0; }
+.mood-words li { padding: 6px 13px 7px; border: 0; background: var(--black); color: var(--white); font: 700 13px/1.2 var(--font-body); letter-spacing: .2em; text-transform: uppercase; }
+.origins { grid-column: 2; grid-row: 2 / span 2; max-width: none; margin: 4px 0 0; padding: 40px 38px 36px; background: var(--black); color: var(--white); box-shadow: inset 0 0 0 10px var(--black), inset 0 0 0 11px #5a5956, inset 0 0 0 14px var(--black), inset 0 0 0 15px #3a3937; }
+.origins h3 { margin-bottom: 16px; text-align: center; font-size: 1.8rem; color: #fff; }
+.origins h3::after { content: ''; display: block; width: 90px; height: 1px; margin: 14px auto 0; background: #6d6c69; }
+.origins p { font-size: 16.5px; line-height: 1.66; color: var(--white); }
+.origins a, .core-item a, .specs a, .tracks a, .foot a { color: var(--white); }
+
+/* Core elements: black card cut with a border of punched stars; the lamp shows through the holes */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.core-item { position: relative; padding: 40px 34px 36px; background: var(--black); color: var(--white); border: 0;
+  -webkit-mask: linear-gradient(#000 0 0) 50% 50% / calc(100% - 30px) calc(100% - 30px) no-repeat, var(--stars) 0 0 / 18px 18px round;
+  mask: linear-gradient(#000 0 0) 50% 50% / calc(100% - 30px) calc(100% - 30px) no-repeat, var(--stars) 0 0 / 18px 18px round; }
+.core-item h3 { margin-bottom: 14px; font-size: 1.75rem; color: #fff; }
+.core-item h3::before { content: counter(core, upper-roman); display: block; margin-bottom: 12px; font: 700 12.5px/1 var(--font-body); letter-spacing: .3em; color: var(--white-3); }
+.core-item p { font-size: 16.5px; line-height: 1.64; color: var(--white); }
+
+/* How to do it: the steps hang from a puppet rod, each on its joint pin */
+.sec-how { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto; column-gap: 56px; align-items: start; }
+.sec-how .sec-title { grid-column: 1 / -1; }
+.steps { grid-column: 1; grid-row: 2 / span 2; position: relative; max-width: none; gap: 0; }
+.steps::before { content: ''; position: absolute; left: 22px; top: 20px; bottom: 34px; width: 3px; background: var(--black); }
+.step { padding: 0 0 30px 76px; }
+.step::before { left: 0; top: -6px; width: 47px; height: 47px; border-radius: 50%; background: var(--black); color: var(--white); font: 400 24px/1 var(--font-display); box-shadow: 0 0 0 4px var(--fog), 0 0 0 5px var(--black); }
+.step h3 { font-size: 1.62rem; margin-bottom: 8px; padding-top: 2px; }
+.step p { font-size: 17.5px; line-height: 1.66; }
+.how-side { grid-column: 2; grid-row: 2; display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; margin: 0; }
+.specs { padding: 28px 30px 22px; background: var(--black); color: var(--white); border: 0; }
+.specs h3 { margin-bottom: 12px; font-size: 1.8rem; color: #fff; }
+.spec { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: 14px; padding: 10px 0; border-top: 1px solid #3a3937; font-size: 15.5px; line-height: 1.5; }
+.spec:first-child { border-top: 0; }
+.spec dt { padding-top: 2px; font-weight: 700; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--white-2); }
+.spec dd { color: var(--white); overflow-wrap: anywhere; }
+.dodont { gap: 26px; }
+.do, .avoid { padding: 24px 26px 18px; background: rgb(236 235 230 / .72); border: 2px solid var(--black); }
+.do h3, .avoid h3 { font-size: 1.7rem; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; margin-bottom: 10px; padding-left: 26px; font-size: 16.5px; line-height: 1.58; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .52em; width: 11px; height: 11px; }
+.do li::before { border-radius: 50%; background: var(--black); }
+.avoid li::before { background: linear-gradient(45deg, transparent 42%, var(--black) 42% 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, var(--black) 42% 58%, transparent 58%); }
+.learn { grid-column: 1 / -1; grid-row: 4; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--black); }
+.learn ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 54px; }
+.ref-item a, .learn a { font-weight: 700; }
+.brief { grid-column: 1 / -1; grid-row: 5; }
+.btn { padding: 11px 18px; background: var(--black); color: var(--white); border: 0; font: 700 13px/1.2 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.btn:hover { background: #2a2a28; }
+.brief-note, .palette-note { color: var(--ink-2); font-size: 15px; }
+
+/* Palette: every chip is a flat of scenery cut from that colour */
+.swatches { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 16px; }
+.swatch button { background: transparent; border: 0; }
+.chip { height: 140px; background: var(--c); -webkit-mask: var(--cut) top / 100% 100% no-repeat; mask: var(--cut) top / 100% 100% no-repeat; }
+.swatch:nth-child(4n+1) { --cut: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 30C14 18 26 10 40 16S70 34 84 22 100 12 100 12V100H0Z'/%3E%3C/svg%3E"); }
+.swatch:nth-child(4n+2) { --cut: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 18 12 26 20 6 28 24 40 20 52 30 62 8 72 26 86 18 100 28V100H0Z'/%3E%3C/svg%3E"); }
+.swatch:nth-child(4n+3) { --cut: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 26C20 26 30 8 52 10S84 30 100 20V100H0Z'/%3E%3C/svg%3E"); }
+.swatch:nth-child(4n) { --cut: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 22 18 22 22 4 26 22 46 22 58 14 70 22 78 10 86 22 100 22V100H0Z'/%3E%3C/svg%3E"); }
+.swatch-name, .swatch-hex { padding: 0; }
+.swatch-name { padding-top: 10px; font: 700 15px/1.3 var(--font-body); }
+.swatch-hex { padding-bottom: 4px; color: var(--ink-2); font: 400 14px/1.4 var(--font-body); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.palette-note { max-width: 52em; margin-top: 18px; }
+
+/* Feel the vibe: four frames of film and the music on black */
+.loops { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.loop video { border: 5px solid var(--black); background: var(--black); aspect-ratio: 16 / 9; object-fit: cover; box-shadow: 0 7px 12px -7px rgb(0 0 0 / .5); }
+.loops-wrap h3, .music-wrap h3 { margin-bottom: 16px; }
+.tracks { max-width: none; gap: 0; padding: 14px 26px; background: var(--black); color: var(--white); }
+.track { padding: 10px 0; border-top: 1px solid #343432; }
+.track:first-child { border-top: 0; }
+.track-btn { padding: 4px 6px 4px 0; background: transparent; border: 0; border-radius: 0; color: var(--white); }
+.track-btn:hover .track-play, .track.is-playing .track-play { background: var(--red); color: #fff; border-color: var(--red); }
+.track-play { width: 34px; height: 34px; border-radius: 50%; background: transparent; border: 1.5px solid var(--white-2); color: var(--white); }
+.track-title { font-weight: 700; font-size: 17px; }
+.track-artist { color: var(--white-2); font-size: 14.5px; }
+.track-note { margin: 2px 0 2px 46px; color: var(--white-2); font-size: 15px; line-height: 1.5; }
+.track-yt { color: var(--white-2); font-size: 14px; }
+.player { background: var(--black); color: var(--white); border: 1px solid #3a3937; border-radius: 0; font-family: var(--font-body); }
+.player-now { color: var(--white-3); }
+.player-artist { color: var(--white-2); }
+.player-close { color: var(--white); }
+
+/* More references */
+.ref-gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px 18px; margin-bottom: 40px; }
+.ref-gallery .shot-link { aspect-ratio: 4 / 3; border-width: 4px; }
+.ref-lists { gap: 30px 54px; }
+.ref-list h3 { padding-bottom: 10px; margin-bottom: 16px; border-bottom: 1px solid var(--black); }
+.ref-item { margin-bottom: 16px; }
+.ref-meta { color: var(--ink-2); font-size: 14px; }
+.ref-note { font-size: 16px; line-height: 1.55; }
+
+/* Sources */
+.sources { font-size: 15px; gap: 2px 30px; }
+.source-meta { color: var(--ink-2); font-size: 14px; }
+.source:target { outline-color: var(--black); }
+
+/* Related styles */
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.related img { border: 4px solid var(--black); background: var(--black); }
+.related span { padding-top: 10px; font: 700 16px/1.35 var(--font-body); letter-spacing: .01em; }
+
+/* The foot of the screen: the dark edge of the stage */
+.foot { margin: 36px calc(-1 * var(--pad)) 0; padding: 30px var(--pad) 34px; background: var(--black); border: 0; color: var(--white-2); font-size: 15px; }
+.foot-nav a { color: var(--white); }
+
+/* ---------- Film grain over everything (calm mode removes it) ---------- */
+.decor .ss-grain { position: absolute; inset: -120px; background: var(--grain) 0 0 / 240px; opacity: .14; }
+:root:not([data-calm]) .decor .ss-grain { animation: ss-grain .9s steps(1) infinite; }
+@keyframes ss-grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-37px, 61px); } 50% { transform: translate(53px, -29px); } 75% { transform: translate(-71px, -83px); } }
+
+@media (max-width: 1100px) {
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ref-gallery .shot:nth-child(10) { grid-column: 2; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 26px; }
+}
+@media (max-width: 900px) {
+  :root { --pad: 28px; }
+  .sec-feel, .sec-how { grid-template-columns: minmax(0, 1fr); }
+  .feel-body, .mood-words, .origins, .steps, .how-side, .learn, .brief { grid-column: 1; grid-row: auto; }
+  .origins { margin-top: 30px; }
+  .how-side { margin-top: 10px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .hero-gallery .shot-1 { grid-row: auto; }
+  .hero-gallery .shot-1 .shot-link { flex: none; aspect-ratio: 16 / 9; }
+  .ss-branch { width: 34%; top: -8%; }
+}
+@media (max-width: 640px) {
+  :root { --pad: 16px; }
+  html { font-size: 17px; }
+  .page { margin: 0 auto 30px; }
+  .ss-lamp { width: 1000px; height: 1000px; margin: -500px 0 0 -500px; }
+  .atlas { padding: 0 10px; }
+  .hero-text { min-height: 760px; padding: 40px var(--pad) 300px; }
+  .hero-title { font-size: min(18vw, 84px); }
+  .hero-sub { letter-spacing: .3em; }
+  .hero-tagline { padding: 12px 14px; }
+  .hero-text { --ground: 196px; }
+  .ss-far { height: 36%; }
+  .ss-mid { height: 150px; }
+  .ss-fig { left: 52%; height: 150px; }
+  .ss-bird { left: 70%; top: auto; bottom: 330px; width: 58px; }
+  .ss-branch { display: none; }
+  .ss-reeds { height: 190px; right: -12%; }
+  .ss-ctl { bottom: 18px; }
+  .ss-hint { font-size: 14px; }
+  .feel-body { font-size: 18px; }
+  .origins { padding: 32px 24px 28px; }
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+  .core-item { padding: 36px 28px 32px; }
+  .step { padding-left: 64px; }
+  .steps::before { left: 20px; }
+  .step::before { width: 42px; height: 42px; font-size: 21px; }
+  .learn ul { grid-template-columns: minmax(0, 1fr); }
+  /* The cheat sheet's label above its value, so values keep the panel's full width */
+  .specs { padding: 24px 22px 18px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .chip { height: 100px; }
+  .swatch-name { font-size: 13.5px; }
+  .swatch-hex { font-size: 12.5px; }
+  .loops { grid-template-columns: minmax(0, 1fr); }
+  .tracks { padding: 8px 16px; }
+  .track { grid-template-columns: minmax(0, 1fr); }
+  .track-note { margin-left: 46px; }
+  .track-yt { grid-row: 3; grid-column: 1; justify-self: start; margin: 2px 0 0 46px; }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  .ref-gallery .shot:nth-child(10) { grid-column: auto; }
+  .ref-lists { gap: 20px; }
+  /* One related style a row: its picture beside its name */
+  .related { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .related a { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 14px; align-items: center; }
+  .related span { padding-top: 0; }
+  .ss-flats { height: 96px; margin-top: 8px; }
+  .sec-title { font-size: 40px; }
+}

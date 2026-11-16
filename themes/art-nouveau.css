@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'Federant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/federant-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/bellefair-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Art Nouveau: the page is a set of Paris lithograph posters from the 1890s, pasted on a plum mosaic wall.
+   The cover is a Mucha poster: lettered title, a halo disk behind it, a gold mosaic border, Zodiac and Job on either side.
+   Every section is its own panel on tan wove paper with a lettered mosaic plaque for its title, and a whiplash vine
+   grows round its edge when it comes into view (theme script). The site bar is Guimard's Métro ironwork with its
+   enamel sign, and the palette ends with Gismonda split into its five colour stones, printed again one stone at a time. */
+:root {
+  --paper: #f6ead3; --paper-2: #efdfc2; --paper-3: #e6d2ae; --tan: #ecdfc4;
+  --sepia: #3c2c1b; --sepia-2: #5e4a33;
+  --plum: #712759; --plum-d: #4a1c42; --plum-dd: #2c0f27;
+  --gold: #cd9f5a; --gold-d: #a8803f; --gold-l: #e6c98e;
+  --sage: #8f9b6b; --sage-d: #5d6b45;
+  --rose: #b87f8b; --rose-d: #8f4f5e;
+  --cobalt: #3f648c; --cobalt-d: #23487c;
+  --iron: #2c4a3b; --iron-d: #1d3328; --enamel: #f1dc94;
+  --bg: var(--plum-d); --surface: var(--paper); --ink: var(--sepia); --muted: var(--sepia-2); --accent: var(--cobalt-d); --line: var(--gold-d);
+  --font-display: 'Federant', Georgia, serif;
+  --font-body: 'Bellefair', Georgia, serif;
+  --font-mono: 'Bellefair', Georgia, serif;
+  --radius: 0; --max: 1220px; --gap: 22px; --atlas-h: 50px;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .24 0 0 0 0 .17 0 0 0 0 .1 0 0 0 .55 -.2'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  --frame: 0 0 0 1.5px var(--sepia), 0 0 0 6px var(--gold), 0 0 0 7.5px var(--sepia);
+  --rule: inset 0 0 0 1.5px var(--sepia), inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px var(--gold-d);
+  color-scheme: light;
+}
+html { font-size: 19px; background: var(--plum-d); }
+body { background: var(--plum-dd) url("../media/art-nouveau/mosaic-plum.svg") 0 0 / 96px; color: var(--ink); font-size: 1.06rem; line-height: 1.5; }
+a { color: var(--cobalt-d); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--plum); }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+::selection { background: var(--gold-l); color: var(--sepia); }
+b, strong { font-weight: 400; color: var(--plum); }
+
+/* Site bar: Guimard's cast-iron Métro entrance, the way in carried on an enamel sign */
+.atlas { background: linear-gradient(#3a5d4b, var(--iron) 45%, var(--iron-d)); border-bottom: 0; box-shadow: 0 2px 0 var(--gold-d), 0 3px 0 var(--iron-d), 0 8px 18px rgb(20 6 16 / .45); color: var(--paper); font: 17px/1 var(--font-body); }
+.atlas a, .atlas-btn { color: var(--paper); }
+.atlas-home { position: relative; height: 34px; padding: 3px 18px 0 12px; gap: 8px; background: var(--enamel); color: var(--iron-d) !important; font: 17px/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; border-radius: 17px; box-shadow: inset 0 0 0 2px var(--iron-d), inset 0 0 0 4px var(--enamel), inset 0 0 0 5px #b89a4c, 0 0 0 2px #4f7360; }
+.atlas-home svg { margin-top: -3px; }
+.atlas-home:hover { background: #f7e7ae; }
+.atlas-here { color: #d9e2c8; font-size: 16px; letter-spacing: .06em; }
+.atlas-btn { height: 34px; border-radius: 17px; font-size: 16px; }
+.atlas-btn:hover { border-color: var(--enamel); background: rgb(241 220 148 / .12); }
+.atlas-btn[aria-pressed="true"] { color: var(--enamel); }
+/* The two lamps on their curling stalks, either side of the sign */
+.atlas::before, .atlas::after { content: ''; position: absolute; top: 9px; width: 12px; height: 16px; border-radius: 50% 50% 46% 46%; background: radial-gradient(circle at 50% 38%, #ffe2a0, #f67e3f 55%, #9c3a16); box-shadow: 0 0 10px 2px rgb(246 126 63 / .45); pointer-events: none; }
+.atlas::before { left: 4px; }
+.atlas::after { right: 4px; }
+.atlas { padding: 0 24px; }
+
+/* Page frame */
+.page { padding: 0 var(--gap) 64px; }
+
+/* Cover: a Mucha poster with a gold mosaic border */
+.hero { position: relative; margin-top: 30px; padding: 30px clamp(16px, 3.4vw, 44px) 34px; border: 16px solid transparent;
+  background: var(--grain) 0 0 / 220px padding-box, linear-gradient(var(--paper), var(--paper)) padding-box, url("../media/art-nouveau/mosaic-gold.svg") 0 0 / 96px border-box;
+  box-shadow: 0 0 0 2px var(--sepia), inset 0 0 0 2px var(--sepia), inset 0 0 0 7px var(--paper), inset 0 0 0 8.5px var(--gold-d), 0 24px 50px -12px rgb(20 4 16 / .7);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.32fr) minmax(0, 1.32fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 1fr auto auto auto auto 1fr auto; column-gap: 18px; }
+.hero-text, .hero-gallery { display: contents; }
+.hero::before { content: ''; grid-area: 1 / 3 / 7 / 5; align-self: center; justify-self: center; width: min(100%, 470px); aspect-ratio: 1; background: url("../media/art-nouveau/halo.svg") center / contain no-repeat; }
+.hero-kicker, .hero-title, .hero-sub, .hero-tagline { position: relative; z-index: 1; text-align: center; justify-self: center; }
+.hero-kicker { grid-area: 2 / 3 / 3 / 5; margin: 0 0 10px; padding: 5px 16px 3px; background: var(--paper); border-radius: 99px; box-shadow: inset 0 0 0 1px var(--gold-d); color: var(--sepia-2); font: 16px/1.2 var(--font-display); letter-spacing: .12em; text-transform: uppercase; }
+.hero-title { grid-area: 3 / 3 / 4 / 5; font: 400 clamp(2.5rem, 6.2vw, 4.6rem)/.92 var(--font-display); text-transform: uppercase; letter-spacing: .03em; color: var(--cobalt-d); -webkit-text-stroke: .13em var(--paper); paint-order: stroke fill; text-wrap: balance; overflow-wrap: normal; }
+.hero-sub { grid-area: 4 / 3 / 5 / 5; margin: 10px 0 0; font: 400 clamp(1.3rem, 2.4vw, 1.8rem)/1 var(--font-display); color: var(--plum); -webkit-text-stroke: .14em var(--paper); paint-order: stroke fill; letter-spacing: .04em; }
+.hero-tagline { grid-area: 5 / 3 / 6 / 5; max-width: 23em; margin: 16px 0 0; padding: 12px 22px; background: var(--paper); border-radius: 30px; box-shadow: inset 0 0 0 1.5px var(--sepia), inset 0 0 0 5px var(--paper), inset 0 0 0 6px var(--gold-d); font-size: 1.1rem; line-height: 1.32; color: var(--sepia); }
+.hero-gallery .shot { position: relative; z-index: 1; }
+.shot-1 { grid-area: 1 / 1 / 7 / 3; }
+.shot-4 { grid-area: 1 / 5 / 7 / 7; }
+.shot-2 { grid-area: 7 / 1 / 8 / 4; margin-top: 22px; }
+.shot-3 { grid-area: 7 / 4 / 8 / 7; margin-top: 22px; }
+.hero-gallery .shot-link { aspect-ratio: 16 / 9; }
+.hero-gallery :is(.shot-1, .shot-4) .shot-link { aspect-ratio: 3 / 4; }
+.shot-link { background: var(--paper-3); box-shadow: 0 0 0 1.5px var(--sepia), 0 0 0 5px var(--paper), 0 0 0 6px var(--gold-d); }
+.hero .shot-link { margin: 6px; }
+.shot figcaption, .loop figcaption { padding-top: 10px; font-size: 16px; line-height: 1.3; color: var(--sepia-2); }
+.hero .shot figcaption { padding-left: 6px; }
+.shot-title { font-weight: 400; color: var(--plum); }
+.shot-meta { color: var(--sepia-2); }
+
+/* Contents: a row of small lettered plaques, like the name plates under The Seasons */
+.toc { margin: 26px 0 0; }
+.toc ul { justify-content: center; gap: 12px; }
+.toc a { display: block; padding: 9px 18px 7px; background: var(--paper); color: var(--plum); font: 16px/1 var(--font-display); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-radius: 99px; box-shadow: inset 0 0 0 1.5px var(--sepia), inset 0 0 0 4px var(--paper), inset 0 0 0 5px var(--gold-d), 0 4px 10px rgb(20 4 16 / .35); }
+.toc a:hover { background: var(--enamel); color: var(--iron-d); }
+
+/* Sections: separate poster panels on tan wove paper */
+.sec { position: relative; margin-top: 34px; padding: 74px clamp(44px, 5.6vw, 72px) 64px; background: var(--grain) 0 0 / 220px, var(--paper); box-shadow: var(--frame), 0 22px 44px -14px rgb(20 4 16 / .7); }
+main { display: block; }
+/* A faint halo behind each title */
+.sec::before { content: ''; position: absolute; left: 50%; top: 18px; width: 200px; aspect-ratio: 1; translate: -50% 0; background: url("../media/art-nouveau/halo.svg") center / contain no-repeat; opacity: .32; pointer-events: none; }
+.sec > * { position: relative; }
+.sec > .an-vine { position: absolute; }
+.sec-title { width: fit-content; max-width: 100%; margin: 0 auto 38px; padding: .3em .75em .2em; font-size: clamp(1.45rem, 3.5vw, 2.45rem); line-height: 1.08; text-transform: uppercase; letter-spacing: .07em; text-align: center; color: #1b3764; font-weight: 400; text-wrap: balance;
+  border: 8px solid transparent; background: url("../media/art-nouveau/mosaic-gold.svg") 0 0 / 96px padding-box, url("../media/art-nouveau/mosaic-blue.svg") 0 0 / 48px border-box;
+  box-shadow: 0 0 0 1.5px var(--sepia), inset 0 0 0 1.5px var(--sepia), 0 6px 14px -6px rgb(60 44 27 / .5); text-shadow: 0 1px 0 rgb(255 244 214 / .55); }
+.sec h3 { font: 400 1.32rem/1.15 var(--font-display); color: var(--plum); margin-bottom: 8px; letter-spacing: .01em; text-wrap: balance; }
+
+/* The feel: two columns, origins as a tall narrow strip like Gismonda */
+.sec-feel { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); column-gap: 52px; align-items: start; }
+.sec-feel .sec-title { grid-column: 1 / -1; }
+.feel-body { grid-column: 1; font-size: 1.2rem; line-height: 1.5; max-width: none; }
+.feel-body p:first-child::first-letter { float: left; margin: .06em .12em 0 0; font: 400 3.5em/.8 var(--font-display); color: var(--plum); }
+.mood-words { grid-column: 1; gap: 10px; margin: 26px 0 0; }
+.mood-words li { padding: 5px 16px 3px; border: 0; border-radius: 99px; background: var(--paper-2); box-shadow: inset 0 0 0 1px #4c5a35; color: #4c5a35; font: 17px/1.2 var(--font-display); }
+.origins { grid-column: 2; grid-row: 2 / span 2; margin: 0; max-width: none; padding: 28px 26px 26px; background: var(--paper-2); box-shadow: var(--rule); font-size: 1rem; }
+.origins::before { content: ''; display: block; height: 12px; margin: -8px -6px 18px; background: url("../media/art-nouveau/mosaic-gold.svg") 0 0 / 48px; box-shadow: 0 0 0 1px var(--sepia); }
+.origins h3 { text-align: center; }
+
+/* Core elements: six panels in two rows, each numbered in a small halo */
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 58px 28px; padding-top: 36px; }
+.core-item { position: relative; padding: 58px 26px 28px; background: var(--paper-2); border: 0; box-shadow: var(--rule); }
+.core-item::before { content: counter(core, upper-roman); position: absolute; top: -40px; left: 50%; translate: -50% 0; width: 80px; height: 80px; display: grid; place-items: center; padding-top: 3px; background: url("../media/art-nouveau/halo.svg") center / contain no-repeat; color: var(--plum); font: 1.25rem/1 var(--font-display); letter-spacing: .04em; }
+.core-item h3 { text-align: center; margin-bottom: 12px; }
+
+/* How to: steps in two columns, numbered in halo medallions */
+.steps { display: block; max-width: none; column-count: 2; column-gap: 60px; }
+.step { padding: 0 0 0 64px; margin-bottom: 28px; min-height: 52px; break-inside: avoid; }
+.step h3 { break-after: avoid; }
+.step::before { top: 0; width: 50px; height: 50px; padding-top: 3px; background: url("../media/art-nouveau/halo.svg") center / contain no-repeat; color: var(--plum); font: 400 1.1rem/1 var(--font-display); border-radius: 50%; }
+.step h3 { margin-bottom: 6px; padding-top: 8px; }
+.how-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; margin-top: 18px; }
+.specs, .do, .avoid { padding: 26px 26px 22px; background: var(--paper-2); border: 0; box-shadow: var(--rule); }
+.specs h3, .do h3, .avoid h3 { text-align: center; }
+.spec { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 14px; padding: 9px 0 8px; border-top: 1px dotted var(--gold-d); line-height: 1.3; }
+.spec dt { font: 400 1.04rem/1.25 var(--font-display); color: var(--plum); }
+.dodont { gap: 30px; }
+.dodont ul { list-style: none; padding: 0; }
+.dodont li { position: relative; padding-left: 28px; margin-bottom: 12px; line-height: 1.4; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .3em; width: 17px; height: 14px; background: center / contain no-repeat; }
+.do li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 14'%3E%3Cpath d='M1 12C5 13 9 9 9 5 13 5 16 2 16 1 11 0 8 3 8 6 6 7 3 9 1 12Z' fill='%238f9b6b' stroke='%233c2c1b' stroke-width='.9'/%3E%3C/svg%3E"); }
+.avoid li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 14'%3E%3Ccircle cx='8.5' cy='7' r='5' fill='%23b87f8b' stroke='%233c2c1b' stroke-width='.9'/%3E%3Cpath d='M4.6 3.1 12.4 10.9' stroke='%233c2c1b' stroke-width='1.3'/%3E%3C/svg%3E"); }
+.learn { margin-top: 44px; }
+.learn h3 { text-align: center; margin-bottom: 16px; }
+.learn ul { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px 26px; }
+@media (min-width: 861px) { .learn ul:has(> li:nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.learn li, .ref-item { line-height: 1.35; }
+.learn li { padding: 16px 18px; background: var(--paper-2); box-shadow: var(--rule); }
+.ref-item > a, .learn li > a { font: 400 1.08rem/1.25 var(--font-display); color: var(--cobalt-d); }
+.ref-meta { color: var(--sepia-2); font-size: 16px; }
+.ref-note { font-size: 1rem; margin-top: 4px; }
+.brief, .palette-actions { justify-content: center; margin-top: 34px; }
+.brief-note, .palette-note { color: var(--sepia-2); font-size: 16px; }
+.btn { padding: 11px 22px 8px; background: var(--iron); color: var(--enamel); border: 0; border-radius: 99px; font: 16px/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; box-shadow: inset 0 0 0 2px var(--iron-d), inset 0 0 0 3.5px var(--gold), 0 3px 0 var(--iron-d); }
+.btn:hover { background: #355a47; color: #fff3c8; }
+.btn:active { translate: 0 2px; box-shadow: inset 0 0 0 2px var(--iron-d), inset 0 0 0 3.5px var(--gold), 0 1px 0 var(--iron-d); }
+
+/* Palette: each colour a small disk, the way Mucha set a halo behind a head */
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 22px 16px; }
+.swatch button { background: none; border: 0; text-align: center; overflow: visible; }
+.chip { width: calc(100% - 14px); max-width: 118px; height: auto; aspect-ratio: 1; margin: 7px auto 12px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--sepia), inset 0 0 0 6px rgb(255 255 255 / .16), 0 0 0 4px var(--paper), 0 0 0 5.5px var(--gold-d); transition: transform .3s ease; }
+.swatch button:hover .chip { transform: scale(1.05); }
+.swatch-name, .swatch-hex { padding: 0 2px; text-align: center; }
+.swatch-name { font: 400 1rem/1.15 var(--font-display); color: var(--plum); }
+.swatch-hex { font-size: 16px; color: var(--sepia-2); letter-spacing: .04em; }
+.palette-note { margin: 22px auto 0; text-align: center; }
+
+/* Gismonda in five stones (built by the theme script) */
+.an-press { margin-top: 54px; padding-top: 40px; border-top: 1px dotted var(--gold-d); }
+.an-press-title { text-align: center; }
+.an-press-note { max-width: 40em; margin: 0 auto 28px; text-align: center; font-size: 1.04rem; }
+.an-press-row { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px 34px; align-items: start; }
+.an-stone, .an-print { position: relative; display: block; width: 100%; margin: 0; padding: 0; background: none; border: 0; text-align: center; color: var(--sepia); }
+.an-sheet { position: relative; display: block; aspect-ratio: 566 / 1600; background: var(--tan); isolation: isolate; box-shadow: 0 0 0 1.5px var(--sepia), 0 0 0 5px var(--paper), 0 0 0 6px var(--gold-d), 0 10px 18px -8px rgb(60 44 27 / .5); overflow: hidden; }
+.an-sheet img { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; transition: opacity .35s ease; }
+.an-stone .an-sheet { transition: transform .25s ease, opacity .25s ease; }
+.an-stone:not(:disabled):hover .an-sheet { transform: translateY(-4px); }
+.an-stone:disabled { cursor: progress; }
+.an-stone[aria-pressed="false"] .an-sheet { opacity: .35; }
+.an-stone[aria-pressed="false"] .an-name { text-decoration: line-through; color: var(--sepia-2); }
+.an-name { display: flex; justify-content: center; align-items: center; gap: 7px; margin-top: 14px; font: 400 16px/1.15 var(--font-display); color: var(--plum); }
+.an-name i { flex: none; width: 13px; height: 13px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1px var(--sepia); }
+.an-print .an-name { color: var(--cobalt-d); }
+.an-print img.an-off { opacity: 0; }
+.an-stone + .an-stone::before, .an-print::before { position: absolute; left: -26px; top: 42%; width: 18px; text-align: center; font: 400 1.6rem/1 var(--font-display); color: var(--gold-d); }
+.an-stone + .an-stone::before { content: '+'; }
+.an-print::before { content: '='; }
+.an-press-actions { display: flex; justify-content: center; margin-top: 26px; }
+.an-fly { position: absolute; z-index: 5; pointer-events: none; mix-blend-mode: multiply; transform-origin: 0 0; }
+
+/* Feel the vibe: framed loops and a theatre programme for the music */
+.loops-wrap h3, .music-wrap h3 { text-align: center; margin-bottom: 22px; }
+.loops-wrap { margin-bottom: 46px; }
+.loops { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 30px; }
+.loop video { box-shadow: 0 0 0 1.5px var(--sepia), 0 0 0 5px var(--paper), 0 0 0 6px var(--gold-d); background: var(--paper-3); margin: 6px; width: calc(100% - 12px); }
+.loop figcaption { padding-left: 6px; }
+.tracks { max-width: 800px; margin: 0 auto; gap: 0; padding: 22px 30px 18px; background: var(--paper-2); box-shadow: var(--rule); }
+.track { padding: 8px 0 6px; border-bottom: 1px dotted var(--gold-d); }
+.track:last-child { border-bottom: 0; }
+.track-btn { padding: 6px 4px; background: transparent; border: 0; }
+.track-btn:hover, .track.is-playing .track-btn { background: rgb(205 159 90 / .16); }
+.track-play { width: 34px; height: 34px; background: var(--iron); color: var(--enamel); border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--gold); }
+.track-text { flex: 1; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; }
+.track-text::after { content: ''; order: 1; flex: 1 1 24px; border-bottom: 1px dotted var(--gold-d); }
+.track-title { font: 400 1.14rem/1.2 var(--font-display); color: var(--plum); }
+.track-artist { order: 2; font-size: 16px; color: var(--sepia-2); }
+.track-note { margin: 2px 0 6px 50px; font-size: 1rem; line-height: 1.4; color: var(--sepia); }
+.track-yt { align-self: start; margin-top: 11px; font-size: 16px; color: var(--cobalt-d); }
+.player { background: var(--paper); border: 0; border-radius: 0; box-shadow: var(--frame), 0 16px 36px rgb(20 4 16 / .55); }
+.player-info { font-size: 16px; }
+.player-now { font: 13px/1.2 var(--font-display); letter-spacing: .12em; color: var(--sepia-2); }
+.player-title { font-weight: 400; color: var(--plum); }
+.player-artist { color: var(--sepia-2); }
+
+/* References: a salon wall of prints, uncropped, then two columns of notes */
+.ref-gallery { display: block; column-count: 3; column-gap: 26px; margin-bottom: 40px; }
+.ref-gallery .shot { break-inside: avoid; margin: 0 0 24px; padding: 6px 6px 0; }
+.ref-gallery .shot-link { aspect-ratio: auto; }
+.ref-gallery .shot-link img { height: auto; }
+.ref-lists { gap: 30px 52px; }
+.ref-list h3 { text-align: center; margin-bottom: 18px; }
+.ref-item { margin-bottom: 18px; }
+
+/* Sources */
+.sources { font-size: 16px; line-height: 1.4; gap: 6px 34px; }
+.source { padding: 6px 4px; }
+.source-n { font: 400 1rem/1.3 var(--font-display); color: var(--plum); }
+.source-meta { font-size: 15px; color: var(--sepia-2); }
+.source:target { outline-color: var(--cobalt); }
+.cite { font-weight: 400; }
+
+.related { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 30px 26px; }
+.related a { padding: 6px; }
+.related img { box-shadow: 0 0 0 1.5px var(--sepia), 0 0 0 5px var(--paper), 0 0 0 6px var(--gold-d); }
+.related span { padding-top: 14px; font: 400 1.05rem/1.25 var(--font-display); color: var(--plum); text-align: center; }
+
+/* Foot: the printer's imprint along the bottom of the sheet */
+.foot { margin-top: 34px; padding: 26px clamp(20px, 4vw, 44px); background: var(--paper); border-top: 0; box-shadow: var(--frame); color: var(--sepia-2); font-size: 16px; text-align: center; }
+.foot::after { content: 'Imprimé en huit couleurs sur papier vélin teinté'; display: block; margin-top: 14px; font: 13px/1.3 var(--font-display); letter-spacing: .16em; text-transform: uppercase; color: var(--sepia-2); }
+.foot-nav a { color: var(--cobalt-d); font: 16px/1.2 var(--font-display); }
+
+/* The whiplash vine the theme script draws round each panel */
+.an-vine { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.an-vine .an-stem { fill: none; stroke: #4c5a35; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--t, 2.8s) linear; }
+.an-vine .an-stem.an-gilt { stroke: var(--gold-d); stroke-width: 1.1; }
+.an-vine .an-tendril { fill: none; stroke: #4c5a35; stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset .8s ease-out var(--d, 0s); }
+.an-vine .an-leaf { fill: var(--sage); stroke: var(--sepia); stroke-width: .8; transform-box: fill-box; transform-origin: 0 50%; transform: scale(0); transition: transform .55s cubic-bezier(.3, 1.4, .5, 1) var(--d, 0s); }
+.an-vine .an-bud { fill: var(--rose); stroke: var(--sepia); stroke-width: .8; transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0); transition: transform .5s cubic-bezier(.3, 1.6, .5, 1) var(--d, 0s); }
+.an-vine .an-bud-c { fill: var(--gold); }
+.an-grown .an-vine .an-stem, .an-grown .an-vine .an-tendril { stroke-dashoffset: 0; }
+.an-grown .an-vine .an-leaf, .an-grown .an-vine .an-bud { transform: none; }
+
+@media (max-width: 1180px) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.55fr) minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .hero-kicker { font-size: 14px; letter-spacing: .05em; }
+  .hero-tagline { font-size: 1rem; padding: 10px 18px; }
+}
+@media (max-width: 1080px) {
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  html { font-size: 18px; }
+  .hero { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; column-gap: 14px; }
+  .hero::before { grid-area: 2 / 1 / 4 / 3; width: min(100%, 360px); }
+  .hero-kicker { grid-area: 1 / 1 / 2 / 3; margin-bottom: 18px; }
+  .hero-title { grid-area: 2 / 1 / 3 / 3; padding-top: 52px; }
+  .hero-sub { grid-area: 3 / 1 / 4 / 3; padding-bottom: 60px; }
+  .hero-tagline { grid-area: 4 / 1 / 5 / 3; margin: 6px 0 22px; }
+  .shot-1 { grid-area: 5 / 1 / 6 / 2; }
+  .shot-4 { grid-area: 5 / 2 / 6 / 3; }
+  .shot-2 { grid-area: 6 / 1 / 7 / 3; margin-top: 18px; }
+  .shot-3 { grid-area: 7 / 1 / 8 / 3; margin-top: 18px; }
+  .sec-feel { grid-template-columns: minmax(0, 1fr); }
+  .origins { grid-column: 1; grid-row: auto; margin-top: 32px; }
+  .steps { column-count: 1; }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .an-press-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 30px; }
+  .an-stone:nth-child(4)::before { content: none; }
+  .ref-gallery { column-count: 2; column-gap: 18px; }
+}
+@media (max-width: 700px) {
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  html { font-size: 17px; }
+  .page { padding: 0 12px 48px; }
+  .atlas { padding: 0 20px; gap: 8px; }
+  .atlas-home { padding: 3px 12px 0 8px; font-size: 15px; letter-spacing: .05em; }
+  .atlas::before { left: 3px; } .atlas::after { right: 3px; }
+  .hero { margin-top: 18px; border-width: 9px; padding: 22px 10px 24px; column-gap: 16px; background-size: 220px, auto, 64px; }
+  .hero::before { width: min(100%, 330px); }
+  .hero-kicker { font-size: 14px; letter-spacing: .08em; }
+  .hero-title { padding-top: 70px; }
+  .hero-sub { padding-bottom: 66px; }
+  .hero-tagline { padding: 10px 16px; font-size: 1.06rem; }
+  .hero .shot-link { margin: 0; }
+  .hero .shot figcaption { padding-left: 0; }
+  .toc ul { gap: 8px; }
+  .toc a { padding: 8px 12px 6px; font-size: 15px; letter-spacing: .06em; }
+  .sec { --frame: 0 0 0 1.5px var(--sepia), 0 0 0 5px var(--gold), 0 0 0 6.5px var(--sepia); margin-top: 26px; padding: 58px 24px 46px; }
+  .sec::before { width: 150px; top: 14px; }
+  .sec-title { font-size: 1.3rem; letter-spacing: .04em; border-width: 6px; margin-bottom: 30px; }
+  .feel-body { font-size: 1.12rem; }
+  .core-item { padding: 54px 20px 22px; }
+  .step { padding-left: 0; }
+  .step::before { width: 44px; height: 44px; font-size: 1rem; }
+  .step h3 { display: flex; align-items: center; min-height: 44px; padding: 0 0 0 54px; margin-bottom: 8px; }
+  .specs, .do, .avoid { padding: 22px 18px 18px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .swatches { gap: 18px 10px; }
+  .swatch-name { font-size: 15px; }
+  .swatch-hex { font-size: 15px; }
+  .an-press-row { gap: 22px 22px; }
+  .an-name { font-size: 15px; gap: 5px; }
+  .an-stone + .an-stone::before, .an-print::before { left: -19px; width: 16px; font-size: 1.3rem; }
+  .tracks { padding: 12px 10px 8px; margin: 0 -8px; }
+  .track-note { margin-left: 4px; font-size: .98rem; }
+  .track-text { column-gap: 6px; }
+  .track-text::after { flex-basis: 10px; }
+  .track-yt { margin-top: 7px; }
+  .ref-gallery { column-gap: 14px; }
+  .ref-gallery .shot { padding: 5px 5px 0; }
+  .foot::after { letter-spacing: .1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .an-vine * { transition: none !important; }
+}

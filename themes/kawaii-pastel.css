@@ -1,0 +1,420 @@
+@font-face {
+  font-family: 'DynaPuff';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/dynapuff-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DynaPuff';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/dynapuff-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/zen-maru-gothic-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/zen-maru-gothic-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/zen-maru-gothic-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Kawaii / Cute Pastel: a sticker sheet from a stationery shop.
+   The top of the page is the pack's header card, with its hanging slot and two staples, and beside it the sheet of stickers.
+   Every section below is another sheet in a different candy pastel, printed with polka dots, and everything on it is a
+   die-cut sticker: a soft outline a shade darker than its own fill, a white border round that, and the faint kiss-cut line
+   where the blade scored the backing. The character stickers (themes/kawaii-pastel.js) really peel off: drag one anywhere
+   on the page and it stays there, while the sheet keeps a glossy hole in its shape. Press any sticker and it squishes. */
+:root {
+  --pink: #f69db3; --milk: #fad1dc; --blush: #e77590; --butter: #fcf1b8; --mint: #b1f2c5; --lav: #caafe4; --sky: #b2dfef; --cocoa: #7c6651;
+  /* Sticker fills (pale), their lines (the same hue, darker) and deep tints for lettering */
+  --f-pink: #fff1f5; --f-sky: #eff9fd; --f-lav: #f7f1fc; --f-mint: #eefcf2; --f-butter: #fffbe4;
+  --l-pink: #e48aa5; --l-sky: #6fb3d6; --l-lav: #a98ad4; --l-mint: #66c08c; --l-butter: #d8b04a;
+  --d-pink: #b0476b; --d-sky: #2f6f90; --d-lav: #6a4c99; --d-mint: #2e7a4e; --d-butter: #93670f;
+  --t-butter: #fde48c; --t-mint: #9fe8b6; --t-sky: #a2d9ef;
+  --ink: #4a3628; --ink-2: #5e4636; --link: #9a2f57; --white: #fffefc;
+  --bg: #ffeef3; --surface: var(--white); --muted: var(--ink-2); --accent: var(--link); --line: #ecd3dd;
+  --font-display: 'DynaPuff', 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+  --font-body: 'Zen Maru Gothic', 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+  --font-mono: 'Zen Maru Gothic', 'Trebuchet MS', sans-serif;
+  --radius: 22px; --max: 1220px; --gap: 28px; --atlas-h: 54px;
+  --kp-s: 88px;
+  /* The white die-cut border and the kiss-cut line round it, then the soft lift off the sheet */
+  --cut: 0 0 0 7px var(--white), 0 0 0 8.5px rgb(124 102 81 / .2);
+  --lift: 0 12px 16px -8px rgb(120 62 86 / .36);
+  --sheet-shadow: 0 0 0 1px rgb(124 102 81 / .1), 0 2px 0 rgb(255 255 255 / .5) inset, 0 12px 16px -8px rgb(120 62 86 / .3), 0 30px 38px -26px rgb(120 62 86 / .42);
+  --dots: radial-gradient(circle, rgb(255 255 255 / .58) 0 3.6px, transparent 4.2px) 0 0 / 30px 30px, radial-gradient(circle, rgb(255 255 255 / .58) 0 3.6px, transparent 4.2px) 15px 15px / 30px 30px;
+  /* Lettering cut out as a sticker: six hard white shadows build a round white border, then a soft one lifts it */
+  --die: drop-shadow(3px 0 0 #fffefc) drop-shadow(-1.5px 2.6px 0 #fffefc) drop-shadow(-1.5px -2.6px 0 #fffefc) drop-shadow(3px 0 0 #fffefc) drop-shadow(-1.5px 2.6px 0 #fffefc) drop-shadow(-1.5px -2.6px 0 #fffefc) drop-shadow(0 4px 3px rgb(120 62 86 / .3));
+  --die-l: drop-shadow(4px 0 0 #fffefc) drop-shadow(-2px 3.5px 0 #fffefc) drop-shadow(-2px -3.5px 0 #fffefc) drop-shadow(4px 0 0 #fffefc) drop-shadow(-2px 3.5px 0 #fffefc) drop-shadow(-2px -3.5px 0 #fffefc) drop-shadow(0 6px 4px rgb(120 62 86 / .32));
+  --shine: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 14'%3E%3Cpath d='M3 12C4 7 8 3.5 13 2.5' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round'/%3E%3Ccircle cx='19' cy='2.8' r='2' fill='%23fff'/%3E%3C/svg%3E");
+  --badge-do: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23fffefc'/%3E%3Ccircle cx='20' cy='20' r='14' fill='%23b1f2c5' stroke='%2366c08c' stroke-width='3'/%3E%3Cpath d='M13.5 20.5l4.5 4.5 8.5-9.5' fill='none' stroke='%232e7a4e' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cellipse cx='14' cy='12.5' rx='3.2' ry='1.8' fill='%23fff' transform='rotate(-32 14 12.5)'/%3E%3C/svg%3E");
+  --badge-avoid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23fffefc'/%3E%3Ccircle cx='20' cy='20' r='14' fill='%23fad1dc' stroke='%23e48aa5' stroke-width='3'/%3E%3Cpath d='M15 15l10 10M25 15 15 25' fill='none' stroke='%23b0476b' stroke-width='3.4' stroke-linecap='round'/%3E%3Cellipse cx='14' cy='12.5' rx='3.2' ry='1.8' fill='%23fff' transform='rotate(-32 14 12.5)'/%3E%3C/svg%3E");
+  --slot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 34'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Cpath d='M45 14a10 10 0 0 1 20 0h29a8 8 0 0 1 0 16H16a8 8 0 0 1 0-16z'/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath d='M45 14a10 10 0 0 1 20 0h29a8 8 0 0 1 0 16H16a8 8 0 0 1 0-16z' fill='%23c48aa0'/%3E%3Cpath clip-path='url(%23c)' transform='translate(0 3.5)' d='M45 14a10 10 0 0 1 20 0h29a8 8 0 0 1 0 16H16a8 8 0 0 1 0-16z' fill='%23f9e2ea'/%3E%3Cpath d='M45 14a10 10 0 0 1 20 0h29a8 8 0 0 1 0 16H16a8 8 0 0 1 0-16z' fill='none' stroke='%23fff' stroke-opacity='.7' stroke-width='1.2' transform='translate(0 .8)'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+html { font-size: 18px; }
+/* The shop wall: soft candy stripes */
+body { color: var(--ink); background: repeating-linear-gradient(90deg, #fff6f8 0 30px, #ffe9f0 30px 60px) #fff1f5; font-weight: 500; line-height: 1.62; }
+::selection { background: var(--butter); color: var(--ink); }
+:where(.page) a { color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+:where(.page) a:hover { color: var(--d-lav); }
+:focus-visible { outline: 3px solid #8a63c9; outline-offset: 3px; }
+
+/* ---------- Site bar: a white strip with a scalloped edge, its buttons little pill stickers ---------- */
+.atlas { height: var(--atlas-h); padding: 0 18px; gap: 14px; background: var(--white); border: 0; color: var(--ink); font: 500 16px/1 var(--font-body); }
+.atlas::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 10px; background: radial-gradient(circle at 10px 0, var(--white) 0 8px, var(--l-pink) 8.6px 10px, transparent 10.6px) 0 0 / 20px 10px repeat-x; pointer-events: none; }
+.atlas a, .atlas-btn { color: var(--ink); white-space: nowrap; }
+.atlas-home { height: 36px; padding: 0 16px 0 10px; border-radius: 99px; background: var(--f-pink); box-shadow: inset 0 0 0 2.5px var(--l-pink); font: 600 16px/1 var(--font-display); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.atlas-home:hover { background: var(--milk); }
+.atlas-here { padding: 6px 12px; border-radius: 99px; background: var(--f-sky); box-shadow: inset 0 0 0 2.5px var(--l-sky); color: var(--ink); font: 600 14px/1 var(--font-display); }
+.atlas-btn { height: 36px; min-width: 36px; padding: 0 12px; border: 0; border-radius: 99px; box-shadow: inset 0 0 0 2.5px var(--line); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.atlas-btn:hover { background: var(--f-lav); box-shadow: inset 0 0 0 2.5px var(--l-lav); border-color: transparent; }
+.atlas-btn[aria-pressed="true"] { color: var(--d-pink); background: var(--f-pink); box-shadow: inset 0 0 0 2.5px var(--l-pink); }
+.atlas-home:active, .atlas-btn:active { scale: 1.08 .9; transition-duration: .08s; }
+
+/* ---------- The page ---------- */
+.page { padding: 0 28px 70px; }
+
+/* ---------- The pack: header card on the left, the sheet of stickers beside it ---------- */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 46px 40px; padding: 54px 0 4px; }
+.hero:has(> .kp-sheet) { grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr); grid-template-areas: "card sheet" "gal gal"; }
+.hero:has(> .kp-sheet) > .hero-text { grid-area: card; }
+.hero:has(> .kp-sheet) > .hero-gallery { grid-area: gal; }
+.hero > .kp-sheet { grid-area: sheet; }
+
+/* Header card: strawberry milk board, hung by its slot, stapled at the foot */
+.hero-text { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 86px 40px 58px; text-align: center; background: var(--dots), var(--milk); border-radius: 28px 28px 22px 22px; box-shadow: var(--sheet-shadow); }
+.hero-text::before { content: ''; position: absolute; left: 50%; top: 20px; width: 118px; height: 37px; translate: -50% 0; background: var(--slot) center / contain no-repeat; }
+.hero-text::after { content: ''; position: absolute; left: 34px; right: 34px; bottom: 20px; height: 7px; background: linear-gradient(#f4f6f8, #a9b0b8 70%, #8d949c) 0 0 / 38px 7px no-repeat, linear-gradient(#f4f6f8, #a9b0b8 70%, #8d949c) 100% 0 / 38px 7px no-repeat; }
+.hero-kicker { margin: 0 0 18px; padding: 7px 18px 8px; border-radius: 99px; background: var(--white); box-shadow: inset 0 0 0 2.5px var(--l-lav), 0 4px 6px -3px rgb(120 62 86 / .3); color: var(--ink); font: 600 15px/1.2 var(--font-display); letter-spacing: .02em; }
+.hero-title { position: relative; margin: 0; padding: 0 6px; font: 700 clamp(64px, 9.4vw, 128px)/1.02 var(--font-display); letter-spacing: .03em; white-space: nowrap; overflow-wrap: normal; color: var(--pink); -webkit-text-stroke: 9px var(--d-pink); paint-order: stroke fill; }
+.hero-title:not(.kp-split) { filter: var(--die-l); }
+/* Split by the script into letters, each its own sticker with a line in its own hue */
+/* The white border is a wide white text stroke on a copy of each letter, under all of them: a filter here would be redrawn on every frame of the bob */
+.hero-title.kp-split { isolation: isolate; }
+.kp-ch { position: relative; display: inline-block; color: var(--c); -webkit-text-stroke: .075em var(--cl); }
+.kp-ch::before { content: attr(data-ch); position: absolute; inset: 0; z-index: -1; color: var(--white); -webkit-text-stroke: .21em var(--white); text-shadow: 0 6px 6px rgb(120 62 86 / .35); }
+.kp-ch:nth-child(5n+1) { --c: var(--pink); --cl: var(--d-pink); --b: -2deg; }
+.kp-ch:nth-child(5n+2) { --c: var(--t-butter); --cl: var(--d-butter); --b: 3deg; }
+.kp-ch:nth-child(5n+3) { --c: var(--t-mint); --cl: var(--d-mint); --b: -3deg; }
+.kp-ch:nth-child(5n+4) { --c: var(--t-sky); --cl: var(--d-sky); --b: 2deg; }
+.kp-ch:nth-child(5n) { --c: var(--lav); --cl: var(--d-lav); --b: -1deg; }
+.kp-ch { rotate: var(--b); }
+:root:not([data-calm]) .kp-ch { animation: kp-bob 3.8s ease-in-out calc(var(--i) * -.55s) infinite alternate; will-change: transform; }
+@keyframes kp-bob { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+.kp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.hero-sub { margin: 26px 0 0; padding: 8px 26px 10px; border-radius: 99px; background: var(--butter); border: 3px solid var(--l-butter); box-shadow: var(--cut), var(--lift); color: var(--ink); font: 600 clamp(1.3rem, 2.2vw, 1.7rem)/1.1 var(--font-display); rotate: -2deg; }
+.hero-tagline { max-width: 25em; margin: 32px auto 0; padding: 14px 26px 16px; background: var(--white); border: 3px solid var(--l-pink); border-radius: 24px; box-shadow: var(--cut), var(--lift); font: 500 clamp(1.05rem, 1.6vw, 1.2rem)/1.5 var(--font-body); text-wrap: balance; }
+/* Sparkles round the title (the script adds them) */
+.kp-tw { position: absolute; z-index: 1; width: var(--z, 26px); height: var(--z, 26px); pointer-events: none; }
+.kp-tw svg { display: block; width: 100%; height: 100%; overflow: visible; }
+:root:not([data-calm]) .kp-tw svg { animation: kp-tw 3.4s ease-in-out var(--d, 0s) infinite; }
+@keyframes kp-tw { 0%, 100% { transform: scale(.55) rotate(0deg); opacity: .55; } 50% { transform: scale(1) rotate(20deg); opacity: 1; } }
+
+/* ---------- The sticker sheet (built by the script) ---------- */
+.kp-sheet { position: relative; display: flex; flex-direction: column; padding: 20px 22px 22px; background: var(--dots), var(--sky); border-radius: 26px; box-shadow: var(--sheet-shadow); }
+.kp-sheet-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; min-height: 32px; margin: 0 0 10px; color: var(--d-sky); font: 700 22px/1.2 var(--font-display); }
+.kp-count { padding: 4px 12px; border-radius: 99px; background: var(--white); color: var(--ink); font: 600 15px/1.2 var(--font-display); }
+.kp-count[hidden] { display: none; }
+.kp-slots { flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 12px; align-content: center; padding: 6px 4px; }
+.kp-slot { position: relative; aspect-ratio: 1; }
+.kp-hole { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; rotate: var(--r, 0deg); }
+.kp-sheet-note { margin: 12px 0 0; padding: 10px 16px 11px; background: var(--white); border-radius: 16px; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.kp-reset { padding: 3px 13px 4px; border: 2.5px solid var(--l-pink); border-radius: 99px; background: var(--white); box-shadow: 0 4px 6px -3px rgb(120 62 86 / .4); color: var(--ink); font: 600 15px/1.2 var(--font-display); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.kp-reset:hover { background: var(--f-pink); }
+.kp-reset:active { scale: 1.07 .9; transition-duration: .08s; }
+.kp-reset[hidden] { display: none; }
+
+/* A sticker: its spot (on the sheet, stuck to the page, or in the hand) and the sticker itself, which squishes */
+.kp-pos { position: absolute; z-index: 30; width: var(--kp-s); height: var(--kp-s); translate: -50% -50%; }
+.kp-slot > .kp-pos { inset: 0; z-index: 1; width: auto; height: auto; translate: none; }
+.kp-pos.kp-drag { position: fixed; left: 0; top: 0; z-index: 990; width: var(--w); height: var(--w); translate: none; pointer-events: none; }
+/* A finger can still scroll the page from a sticker; the script holds the page still once a sticker has been held */
+.kp-stk { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y pinch-zoom; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; transform-origin: 50% 82%; rotate: var(--r, 0deg); filter: drop-shadow(0 2px 1.5px rgb(120 62 86 / .3)); transition: scale .5s cubic-bezier(.3, 2, .45, 1), filter .2s; }
+.kp-stk svg { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.kp-stk:hover { scale: 1.07; }
+.kp-stk.kp-press { scale: 1.16 .84; transition: scale .1s ease-out; }
+.kp-drag .kp-stk { scale: 1.14; rotate: calc(var(--r, 0deg) + var(--tilt, 0deg)); cursor: grabbing; filter: drop-shadow(0 18px 10px rgb(120 62 86 / .3)); transition: scale .25s cubic-bezier(.3, 1.8, .45, 1), rotate .18s ease-out, filter .2s; }
+:root:not([data-calm]) .kp-drag .kp-stk { animation: kp-peel .34s ease-out; }
+@keyframes kp-peel { 0% { transform: perspective(300px) rotateX(0deg); } 45% { transform: perspective(300px) rotateX(32deg) rotateY(-10deg); } 100% { transform: perspective(300px) rotateX(0deg); } }
+.kp-dragging, .kp-dragging * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }
+.kp-stk.kp-land { animation: kp-land .62s ease-out; }
+@keyframes kp-land { 0% { scale: 1.14; } 30% { scale: 1.24 .78; } 55% { scale: .93 1.08; } 78% { scale: 1.03 .97; } 100% { scale: 1; } }
+.kp-stk.kp-boing { animation: kp-boing .55s ease-out; }
+@keyframes kp-boing { 0% { scale: 1.16 .84; } 40% { scale: .93 1.09; } 70% { scale: 1.04 .97; } 100% { scale: 1; } }
+
+/* ---------- Four photo stickers: the picture in a coloured line and a white die-cut border ---------- */
+.hero-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 50px; margin: 0; padding: 12px 12px 0; }
+.hero-gallery .shot { position: relative; rotate: var(--sr, 0deg); transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1); }
+.shot-1 { --sr: -1.2deg; --fl: var(--l-pink); } .shot-2 { --sr: 1deg; --fl: var(--l-lav); } .shot-3 { --sr: .8deg; --fl: var(--l-mint); } .shot-4 { --sr: -.9deg; --fl: var(--l-sky); }
+.hero-gallery .shot:hover { --sr: 0deg; }
+.hero-gallery .shot-link, .ref-gallery .shot-link, .loop video, .related img { border: 3px solid var(--fl, var(--l-pink)); border-radius: 22px; background: var(--white); box-shadow: var(--cut), var(--lift); }
+.hero-gallery .shot-link { aspect-ratio: 16 / 10; }
+.is-contain .shot-link img { object-fit: contain; background: var(--f-pink); }
+.shot figcaption, .loop figcaption { width: fit-content; max-width: 100%; margin: 18px 0 0 4px; padding: 6px 14px 7px; background: var(--white); border-radius: 14px; box-shadow: 0 0 0 1.5px rgb(124 102 81 / .16), 0 4px 6px -3px rgb(120 62 86 / .3); color: var(--ink); font-size: 16px; line-height: 1.4; }
+.shot-title { font: 600 16px/1.35 var(--font-display); }
+.shot-meta { display: block; margin-top: 2px; color: var(--ink-2); font-size: 15px; line-height: 1.4; }
+
+/* ---------- Contents: a strip of pill stickers ---------- */
+.toc { position: relative; margin: 50px 0 0; }
+.toc ul { justify-content: center; gap: 18px 20px; }
+.toc a { display: block; padding: 8px 20px 9px; border: 3px solid var(--tl); border-radius: 99px; background: var(--tf); box-shadow: var(--cut), 0 7px 9px -5px rgb(120 62 86 / .4); color: var(--ink); font: 600 17px/1.2 var(--font-display); text-decoration: none; rotate: var(--tr); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.toc li:nth-child(1) a { --tf: var(--f-mint); --tl: var(--l-mint); --tr: -2deg; }
+.toc li:nth-child(2) a { --tf: var(--f-butter); --tl: var(--l-butter); --tr: 1.5deg; }
+.toc li:nth-child(3) a { --tf: var(--f-sky); --tl: var(--l-sky); --tr: -1deg; }
+.toc li:nth-child(4) a { --tf: var(--f-pink); --tl: var(--l-pink); --tr: 2deg; }
+.toc li:nth-child(5) a { --tf: var(--f-lav); --tl: var(--l-lav); --tr: -1.5deg; }
+.toc li:nth-child(6) a { --tf: var(--f-mint); --tl: var(--l-mint); --tr: 1deg; }
+.toc a:hover { scale: 1.06; text-decoration: none; }
+.toc a:active, .btn:active, .swatch button:active, .track-btn:active { scale: 1.07 .9; transition-duration: .08s; }
+
+/* ---------- Every section is a sheet: a candy pastel printed with white polka dots ---------- */
+.sec { position: relative; margin-top: 54px; padding: 34px 40px 42px; background: var(--dots), var(--sheet, var(--mint)); border-radius: 30px; box-shadow: var(--sheet-shadow); }
+.sec-title { width: fit-content; max-width: 100%; margin: 0 0 30px; padding: 0 4px; color: var(--tf, var(--pink)); -webkit-text-stroke: 7px var(--tl, var(--d-pink)); paint-order: stroke fill; font: 700 clamp(2rem, 3.6vw, 2.7rem)/1.12 var(--font-display); letter-spacing: .02em; filter: var(--die); }
+.sec h3 { margin-bottom: 10px; color: var(--ink); font: 600 1.28rem/1.25 var(--font-display); }
+
+/* Text stickers: a pale fill, a 3px line in the same hue, a white border and the kiss-cut line */
+:is(.feel-body, .origins, .core-item, .step, .specs, .do, .avoid, .learn, .ref-list, .foot) { position: relative; background: var(--sf, var(--white)); border: 3px solid var(--sl, var(--l-pink)); border-radius: 24px; box-shadow: var(--cut), var(--lift); }
+:is(.feel-body, .core-item, .step, .learn, .ref-list)::after { content: ''; position: absolute; left: 10px; top: 9px; width: 24px; height: 14px; background: var(--shine) center / contain no-repeat; pointer-events: none; }
+
+/* The feel: a big label for the text, a memo-pad page for the history, mood words as small pill stickers */
+.sec-feel { --sheet: var(--mint); --tf: var(--pink); --tl: var(--d-pink); display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 40px; align-items: start; }
+.sec-feel .sec-title { grid-column: 1 / -1; }
+.feel-body { grid-column: 1; grid-row: 2 / span 2; max-width: none; padding: 28px 32px 30px; --sl: var(--l-mint); font-size: 1.04rem; line-height: 1.72; }
+.origins { grid-column: 2; grid-row: 2; max-width: none; margin: 0; padding: 0 0 20px; --sl: var(--l-pink); rotate: 1deg; }
+.origins h3 { margin: 0 0 6px; padding: 14px 22px 12px; background: var(--milk); border-bottom: 3px dashed var(--l-pink); border-radius: 21px 21px 0 0; font-size: 1.15rem; }
+.origins p { margin: 0 22px; font-size: 17px; line-height: 31px; background: linear-gradient(transparent 29.5px, #f1d3de 29.5px 31px) 0 0 / 100% 31px; }
+/* Centred in the space the long feel text leaves under the memo page, so no empty patch of sheet gathers under them */
+.mood-words { grid-column: 2; grid-row: 3; align-self: center; justify-content: center; gap: 22px 20px; margin: 36px 0 8px; padding: 0 6px; }
+.mood-words li { padding: 5px 16px 7px; border: 3px solid var(--ml); border-radius: 99px; background: var(--mf); box-shadow: var(--cut), 0 6px 7px -4px rgb(120 62 86 / .38); color: var(--ink); font: 600 17px/1.25 var(--font-display); rotate: var(--mr); }
+.mood-words li:nth-child(6n+1) { --mf: var(--f-pink); --ml: var(--l-pink); --mr: -3deg; }
+.mood-words li:nth-child(6n+2) { --mf: var(--f-butter); --ml: var(--l-butter); --mr: 2deg; }
+.mood-words li:nth-child(6n+3) { --mf: var(--f-sky); --ml: var(--l-sky); --mr: -1deg; }
+.mood-words li:nth-child(6n+4) { --mf: var(--f-lav); --ml: var(--l-lav); --mr: 3deg; }
+.mood-words li:nth-child(6n+5) { --mf: var(--f-pink); --ml: var(--l-pink); --mr: -2deg; }
+.mood-words li:nth-child(6n) { --mf: var(--f-mint); --ml: var(--l-mint); --mr: 1.5deg; }
+
+/* Core elements: six label stickers, each with a round number sticker on its corner */
+.sec-core { --sheet: var(--butter); --tf: var(--lav); --tl: var(--d-lav); }
+.core-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 36px; padding: 14px 8px 4px; }
+.core-item { padding: 34px 26px 26px; }
+.core-item:nth-child(6n+1) { --sf: var(--f-pink); --sl: var(--l-pink); --nf: var(--milk); }
+.core-item:nth-child(6n+2) { --sf: var(--f-sky); --sl: var(--l-sky); --nf: var(--sky); }
+.core-item:nth-child(6n+3) { --sf: var(--f-mint); --sl: var(--l-mint); --nf: var(--mint); }
+.core-item:nth-child(6n+4) { --sf: var(--f-lav); --sl: var(--l-lav); --nf: var(--lav); }
+.core-item:nth-child(6n+5) { --sf: var(--white); --sl: var(--l-butter); --nf: var(--t-butter); }
+.core-item:nth-child(6n) { --sf: var(--f-pink); --sl: var(--l-pink); --nf: var(--pink); }
+.core-item h3::before { content: counter(core); position: absolute; left: -18px; top: -20px; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle at 32% 26%, #fff 0 3px, transparent 3.5px), var(--nf); border: 3px solid var(--sl); box-shadow: 0 0 0 5px var(--white), 0 0 0 6.5px rgb(124 102 81 / .2), 0 5px 6px -2px rgb(120 62 86 / .35); color: var(--ink); font: 700 21px/1 var(--font-display); rotate: -8deg; }
+.core-item p { font-size: 17px; line-height: 1.62; }
+
+/* How to do it: numbered strip stickers, two across */
+.sec-how { --sheet: var(--sky); --tf: var(--t-butter); --tl: var(--d-butter); }
+.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 40px; max-width: none; padding: 8px 6px 0; }
+.step { padding: 24px 26px 24px 96px; --sl: var(--l-sky); }
+.step:nth-child(4n+2), .step:nth-child(4n+3) { --sl: var(--l-lav); }
+.step::before { left: 20px; top: 20px; width: 58px; height: 58px; border-radius: 50%; background: radial-gradient(circle at 32% 26%, #fff 0 3.5px, transparent 4px), var(--t-butter); border: 3px solid var(--l-butter); box-shadow: 0 0 0 5px var(--white), 0 0 0 6.5px rgb(124 102 81 / .2), 0 5px 6px -2px rgb(120 62 86 / .3); color: var(--ink); font: 700 26px/1 var(--font-display); }
+.step:nth-child(even)::before { background: radial-gradient(circle at 32% 26%, #fff 0 3.5px, transparent 4px), var(--milk); border-color: var(--l-pink); }
+.step p { font-size: 17px; line-height: 1.62; overflow-wrap: anywhere; }
+.how-side { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 36px; margin-top: 50px; align-items: start; }
+.dodont { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; align-items: start; }
+.specs { padding: 0 0 14px; --sl: var(--l-lav); }
+.specs h3 { margin: 0; padding: 14px 22px 12px; background: var(--lav); border-bottom: 3px solid var(--l-lav); border-radius: 21px 21px 0 0; }
+.specs dl { padding: 4px 22px 0; }
+.spec { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 12px; padding: 10px 0; border-top: 2px dotted rgb(124 102 81 / .35); font-size: 16px; line-height: 1.45; }
+.spec:first-child { border-top: 0; }
+.spec dt { font-weight: 700; }
+.spec dd { overflow-wrap: anywhere; }
+.do, .avoid { padding: 20px 24px 18px; }
+.do { --sf: var(--f-mint); --sl: var(--l-mint); } .avoid { --sf: var(--f-pink); --sl: var(--l-pink); }
+.do h3, .avoid h3 { display: flex; align-items: center; gap: 10px; }
+.do h3::before, .avoid h3::before { content: ''; flex: none; width: 38px; height: 38px; margin: -4px 0 -4px -6px; background: var(--badge-do) center / contain no-repeat; }
+.avoid h3::before { background-image: var(--badge-avoid); }
+.dodont ul { padding: 0; list-style: none; }
+.dodont li { position: relative; margin-bottom: 10px; padding-left: 24px; font-size: 17px; line-height: 1.55; }
+.dodont li:last-child { margin-bottom: 0; }
+.dodont li::before { content: ''; position: absolute; left: 2px; top: .52em; width: 12px; height: 12px; border-radius: 50%; background: var(--sf); border: 2.5px solid var(--sl); }
+.learn { margin-top: 50px; padding: 22px 28px 24px; --sl: var(--l-pink); }
+.learn ul { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.brief, .palette-actions { gap: 16px 20px; margin-top: 34px; }
+.btn { padding: 10px 22px 11px; border: 3px solid var(--l-pink); border-radius: 99px; background: var(--white); box-shadow: var(--cut), 0 7px 9px -5px rgb(120 62 86 / .4); color: var(--ink); font: 600 16px/1.2 var(--font-display); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.btn:hover { background: var(--f-pink); border-color: var(--l-pink); }
+.brief-note { padding: 4px 12px; border-radius: 99px; background: rgb(255 255 255 / .7); color: var(--ink); font-size: 15px; }
+
+/* References and tools lists */
+.ref-item, .learn li { margin-bottom: 16px; line-height: 1.45; }
+.ref-item:last-child { margin-bottom: 0; }
+.ref-item > a { font: 600 17px/1.35 var(--font-display); }
+.ref-meta { color: var(--ink-2); font-size: 15px; }
+.ref-note { margin-top: 3px; font-size: 16px; line-height: 1.5; }
+
+/* Palette: a sheet of round dot stickers. The line round each dot is the dot's own colour, darker. */
+.sec-palette { --sheet: var(--milk); --tf: var(--t-mint); --tl: var(--d-mint); }
+.swatches { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 26px 18px; }
+.swatch button { padding: 0; background: none; border: 0; border-radius: 0; overflow: visible; text-align: center; transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.chip { width: min(100%, 112px); height: auto; aspect-ratio: 1; margin: 10px auto 16px; border-radius: 50%; background: radial-gradient(circle at 31% 26%, rgb(255 255 255 / .9) 0 5%, rgb(255 255 255 / 0) 11%), var(--c); border: 3px solid color-mix(in srgb, var(--c) 64%, #4a2a20); box-shadow: 0 0 0 6px var(--white), 0 0 0 7.5px rgb(124 102 81 / .22), 0 9px 10px -5px rgb(120 62 86 / .4); }
+.swatch button:hover .chip { scale: 1.05; }
+.swatch-name { padding: 0 2px; color: var(--ink); font: 600 16px/1.25 var(--font-display); }
+.swatch-hex { padding: 3px 0 0; color: var(--ink-2); font: 500 15px/1.3 var(--font-body); }
+.palette-note { color: var(--ink); }
+.palette-actions { justify-content: center; }
+
+/* Feel the vibe: the clips as photo stickers, the music as a stack of pill stickers */
+.sec-vibe { --sheet: var(--lav); --tf: var(--t-sky); --tl: var(--d-sky); }
+.music-wrap { margin-top: 46px; }
+.loops-wrap { margin: 0; }
+.loops-wrap h3, .music-wrap h3 { margin-bottom: 20px; }
+.loops { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 30px; }
+.loop:nth-child(4n+1) { --fl: var(--l-pink); rotate: -1deg; } .loop:nth-child(4n+2) { --fl: var(--l-mint); rotate: 1deg; }
+.loop:nth-child(4n+3) { --fl: var(--l-sky); rotate: .8deg; } .loop:nth-child(4n) { --fl: var(--l-butter); rotate: -.8deg; }
+.loop video { aspect-ratio: 16 / 9; object-fit: cover; }
+.loop figcaption .shot-meta { color: var(--ink-2); }
+.tracks { max-width: none; gap: 22px; }
+.track { grid-template-columns: minmax(0, 21em) minmax(0, 1fr) auto; column-gap: 28px; align-items: center; }
+.track-btn { grid-column: 1; grid-row: 1; }
+.track-btn { padding: 7px 18px 7px 7px; background: var(--white); border: 3px solid var(--l-lav); border-radius: 99px; box-shadow: var(--cut), 0 6px 8px -5px rgb(80 50 120 / .45); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.track-btn:hover, .track.is-playing .track-btn { background: var(--f-pink); border-color: var(--l-pink); }
+.track-play { width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at 32% 26%, #fff 0 2.5px, transparent 3px), var(--pink); border: 3px solid var(--d-pink); color: var(--ink); }
+.track-title { font: 600 17px/1.3 var(--font-display); }
+.track-artist { color: var(--ink); font-size: 15px; }
+.track-note { grid-column: 2; grid-row: 1; margin: 0; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.track-yt { grid-column: 3; padding: 4px 12px; border-radius: 99px; background: var(--white); color: var(--link); font-size: 15px; font-weight: 700; }
+.player { background: var(--white); border: 3px solid var(--l-pink); border-radius: 22px; overflow: hidden; box-shadow: 0 0 0 6px var(--white), 0 0 0 7.5px rgb(124 102 81 / .22), 0 16px 28px rgb(120 62 86 / .35); font-family: var(--font-body); }
+.player-now { color: var(--d-pink); font: 600 12px/1.3 var(--font-display); }
+.player-title { font-family: var(--font-display); }
+.player-artist { color: var(--ink-2); }
+
+/* More references: ten photo stickers, five across */
+.sec-refs { --sheet: var(--mint); --tf: var(--pink); --tl: var(--d-pink); }
+.ref-gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 36px 28px; margin-bottom: 52px; padding: 8px 6px 0; }
+.ref-gallery .shot-link { aspect-ratio: 4 / 3; border-radius: 18px; rotate: var(--gr, 0deg); transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1); }
+.ref-gallery .shot:nth-child(5n+1) { --fl: var(--l-pink); --gr: -1.4deg; } .ref-gallery .shot:nth-child(5n+2) { --fl: var(--l-sky); --gr: 1deg; }
+.ref-gallery .shot:nth-child(5n+3) { --fl: var(--l-butter); --gr: -.6deg; } .ref-gallery .shot:nth-child(5n+4) { --fl: var(--l-lav); --gr: 1.4deg; }
+.ref-gallery .shot:nth-child(5n) { --fl: var(--l-mint); --gr: -1deg; }
+/* Only the picture tilts; its caption label stays level */
+.ref-gallery .shot:hover { --gr: 0deg; }
+.ref-gallery figcaption { margin-left: 0; }
+.ref-lists { gap: 40px; }
+.ref-list { padding: 22px 28px 24px; }
+.ref-games { --sf: var(--f-sky); --sl: var(--l-sky); } .ref-media { --sf: var(--f-lav); --sl: var(--l-lav); }
+
+/* Sources: the back of the sheet, white backing with its printed grid */
+.sec-sources { --tf: var(--lav); --tl: var(--d-lav); background: linear-gradient(rgb(111 179 214 / .2) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgb(111 179 214 / .2) 1px, transparent 1px) 0 0 / 24px 24px, #fbfdff; }
+.sources { gap: 6px 34px; font-size: 16px; line-height: 1.5; }
+.source { padding: 8px; background: rgb(251 253 255 / .9); border-radius: 12px; }
+.source-meta { color: var(--ink-2); font-size: 15px; }
+
+/* Related styles: four small photo stickers */
+.sec-related { --sheet: var(--butter); --tf: var(--t-sky); --tl: var(--d-sky); }
+.related { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 30px; padding: 8px 6px 0; }
+.related-item:nth-child(4n+1) { --fl: var(--l-pink); } .related-item:nth-child(4n+2) { --fl: var(--l-sky); } .related-item:nth-child(4n+3) { --fl: var(--l-mint); } .related-item:nth-child(4n) { --fl: var(--l-lav); }
+.related img { border-radius: 18px; }
+.related a { color: var(--ink); transition: scale .45s cubic-bezier(.3, 2, .45, 1); }
+.related a:hover { scale: 1.03; }
+.related a:active { scale: 1.05 .94; transition-duration: .08s; }
+.related span { padding-top: 16px; font: 600 17px/1.3 var(--font-display); }
+
+/* Footer: one last label */
+.foot { margin-top: 54px; padding: 22px 30px 24px; --sl: var(--l-pink); color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.foot-nav { gap: 12px 24px; margin-top: 14px; }
+.foot-nav a { color: var(--link); font: 600 16px/1.3 var(--font-display); }
+
+@media print { .kp-pos, .kp-sheet, .kp-tw { display: none !important; } }
+
+/* ---------- Narrower screens ---------- */
+@media (max-width: 1100px) {
+  .sec-feel { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .feel-body, .origins, .mood-words { grid-column: 1; grid-row: auto; }
+  .mood-words { margin: 34px 0 6px; }
+  .origins { margin-top: 30px; rotate: .5deg; }
+  .core-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .how-side { grid-template-columns: minmax(0, 1fr); }
+  .ref-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .track { grid-template-columns: minmax(0, 1fr) auto; }
+  .track-note { grid-column: 1 / -1; grid-row: 2; margin: 12px 4px 4px 18px; }
+  .track-yt { grid-column: 2; }
+}
+@media (max-width: 1000px) {
+  .hero:has(> .kp-sheet) { grid-template-columns: minmax(0, 1fr); grid-template-areas: "card" "sheet" "gal"; }
+  .related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .steps, .dodont { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .core-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  :root { --kp-s: 66px; }
+  html { font-size: 17px; }
+  .atlas { padding: 0 10px; gap: 8px; }
+  .atlas-btn { padding: 0 9px; }
+  .page { padding: 0 14px 56px; }
+  .hero { padding-top: 34px; gap: 38px; }
+  .hero-text { padding: 76px 18px 50px; }
+  .hero-title { font-size: min(19vw, 92px); }
+  .kp-sheet { padding: 16px 14px 18px; }
+  .kp-slots { gap: 6px 8px; padding: 4px 2px; }
+  .hero-gallery { grid-template-columns: minmax(0, 1fr); gap: 34px; padding: 10px 8px 0; }
+  .toc { margin-top: 40px; }
+  .toc ul { gap: 18px 16px; }
+  .toc a { padding: 6px 15px 7px; font-size: 16px; }
+  .sec { margin-top: 44px; padding: 26px 18px 30px; border-radius: 24px; }
+  .sec-title { margin-bottom: 26px; }
+  .feel-body { padding: 22px 20px 24px; }
+  .core-item { padding: 32px 20px 22px; }
+  .core-item h3::before { left: -12px; top: -18px; width: 42px; height: 42px; font-size: 19px; }
+  .step { padding: 34px 20px 22px; }
+  .step::before { left: -12px; top: -18px; width: 46px; height: 46px; font-size: 21px; }
+  .spec { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .learn { padding: 20px 20px 22px; }
+  .ref-list { padding: 20px 20px 22px; }
+  .foot { padding: 20px 20px 22px; }
+}
+@media (max-width: 560px) {
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ref-gallery, .related, .loops { grid-template-columns: minmax(0, 1fr); }
+  .chip { width: 92px; }
+}
+@media (max-width: 720px) {
+  /* The star that starts out on the first photo sits a little further in, so it stays on a phone screen */
+  .hero-gallery .shot-1 > .kp-pos { left: 30px !important; top: 14px !important; }
+  /* The dango that starts on Core elements moves up onto the sheet's top edge, clear of the heading's last letter */
+  #core > .kp-pos.kp-default { top: -14px !important; }
+}
+@media (max-width: 380px) {
+  /* Small Android phones: the site bar's pills shrink so "All styles" and the effects button stay on one line */
+  .atlas { gap: 6px; padding: 0 8px; }
+  .atlas-home { padding: 0 10px 0 6px; font-size: 14px; }
+  .atlas-btn { padding: 0 7px; font-size: 14px; }
+  .atlas-actions { gap: 4px; }
+}
+@media (max-width: 560px) {
+  /* On a phone the YouTube link moves under the note, so the track title gets the whole pill */
+  .track { grid-template-columns: minmax(0, 1fr); }
+  .track-yt { grid-column: 1; grid-row: 3; justify-self: start; margin: 8px 0 0 14px; }
+  .track-play { width: 34px; height: 34px; }
+}
